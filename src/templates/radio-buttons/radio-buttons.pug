@@ -1,0 +1,16 @@
+mixin radio-btns ({ groupName = 'group-default', items = ['Мужчина', 'Женщина', 555]})
+    .radio-btns
+        form(class="radio-btns__form")
+            each val,index in items
+                case index
+                    when 0
+                        div(class="radio-btns__button")
+                            input(class="radio-btns__input" type="radio" id=(groupName+"-choice"+(index+1)) name=groupName value=val checked)
+                            label(class="radio-btns__label" for=(groupName+"-choice"+(index+1)))=val
+                    default
+                        div(class="radio-btns__button")
+                            input(class="radio-btns__input" type="radio" id=(groupName+"-choice"+(index+1)) name=groupName value=val)
+                            label(class="radio-btns__label" for=(groupName+"-choice"+(index+1)))=val
+                
+            
+                
