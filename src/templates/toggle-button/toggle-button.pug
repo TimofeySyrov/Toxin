@@ -1,0 +1,6 @@
+mixin toggle-btn ({ className = "name-default", groupName = "group-default", items = ["Мужчина", "Женщина", 555]})
+    div(class=className)
+        .toggle-btn
+            each val,index in items
+                input(class="toggle-btn__input" type="checkbox" id=(groupName+"-selector"+(index+1)) name=groupName)
+                label(class="toggle-btn__label" for=(groupName+"-selector"+(index+1)))=val                                        
