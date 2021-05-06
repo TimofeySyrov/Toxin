@@ -1,0 +1,60 @@
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+}
+
+.toggle-btn__label {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.toggle-btn__input {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    
+    width: 40px;
+    height: 20px;
+    margin: 0;
+  
+    background: #ffffff;
+    border: 1px solid $dark_shade_25;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+  
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+      
+    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  }
+  
+  .toggle-btn__input::after {
+    content: "";
+    
+    position: absolute;
+    
+    width: 12px;
+    height: 12px;
+    background-color: $dark_shade_25;
+    border-radius: 50%;
+
+    margin: 0 4px 0 4px;
+    transform: translateX(0);
+    
+    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  }
+  
+  .toggle-btn__input:checked::after {
+    transform: translateX(18px);
+    background: $main-gradient;  
+  }
+  
+  .toggle-btn__input:checked {
+    border-color: $purple;
+  }
+
