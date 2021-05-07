@@ -5,8 +5,8 @@
         justify-content: center;
         align-items: center;
         height: 44px;
-        font-family: 'Montserrat-Regular', sans-serif;
-        font-weight: bold;
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-weight: 700;
         font-size: 12px;
         line-height: 15px;
         text-align: center;
@@ -15,6 +15,16 @@
         user-select: none;
         cursor: pointer;
         outline: none;
+    }
+
+    .btnDefault {
+        width: 99px;
+        height: 34px;
+        color: $purple;
+        
+        &:hover {
+            color: $dark_shade_50;
+        }
     }
 
     .btnBackground {     
@@ -41,13 +51,6 @@
         &:hover {
             opacity: 0.5;
         }
-    }
-    .btnDefault {
-        width: 99px;
-        height: 34px;
-        color: white;
-        background-color: rgb(199, 199, 199);
-        border-radius: 22px;
     }
     .btnLong {
         position: relative;

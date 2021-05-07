@@ -1,7 +1,8 @@
-mixin button({  className = 'btnDefault', text = 'click me', buttonType = 'submit', icon=false, }={})
-    .button-link
-        if icon
-            button.button-link__elem(class='btnLong' type=buttonType) #{text}
-                i.material-icons arrow_forward
-        else    
-            button.button-link__elem(class=className type=buttonType) #{text}
+mixin button({  className = 'testMainb', groupName = 'btnDefault', text = 'click me', buttonType = 'submit', icon=false, }={})
+    div(class=className)
+        .button-link
+            if icon
+                button.button-link__elem(class='btnLong' type=buttonType) #{text}
+                    i.material-icons arrow_forward
+            else    
+                button.button-link__elem(class=groupName type=buttonType) #{text}
