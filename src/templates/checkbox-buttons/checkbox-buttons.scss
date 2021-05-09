@@ -1,0 +1,43 @@
+.checkbox-btns {
+    display: flex;
+    flex-direction: column;
+    max-width: 222px;
+    width: 100%;
+    height: auto;
+
+    .check {
+        padding-left: 30px;
+        padding-top: 12px;
+        line-height: 18px;
+        color: $dark_shade_50;
+        cursor: pointer;
+        outline: none;
+        
+        &__input {
+            position: absolute;
+            appearance: none;
+        }
+        
+        &__box {
+            position: absolute;
+            margin-left: -30px;
+            width: 18px;
+            height: 18px;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid $dark_shade_25;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            
+        }
+        .check__input:checked + .check__box {
+            border-color: $purple;
+            background-image: url(../assets/img/Vector.svg);
+        }
+        .check-style {
+            display: block;
+            margin-bottom: 15px;
+        }           
+    }   
+}

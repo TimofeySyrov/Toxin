@@ -1,0 +1,7 @@
+mixin checkbox-btns({ listButtons=[], }={})
+    .checkbox-btns
+        each btn in listButtons
+            label.check.check-style
+                input.check__input(type="checkbox" checked= btn.check)
+                span.check__box 
+                | #{btn.name}
