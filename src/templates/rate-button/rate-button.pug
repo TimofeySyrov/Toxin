@@ -1,12 +1,11 @@
-mixin rate-btn ({ className = "ssdsadsa", groupName = "rating-default", items = 5, check = items,})
-    div(class=className)
-        .rate-btn
-            - for (var x = 0; x < items; x++)
-                - var t1 = x;
-                case t1
-                    when (t1 = check)
-                        input(class="rate-btn__input" type="radio" id=(groupName+"-star"+(x+1)) name=groupName checked)
-                        label(class="rate-btn__label" for=(groupName+"-star"+(x+1)))
-                    default
-                        input(class="rate-btn__input" type="radio" id=(groupName+"-star"+(x+1)) name=groupName)
-                        label(class="rate-btn__label" for=(groupName+"-star"+(x+1)))
+mixin rate-btn ({ groupName = "rating-default", items = 5, check = items})
+    .rate-btn
+        - for (var x = 0; x < items; x++)
+            - var t1 = x;
+            case t1
+                when (t1 = check)
+                    input(class="rate-btn__input" type="radio" id=(groupName+"-star"+(x+1)) name=groupName checked)
+                    label(class="rate-btn__label" for=(groupName+"-star"+(x+1)))
+                default
+                    input(class="rate-btn__input" type="radio" id=(groupName+"-star"+(x+1)) name=groupName)
+                    label(class="rate-btn__label" for=(groupName+"-star"+(x+1)))

@@ -1,13 +1,13 @@
+.radio-btns__form {
+	display: flex;
+}
+
 .radio-btns__button {
     position: relative;
 
 	&:first-child {
 		margin-right: 20px;
 	}
-}
-
-.radio-btns__form {
-	display: flex;
 }
 
 .radio-btns__input {
