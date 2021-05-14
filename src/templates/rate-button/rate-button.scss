@@ -1,45 +1,26 @@
-.rate-btn {
-    position: absolute;
-    display: flex;
-    transform: rotateY(180deg);
-    font-family: 'MaterialIcons-Regular', sans-serif;
-}
+.br-theme-fontawesome-stars {
+	.br-widget {
+		height: 28px;
 
-.rate-btn__input {
-    appearance: none;
-}
+		a {
+			font-family: 'MaterialIcons-Regular';
+			background: $main-gradient;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			margin-right: 2px;
+		}
 
-.rate-btn__label {
-    display: block;
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
+		a:after {
+			content: 'star_border';
+		}
 
-    &::before{
-        content: 'star_border';
-        position: relative;
-        display: block;
-        font-size: 24px;
-        background: $main-gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+		a.br-active:after {
+			content: 'star';
+		}
 
-    &::after{
-        content: 'star';
-        position: absolute;
-        display: block;
-        top: 0;
-        opacity: 0;
-        font-size: 24px;
-        background: $main-gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
-.rate-btn__label:hover::after,
-.rate-btn__label:hover ~ .rate-btn__label::after,
-.rate-btn__input:checked ~ .rate-btn__label::after {
-    opacity: 1;
-}
+		a.br-selected:after {
+			content: 'star';
+		}
+	}
+} 
+  
