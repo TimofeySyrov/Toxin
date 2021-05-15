@@ -8,7 +8,7 @@ $(function(){
 
 $(function() {
     $('.js-widget-rate-button').barrating({
-        theme: 'fontawesome-stars',
+        theme: 'css-stars',
         showSelectedRating: false,
         showValues: false,
         initialRating: a

@@ -1,13 +1,16 @@
-.br-theme-fontawesome-stars {
+.br-theme-css-stars {
 	.br-widget {
-		height: 28px;
+		display: flex;
 
 		a {
 			font-family: 'MaterialIcons-Regular';
 			background: $main-gradient;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
-			margin-right: 2px;
+			width: 24px;
+			height: 24px;
+			font-size: 24px;
+			line-height: 20px;
 		}
 
 		a:after {
