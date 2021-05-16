@@ -1,0 +1,30 @@
+.room-info {
+    max-width: 291px;
+
+    &__item {
+        display: flex;
+        justify-content: start;
+        margin-top: 20px;
+        border-bottom: 1px solid $dark_shade_1;
+        padding-bottom: 20px;
+    }
+
+    &__icon {
+        padding-top: 5px;
+        margin-right: 10px;
+
+        .material-icons {
+            width: 48px;
+            height: 48px;
+            font-size: 48px;
+            line-height: 41px;
+            background: $main-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__name {
+        font-family: 'Montserrat-Bold';
+    }
+}
