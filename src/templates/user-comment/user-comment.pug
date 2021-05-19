@@ -1,0 +1,15 @@
+include ../like-button/like-button.pug
+
+mixin user-comment({ likeCount = 12, likeCheck = true, srcLogo = "../assets/img/user-image.png", name = "Мурад Сарафанов", data = "5 дней назад", desc = "Описание" }={})
+    .user-comment
+        .user-comment__left-box
+            img.user-comment__user-logo(src=srcLogo, alt="user-img")
+            .user-comment__like-btn
+                +like-button({
+                    count: likeCount,
+                    checked: likeCheck
+                })
+        .user-comment__right-box
+            p.user-comment__user-name= name
+            p.user-comment__data= data
+            p.user-comment__desc= desc

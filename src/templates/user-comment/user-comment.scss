@@ -1,0 +1,27 @@
+@import '../like-button/like-button.scss';
+
+.user-comment {
+    max-width: 711px;
+    width: 100%;
+    display: inline-flex;
+
+    &__left-box {
+        display: flex;
+        flex-direction: column;
+        width: 48px;
+        margin-right: 10px;
+    }
+
+    &__user-logo {
+        margin-bottom: 12px;
+    }
+
+    &__user-name {
+        font-family: 'Montserrat-Bold';
+        margin-bottom: 2px;
+    }
+
+    &__data {
+        margin-bottom: 10px;
+    }
+}
