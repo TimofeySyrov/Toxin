@@ -1,7 +1,7 @@
-mixin checkbox-btns({ listButtons=[], }={})
+mixin checkbox-btns({ list=[], }={})
     .checkbox-btns
-        each btn in listButtons
+        each btn in list
             label.check.check-style
                 input.check__input(type="checkbox" checked= btn.check)
-                span.check__box 
+                span.check__box
                 | #{btn.name}
