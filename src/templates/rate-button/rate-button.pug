@@ -1,5 +1,6 @@
-mixin rate-button({ dataRating = 4 }={})
+mixin rate-button({ dataRating = 3, dataReadonly='', }={})
     - let n = 0;
-    select.js-widget-rate-button(data-rating= `${dataRating}`)
-        while n < 5
-            option(value=n+=1)= n
+    .rate-button.js-rate-button
+        select.js-widget-rate-button(data-rating= `${dataRating}` data-readonly= `${dataReadonly}`)
+            while n < 5
+                option(value=n+=1)= n

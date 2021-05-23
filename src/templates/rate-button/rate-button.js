@@ -1,16 +1,29 @@
 import 'jquery-bar-rating/dist/jquery.barrating.min';
 
-var a = null;
+class RateButton {
+    constructor(element) {
+        this.$container = $(element);
+        this.isReadonly = false;
+        this.findDOMElement();
+        this.initPlugin();
+    }
 
-$(function(){
-    a = $('.js-widget-rate-button').attr('data-rating');
-});
+    findDOMElement() {
+        this.rate_button = this.$container.find('.js-widget-rate-button');
+        this.valueRating = this.rate_button.attr('data-rating');
+        this.valueReadonly = this.rate_button.attr('data-readonly');
+    }
+    initPlugin() {
+        if(this.valueReadonly == 'true') this.valueReadonly=true
+        else this.valueReadonly=false
 
-$(function() {
-    $('.js-widget-rate-button').barrating({
-        theme: 'css-stars',
-        showSelectedRating: false,
-        showValues: false,
-        initialRating: a
-    });
-});
+        this.rate_button.barrating({
+            theme: 'css-stars',
+            showSelectedRating: false,
+            initialRating: this.valueRating,
+            readonly: this.valueReadonly
+        });
+    }
+}
+
+export default RateButton
