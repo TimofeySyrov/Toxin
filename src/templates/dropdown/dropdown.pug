@@ -1,0 +1,18 @@
+mixin dropdown({ tittle = 'tittle', buttons = true, list = [] }={})
+    .dropdown.js-dropdown
+        .dropdown__name.js-dropdown-name
+            p.dropdown__tittle= tittle
+            span.dropdown__icon
+                i.material-icons expand_more
+        .dropdown__list.js-dropdown-list
+            each item in list
+                .dropdown__list-item
+                    p.dropdown__list-item-text #{item.name}
+                    .dropdown__list-item-count
+                        .dropdown__list-item-count-btn.minus.js-dropdown-minus -
+                        p.dropdown__list-item-count-number.js-dropdown-number #{item.number}
+                        .dropdown__list-item-count-btn.plus.js-dropdown-plus +
+            if buttons
+                .dropdown__btns
+                    p.dropdown__btn-clear Очистить
+                    p.dropdown__btn-confirm Применить

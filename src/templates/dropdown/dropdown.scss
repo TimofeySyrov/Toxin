@@ -1,0 +1,118 @@
+.dropdown {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    background: white;
+    border: 1px solid $dark_shade_25;
+    border-radius: 4px;
+
+    &__name {
+        height: 44px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        cursor: pointer;
+    }
+
+    &__tittle {
+        position: absolute;
+    }
+    &__icon {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        right: 0;
+        top: 0;
+        font-size: 24px;
+        line-height: 24px;
+        color: $dark_shade_50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-user-select: none;
+    }
+
+    &__list {
+        display: none;
+        flex-direction: column;
+        padding: 0 7px 0 15px;
+        border-top: 1px solid $dark_shade_50;
+        color: $dark_shade_100;
+        font-family: 'Montserrat-Bold';
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+
+        &-active {
+            display: flex;
+        }
+    }
+
+    &__list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 7px 0 7px 0;
+    }
+
+    &__list-item-text {
+
+    }
+
+    &__list-item-count {
+        width: 92px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .minus {
+
+        }
+
+        .plus {
+
+        }
+    }
+
+    &__list-item-count-btn {
+        width: 30px;
+        height: 30px;
+        border: 1px solid $dark_shade_25;
+        border-radius: 50%;
+        color: $dark_shade_25;
+        font-family: 'Montserrat-Regular';
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-user-select: none;
+        cursor: pointer;
+    }
+
+    &__list-item-count-number {
+
+    }
+
+    &__btns {
+        font-size: 12px;
+        line-height: 15px;
+        color: $purple;
+        margin: 13px 0 13px 0;
+        -webkit-user-select: none;
+    }
+
+    &__btn-clear {
+        float: left;
+        cursor: pointer;
+    }
+
+    &__btn-confirm {
+        float: right;
+        cursor: pointer;
+    }
+
+    &-active {
+        border-color: $dark_shade_50;
+    }
+}
