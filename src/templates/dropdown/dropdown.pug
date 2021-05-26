@@ -6,7 +6,7 @@ mixin dropdown({ tittle = 'tittle', buttons = true, list = [] }={})
                 i.material-icons expand_more
         .dropdown__list.js-dropdown-list
             each item in list
-                .dropdown__list-item
+                .dropdown__list-item.js-dropdown-item
                     p.dropdown__list-item-text #{item.name}
                     .dropdown__list-item-count
                         .dropdown__list-item-count-btn.minus.js-dropdown-minus -
@@ -14,5 +14,5 @@ mixin dropdown({ tittle = 'tittle', buttons = true, list = [] }={})
                         .dropdown__list-item-count-btn.plus.js-dropdown-plus +
             if buttons
                 .dropdown__btns
-                    p.dropdown__btn-clear Очистить
-                    p.dropdown__btn-confirm Применить
+                    p.dropdown__btns-clear Очистить
+                    p.dropdown__btns-confirm Применить

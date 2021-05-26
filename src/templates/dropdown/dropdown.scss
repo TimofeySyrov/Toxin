@@ -77,9 +77,9 @@
     &__list-item-count-btn {
         width: 30px;
         height: 30px;
+        color: $dark_shade_50;
         border: 1px solid $dark_shade_25;
         border-radius: 50%;
-        color: $dark_shade_25;
         font-family: 'Montserrat-Regular';
         font-size: 18px;
         line-height: 22px;
@@ -88,6 +88,11 @@
         align-items: center;
         -webkit-user-select: none;
         cursor: pointer;
+        opacity: 0.5;
+
+        &-active {
+            opacity: 1;
+        }
     }
 
     &__list-item-count-number {
@@ -102,14 +107,22 @@
         -webkit-user-select: none;
     }
 
-    &__btn-clear {
+    &__btns-clear {
         float: left;
         cursor: pointer;
+        
+        &:active {
+            color: $dark_shade_50;
+        }
     }
 
-    &__btn-confirm {
+    &__btns-confirm {
         float: right;
         cursor: pointer;
+
+        &:active {
+            color: $dark_shade_50;
+        }
     }
 
     &-active {
