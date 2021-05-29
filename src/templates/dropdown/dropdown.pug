@@ -1,18 +1,19 @@
-mixin dropdown({ tittle = 'tittle', buttons = true, list = [] }={})
-    .dropdown.js-dropdown
+//- dropType: 'guests' or 'room-about'
+mixin dropdown({ tittle = 'tittle', dropType = 'guests', isOpenList = true, list = [] }={})
+    .dropdown.js-dropdown(dropType= dropType isopen= `${isOpenList}`)
         .dropdown__name.js-dropdown-name
-            p.dropdown__tittle= tittle
-            span.dropdown__icon
+            p.dropdown__tittle.js-dropdown-tittle= tittle
+            span.dropdown__icon.js-dropdown-icon
                 i.material-icons expand_more
         .dropdown__list.js-dropdown-list
             each item in list
                 .dropdown__list-item.js-dropdown-item
-                    p.dropdown__list-item-text #{item.name}
+                    p.dropdown__list-item-text.js-item-text #{item.name}
                     .dropdown__list-item-count
-                        .dropdown__list-item-count-btn.minus.js-dropdown-minus -
+                        .dropdown__list-item-count-btn.js-dropdown-minus -
                         p.dropdown__list-item-count-number.js-dropdown-number #{item.number}
-                        .dropdown__list-item-count-btn.plus.js-dropdown-plus +
-            if buttons
+                        .dropdown__list-item-count-btn.js-dropdown-plus +
+            if dropType == 'guests'
                 .dropdown__btns
-                    p.dropdown__btns-clear Очистить
-                    p.dropdown__btns-confirm Применить
+                    p.dropdown__btns-clear.js-dropdown-clear Очистить
+                    p.dropdown__btns-confirm.js-dropdown-confirm Применить

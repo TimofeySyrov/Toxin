@@ -12,6 +12,7 @@
         align-items: center;
         padding-left: 15px;
         cursor: pointer;
+        -webkit-user-select: none;
     }
 
     &__tittle {
@@ -30,6 +31,10 @@
         justify-content: center;
         align-items: center;
         -webkit-user-select: none;
+
+        &-active {
+            transform: rotate(-180deg);
+        }
     }
 
     &__list {
@@ -55,23 +60,11 @@
         margin: 7px 0 7px 0;
     }
 
-    &__list-item-text {
-
-    }
-
     &__list-item-count {
         width: 92px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
-        .minus {
-
-        }
-
-        .plus {
-
-        }
     }
 
     &__list-item-count-btn {
@@ -108,11 +101,16 @@
     }
 
     &__btns-clear {
+        display: none;
         float: left;
         cursor: pointer;
         
         &:active {
             color: $dark_shade_50;
+        }
+
+        &-active {
+            display: block;
         }
     }
 
