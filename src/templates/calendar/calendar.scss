@@ -420,3 +420,28 @@
     .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
       background: none;
       border: none; }
+
+
+.date-picker-calendar__buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+  .calendar__buttons{
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $purple;
+
+    &-clear{
+      cursor: pointer;
+    }
+
+    &-confirm{
+      cursor: pointer;
+    }
+
+  }
+}
+
