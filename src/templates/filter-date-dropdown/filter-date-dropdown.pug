@@ -1,0 +1,9 @@
+include ../calendar/calendar.pug
+
+mixin filter-date-dropdown({ isOpen = true, placeholder='Выберите даты' }={})
+        .filter-date-dropdown.js-filter-date-dropdown(data-calendar-isopen= `${isOpen}`)
+            .filter-date-dropdown__input.js-filter-date-dropdown__input
+                | #{placeholder}
+                i.material-icons expand_more
+            .filter-date-dropdown__calendar
+                +calendar

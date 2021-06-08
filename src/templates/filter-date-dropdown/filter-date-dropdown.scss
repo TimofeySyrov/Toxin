@@ -1,0 +1,38 @@
+@import "../calendar/calendar.scss";
+
+.filter-date-dropdown{
+    max-width: 266px;
+    width: 100%;
+
+    &__input{
+        position: relative;
+        height: 44px;
+        background: white;
+        border: 1px solid $dark_shade_25;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+
+        font-family: 'Montserrat-Regular';
+        font-size: 14px;
+        line-height: 24px;
+        color: $dark_shade_75;
+
+        .material-icons{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            font-size: 24px;
+            line-height: 24px;
+            color: $dark_shade_50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+    }
+}
