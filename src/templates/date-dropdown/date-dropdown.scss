@@ -1,0 +1,60 @@
+@import "../calendar/calendar.scss";
+
+.date-dropdown{
+    max-width: 320px;
+    width: 100%;
+    display: block;
+
+    &__arrdep{
+        height: 44px;
+        position: relative;
+    }
+
+    &__arrival{
+        left: 0;
+        top: 0;
+    }
+
+    &__depature{
+        right: 0;
+        top: 0;
+    }
+
+    &__input{
+        position: absolute;
+        width: 150px;
+        height: 44px;
+        background: white;
+        border: 1px solid $dark_shade_25;
+        border-radius: 4px;
+        padding: 12px 0 8px 15px;
+        cursor: pointer;
+
+        font-family: 'Montserrat-Regular';
+        font-size: 14px;
+        line-height: 18px;
+        color: $dark_shade_75;
+
+        &-active{
+            .material-icons{
+                transform: rotate(-180deg);
+            }
+        }
+
+        .material-icons{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            font-size: 24px;
+            line-height: 24px;
+            color: $dark_shade_50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+    }
+        
+}
