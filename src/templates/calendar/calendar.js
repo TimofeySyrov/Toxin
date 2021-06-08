@@ -2,27 +2,21 @@ import 'air-datepicker';
 
 class AirCalendar {
   
-  constructor(container, doubleInputs, isOpen, firstInput, secondInput){
+  constructor(container, isOpen, firstInput, secondInput){
 
-    this.isDI = doubleInputs;
-    this.calendarContainer = container;
+    this.calendarContainer = $(container).find(".js-date-picker-calendar");
     this.isOpen = isOpen;
     
-    // Проверка: сколько инпутов есть для вывода даты
-    if(doubleInputs){
-      this.arrivalInput = firstInput;
-      this.depatureInput = secondInput;
-    }
-    if(!(doubleInputs)){
-      this.singleInput = firstInput;
+    this.arrivalInput = firstInput;
+    this.depatureInput = secondInput;
+    this.singleInput = firstInput;
+
+    if(secondInput == undefined & secondInput == null){
+      this.isDI = false;
+    }else {
+      this.isDI = true;
     }
 
-    // Если не передан ни один инпут, то datepicker присвоется this.calendarContainer
-    if(!(firstInput == undefined & firstInput == null)){
-      this.calendarContainer = $(this.calendarContainer).find(".js-date-picker-calendar");
-    } else if(!(secondInput == undefined & secondInput == null)){
-      this.calendarContainer = $(this.calendarContainer).find(".js-date-picker-calendar");
-    }
     this.transformToAirDatepicker();
     this.checkIsOpen();
     this.addCalendarButtons();
