@@ -2,11 +2,11 @@ import 'air-datepicker';
 
 class AirCalendar {
   
-  constructor(container, doubleInputs, firstInput, secondInput){
-    console.log("Proverochka");
+  constructor(container, doubleInputs, isOpen, firstInput, secondInput){
 
     this.isDI = doubleInputs;
     this.calendarContainer = container;
+    this.isOpen = isOpen;
     
     // Проверка: сколько инпутов есть для вывода даты
     if(doubleInputs){
@@ -24,10 +24,12 @@ class AirCalendar {
       this.calendarContainer = $(this.calendarContainer).find(".js-date-picker-calendar");
     }
     this.transformToAirDatepicker();
+    this.checkIsOpen();
     this.addCalendarButtons();
 
-    this.clearCalendarButton();
-    this.confirmCalendarButton();
+    this.eventListener_calendarInputs();
+    this.eventListener_clearCalendarButton();
+    this.eventListener_confirmCalendarButton();
   }
 
   transformToAirDatepicker(){
@@ -37,7 +39,9 @@ class AirCalendar {
       containerArrival: $(this.arrivalInput),
       containerDepature: $(this.depatureInput),
       containerSingle: $(this.singleInput),
+      inputIcon: '<i class="material-icons">expand_more</i>',
       options: {
+        inline: false,
         toggleSelected: true,
         range: true,
         multipleDates: 2,
@@ -49,6 +53,8 @@ class AirCalendar {
         prevHtml: '<i class="material-icons">arrow_back</i>',
         nextHtml: '<i class="material-icons">arrow_forward</i>',
         onSelect: function onSelect(selectedDates) {
+          
+          
                 if(selectedDates !== undefined && selectedDates != '' && selectedDates.indexOf('-') > -1){
                     var mdy = selectedDates.split('-');
 
@@ -56,10 +62,10 @@ class AirCalendar {
 
                     //Если значение true, задействованы два инпута. Если false, то задействован один.
                     if(calendar1.isDouble == true){
-                      calendar1.containerArrival.attr('placeholder', mdy[0]);
-                      calendar1.containerDepature.attr('placeholder', mdy[1]);  
+                      calendar1.containerArrival.html(mdy[0]+calendar1.inputIcon);
+                      calendar1.containerDepature.html(mdy[1]+calendar1.inputIcon);  
                     } else if(calendar1.isDouble == false){
-                      calendar1.containerSingle.attr('placeholder', mdy[0]+" - "+mdy[1]);
+                      calendar1.containerSingle.html(mdy[0]+" - "+mdy[1]+calendar1.inputIcon);
                     }
                     
                 }
@@ -74,7 +80,6 @@ class AirCalendar {
     }
 
     var myD = $(this.calendarContainer).datepicker(calendar1.options).data('datepicker');
-
   }
 
   addCalendarButtons(){
@@ -85,9 +90,40 @@ class AirCalendar {
     buttonsContainer.append('<div class="calendar__buttons calendar__buttons-confirm js-calendar-confirm">Применить</div>');
   }
 
-  clearCalendarButton(){
-    var clearb = $(this.calendarContainer).find('.js-calendar-clear');
+  checkIsOpen(){
+    if(this.isOpen == 'true'){
+      this.showCalendar();
+    }
+    if(this.isOpen == 'false'){
+      this.hideCalendar();
+    }
+  }
 
+  eventListener_calendarInputs(){
+    $(this.arrivalInput).on("click", this.calendarInputs.bind(this));
+    $(this.depatureInput).on("click", this.calendarInputs.bind(this));
+  }
+
+  calendarInputs(){
+    var myD = $(this.calendarContainer);
+    
+    if(this.isOpen == 'true'){
+      this.isOpen = 'false';
+      $(myD).hide();
+    }else {
+      this.isOpen = 'true';
+      $(myD).show();
+    }
+  }
+
+  showCalendar(){
+    var myD = $(this.calendarContainer);
+    
+    $(myD).show();
+    
+  }
+
+  clearAllCalendar(){
     var myD = $(this.calendarContainer).data('datepicker');
 
     const inputsPlaceholder = {
@@ -95,23 +131,37 @@ class AirCalendar {
       arr: $(this.arrivalInput),
       dep: $(this.depatureInput),
       containerSingle: $(this.singleInput),
+      inputIcon: '<i class="material-icons">expand_more</i>',
     };
+
+    if(inputsPlaceholder.isDouble){
+      inputsPlaceholder.arr.html('ДД.ММ.ГГГГ'+inputsPlaceholder.inputIcon);
+      inputsPlaceholder.dep.html('ДД.ММ.ГГГГ'+inputsPlaceholder.inputIcon);
+    }
+    if(!(inputsPlaceholder.isDouble)){
+      inputsPlaceholder.containerSingle.html('Выберите даты'+inputsPlaceholder.inputIcon);
+    }
     
-    clearb.on("click", function() {
-      if(inputsPlaceholder.isDouble){
-        inputsPlaceholder.arr.attr('placeholder', 'ДД.ММ.ГГГГ');
-        inputsPlaceholder.dep.attr('placeholder', 'ДД.ММ.ГГГГ');
-      }
-      if(!(inputsPlaceholder.isDouble)){
-        inputsPlaceholder.containerSingle.attr('placeholder', 'Выберите даты');
-      }
-      
-      myD.clear();
-    });
+    myD.clear();
+    myD.hide();
   }
 
-  confirmCalendarButton(){
+  eventListener_clearCalendarButton(){
+    var clearb = $(this.calendarContainer).find('.js-calendar-clear');
     
+    clearb.on("click", this.clearAllCalendar.bind(this));
+  }
+
+  hideCalendar(){
+    var myD = $(this.calendarContainer);
+
+    $(myD).hide();
+  }
+
+  eventListener_confirmCalendarButton(){
+    var clearb = $(this.calendarContainer).find('.js-calendar-confirm');
+    
+    clearb.on("click", this.calendarInputs.bind(this));
   }
 }
 
