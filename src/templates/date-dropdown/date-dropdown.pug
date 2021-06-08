@@ -1,7 +1,6 @@
 include ../calendar/calendar.pug
 
-mixin date-dropdown({ doubleDropdowns = true, isOpen = true, placeholder='ДД.ММ.ГГГГ' }={})
-    if(doubleDropdowns)
+mixin date-dropdown({ isOpen = true, placeholder='ДД.ММ.ГГГГ' }={})
         .date-dropdown.js-date-dropdown(data-calendar-isopen= `${isOpen}`)
             .date-dropdown__arrdep
                 .date-dropdown__input.date-dropdown__arrival.js-date-dropdown-arrival
@@ -10,12 +9,5 @@ mixin date-dropdown({ doubleDropdowns = true, isOpen = true, placeholder='ДД.�
                 .date-dropdown__input.date-dropdown__depature.js-date-dropdown-depature
                     | #{placeholder}
                     i.material-icons expand_more
-            .date-dropdown__calendar
-                +calendar
-    else
-        .date-dropdown.js-date-dropdown
-            .date-dropdown__input.date-dropdown__single.js-date-dropdown-single
-                | #{placeholder}
-                i.material-icons expand_more
             .date-dropdown__calendar
                 +calendar
