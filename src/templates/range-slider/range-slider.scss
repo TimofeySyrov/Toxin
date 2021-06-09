@@ -1,0 +1,63 @@
+.range-slider{
+    max-width: 266px;
+    width: 100%;
+
+    &__tittle{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+
+    &__name{
+        font-family: 'Montserrat-Bold';
+        color: $dark_shade_100;
+    }
+
+    &__prices{
+        font-family: 'Montserrat-Regular';
+        color: $dark_shade_50;
+    }
+
+    &__slider{
+        margin-top: 20px;
+    }
+
+    .noUi-target{
+        background: white;
+        border: 1px solid $dark_shade_25;
+        border-radius: 3px;
+        box-shadow: none;
+    }
+
+    .noUi-horizontal{
+        height: 6px;
+    }
+
+    .noUi-connect{
+        background: $green_gradient;
+    }
+
+    .noUi-handle{
+        border: 2px solid #FFFFFF;
+        border-radius: 10px;
+        background: $green_gradient;
+        box-shadow: none;
+    }
+
+    .noUi-horizontal .noUi-handle{
+        width: 14px;
+        height: 14px;
+        right: -9px;
+        top: -5px;
+        cursor: ew-resize;
+        outline: none;
+    }
+
+    .noUi-handle::after,
+    .noUi-handle::before{
+        display: none;
+    }
+}

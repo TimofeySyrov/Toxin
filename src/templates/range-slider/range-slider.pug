@@ -1,0 +1,10 @@
+mixin range-slider({ name = 'Range Slider', prices = {min: "5000", max: "10000"} }={})
+    - let separator = " - ";
+    .range-slider.js-range-slider
+        .range-slider__tittle
+            .range-slider__name #{name}
+            .range-slider__prices
+                span.range-slider__text.range-slider__min-price.js-range-slider__min-price #{prices.min}₽
+                span.range-slider__text= separator
+                span.range-slider__text.range-slider__max-price.js-range-slider__max-price #{prices.max}₽
+        .range-slider__slider.js-range-slider__slider
