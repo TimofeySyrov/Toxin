@@ -27,7 +27,6 @@ class AirCalendar {
   }
 
   transformToAirDatepicker(){
-
     const calendar1 = {
       isDouble: this.isDI,
       containerArrival: $(this.arrivalInput),
@@ -47,8 +46,6 @@ class AirCalendar {
         prevHtml: '<i class="material-icons">arrow_back</i>',
         nextHtml: '<i class="material-icons">arrow_forward</i>',
         onSelect: function onSelect(selectedDates) {
-          
-          
                 if(selectedDates !== undefined && selectedDates != '' && selectedDates.indexOf('-') > -1){
                     var mdy = selectedDates.split('-');
 
@@ -73,7 +70,7 @@ class AirCalendar {
       calendar1.options.dateFormat = "d M";
     }
 
-    var myD = $(this.calendarContainer).datepicker(calendar1.options).data('datepicker');
+    $(this.calendarContainer).datepicker(calendar1.options).data('datepicker');
   }
 
   addCalendarButtons(){
@@ -112,13 +109,14 @@ class AirCalendar {
 
   showCalendar(){
     var myD = $(this.calendarContainer);
-    
+
     $(myD).show();
-    
   }
 
   clearAllCalendar(){
     var myD = $(this.calendarContainer).data('datepicker');
+    
+    myD.clear();
 
     const inputsPlaceholder = {
       isDouble: this.isDI,
@@ -135,9 +133,6 @@ class AirCalendar {
     if(!(inputsPlaceholder.isDouble)){
       inputsPlaceholder.containerSingle.html('Выберите даты'+inputsPlaceholder.inputIcon);
     }
-    
-    myD.clear();
-    myD.hide();
   }
 
   eventListener_clearCalendarButton(){
