@@ -5,10 +5,30 @@
     width: 100%;
     display: block;
 
+    &__tittles{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    &__arrdep-tittle{
+        width: 150px;
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $dark_shade_100;
+    }
+
     &__arrdep{
         height: 44px;
         position: relative;
         margin-bottom: 5px;
+    }
+
+    &__item{
+        
     }
 
     &__arrival{

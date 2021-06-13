@@ -6,7 +6,6 @@ class DateDropdown {
 
         this.dateDropArrival = this.dateDrop.querySelector(".js-date-dropdown-arrival");
         this.dateDropDepature = this.dateDrop.querySelector(".js-date-dropdown-depature");
-        this.dateDropSingle = this.dateDrop.querySelector(".js-date-dropdown-single");
 
         this.isCalOpen = this.dateDrop.getAttribute("data-calendar-isopen");
 
