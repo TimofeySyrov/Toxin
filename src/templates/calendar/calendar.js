@@ -53,12 +53,15 @@ class AirCalendar {
 
                     //Если значение true, задействованы два инпута. Если false, то задействован один.
                     if(calendar1.isDouble == true){
-                      calendar1.containerArrival.html(mdy[0]+calendar1.inputIcon);
-                      calendar1.containerDepature.html(mdy[1]+calendar1.inputIcon);  
+                      let CalArrDate = calendar1.containerArrival.html(mdy[0]+calendar1.inputIcon);
+                      let CalDepDate = calendar1.containerDepature.html(mdy[1]+calendar1.inputIcon);
+                      let CalDates = [mdy[0], mdy[1]];
+                      localStorage.setItem('CalendarDates', CalDates);
                     } else if(calendar1.isDouble == false){
                       calendar1.containerSingle.html(mdy[0]+" - "+mdy[1]+calendar1.inputIcon);
+                      let CalDates = [mdy[0], mdy[1]];
+                      localStorage.setItem('CalendarDates', CalDates);
                     }
-                    
                 }
                 
         }
