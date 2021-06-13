@@ -1,8 +1,9 @@
 //- dropType: 'guests' or 'room-about'
-mixin dropdown({ tittle = 'tittle', dropType = 'guests', isOpenList = true, list = [] }={})
+mixin dropdown({ tittle='Гости', text = 'Сколько гостей', dropType = 'guests', isOpenList = true, list = [] }={})
     .dropdown.js-dropdown(dropType= dropType isopen= `${isOpenList}`)
+        span.dropdown__tittle= tittle
         .dropdown__name.js-dropdown-name
-            p.dropdown__tittle.js-dropdown-tittle= tittle
+            p.dropdown__name-text.js-dropdown-name-text= text
             span.dropdown__icon.js-dropdown-icon
                 i.material-icons expand_more
         .dropdown__list.js-dropdown-list

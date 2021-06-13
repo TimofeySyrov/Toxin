@@ -11,7 +11,7 @@ class Dropdown {
         this.dropIsOpen = this.container.getAttribute('isopen');
 
         this.dropName = this.container.querySelector('.js-dropdown-name');
-        this.dropTittle = this.container.querySelector('.js-dropdown-tittle');
+        this.dropTittle = this.container.querySelector('.js-dropdown-name-text');
         this.dropIcon = this.container.querySelector('.js-dropdown-icon');
         
 
@@ -51,9 +51,11 @@ class Dropdown {
     open_dropList(){
         if(!(this.dropList.classList.contains('dropdown__list-active'))){
             this.dropList.classList.add('dropdown__list-active');
+            this.dropName.classList.add('dropdown__name-active');
             this.dropIcon.classList.add('dropdown__icon-active');
         } else {
             this.dropList.classList.remove('dropdown__list-active');
+            this.dropName.classList.remove('dropdown__name-active');
             this.dropIcon.classList.remove('dropdown__icon-active');
         }
     }
@@ -131,6 +133,8 @@ class Dropdown {
             this.dropTittle.innerHTML = `спальни, кровати, ванные комн...`;
         }
 
+        localStorage.setItem('NumRoomAbout', [room, bedroom, bathroom]);
+
     }
         if(this.dropType == 'guests'){
             var string_adults = '';
@@ -170,6 +174,7 @@ class Dropdown {
                 this.dropTittle.innerHTML = `${string_adults}, ${string_babies}`;
             }
 
+            localStorage.setItem('NumGuests', [adults_count, babies_count]);
         }
     }
 
