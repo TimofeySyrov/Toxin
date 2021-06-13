@@ -1,7 +1,7 @@
-mixin button({ groupName = 'btnDefault', text = 'click me', buttonType = 'submit', icon=false, }={})
+mixin button({ groupName = 'btnDefault', text = 'click me', icon=false, href='#' }={})
     .button-link
         if icon
-            button.button-link__elem(class='btnLong' type=buttonType) #{text}
+            a.button-link__elem(href=href class='btnLong') #{text}
                 i.material-icons arrow_forward
         else    
-            button.button-link__elem(class=groupName type=buttonType) #{text}
+            a.button-link__elem(href=href class=groupName) #{text}
