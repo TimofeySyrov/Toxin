@@ -1,4 +1,4 @@
-import '../../libs/simplePagination.js-master/jquery.simplePagination';
+import '../../../libs/simplePagination.js-master/jquery.simplePagination';
 
 class Pagination {
     constructor(elem){
