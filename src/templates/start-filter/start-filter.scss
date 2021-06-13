@@ -1,0 +1,39 @@
+@import '../date-dropdown/date-dropdown.scss';
+@import '../dropdown/dropdown.scss';
+@import '../buttons/_buttons.scss';
+
+.start-filter{
+    position: relative;
+    width: 380px;
+    padding: 40px 30px 30px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background: white;
+
+    &__tittle{
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-size: 24px;
+        line-height: 29px;
+        color: black;
+        margin-bottom: 21px;
+    }
+
+    &__dates{
+        margin-bottom: 21px;
+        .date-picker-calendar {
+            position: absolute;
+            z-index: 2;
+        }
+    }
+
+    &__guests{
+        margin-bottom: 31px;
+
+        .dropdown__list{
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+        }
+    }
+}

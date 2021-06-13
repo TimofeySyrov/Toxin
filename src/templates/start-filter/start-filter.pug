@@ -1,0 +1,28 @@
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../buttons/_buttons.pug
+
+mixin start-filter({ tittle = 'test' }={})
+    .start-filter.js-start-filter
+        p.start-filter__tittle #{tittle}
+        .start-filter__dates
+            +date-dropdown({
+                isOpen: false,
+            })
+        .start-filter__guests
+            +dropdown({
+                dropType: 'guests',
+                isOpenList: false,
+                list: [
+                    {name: 'взрослые', number: 0},
+                    {name: 'дети', number: 0},
+                    {name: 'младенцы', number: 0}
+                ]
+            })
+        .start-filter__confirm-btn
+            +button({
+                groupName: 'btnLong',
+                text: 'подобрать номер',
+                icon: true,
+                href: 'file:///C:/Users/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80/Desktop/Toxin/dist/html/search-room.html'
+            })
