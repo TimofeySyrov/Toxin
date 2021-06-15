@@ -1,18 +1,7 @@
-mixin radio-btns ({ groupName = "group-default", check = false, items = ["Мужчина", "Женщина", 555], valCheck = 0})
-    .radio-btns
-        form(class="radio-btns__form")
-            each val,index in items
-                if check
-                    case index
-                        when valCheck
-                            div(class="radio-btns__button")
-                                input(class="radio-btns__input" type="radio" id=(groupName+"-choice"+(index+1)) name=groupName value=val checked)
-                                label(class="radio-btns__label" for=(groupName+"-choice"+(index+1)))=val
-                        default
-                            div(class="radio-btns__button")
-                                input(class="radio-btns__input" type="radio" id=(groupName+"-choice"+(index+1)) name=groupName value=val)
-                                label(class="radio-btns__label" for=(groupName+"-choice"+(index+1)))=val
-                else
-                    div(class="radio-btns__button")
-                        input(class="radio-btns__input" type="radio" id=(groupName+"-choice"+(index+1)) name=groupName value=val)
-                        label(class="radio-btns__label" for=(groupName+"-choice"+(index+1)))=val
+mixin radio-buttons ({ groupName = "group-default", items = [{name: "Мужчина", checked: "checked"}, {name: "Женщина"}] }={})
+    form.radio-buttons
+        each val,index in items
+            div.radio-buttons__button
+                input.radio-buttons__input(type="radio" id=(groupName+"-choice-"+(index+1)) name=groupName value=val.name checked= val.checked)
+                label.radio-buttons__label(for=(groupName+"-choice-"+(index+1)))=val.name
+                
