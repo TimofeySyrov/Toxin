@@ -1,0 +1,68 @@
+@import '../text-field/text-field.scss';
+@import '../radio-buttons/radio-buttons.scss';
+@import '../toggle-button/toggle-button.scss';
+@import '../buttons/_buttons.scss';
+
+.registration-card{
+    max-width: 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px 30px 30px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    &__tittle{
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-size: 24px;
+        line-height: 29px;
+        color: $dark_shade_100;
+        margin-bottom: 20px;
+    }
+
+    &__user{
+
+        &-first-name{
+            margin-bottom: 10px;
+        }
+
+        &-last-name{
+            margin-bottom: 10px;
+        }
+
+        &-sex{
+            margin-bottom: 23px;
+        }
+
+        &-birthday{
+            margin-bottom: 20px;
+        }
+
+        &-info{
+            &-email{
+                margin-bottom: 10px;
+            }
+            &-distribution{
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__confirm-btn{
+        margin: 24px 0 30px 0;
+    }
+
+    &__login-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-tittle{
+            font-size: 14px;
+            line-height: 18px;
+            color: #000000;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+include ../text-field/text-field.pug
+include ../radio-buttons/radio-buttons.pug
+include ../toggle-button/toggle-button.pug
+include ../buttons/_buttons.pug
+
+mixin registration-card({  }={})
+    .registration-card.js-registration-card
+        p.registration-card__tittle Регистрация аккаунта
+        .registration-card__user
+            .registration-card__user-first-name.js-registration-card-first-name
+                +text-field({
+                    placeholder: 'Имя',
+                })
+            .registration-card__user-last-name.js-registration-card-last-name
+                +text-field({
+                    placeholder: 'Фамилия',
+                })
+            .registration-card__user-sex
+                +radio-buttons
+            .registration-card__user-birthday
+                +text-field({
+                    tittle: 'дата рождения',
+                    isMasked: true
+                })
+            .registration-card__user-info
+                .registration-card__user-info-email.js-registration-card-email
+                    +text-field({
+                        tittle: 'данные для входа в сервис',
+                        placeholder: 'Email',
+                    })
+                .registration-card__user-info-password.js-registration-card-password
+                    +text-field({
+                        placeholder: 'Пароль',
+                    })
+                .registration-card__user-info-distribution
+                    +toggle-button
+        .registration-card__confirm-btn.js-registration-card-registr
+            +button({
+                groupName: 'btnLong',
+                text: 'зарегистрироваться',
+                icon: true
+            })
+        .registration-card__login-container
+            p.registration-card__login-container-tittle Уже есть аккаунт на Toxin
+            +button({
+                groupName: 'btnBorder',
+                text: 'войти',
+                href: 'sign-in.html'
+            })
+
+
