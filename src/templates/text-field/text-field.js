@@ -2,9 +2,7 @@ import 'inputmask/dist/jquery.inputmask.min';
 
 class TextField {
     constructor(container) {
-        const isThatElement = $(container).hasClass('js-text-field');
-        if (isThatElement) this.$textField = $(container);
-        
+        this.$textField = $(container).find('.js-text-field-input');
         this.setMasks();
       }
     
