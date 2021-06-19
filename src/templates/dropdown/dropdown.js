@@ -133,7 +133,7 @@ class Dropdown {
             this.dropTittle.innerHTML = `спальни, кровати, ванные комн...`;
         }
 
-        localStorage.setItem('NumRoomAbout', [room, bedroom, bathroom]);
+        localStorage.setItem('NumRoomAbout', JSON.stringify([room, bedroom, bathroom]));
 
     }
         if(this.dropType == 'guests'){
@@ -174,7 +174,7 @@ class Dropdown {
                 this.dropTittle.innerHTML = `${string_adults}, ${string_babies}`;
             }
 
-            localStorage.setItem('NumGuests', [adults_count, babies_count]);
+            localStorage.setItem('NumGuests', JSON.stringify([adults_count, babies_count]));
         }
     }
 
