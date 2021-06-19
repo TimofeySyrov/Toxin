@@ -1,5 +1,5 @@
-mixin toggle-btn ({ groupName = "group-default", items = ["Мужчина", "Женщина", 555]})
+mixin toggle-button ({ list = [{ name: 'Получать спецпредложения'}] }={})
     .toggle-btn
-        each val,index in items
-            input(class="toggle-btn__input" type="checkbox" id=(groupName+"-selector"+(index+1)) name=groupName)
-            label(class="toggle-btn__label" for=(groupName+"-selector"+(index+1)))=val                                        
+        each btn in list
+            label.toggle-btn__label #{btn.name}
+                input.toggle-btn__input(type="checkbox" checked= btn.check)                                    
