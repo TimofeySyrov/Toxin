@@ -4,9 +4,17 @@
     max-width: 266px;
     width: 100%;
 
-    .rich-checkbox-btns__item {
+    &__tittle{
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $dark_shade_100;
+        margin-bottom: 16px;
+    }
+
+    &__item {
         padding-left: 30px;
-        padding-top: 12px;
         line-height: 18px;
         color: $dark_shade_50;
         cursor: pointer;
