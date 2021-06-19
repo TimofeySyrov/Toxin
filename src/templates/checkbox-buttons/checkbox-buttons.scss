@@ -5,20 +5,30 @@
     width: 100%;
     height: auto;
 
-    .check {
+    &__tittle{
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $dark_shade_100;
+        margin-bottom: 16px;
+    }
+
+    &__item {
+        display: block;
+        margin-bottom: 11px;
         padding-left: 30px;
-        padding-top: 12px;
         line-height: 18px;
         color: $dark_shade_50;
         cursor: pointer;
         outline: none;
         
-        &__input {
+        &-input {
             position: absolute;
             appearance: none;
         }
         
-        &__box {
+        &-box {
             position: absolute;
             margin-left: -30px;
             width: 18px;
@@ -30,14 +40,11 @@
             background-repeat: no-repeat;
             background-position: 50% 50%;
             
-        }
-        .check__input:checked + .check__box {
-            border-color: $purple;
-            background-image: url(../assets/img/check.svg);
-        }
-        .check-style {
-            display: block;
-            margin-bottom: 15px;
-        }           
-    }   
+        }          
+    }
+
+    &__item-input:checked + &__item-box {
+        border-color: $purple;
+        background-image: url(../assets/img/check.svg);
+    }
 }
