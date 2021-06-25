@@ -1,0 +1,182 @@
+@import '../rate-button/rate-button.scss';
+
+.cutaway-room-card{
+    max-width: 270px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+
+    &__slider{
+        &-item {
+            max-height: 151.38px;
+            object-fit: cover;
+            border-radius: 4px 4px 0 0;
+        }
+    }
+
+    &__info-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 20px 19px 17px;
+        cursor: pointer;
+    }
+
+    &__tittle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $dark_shade_1;
+        padding-bottom: 10px;
+    }
+
+    &__room-id{
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-size: 14px;
+        line-height: 17px;
+        color: $dark_shade_100;
+
+        &-number{
+            font-size: 19px;
+            line-height: 23,16px;
+        }
+    }
+
+    &__lux{
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $purple;
+    }
+
+    &__price{
+        font-size: 12px;
+        line-height: 18px;
+        color: $dark_shade_50;
+
+        &-number{
+            font-family: 'Montserrat-Bold', sans-serif;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__rating-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 230px;
+        margin-top: 8px;
+
+        &-stars{
+            
+        }
+
+        &-reviews{
+            color: $dark_shade_50;
+            
+            &-num{
+                font-family: 'Montserrat-Bold', sans-serif;
+                font-size: 14px;
+                line-height: 18px;
+                
+            }
+        }
+    }
+
+    .slick-slider {
+
+        .slick-slide {
+            height: 100%;
+
+            > div {
+                margin-bottom: -4px;
+            }
+        }
+
+        &.slick-dotted {
+            margin: 0;
+        }
+
+        .slick-dots {
+            bottom: 10px;
+            right: 0;
+            padding: 0 18px 12px 0;
+            text-align: right;
+        }
+
+        .slick-dots li {
+            width: auto;
+            height: auto;
+            margin-right: 5px;
+
+            button {
+                height: 0;
+                width: 0;
+                padding: 0;
+                margin: 0;
+            }
+
+            button::before {
+                content: '';
+                width: 7.5px;
+                height: 7.5px;
+                border: 1px solid #FFFFFF;
+                box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+                box-sizing: border-box;
+                border-radius: 50%;
+                opacity: 1;
+                z-index: 2;
+            }
+
+            &.slick-active {
+        
+                button::before {
+                    background: #FFF;
+                }
+            }
+        }
+
+        .slick-arrow {
+            width: 42px;
+            height: 151px;
+    
+            &::before {
+                font-family: 'MaterialIcons-Regular';
+                font-size: 24px;
+                opacity: 1;
+            }
+        }
+
+        .slick-next {
+            right: 0;
+            top: 0;
+            z-index: 2;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+        
+            &::before {
+                content: 'keyboard_arrow_left'
+            }
+        }
+
+        .slick-prev {
+            left: 0;
+            z-index: 2;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        
+            &::before {
+                content: 'keyboard_arrow_left'
+            }
+        }
+        
+
+        .slick-list {
+        
+            .slick-loading & {
+                background: none;
+            }
+        }
+    }
+}

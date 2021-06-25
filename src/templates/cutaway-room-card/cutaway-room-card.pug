@@ -1,0 +1,25 @@
+mixin cutaway-room-card({ number = 888, lux = true, price = 9990, stars = 5, reviews = 145, sliders = [{src: '../assets/img/room-888.png', alt: 'room №888'}, {src: '../assets/img/room-888.png', alt: 'room №888'}, {src: '../assets/img/room-888.png', alt: 'room №888'}] }={})
+    .cutaway-room-card.js-cutaway-room-card
+        .cutaway-room-card__slider.js-cutaway-room-card__slider
+            each slider in sliders
+                img(src= slider.src, alt= slider.alt).cutaway-room-card__slider-item
+        .cutaway-room-card__info-box.js-cutaway-room-card__info-box
+            .cutaway-room-card__tittle
+                p.cutaway-room-card__room-id №!{' '}
+                    span.cutaway-room-card__room-id-number.js-cutaway-room-card-id #{number}
+                    if lux
+                        span.cutaway-room-card__lux.js-cutaway-room-card-lux люкс
+                p.cutaway-room-card__price
+                    span.cutaway-room-card__price-number.js-cutaway-room-card-price-of-day #{price}₽
+                    | !{' '}в сутки
+            .cutaway-room-card__rating-box
+                .cutaway-room-card__rating-box-stars
+                    include ../rate-button/rate-button.pug
+                    +rate-button({
+                        dataRating: 4,
+                        dataReadonly: true
+                    })
+                p.cutaway-room-card__rating-box-reviews
+                    span.cutaway-room-card__rating-box-reviews-num #{reviews}!{' '}
+                    | Отзывов
+
