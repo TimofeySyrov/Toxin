@@ -1,0 +1,163 @@
+@import '../date-dropdown/date-dropdown.scss';
+@import '../dropdown/dropdown.scss';
+@import '../buttons/_buttons.scss';
+
+.room-main-card {
+    position: relative;
+    max-width: 380px;
+    width: 100%;
+    padding: 40px 30px 30px 30px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+    &__tittle {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        font-family: 'Montserrat-Bold', sans-serif;
+
+        &-room-info {
+            color: $dark_shade_100;
+
+            &-id{
+                font-size: 24px;
+                line-height: 17px;
+            }
+
+            &-lux {
+                font-size: 12px;
+                line-height: 15px;
+                text-transform: uppercase;
+                color: $purple;
+                margin-left: 8px;
+                display: none;
+    
+                &--active{
+                    display: inline-block;
+                }
+            }
+        }
+
+        &-room-price {
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-size: 12px;
+            line-height: 18px;
+            color: $dark_shade_50;
+
+            &-amount{
+                font-family: 'Montserrat-Bold', sans-serif;
+                font-size: 14px;
+                line-height: 18px;
+            }
+            &-currency {
+                font-family: 'Montserrat-Bold', sans-serif;
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    &__dates {
+        .date-dropdown {
+            margin-bottom: 20px;
+        }
+        .date-picker-calendar {
+            position: absolute;
+            z-index: 2;
+        }
+    }
+
+    &__guests {
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown__list{
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+        }
+    }
+
+    &__discount-offer {
+
+        &-icon{
+            width: 20px;
+            height: 20px;
+            border: 1px solid $dark_shade_25;
+            border-radius: 50%;
+            font-family: 'Montserrat-Bold', sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+            color: $dark_shade_25;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+
+        &-start{ 
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        &-services-first {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            &-table-row{
+                span {
+                    max-width: 214px;
+                }
+            }
+
+            .room-main-card__discount-offer-icon{
+                margin-left: 5px;
+            }
+        }
+
+        &-services-second {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            &-table-row{
+                display: inline-flex;
+                span {
+                    max-width: 214px;
+                }
+            }
+
+            .room-main-card__discount-offer-icon{
+                margin-left: 5px;
+            }
+        }
+
+        &-end {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-family: 'Montserrat-Bold', sans-serif;
+            font-size: 19px;
+            line-height: 23px;
+            color: $dark_shade_100;
+
+            &-table-row{
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+
+            &-line{
+                height: 1px;
+                width: 100%;
+                display: inline-flex;
+                border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
+            }
+        }
+    }
+}

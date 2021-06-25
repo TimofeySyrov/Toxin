@@ -1,0 +1,70 @@
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../buttons/_buttons.pug
+
+mixin room-main-card({  }={})
+    table.room-main-card.js-room-main-card
+        tr.room-main-card__tittle
+            td.room-main-card__tittle-room-info
+                span №!{' '}
+                span.room-main-card__tittle-room-info-id.js-room-main-card__id 888
+                span.room-main-card__tittle-room-info-lux.js-room-main-card__lux люкс
+            td.room-main-card__tittle-room-price
+                span.room-main-card__tittle-room-price-amount.js-room-main-card__price 9 990
+                span.room-main-card__tittle-room-price-currency ₽
+                span !{' '}в сутки
+        tr.room-main-card__dates
+            td
+                +date-dropdown({
+                    isOpen: false,
+                })
+        tr.room-main-card__guests
+            td
+                +dropdown({
+                    isOpenList: false,
+                    list: [
+                        {name: 'взрослые', number: 0},
+                        {name: 'дети', number: 0},
+                        {name: 'младенцы', number: 0},
+                    ]
+                })
+        tr.room-main-card__discount-offer-start
+            td
+                span.room-main-card__discount-offers-start-amount.js-room-main-card__price 9 990
+                span.room-main-card__discount-offers-start-currency ₽
+                span !{' '}x 4 суток
+            td
+                span.js-room-main-card__calc-start-price 39 960
+                span ₽
+        tr.room-main-card__discount-offer-services-first
+            td.room-main-card__discount-offer-services-first-table-row
+                span Сбор за услуги: скидка!{' '}
+                span.room-main-card__discount-offer-services-first-amount.js-room-main-card__service-first 2 179
+                span.room-main-card__discount-offer-services-first-currency ₽
+                .room-main-card__discount-offer-icon i
+            td
+                span 0₽
+        tr.room-main-card__discount-offer-services-second
+            td.room-main-card__discount-offer-services-second-table-row
+                span Сбор за дополнительные услуги
+                .room-main-card__discount-offer-icon i
+            td
+                span.room-main-card__discount-offer-services-second-amount.js-room-main-card__service-second 300
+                span.room-main-card__discount-offer-services-second-currency ₽
+        tr.room-main-card__discount-offer-end
+            td.room-main-card__discount-offer-end-table-row
+                span Итого
+                .room-main-card__discount-offer-end-line
+                span.room-main-card__discount-offer-end-amount.js-room-main-card__end-price 38 081
+                span.room-main-card__discount-offer-end-currency ₽
+        tr.room-main-card__btn-confirm
+            td
+                +button({
+                    groupName: 'btnLong',
+                    text: 'забронировать',
+                    icon: true,
+                })
+
+        
+        
+            
