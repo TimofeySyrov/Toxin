@@ -21,6 +21,10 @@
         width: 99px;
         height: 34px;
         color: $purple;
+
+        &--small{
+            width: 87px;
+        }
         
         &:hover {
             color: $dark_shade_50;
@@ -32,6 +36,10 @@
         color: white;
         background: $main-gradient;
         border-radius: 22px;
+
+        &--small{
+            height: 34px;
+        }
         
         &:hover {
             opacity: 0.5;
@@ -46,6 +54,11 @@
         background-position: center center;
         box-shadow:inset 0 0 0 100px white;
         background-size:  110% 110%;
+
+        &--small{
+            width: 87px;
+            height: 34px;
+        }
 
         &:hover {
             opacity: 0.5;
