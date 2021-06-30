@@ -1,0 +1,5 @@
+mixin button({ groupName = 'default', small = false, href='/mock-address/change-me', target, text = 'кнопка' }={})
+    .button
+        a.button__link(href= href target= target class= ['button__link_type_'+groupName, 'button__link_size_small', small ? 'button__link_custom-size_'+groupName+'-small' : '']) #{text}
+            if groupName == 'long'
+                i.material-icons.button__icon arrow_forward

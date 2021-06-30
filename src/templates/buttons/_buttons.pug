@@ -1,5 +1,0 @@
-mixin button({ groupName = 'btnDefault', text = 'click me', icon=false, href='#', small, target }={})
-    .button-link
-        a.button-link__elem(href=href target=target class= [groupName, small ? groupName+'--small' : '']) #{text}
-            if icon
-                i.material-icons arrow_forward

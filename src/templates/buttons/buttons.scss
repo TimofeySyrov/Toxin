@@ -1,0 +1,77 @@
+.button {
+    display: inline-block;
+    height: 44px;
+}
+
+.button__link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__icon {
+    position: absolute;
+    content: 'arrow_forward';
+    right: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__link_type_default {
+    color: $purple;
+        
+    &:hover {
+        color: $dark_shade_50;
+    }
+}
+
+.button__link_type_background {     
+    width: 196px;
+    background: $main-gradient;
+    color: #fff;
+    border-radius: 22px;
+        
+    &:hover {
+        opacity: 0.5;
+    }
+}
+.button__link_type_border {
+    width: 99px;
+    border: 2px solid transparent;
+    border-radius: 22px;
+    background: $main-gradient;
+    color: $purple;
+    background-position: center center;
+    box-shadow:inset 0 0 0 100px #fff;
+    background-size:  110% 110%;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.button__link_type_long {
+    position: relative;
+    width: 320px;
+    background: $main-gradient;
+    color: #fff;
+    border-radius: 22px;
+        
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.button__link_size_small { height: 34px; }
+.button__link_custom-size_border-small { width: 87px; }
