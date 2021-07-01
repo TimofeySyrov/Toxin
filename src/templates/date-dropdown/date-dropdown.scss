@@ -1,81 +1,66 @@
 @import "../calendar/calendar.scss";
 
-.date-dropdown{
-    max-width: 320px;
-    width: 100%;
-    display: block;
+.date-dropdown {
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-    &__tittles{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 5px;
-    }
+.date-dropdown__items {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    &__arrdep-tittle{
-        width: 150px;
-        font-family: 'Montserrat-Bold', sans-serif;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
-        color: $dark_shade_100;
-    }
+.date-dropdown__item {
+  display: inline-flex;
+  flex-direction: column;
+}
 
-    &__arrdep{
-        height: 44px;
-        position: relative;
-        margin-bottom: 5px;
-    }
+.date-dropdown__tittle{
+  width: 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $dark_shade_100;
+  margin-bottom: 5px;
+}
 
-    &__item{
-        
-    }
+.date-dropdown__input {
+  position: relative;
+  width: 150px;
+  height: 44px;
+  background: #fff;
+  border: 1px solid $dark_shade_25;
+  border-radius: 4px;
+  padding: 12px 0 8px 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: $dark_shade_75;
+  cursor: pointer;
+}
 
-    &__arrival{
-        left: 0;
-        top: 0;
-    }
+.date-dropdown__arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  line-height: 24px;
+  color: $dark_shade_50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
 
-    &__depature{
-        right: 0;
-        top: 0;
-    }
-
-    &__input{
-        position: absolute;
-        width: 150px;
-        height: 44px;
-        background: white;
-        border: 1px solid $dark_shade_25;
-        border-radius: 4px;
-        padding: 12px 0 8px 15px;
-        cursor: pointer;
-
-        font-family: 'Montserrat-Regular';
-        font-size: 14px;
-        line-height: 18px;
-        color: $dark_shade_75;
-
-        &-active{
-            .material-icons{
-                transform: rotate(-180deg);
-            }
-        }
-
-        .material-icons{
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 44px;
-            height: 44px;
-            font-size: 24px;
-            line-height: 24px;
-            color: $dark_shade_50;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-        }
-    }
-        
+.date-dropdown__calendar-container {
+  position: absolute;
 }
