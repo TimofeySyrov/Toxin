@@ -1,5 +1,6 @@
 mixin bullet-list({ list=[], }={})
-    .bullet-list
-        ul.bullet-list__list
-            each item in list
-                li.bullet-list__item #{item.name}
+	.bullet-list
+		ul.bullet-list__list
+			each item in list
+				li.bullet-list__item
+					p.bullet-list__content #{item}
