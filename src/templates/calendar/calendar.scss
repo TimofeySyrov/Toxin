@@ -1,48 +1,55 @@
-    .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
-        background: $main-gradient;
-        border-radius: 50%;
-        font-family: 'Montserrat-Bold';
-        color: white; }
-      .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-        background: $main-gradient;
-        border-radius: 50%;
-        font-family: 'Montserrat-Bold';
-        color: white; }
-
-    .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
-      background: none;
-      border: none; }
+.-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+  background: $main-gradient;
+  border-radius: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+.-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+  background: $main-gradient;
+  border-radius: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+  background: none;
+  border: none;
+}
   
   /* -------------------------------------------------
       Datepicker cells
      ------------------------------------------------- */
-  .datepicker--cells {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+.datepicker--cells {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
   
-  .datepicker--cell {
-    box-sizing: border-box;
-    cursor: pointer;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    z-index: 1; }
+.datepicker--cell {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 1;
+}
     .datepicker--cell.-focus- {}
     .datepicker--cell.-current- {
         background: $green-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
       .datepicker--cell.-current-.-focus- {
         color: white; }
@@ -88,17 +95,20 @@
     .datepicker--cell.-selected- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
       .datepicker--cell.-selected-.-current- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
       .datepicker--cell.-selected-.-focus- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
     .datepicker--cell:empty {
       cursor: default; }
@@ -110,7 +120,8 @@
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    font-family: 'Montserrat-Bold';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: $purple; }
   
   .datepicker--day-name {
@@ -155,12 +166,14 @@
     .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
       .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
     .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
       background: none;
@@ -293,12 +306,14 @@
     .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
       .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
     .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
         background: linear-gradient(180deg, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25) 75%);
@@ -351,7 +366,8 @@
       fill: none; }
   
   .datepicker--nav-title {
-    font-family: 'Montserrat-Bold';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 19px;
     line-height: 23px;
     color: $dark_shade_100;
@@ -392,12 +408,14 @@
     .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
       .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
     
     .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
@@ -407,12 +425,14 @@
     .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
       .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
         background: $main-gradient;
         border-radius: 50%;
-        font-family: 'Montserrat-Bold';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         color: white; }
     
     .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
@@ -421,12 +441,13 @@
 
 
 .date-picker-calendar__buttons{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
     
   .calendar__buttons{
-    font-family: 'Montserrat-Bold';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;

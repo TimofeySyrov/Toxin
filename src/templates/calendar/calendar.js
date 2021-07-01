@@ -32,7 +32,6 @@ class AirCalendar {
       containerArrival: $(this.arrivalInput),
       containerDepature: $(this.depatureInput),
       containerSingle: $(this.singleInput),
-      inputIcon: '<i class="material-icons">expand_more</i>',
       options: {
         inline: false,
         toggleSelected: true,
@@ -49,18 +48,16 @@ class AirCalendar {
                 if(selectedDates !== undefined && selectedDates != '' && selectedDates.indexOf('-') > -1){
                     var mdy = selectedDates.split('-');
 
-                    console.log("Data: "+mdy);
-
                     //Если значение true, задействованы два инпута. Если false, то задействован один.
                     if(calendar1.isDouble == true){
-                      let CalArrDate = calendar1.containerArrival.html(mdy[0]+calendar1.inputIcon);
-                      let CalDepDate = calendar1.containerDepature.html(mdy[1]+calendar1.inputIcon);
+                      let CalArrDate = calendar1.containerArrival.html(mdy[0]);
+                      let CalDepDate = calendar1.containerDepature.html(mdy[1]);
                       let CalDates = [mdy[0], mdy[1]];
-                      localStorage.setItem('CalendarDates', CalDates);
+                      localStorage.setItem('CalendarDates', JSON.stringify(CalDates));
                     } else if(calendar1.isDouble == false){
-                      calendar1.containerSingle.html(mdy[0]+" - "+mdy[1]+calendar1.inputIcon);
+                      calendar1.containerSingle.html(mdy[0]+" - "+mdy[1]);
                       let CalDates = [mdy[0], mdy[1]];
-                      localStorage.setItem('CalendarDates', CalDates);
+                      localStorage.setItem('CalendarDates', JSON.stringify(CalDates));
                     }
                 }
                 
@@ -126,15 +123,14 @@ class AirCalendar {
       arr: $(this.arrivalInput),
       dep: $(this.depatureInput),
       containerSingle: $(this.singleInput),
-      inputIcon: '<i class="material-icons">expand_more</i>',
     };
 
     if(inputsPlaceholder.isDouble){
-      inputsPlaceholder.arr.html('ДД.ММ.ГГГГ'+inputsPlaceholder.inputIcon);
-      inputsPlaceholder.dep.html('ДД.ММ.ГГГГ'+inputsPlaceholder.inputIcon);
+      inputsPlaceholder.arr.html('ДД.ММ.ГГГГ');
+      inputsPlaceholder.dep.html('ДД.ММ.ГГГГ');
     }
     if(!(inputsPlaceholder.isDouble)){
-      inputsPlaceholder.containerSingle.html('Выберите даты'+inputsPlaceholder.inputIcon);
+      inputsPlaceholder.containerSingle.html('Выберите даты');
     }
   }
 
