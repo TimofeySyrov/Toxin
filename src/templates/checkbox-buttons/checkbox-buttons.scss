@@ -1,50 +1,46 @@
 .checkbox-btns {
-    display: flex;
-    flex-direction: column;
-    max-width: 222px;
-    width: 100%;
-    height: auto;
+	display: flex;
+	flex-direction: column;
+	max-width: 222px;
+}
 
-    &__tittle{
-        font-family: 'Montserrat-Bold', sans-serif;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
-        color: $dark_shade_100;
-        margin-bottom: 16px;
-    }
+.checkbox-btns__tittle{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: $dark_shade_100;
+	margin-bottom: 16px;
+}
 
-    &__item {
-        display: block;
-        margin-bottom: 11px;
-        padding-left: 30px;
-        line-height: 18px;
-        color: $dark_shade_50;
-        cursor: pointer;
-        outline: none;
-        
-        &-input {
-            position: absolute;
-            appearance: none;
-        }
-        
-        &-box {
-            position: absolute;
-            margin-left: -30px;
-            width: 18px;
-            height: 18px;
-            overflow: hidden;
-            border-radius: 4px;
-            border: 1px solid $dark_shade_25;
-            background-color: white;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            
-        }          
-    }
+.checkbox-btns__item {
+	position: relative;
+	margin-bottom: 11px;
+	padding-left: 30px;
+	line-height: 18px;
+	color: $dark_shade_50;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+}
+		
+.checkbox-btns__input {
+	position: absolute;
+	appearance: none;
+	top: 0;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid $dark_shade_25;
+	border-radius: 4px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	overflow: hidden;
+}
 
-    &__item-input:checked + &__item-box {
-        border-color: $purple;
-        background-image: url(../assets/img/check.svg);
-    }
+.checkbox-btns__input:checked {
+	border-color: $purple;
+	background-image: url(../assets/img/check.svg);
 }
