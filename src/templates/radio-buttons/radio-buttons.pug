@@ -1,7 +1,7 @@
-mixin radio-buttons ({ groupName = "group-default", items = [{name: "Мужчина", checked: "checked"}, {name: "Женщина"}] }={})
-    form.radio-buttons
-        each val,index in items
-            div.radio-buttons__button
-                input.radio-buttons__input(type="radio" id=(groupName+"-choice-"+(index+1)) name=groupName value=val.name checked= val.checked)
-                label.radio-buttons__label(for=(groupName+"-choice-"+(index+1)))=val.name
-                
+mixin radio-buttons ({ groupName = "group-default", list = [{name: "Мужчина", check: true}, {name: "Женщина"}] }={})
+  form.radio-buttons
+    each val,index in list
+      label.radio-buttons__item
+        input.radio-buttons__input(type="radio" name= groupName value= val.name checked= (val.check ? 'checked' : val.check))
+        span.radio-buttons__box #{val.name}
+        
