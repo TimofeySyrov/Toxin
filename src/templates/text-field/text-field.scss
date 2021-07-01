@@ -1,34 +1,34 @@
 .text-field {
+  max-width: 320px;
+}
 
-    &__input{
-        max-width: 320px;
-        width: 100%;
-        height: 44px;
-        background: white;
-        color: $dark_shade_25;
-        border: 1px solid $dark_shade_25;
-        border-radius: 4px;
-        padding-left: 15px;
-        font-size: 14px;
-        line-height: 24px;
-        outline: none;
+.text-field__tittle{
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: $dark_shade_100;
+  text-transform: uppercase;
+}
 
-        &::placeholder {
-            color: $dark_shade_25;
-        }
+.text-field__input{
+  width: 100%;
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid $dark_shade_25;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark_shade_25;
+  background: #fff;
 
-        &:hover, &:focus {
-            color: $dark_shade_75;
-            border-color: $dark_shade_50;
-        }
-    }
+  &::placeholder {
+    color: $dark_shade_25;
+  }
 
-    &__tittle{
-        font-family: 'Montserrat-Bold', sans-serif;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
-        color: $dark_shade_100;
-        margin-bottom: 5px;
-    }
+  &:hover, &:focus {
+    color: $dark_shade_75;
+    border-color: $dark_shade_50;
+  }
 }
