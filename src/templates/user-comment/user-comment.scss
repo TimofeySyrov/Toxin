@@ -1,27 +1,32 @@
 @import '../like-button/like-button.scss';
 
 .user-comment {
-    max-width: 711px;
-    width: 100%;
-    display: inline-flex;
+	max-width: 711px;
+	display: inline-flex;
+}
 
-    &__left-box {
-        display: flex;
-        flex-direction: column;
-        width: 48px;
-        margin-right: 10px;
-    }
+.user-comment__left-box {
+	width: 48px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+}
 
-    &__user-logo {
-        margin-bottom: 12px;
-    }
+.user-comment__user-img {
+	width: 48px;
+	height: 48px;
+	margin-bottom: 12px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+}
 
-    &__user-name {
-        font-family: 'Montserrat-Bold';
-        margin-bottom: 2px;
-    }
+.user-comment__user-name {
+	margin-bottom: 2px;
+	font-family: 'Montserrat';
+	font-weight: 700;
+}
 
-    &__data {
-        margin-bottom: 10px;
-    }
+.user-comment__data {
+	margin-bottom: 10px;
 }
