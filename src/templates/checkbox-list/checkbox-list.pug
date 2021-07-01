@@ -1,12 +1,11 @@
-mixin checkbox-list({ tittle = "expandable checkbox list", list = [] }={})
-    .checkbox-list.js-checkbox-list
-        .checkbox-list__name.js-checkbox-list__name
-            p.checkbox-list__tittle= tittle
-            p.checkbox-list__arrow.js-checkbox-list__arrow expand_more
-        .checkbox-list__menu.js-checkbox-list__menu
-            each btn in list
-                label.check.check-style
-                    input.check__input(type="checkbox" checked= btn.check)
-                    span.check__box
-                    | #{btn.name}
+mixin checkbox-list({ tittle = 'expandable checkbox list', list = [] }={})
+	.checkbox-list.js-checkbox-list
+		.checkbox-list__name.js-checkbox-list__name
+			span.checkbox-list__tittle= tittle
+			span.checkbox-list__arrow.js-checkbox-list__arrow expand_more
+		.checkbox-list__menu.js-checkbox-list__menu
+			each btn in list
+				label.checkbox-list__item
+					input.checkbox-list__input(type="checkbox" checked=(btn.check ? 'checked' : btn.check))
+					span.checkbox-list__box #{btn.name}
 
