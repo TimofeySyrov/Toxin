@@ -7,15 +7,16 @@ mixin dropdown({ tittle='Гости', text = 'Сколько гостей', drop
             p.dropdown__name-text.js-dropdown-name-text= text
             span.dropdown__icon.js-dropdown-icon
                 i.material-icons expand_more
-        .dropdown__list.js-dropdown-list
-            each item in list
-                .dropdown__list-item.js-dropdown-item
-                    p.dropdown__list-item-text.js-item-text #{item.name}
-                    .dropdown__list-item-count
-                        .dropdown__list-item-count-btn.js-dropdown-minus -
-                        p.dropdown__list-item-count-number.js-dropdown-number #{item.number}
-                        .dropdown__list-item-count-btn.js-dropdown-plus +
-            if dropType == 'guests'
-                .dropdown__btns
-                    p.dropdown__btns-clear.js-dropdown-clear Очистить
-                    p.dropdown__btns-confirm.js-dropdown-confirm Применить
+        .dropdown__list-container
+            .dropdown__list.js-dropdown-list
+                each item in list
+                    .dropdown__list-item.js-dropdown-item
+                        p.dropdown__list-item-text.js-item-text #{item.name}
+                        .dropdown__list-item-count
+                            .dropdown__list-item-count-btn.js-dropdown-minus -
+                            p.dropdown__list-item-count-number.js-dropdown-number #{item.number}
+                            .dropdown__list-item-count-btn.js-dropdown-plus +
+                if dropType == 'guests'
+                    .dropdown__btns
+                        p.dropdown__btns-clear.js-dropdown-clear Очистить
+                        p.dropdown__btns-confirm.js-dropdown-confirm Применить
