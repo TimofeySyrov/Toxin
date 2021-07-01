@@ -1,45 +1,41 @@
-.sub-text-field {
-    position: relative;
-    max-width: 267px;
-    width: 100%;
-    height: 44px;
+.subscription-text-field {
+  position: relative;
+  max-width: 267px;
+}
 
-    &__input {
-        position: absolute;
-        width: 100%;
-        height: 44px;
-        background: white;
-        color: $dark_shade_25;
-        border: 1px solid $dark_shade_25;
-        border-radius: 4px;
-        padding-left: 15px;
-        font-size: 14px;
-        line-height: 24px;
-        outline: none;
+.subscription-text-field__input {
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  color: $dark_shade_25;
+  border: 1px solid $dark_shade_25;
+  border-radius: 4px;
+  padding: 0 59px 0 15px;
+  font-size: 14px;
+  line-height: 24px;
 
-        &::placeholder {
-            color: $dark_shade_25;
-        }
-    
-        &:hover, &:focus {
-            color: $dark_shade_75;
-            border-color: $dark_shade_50;
-        }
-    }
+  &::placeholder {
+    color: $dark_shade_25;
+  }
 
-    &__btn {
-        position: absolute;
-        width: 44px;
-        height: 44px;
-        right: 0;
-        top: 0;
-        font-size: 24px;
-        line-height: 24px;
-        background: $main-gradient;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  &:hover, &:focus {
+    color: $dark_shade_75;
+    border-color: $dark_shade_50;
+  }
+}
+
+.subscription-text-field__icon {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  right: 0;
+  top: 0;
+  font-size: 24px;
+  line-height: 24px;
+  background: $main-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

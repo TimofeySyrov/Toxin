@@ -1,5 +1,5 @@
-mixin sub-text-field({ type='text', name='Email', placeholder='Email', href='#' }={})
-    .sub-text-field
-        input.sub-text-field__input(type=type name=name placeholder=placeholder)
-        a.sub-text-field__btn(href=href)
-            i.material-icons arrow_forward
+mixin subscription-text-field({ type='text', name='Email', placeholder='Email', href='#', target }={})
+  .subscription-text-field
+    input.subscription-text-field__input(type=type name=name placeholder=placeholder)
+    a.subscription-text-field__icon(href= href target= target)
+      i.material-icons arrow_forward
