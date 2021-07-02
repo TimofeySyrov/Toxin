@@ -1,65 +1,61 @@
 .rich-checkbox-btns {
-    display: flex;
-    flex-direction: column;
-    max-width: 266px;
-    width: 100%;
-
-    &__tittle{
-        font-family: 'Montserrat-Bold', sans-serif;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
-        color: $dark_shade_100;
-        margin-bottom: 16px;
-    }
-
-    &__item {
-        padding-left: 30px;
-        line-height: 18px;
-        color: $dark_shade_50;
-        cursor: pointer;
-        outline: none;
-        display: block;
-        margin-bottom: 10px;
-        position: relative;
-    } 
-    
-    &__input {
-        position: absolute;
-        appearance: none;
-
-        &::before {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            margin-left: -30px;
-            width: 18px;
-            height: 18px;
-            overflow: hidden;
-            border-radius: 4px;
-            border: 1px solid $dark_shade_25;
-            background-color: white;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-        }
-        
-    }
-
-    &__name {
-        font-family: 'Montserrat-Bold';
-        font-size: 14px;
-        line-height: 18px;
-        color: $dark_shade_75;
-        margin-bottom: 5px;
-    }
-
-    &__desc {
-        font-size: 12px;
-        line-height: 14px;
-    }
+  display: flex;
+  flex-direction: column;
+  max-width: 266px;
 }
 
-.rich-checkbox-btns__input:checked::before {
-    border-color: $purple;
-    background-image: url(../assets/img/check.svg);
+.rich-checkbox-btns__tittle{
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: $dark_shade_100;
+  text-transform: uppercase;
+}
+
+.rich-checkbox-btns__item {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  line-height: 18px;
+  color: $dark_shade_50;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+} 
+
+.rich-checkbox-btns__input {
+  position: absolute;
+	appearance: none;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border: 1px solid $dark_shade_25;
+	border-radius: 4px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+  cursor: pointer;
+}
+
+.rich-checkbox-btns__name {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: $dark_shade_75;
+  margin-bottom: 5px;
+}
+
+.rich-checkbox-btns__desc {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.rich-checkbox-btns__input:checked {
+  border-color: $purple;
+  background-image: url(../assets/img/check.svg);
 }  
