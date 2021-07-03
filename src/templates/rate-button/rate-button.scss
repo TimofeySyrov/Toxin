@@ -1,27 +1,27 @@
-.br-theme-css-stars {
+.rate-button {
 	.br-widget {
 		display: flex;
 
 		a {
-			font-family: 'MaterialIcons-Regular';
+			width: 24px;
+			height: 24px;
+			font-family: 'MaterialIcons';
+			font-size: 24px;
+			line-height: 20px;
 			background: $main-gradient;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
-			width: 24px;
-			height: 24px;
-			font-size: 24px;
-			line-height: 20px;
+
+			&::after {
+				content: 'star_border';
+			}
 		}
 
-		a:after {
-			content: 'star_border';
-		}
-
-		a.br-active:after {
+		a.br-active::after {
 			content: 'star';
 		}
 
-		a.br-selected:after {
+		a.br-selected::after {
 			content: 'star';
 		}
 	}
