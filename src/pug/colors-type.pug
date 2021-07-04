@@ -1,0 +1,73 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title !{'Colors & Type'}
+  body
+    header.header
+      .header__container
+        include ../templates/logo/logo.pug
+        .header__logo
+          +logo({
+            full: false
+          })
+    main
+      section.hero
+        .container
+          .basic-wrap
+            .color-card
+              .color-type-block
+                .color-type-block__palette.color-type-block__palette_color_dark-shade-100
+                .color-type-block__box
+                  span.color-type-block__tittle Dark Shade 100%
+                  span.color-type-block__description #1F2041
+              .color-type-block
+                .color-type-block__palette.color-type-block__palette_color_dark-shade-75
+                .color-type-block__box
+                  span.color-type-block__tittle Dark Shade 75%
+                  span.color-type-block__description #1F2041
+              .color-type-block
+                .color-type-block__palette.color-type-block__palette_color_dark-shade-50
+                .color-type-block__box
+                  span.color-type-block__tittle Dark Shade 50%
+                  span.color-type-block__description #1F2041
+              .color-type-block
+                .color-type-block__palette.color-type-block__palette_color_dark-shade-25
+                .color-type-block__box
+                  span.color-type-block__tittle Dark Shade 25%
+                  span.color-type-block__description #1F2041
+              .color-type-block
+                .color-type-block__palette.color-type-block__palette_color_dark-shade-5
+                .color-type-block__box
+                  span.color-type-block__tittle Dark Shade 5%
+                  span.color-type-block__description #1F2041
+              .color-type-block
+                .color-type-block__palette.color-type-block__palette_color_purple
+                .color-type-block__box
+                  span.color-type-block__tittle Purple
+                  span.color-type-block__description #BC9CFF
+              .color-type-block
+                .color-type-block__palette.color-type-block__palette_color_green
+                .color-type-block__box
+                  span.color-type-block__tittle Green
+                  span.color-type-block__description #6FCF97
+            .text-card
+              .text-type-block
+                .text-type-block__box.text-type-block__box_tag_h1
+                  span.text-type-block__tag-preview H1
+                  span.text-type-block__tittle This one is the sub-section or widget title
+              .text-type-block
+                .text-type-block__box.text-type-block__box_tag_h2
+                  span.text-type-block__tag-preview H2
+                  span.text-type-block__tittle Next one is the item title inside widgets
+              .text-type-block
+                .text-type-block__box.text-type-block__box_tag_h3
+                  span.text-type-block__tag-preview H3
+                  span.text-type-block__tittle This is a label or CTA text
+              .text-type-block
+                .text-type-block__box.text-type-block__box_tag_body
+                  span.text-type-block__tag-preview Body
+                  span.text-type-block__tittle This is the body text which is used for most of&nbsp;the&nbsp;design, like paragraphs, lists, etc.
+
