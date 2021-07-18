@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -17,18 +18,24 @@ module.exports = {
         'room-details': ['./js/room-details.js'],
         'sign-in': ['./js/sign-in.js'],
         'sign-up': ['./js/sign-up.js'],
+        'colors-type': ['./js/colors-type.js'],
+        'form-elements': ['./js/form-elements.js'],
+        'cards': ['./js/cards.js'],
+        'headers-footers': ['./js/headers-footers.js']
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].[contenthash].js'
     },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname, 'dist'),
+        open: true,
+        compress: true,
+        hot: true,
+        port: 3000,
+    },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-        }),
-        new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [
                 {
@@ -37,6 +44,17 @@ module.exports = {
                 }
             ],
         }),
+        new FaviconsWebpackPlugin({
+            logo: './assets/favicons/favicon.ico',
+            outputPath: './assets/favicons/',
+            prefix: 'assets/favicons/'
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+        }),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
         }),
@@ -64,6 +82,26 @@ module.exports = {
             filename: 'html/sign-up.html',
             template: './pug/sign-up.pug',
             chunks: ['sign-up'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'html/colors-type.html',
+            template: './pug/colors-type.pug',
+            chunks: ['colors-type'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'html/form-elements.html',
+            template: './pug/form-elements.pug',
+            chunks: ['form-elements'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'html/cards.html',
+            template: './pug/cards.pug',
+            chunks: ['cards'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'html/headers-footers.html',
+            template: './pug/headers-footers.pug',
+            chunks: ['headers-footers'],
         }),
     ],
     module: {
@@ -105,19 +143,27 @@ module.exports = {
             },
             {
                 test: /\.(gif|png|jpe?g|svg|ico)$/,
-                loader: 'file-loader',
                 exclude: [/fonts/],
-                options: {
-                    name: './img/[name].[ext]',
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: './assets/img/[name].[ext]',
+                            outputPath: './',
+                            useRelativePath: true
                 },
+                    }
+                ]
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
-                exclude: [/pug/, /img/],
+                exclude: [/img/],
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: './fonts/[name].[ext]',
+                        name: './assets/fonts/[name].[ext]',
+                        outputPath: './',
+                        useRelativePath: true
                     }
                 }
             },
