@@ -1,0 +1,209 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Form Elements
+  body
+    header.header
+      .header__container
+        include ../templates/logo/logo.pug
+        .header__logo
+          +logo({
+            full: false
+          })
+    main.main 
+      section.hero
+        .container
+          .basic-wrap
+            .text-field-custom-column
+              .basic-item.text-field-custom-column__item
+                p.basic-item__tittle text field
+                include ../templates/text-field/text-field.pug
+                +text-field
+              .basic-item.text-field-custom-column__item
+                include ../templates/dropdown/dropdown.pug
+                +dropdown({
+                  tittle: 'dropdown',
+                  isOpenList: false,
+                  list: [
+                    {name: 'взрослые', number: 0},
+                    {name: 'дети', number: 0},
+                    {name: 'младенцы', number: 0},
+                  ]
+                })
+              .basic-item.text-field-custom-column__item
+                p.basic-item__tittle masked text field
+                +text-field({
+                  isMasked: true,
+                })
+              .basic-item.text-field-custom-column__item
+                include ../templates/date-dropdown/date-dropdown.pug
+                +date-dropdown({
+                  isOpen: false,
+                  arr: 'date Dropdown',
+                  dep: 'date Dropdown',
+                })
+              .basic-item.text-field-custom-column__item
+                p.basic-item__tittle filter date dropdown
+                include ../templates/filter-date-dropdown/filter-date-dropdown.pug
+                +filter-date-dropdown({
+                  isOpen: false,
+                })
+              .basic-item.text-field-custom-column__item
+                p.basic-item__tittle subscription text field
+                include ../templates/subscription-text-field/subscription-text-field.pug
+                +subscription-text-field
+            .checkbox-buttons-custom-column
+              .basic-item.checkbox-buttons-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent Checkbox Buttons
+                include ../templates/checkbox-buttons/checkbox-buttons.pug
+                +checkbox-buttons({
+                  list: [
+                    {name: 'Можно курить'},
+                    {name: 'Можно с питомцами', check: true},
+                    {name: 'Можно пригласить гостей (до 10 человек)', check: true}
+                  ]
+                })
+              .basic-item.checkbox-buttons-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent Radio Buttons
+                include ../templates/radio-buttons/radio-buttons.pug
+                +radio-buttons
+              .basic-item.checkbox-buttons-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent Toggle
+                include ../templates/toggle-button/toggle-button.pug
+                +toggle-button({
+                  check: true,
+                })
+              .basic-item.checkbox-buttons-custom-column__item
+                +toggle-button
+              .basic-item.checkbox-buttons-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent like button
+                include ../templates/like-button/like-button.pug
+                .checkbox-buttons-custom-column__like-group
+                  +like-button
+                .checkbox-buttons-custom-column__like-group
+                  +like-button({
+                    count: 12,
+                    checked: true
+                  })
+              .basic-item.checkbox-buttons-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent rate button
+                include ../templates/rate-button/rate-button.pug
+                .checkbox-buttons-custom-column__rate-group
+                  +rate-button({
+                    rating: 4,
+                  })
+                .checkbox-buttons-custom-column__rate-group
+                  +rate-button({
+                    rating: 5,
+                    readonly: true,
+                  })
+            .range-slider-custom-column
+              .basic-item.range-slider-custom-column__item
+                include ../templates/range-slider/range-slider.pug
+                +range-slider
+              .basic-item.range-slider-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent buttons
+                include ../templates/buttons/buttons.pug
+                .range-slider-custom-column__buttons-group
+                  +button({
+                    groupName: 'background',
+                  })
+                .range-slider-custom-column__buttons-group
+                  +button({
+                    groupName: 'border'
+                  })
+              .basic-item.range-slider-custom-column__item
+                +button
+              .basic-item.range-slider-custom-column__item
+                +button({
+                  groupName: 'long',
+                  text: 'перейти к оплате'
+                })
+              .basic-item.range-slider-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent pagination
+                include ../templates/pagination/pagination.pug
+                +pagination
+            .drop-first-custom-column
+              .basic-item.drop-first-custom-column__item
+                +dropdown({
+                  tittle: 'dropdown',
+                  dropType: 'room-about',
+                  isOpenList: false,
+                  list: [
+                    {name: 'спальни', number: 2},
+                    {name: 'кровати', number: 2},
+                    {name: 'ванные комнаты', number: 0}
+                  ]
+                })
+            .drop-second-custom-column
+              .basic-item.drop-second-custom-column__item
+                +dropdown({
+                  tittle: 'dropdown',
+                  isOpenList: false,
+                  list: [
+                    {name: 'взрослые', number: 0},
+                    {name: 'дети', number: 0},
+                    {name: 'младенцы', number: 0}
+                  ]
+                })
+            .drop-third-custom-column
+              .basic-item.drop-third-custom-column__item
+                +dropdown({
+                  tittle: 'dropdown',
+                  isOpenList: false,
+                  list: [
+                    {name: 'взрослые', number: 2},
+                    {name: 'дети', number: 1},
+                    {name: 'младенцы', number: 0}
+                  ]
+                })
+            .exp-checkbox-list-custom-column
+              .basic-item.exp-checkbox-list-custom-column__item
+                include ../templates/checkbox-list/checkbox-list.pug
+                +checkbox-list({
+                  list: [
+                    {name: 'Завтрак'},
+                    {name: 'Письменный стол', check: true},
+                    {name: 'Стул для кормления', check: true},
+                    {name: 'Кроватка', check: true},
+                    {name: 'Телевизор'},
+                    {name: 'Шампунь'},
+                    {name: 'Телевизор'},
+                    {name: 'Шампунь'}
+                  ]
+                })
+            .rich-checkbox-buttons-custom-column
+              .basic-item.rich-checkbox-buttons-custom-column__item
+                include ../templates/rich-checkbox-buttons/rich-checkbox-buttons.pug
+                +rich-checkbox-buttons({
+                  tittle: 'rich Checkbox Buttons',
+                  list: [
+                    {name: 'Широкий коридор', desc: 'Ширина коридоров в номере не менее 91 см.'},
+                    {name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
+                  ]
+                })
+            .bullet-list-custom-column
+              .basic-item.bullet-list-custom-column__item
+                p.basic-item__tittle.basic-item__tittle_long-indent bullet list
+                include ../templates/bullet-list/bullet-list.pug
+                +bullet-list({
+                  list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00']
+                })
+            .room-comfort-custom-column
+              .basic-item.room-comfort-custom-column__item
+                include ../templates/room-info/room-info.pug
+                +room-info({
+                  list: [
+                    {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
+                    {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'}
+                  ]
+                })
+            .comment-custom-column
+              .basic-item.comment-custom-column__item
+                include ../templates/user-comment/user-comment.pug
+                +user-comment({
+                  desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                })
