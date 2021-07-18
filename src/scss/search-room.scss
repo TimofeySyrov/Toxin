@@ -1,0 +1,127 @@
+@import "~normalize.css";
+@import "../templates/colors-type/colors.scss";
+@import "../templates/colors-type/type.scss";
+@import "../templates/colors-type/fonts.scss";
+
+@import "../templates/header-unauth/header-unauth.scss";
+@import '../templates/filter-date-dropdown/filter-date-dropdown.scss';
+@import '../templates/dropdown/dropdown.scss';
+@import '../templates/range-slider/range-slider.scss';
+@import '../templates/checkbox-buttons/checkbox-buttons.scss';
+@import '../templates/rich-checkbox-buttons/rich-checkbox-buttons.scss';
+@import '../templates/checkbox-list/checkbox-list.scss';
+@import '../templates/cutaway-room-card/cutaway-room-card.scss';
+@import '../templates/pagination/pagination.scss';
+@import '../templates/footer/footer.scss';
+
+.main{
+  border-bottom: 1px solid $dark_shade_25;
+  &__container{
+    max-width: 1175px;
+    padding: 30px 0 70px;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+.page-title{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: $dark_shade_100;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.basic-wrap{
+  display: grid;
+  grid-template-columns: 266 1fr;
+  column-gap: 60px;
+  row-gap: 40px;
+  justify-content: center;
+}
+
+.filter-room-sidebar{
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 266px;
+  display: flex;
+  flex-direction: column;
+  min-width: 266px;
+
+  &__item{
+    margin-bottom: 30px;
+    position: relative;
+
+    &:first-child{
+      margin-bottom: 20px;
+    }
+
+    &:last-child{
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.sidebar-date-dropdown,
+.sidebar-room-about-dropdown{
+  z-index: 101;
+}
+
+.sidebar-range-slider__description{
+  margin-top: 13px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $dark_shade_50;
+}
+
+.room-cards-list{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.room-cards-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 270px);
+  column-gap: 12px;
+  row-gap: 20px;
+}
+
+.pagination-block{
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .main__container{
+    padding: 30px 15px 70px;
+  }
+
+  .room-cards-grid{
+    grid-template-columns: repeat(2, 270px);
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .room-cards-grid{
+    grid-template-columns: repeat(1, 270px);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .basic-wrap{
+    grid-template-columns: min-content;
+    justify-content: center;
+  }
+
+  .room-cards-list{
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .pagination-block{
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
