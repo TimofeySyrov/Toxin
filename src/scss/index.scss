@@ -1,1 +1,44 @@
 @import "~normalize.css";
+@import "../templates/colors-type/colors.scss";
+@import "../templates/colors-type/type.scss";
+@import "../templates/colors-type/fonts.scss";
+
+@import "../templates/header-unauth/header-unauth.scss";
+@import '../templates/start-filter/start-filter.scss';
+@import '../templates/footer/footer.scss';
+
+.main{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+
+  &__container{
+    max-width: 1160px;
+    min-height: 830px;
+    padding: 70px 0;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+.site-description-box{
+  max-width: 297px;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 18px;
+  color: $dark_shade_75;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1200px) {
+  .main__container{
+    padding: 70px 15px;
+  }
+
+  .site-description-box{
+    margin: 0 15px 18px;
+  }
+}
