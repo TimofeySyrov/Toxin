@@ -1,3 +1,2 @@
-import '../scss/sign-in.scss';
-
-console.log('Привет это только джиэс файл страницы войти in');
+import '../scss/sign-in.scss'
+import '../templates/login-card/login-card-init'
