@@ -1,0 +1,13 @@
+mixin nav-menu({ listMenu = [] }={})
+  ul.nav-menu
+    each item in listMenu
+      li.nav-menu__item
+        if item.submenu
+          a.nav-menu__link.nav-menu__link--submenu(href= item.href title= item.name) !{item.name}
+          i.material-icons.nav-menu__icon expand_more
+          ul.submenu
+            each itemSubmenu in item.submenu
+              li.submenu__item
+                a.submenu__link(href= itemSubmenu.href title= itemSubmenu.name) !{itemSubmenu.name}
+        else
+          a.nav-menu__link(href= item.href title= item.name) !{item.name}
