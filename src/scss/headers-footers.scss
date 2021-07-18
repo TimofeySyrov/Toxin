@@ -1,0 +1,26 @@
+@import "~normalize.css";
+@import "../templates/colors-type/colors.scss";
+@import "../templates/colors-type/type.scss";
+@import "../templates/colors-type/fonts.scss";
+
+@import '../templates/logo/logo.scss';
+@import '../templates/header-unauth/header-unauth.scss';
+@import '../templates/header-auth/header-auth.scss';
+@import '../templates/footer/footer.scss';
+@import '../templates/footer-mobile/footer-mobile.scss';
+
+.body {
+  background: #F4F4F6;
+}
+
+.header {
+  &__container {
+    padding: 30px;
+  }
+}
+
+.article-header-unreg-user,
+.article-header-authorized-user,
+.article-footer-desktop{
+  margin-bottom: 40px
+}

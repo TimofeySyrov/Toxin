@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Headers & Footers
+  body.body
+    header.header
+      .header__container
+        include ../templates/logo/logo.pug
+        .header__logo
+          +logo({
+            full: false
+          })
+    main.main 
+      section.hero
+        article.article-header-unreg-user
+          include ../templates/header-unauth/header-unauth.pug
+          +header-unauth
+        article.article-header-authorized-user
+          include ../templates/header-auth/header-auth.pug
+          +header-auth
+        article.article-footer-desktop
+          include ../templates/footer/footer.pug
+          +footer
+        article.article-footer-mobile
+          include ../templates/footer-mobile/footer-mobile.pug
+          +footer-mobile
