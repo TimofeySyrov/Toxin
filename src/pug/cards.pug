@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Cards
+  body.body
+    header.header
+      .header__container
+        include ../templates/logo/logo.pug
+        .header__logo
+          +logo({
+            full: false
+          })
+    main.main 
+      section.hero
+        .container
+          .basic-wrap
+            .start-cards-custom-column
+              .start-cards-custom-column__item
+                include ../templates/start-filter/start-filter.pug
+                +start-filter
+              .start-cards-custom-column__item
+                include ../templates/registration-card/registration-card.pug
+                +registration-card
+            .middle-cards-custom-column
+              .middle-cards-custom-column__item
+                include ../templates/room-info-card/room-info-card.pug
+                +room-info-card
+              .middle-cards-custom-column__item
+                include ../templates/login-card/login-card.pug
+                +login-card
+            .end-cards-custom-column
+              .end-cards-custom-column__item
+                include ../templates/cutaway-room-card/cutaway-room-card.pug
+                +cutaway-room-card({
+                  sliders: [
+                    {src: '../assets/img/room-888.png', alt: 'room №888'},
+                    {src: '../assets/img/room-888.png', alt: 'room №888'},
+                    {src: '../assets/img/room-888.png', alt: 'room №888'},
+                    {src: '../assets/img/room-888.png', alt: 'room №888'},
+                  ],
+                })
+              .end-cards-custom-column__item
+                +cutaway-room-card({
+                  number: 840,
+                  lux: false,
+                  stars: 4,
+                  sliders: [
+                    {src: '../assets/img/room-840.jpg', alt: 'room №840'},
+                    {src: '../assets/img/room-840.jpg', alt: 'room №840'},
+                    {src: '../assets/img/room-840.jpg', alt: 'room №840'},
+                    {src: '../assets/img/room-840.jpg', alt: 'room №840'},
+                  ],
+                })

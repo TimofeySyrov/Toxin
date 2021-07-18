@@ -1,0 +1,68 @@
+@import "~normalize.css";
+@import "../templates/colors-type/colors.scss";
+@import "../templates/colors-type/type.scss";
+@import "../templates/colors-type/fonts.scss";
+
+@import '../templates/logo/logo.scss';
+@import '../templates/start-filter/start-filter.scss';
+@import '../templates/registration-card/registration-card.scss';
+@import '../templates/room-info-card/room-info-card.scss';
+@import '../templates/login-card/login-card.scss';
+@import '../templates/calendar/calendar.scss';
+@import '../templates/cutaway-room-card/cutaway-room-card.scss';
+
+.body {
+  background: #F4F4F6;
+}
+
+.header {
+  &__container {
+    padding: 30px;
+  }
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 37px 10px;
+  @media screen and (max-width: 830px) {
+    padding: 37px 0;
+  }
+}
+
+.basic-wrap{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'start-cards-custom-column middle-cards-custom-column end-cards-custom-column';
+
+  @media screen and (max-width: 1140px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 40px;
+    grid-template-areas:
+      'start-cards-custom-column middle-cards-custom-column'
+      'end-cards-custom-column end-cards-custom-column';
+  }
+  @media screen and (max-width: 830px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'start-cards-custom-column'
+      'middle-cards-custom-column'
+      'end-cards-custom-column';
+  }
+}
+
+.start-cards-custom-column,
+.middle-cards-custom-column,
+.end-cards-custom-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__item{
+    margin-bottom: 40px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
