@@ -1,0 +1,14 @@
+include ../logo/logo.pug
+
+mixin footer-mobile({  }={})
+  footer.footer-mobile
+    .footer-mobile__logo
+      +logo
+    .footer-mobile__description Copyright © 2018 Toxin отель. Все права защищены.
+    .footer-mobile__copyright-bar
+      a.footer-mobile__copyright-link(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
+        img(src="../assets/img/twitter-icon.svg", alt="twitter")
+      a.footer-mobile__copyright-link(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
+        img(src="../assets/img/facebook-icon.svg", alt="facebook")
+      a.footer-mobile__copyright-link(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
+        img(src="../assets/img/instagram-icon.svg", alt="instagram")
