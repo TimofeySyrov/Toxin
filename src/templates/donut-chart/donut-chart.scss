@@ -1,0 +1,70 @@
+.donut-chart{
+  position: relative;
+
+  &__text-inside{
+    font-weight: 700;
+    color: $purple;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 35px;
+    left: 28px;
+  }
+
+  &__number{
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &__label{
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    max-width: 161px;
+    margin-left: 15px;
+    font-size: 14px;
+    line-height: 24px;
+    float: right;
+  }
+  
+  &__list-item {
+    position: relative;
+  
+    &::before {
+      position: absolute;
+      content: '';
+      top: 8px;
+      left: -15px;
+      width: 10px;
+      height: 10px;
+      background: gray;
+      border-radius: 50%;
+    }
+  
+    &:nth-child(1)::before{
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+
+    &:nth-child(2)::before{
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+
+    &:nth-child(3)::before{
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &:nth-child(4)::before{
+      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+
+  }
+
+  svg {
+    transform: scale(-1, 1);
+  }
+}
