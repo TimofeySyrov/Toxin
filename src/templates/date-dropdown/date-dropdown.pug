@@ -2,17 +2,17 @@ include ../calendar/calendar.pug
 
 mixin date-dropdown({ isOpen = true, placeholder='ДД.ММ.ГГГГ', arr = 'прибытие', dep = 'выезд' }={})
   .date-dropdown.js-date-dropdown(data-calendar-isopen= `${isOpen}`)
-      .date-dropdown__items
-        .date-dropdown__item
-          span.date-dropdown__tittle= arr
-          .date-dropdown__input.date-dropdown__arrival
-            span.js-date-dropdown-arrival #{placeholder}
-            i.material-icons.date-dropdown__arrow expand_more
-        .date-dropdown__item
-          span.date-dropdown__tittle= dep
-          .date-dropdown__input.date-dropdown__depature
-            span.js-date-dropdown-depature #{placeholder}
-            i.material-icons.date-dropdown__arrow expand_more
-      .date-dropdown__calendar
-        .date-dropdown__calendar-container
-          +calendar
+    .date-dropdown__items
+      .date-dropdown__item
+        span.date-dropdown__tittle= arr
+        .date-dropdown__input.date-dropdown__arrival
+          span.js-date-dropdown-arrival #{placeholder}
+          i.material-icons.date-dropdown__arrow expand_more
+      .date-dropdown__item
+        span.date-dropdown__tittle= dep
+        .date-dropdown__input.date-dropdown__depature
+          span.js-date-dropdown-depature #{placeholder}
+          i.material-icons.date-dropdown__arrow expand_more
+    .date-dropdown__calendar
+      .date-dropdown__calendar-container
+        +calendar
