@@ -1,163 +1,132 @@
 @import '../date-dropdown/date-dropdown.scss';
 @import '../dropdown/dropdown.scss';
-@import '../buttons/_buttons.scss';
+@import '../buttons/buttons.scss';
 
-.room-main-card {
+.room-info-card {
+  max-width: 380px;
+  width: 380px;
+  padding: 40px 30px 30px 30px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  &__tittle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  &__room-number {
+    color: $dark_shade_100;
+  }
+
+  &__number-id{
+    font-size: 24px;
+    line-height: 17px;
+  }
+
+  &__number-lux{
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $purple;
+    margin-left: 8px;
+    display: none;
+
+    &--active{
+      display: inline-block;
+    }
+  }
+
+  &__room-price {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark_shade_50;
+  }
+
+  &__price-text{
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  &__dates {
+    margin-bottom: 20px;
+  }
+
+  &__guests {
+    margin-bottom: 20px;
     position: relative;
-    max-width: 380px;
+    z-index: 1;
+  }
+
+  &__info-icon{
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dark_shade_25;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark_shade_25;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  }
+
+  &__price-table{
     width: 100%;
-    padding: 40px 30px 30px 30px;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
 
-    &__tittle {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        font-family: 'Montserrat-Bold', sans-serif;
+  &__table-row{
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark_shade_75;
+    display: flex;
 
-        &-room-info {
-            color: $dark_shade_100;
-
-            &-id{
-                font-size: 24px;
-                line-height: 17px;
-            }
-
-            &-lux {
-                font-size: 12px;
-                line-height: 15px;
-                text-transform: uppercase;
-                color: $purple;
-                margin-left: 8px;
-                display: none;
-    
-                &--active{
-                    display: inline-block;
-                }
-            }
-        }
-
-        &-room-price {
-            font-family: 'Montserrat-Regular', sans-serif;
-            font-size: 12px;
-            line-height: 18px;
-            color: $dark_shade_50;
-
-            &-amount{
-                font-family: 'Montserrat-Bold', sans-serif;
-                font-size: 14px;
-                line-height: 18px;
-            }
-            &-currency {
-                font-family: 'Montserrat-Bold', sans-serif;
-                font-size: 14px;
-                line-height: 18px;
-            }
-        }
+    &:last-child{
+      margin-bottom: 0;
     }
 
-    &__dates {
-        .date-dropdown {
-            margin-bottom: 20px;
-        }
-        .date-picker-calendar {
-            position: absolute;
-            z-index: 2;
-        }
+    &-name{
+      flex-grow: 1;
+      max-width: 214px;
+      margin-right: 5px;
     }
 
-    &__guests {
-        .dropdown {
-            margin-bottom: 20px;
-        }
-        .dropdown__list{
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-        }
+    &-price{
+      flex-grow: 2;
+      text-align: right;
     }
+  }
 
-    &__discount-offer {
+  &__final-box{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+    color: $dark_shade_100;
+  }
 
-        &-icon{
-            width: 20px;
-            height: 20px;
-            border: 1px solid $dark_shade_25;
-            border-radius: 50%;
-            font-family: 'Montserrat-Bold', sans-serif;
-            font-size: 12px;
-            line-height: 14px;
-            color: $dark_shade_25;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-        }
+  &__line-separator{
+    height: 1px;
+    width: 100%;
+    display: inline-flex;
+    border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
+  }
+}
 
-        &-start{ 
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        &-services-first {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-
-            &-table-row{
-                span {
-                    max-width: 214px;
-                }
-            }
-
-            .room-main-card__discount-offer-icon{
-                margin-left: 5px;
-            }
-        }
-
-        &-services-second {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-
-            &-table-row{
-                display: inline-flex;
-                span {
-                    max-width: 214px;
-                }
-            }
-
-            .room-main-card__discount-offer-icon{
-                margin-left: 5px;
-            }
-        }
-
-        &-end {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            font-family: 'Montserrat-Bold', sans-serif;
-            font-size: 19px;
-            line-height: 23px;
-            color: $dark_shade_100;
-
-            &-table-row{
-                width: 100%;
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-between;
-            }
-
-            &-line{
-                height: 1px;
-                width: 100%;
-                display: inline-flex;
-                border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
-            }
-        }
-    }
+@media screen and (max-width: 379px) {
+  .room-info-card{
+    width: 100%;
+  }
 }
