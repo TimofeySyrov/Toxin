@@ -1,38 +1,55 @@
 @import "../calendar/calendar.scss";
 
 .filter-date-dropdown{
-    max-width: 266px;
-    width: 100%;
+  max-width: 266px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
 
-    &__input{
-        position: relative;
-        height: 44px;
-        background: white;
-        border: 1px solid $dark_shade_25;
-        border-radius: 4px;
-        margin-bottom: 5px;
-        padding-left: 15px;
-        display: flex;
-        align-items: center;
+  &__tittle{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark_shade_100;
+  }
 
-        font-family: 'Montserrat-Regular';
-        font-size: 14px;
-        line-height: 24px;
-        color: $dark_shade_75;
+  &__name-box{
+    position: relative;
+    height: 44px;
+    background: #fff;
+    border: 1px solid $dark_shade_25;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
 
-        .material-icons{
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 44px;
-            height: 44px;
-            font-size: 24px;
-            line-height: 24px;
-            color: $dark_shade_50;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-        }
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark_shade_75;
+
+    .material-icons{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 44px;
+      height: 44px;
+      font-size: 24px;
+      line-height: 24px;
+      color: $dark_shade_50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
     }
+  }
+
+  &__calendar{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
 }

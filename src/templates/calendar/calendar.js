@@ -4,17 +4,21 @@ class AirCalendar {
   
   constructor(container, isOpen, firstInput, secondInput){
 
-    this.calendarContainer = $(container).find(".js-date-picker-calendar");
-    this.isOpen = isOpen;
-    
-    this.arrivalInput = firstInput;
-    this.depatureInput = secondInput;
-    this.singleInput = firstInput;
+    if(!$(container).hasClass('js-date-picker-calendar')){
 
-    if(secondInput == undefined & secondInput == null){
-      this.isDI = false;
-    }else {
-      this.isDI = true;
+      this.calendarContainer = $(container).find(".js-date-picker-calendar");
+      this.isOpen = isOpen;
+      this.arrivalInput = firstInput;
+      this.depatureInput = secondInput;
+      this.singleInput = firstInput;
+
+      if(secondInput == undefined & secondInput == null){
+        this.isDI = false;
+      }else {
+        this.isDI = true;
+      }
+    } else {
+      this.calendarContainer = $(container);
     }
 
     this.transformToAirDatepicker();
@@ -47,16 +51,15 @@ class AirCalendar {
         onSelect: function onSelect(selectedDates) {
                 if(selectedDates !== undefined && selectedDates != '' && selectedDates.indexOf('-') > -1){
                     var mdy = selectedDates.split('-');
+                    var CalDates = [mdy[0], mdy[1]];
 
                     //Если значение true, задействованы два инпута. Если false, то задействован один.
                     if(calendar1.isDouble == true){
-                      let CalArrDate = calendar1.containerArrival.html(mdy[0]);
-                      let CalDepDate = calendar1.containerDepature.html(mdy[1]);
-                      let CalDates = [mdy[0], mdy[1]];
+                      calendar1.containerArrival.html(mdy[0]);
+                      calendar1.containerDepature.html(mdy[1]);
                       localStorage.setItem('CalendarDates', JSON.stringify(CalDates));
                     } else if(calendar1.isDouble == false){
                       calendar1.containerSingle.html(mdy[0]+" - "+mdy[1]);
-                      let CalDates = [mdy[0], mdy[1]];
                       localStorage.setItem('CalendarDates', JSON.stringify(CalDates));
                     }
                 }

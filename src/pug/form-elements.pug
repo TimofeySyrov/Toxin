@@ -190,7 +190,11 @@ html(lang="en")
                 p.basic-item__tittle.basic-item__tittle_long-indent bullet list
                 include ../templates/bullet-list/bullet-list.pug
                 +bullet-list({
-                  list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00']
+                  list: [
+                    {name: 'Нельзя с питомцами'},
+                    {name: 'Без вечеринок и мероприятий'},
+                    {name: 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00'}
+                  ]
                 })
             .room-comfort-custom-column
               .basic-item.room-comfort-custom-column__item

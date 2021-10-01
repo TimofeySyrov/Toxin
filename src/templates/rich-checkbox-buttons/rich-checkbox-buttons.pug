@@ -1,7 +1,7 @@
-mixin rich-checkbox-buttons({ tittle, list=[], }={})
+mixin rich-checkbox-buttons({ title, list=[], }={})
   .rich-checkbox-btns
-    if tittle
-      span.rich-checkbox-btns__tittle #{tittle}
+    if title
+      span.rich-checkbox-btns__tittle #{title}
     each btn in list
       label.rich-checkbox-btns__item
         input.rich-checkbox-btns__input(type="checkbox" checked= btn.check)

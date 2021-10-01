@@ -1,22 +1,22 @@
 //- dropType: 'guests' or 'room-about'
-mixin dropdown({ tittle='Гости', text = 'Сколько гостей', dropType = 'guests', isOpenList = true, list = [] }={})
-    .dropdown.js-dropdown(dropType= dropType isopen= `${isOpenList}`)
-        if tittle
-            span.dropdown__tittle= tittle
-        .dropdown__name.js-dropdown-name
-            p.dropdown__name-text.js-dropdown-name-text= text
-            span.dropdown__icon.js-dropdown-icon
-                i.material-icons expand_more
-        .dropdown__list-container
-            .dropdown__list.js-dropdown-list
-                each item in list
-                    .dropdown__list-item.js-dropdown-item
-                        p.dropdown__list-item-text.js-item-text #{item.name}
-                        .dropdown__list-item-count
-                            .dropdown__list-item-count-btn.js-dropdown-minus -
-                            p.dropdown__list-item-count-number.js-dropdown-number #{item.number}
-                            .dropdown__list-item-count-btn.js-dropdown-plus +
-                if dropType == 'guests'
-                    .dropdown__btns
-                        p.dropdown__btns-clear.js-dropdown-clear Очистить
-                        p.dropdown__btns-confirm.js-dropdown-confirm Применить
+mixin dropdown({ title='Гости', text = 'Сколько гостей', dropType = 'guests', isOpenList = true, list = [] }={})
+  .dropdown.js-dropdown(dropType= dropType isopen= `${isOpenList}`)
+    if title
+      span.dropdown__tittle= title
+    .dropdown__name.js-dropdown-name
+      p.dropdown__name-text.js-dropdown-name-text= text
+      span.dropdown__icon.js-dropdown-icon
+        i.material-icons expand_more
+    .dropdown__list-container
+      .dropdown__list.js-dropdown-list
+        each item in list
+          .dropdown__list-item.js-dropdown-item
+            p.dropdown__list-item-text.js-item-text #{item.name}
+            .dropdown__list-item-count
+              .dropdown__list-item-count-btn.js-dropdown-minus -
+              p.dropdown__list-item-count-number.js-dropdown-number #{item.number}
+              .dropdown__list-item-count-btn.js-dropdown-plus +
+        if dropType == 'guests'
+          .dropdown__btns
+            p.dropdown__btns-clear.js-dropdown-clear Очистить
+            p.dropdown__btns-confirm.js-dropdown-confirm Применить

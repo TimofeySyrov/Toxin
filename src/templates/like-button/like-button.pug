@@ -1,5 +1,8 @@
-mixin like-button({ count = 2, checked = false }={})
-    button(class="like-button js-like-button" data=`${checked}`)
-        span.like-button__icon.js-like-button__icon
-            i.material-icons favorite_border
-        span.like-button__count.js-like-button__count= count
+mixin like-button({ count = 2, checked = false, tittle }={})
+  .like-button.js-like-button
+    if tittle
+      span.like-button__tittle !{tittle}
+    button.like-button__btn.js-like-button__btn(data-checked=`${checked}`)
+      span.like-button__icon.js-like-button__icon
+        i.material-icons favorite_border
+      span.like-button__count.js-like-button__count= count

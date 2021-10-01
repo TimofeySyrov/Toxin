@@ -1,6 +1,8 @@
-mixin rate-button({ rating = 3, readonly = false }={})
+mixin rate-button({ rating = 3, readonly = false, tittle }={})
   - let n = 0;
   .rate-button.js-rate-button
+    if tittle
+      span.rate-button__tittle !{tittle}
     select.rate-button__container.js-rate-button__container(data-rating= `${rating}` data-readonly= `${readonly}`)
       while n < 5
         option.rate-button__star(value=n+=1)= n

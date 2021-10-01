@@ -1,29 +1,28 @@
 include ../text-field/text-field.pug
-include ../buttons/_buttons.pug
+include ../buttons/buttons.pug
 
 mixin login-card({ }={})
-    .login-card.js-login-card
-        p.login-card__tittle Войти
-        .login-card__user-form
-            .login-card__user-form-email.js-login-card-email
-                +text-field({
-                    placeholder: 'Email'
-                })
-            .login-card__user-form-password.js-login-card-password
-                +text-field({
-                    placeholder: 'Пароль'
-                })
-        .login-card__sign-in.js-login-card-login-btn
-            +button({
-                    groupName: 'btnLong',
-                    text: 'войти',
-                    icon: true
-                })
-        .login-card__registration-container
-            p Нет аккаунта на Toxin?
-            +button({
-                groupName: 'btnBorder',
-                text: 'создать',
-                href: 'sign-up.html'
-            })
-            
+  .login-card.js-login-card
+    p.login-card__tittle Войти
+    .login-card__user-form
+      .login-card__user-form-email.js-login-card-email
+        +text-field({
+          placeholder: 'Email'
+        })
+      .login-card__user-form-password.js-login-card-password
+        +text-field({
+          placeholder: 'Пароль'
+        })
+    .login-card__sign-in.js-login-card-login-btn
+      +button({
+          groupName: 'long',
+          text: 'войти',
+          icon: true
+        })
+    .login-card__registration-container
+      p Нет аккаунта на Toxin?
+      +button({
+        groupName: 'border',
+        text: 'создать',
+      })
+      
