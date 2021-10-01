@@ -1,6 +1,9 @@
 /node_modules
-/dist
-/webpack.config.js
-/package-lock.json
-/package.json
 /.babelrc
+/package.json
+/package-lock.json
+/webpack.config.js
+/PP
+/.vscode
+/libs
+/dist
