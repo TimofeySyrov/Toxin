@@ -1,6 +1,6 @@
 import RegCard from './registration-card';
 
 $(() => {
-  let $regCardBody = $('.js-registration-card');
+  const $regCardBody = $('.js-registration-card');
   new RegCard($regCardBody);
 });
