@@ -31,17 +31,17 @@ class RegCard {
 
     for (const item of this.listToSafe) {
       const $itemBody = item.find('input.text-field__input');
-      const $itemValue = $itemBody.val();
+      const itemValue = $itemBody.val();
 
-      if ($itemValue) {
+      if (itemValue) {
         if (item.hasClass('js-registration-card-first-name')) {
-          uFirstName = $itemValue;
+          uFirstName = itemValue;
         } else if (item.hasClass('js-registration-card-last-name')) {
-          uLastName = $itemValue;
+          uLastName = itemValue;
         } else if (item.hasClass('js-registration-card-email')) {
-          uEmail = $itemValue;
+          uEmail = itemValue;
         } else if (item.hasClass('js-registration-card-password')) {
-          uPassword = $itemValue;
+          uPassword = itemValue;
         }
       }
     }
