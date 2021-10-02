@@ -2,7 +2,7 @@ import '../date-dropdown/date-dropdown-init';
 import '../dropdown/dropdown-init';
 
 class StartFilter {
-  constructor(elem){
+  constructor(elem) {
     this.constructor = elem;
   }
 }
