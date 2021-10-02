@@ -1,8 +1,7 @@
-import FilterDateDropdown from "./filter-date-dropdown";
+import FilterDateDropdown from './filter-date-dropdown';
 
 $(() => {
-  let $FilterDD = $('.js-filter-date-dropdown');
-  $FilterDD.each((i, val) => {
+  $('.js-filter-date-dropdown').forEach((i, val) => {
     new FilterDateDropdown(val);
-  });   
+  });
 });
