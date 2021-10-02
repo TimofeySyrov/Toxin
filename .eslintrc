@@ -8,7 +8,8 @@
       "consistent": true
     }],
     "no-new": 0,
-    "one-var": 0
+    "one-var": 0,
+    "func-names": ["error", "as-needed"]
   },
   "globals": {
     "window": true,
