@@ -11,6 +11,11 @@
   "globals": {
     "window": true,
     "document": true,
-    "$": true
+    "$": true,
+    "localStorage": true,
+    "sessionStorage": true
+  },
+  "env": {
+    "browser": true
   }
 }
