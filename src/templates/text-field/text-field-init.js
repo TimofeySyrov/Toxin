@@ -8,8 +8,7 @@ $(() => {
     const isMaskedTextField = $(textInput).hasClass('text-field__masked');
 
     if (isMaskedTextField) {
-      const textField = new TextField(val);
-      textField();
+      new TextField(val);
     }
   });
 });
