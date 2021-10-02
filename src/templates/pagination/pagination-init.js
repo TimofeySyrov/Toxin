@@ -1,8 +1,7 @@
 import Pagination from './pagination';
 
 $(() => {
-  let $pag = $('.js-pagination');
-  $pag.each((i, val) => {
+  $('.js-pagination').each((i, val) => {
     new Pagination(val);
-  });   
+  });
 });
