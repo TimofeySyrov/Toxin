@@ -6,7 +6,9 @@
     "operator-linebreak": 0,
     "object-curly-newline": ["error", {
       "consistent": true
-    }]
+    }],
+    "no-new": 0,
+    "one-var": 0
   },
   "globals": {
     "window": true,
