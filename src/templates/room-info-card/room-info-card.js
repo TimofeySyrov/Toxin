@@ -2,64 +2,63 @@ import '../date-dropdown/date-dropdown-init';
 import '../dropdown/dropdown-init';
 
 class RoomMainCard {
-	constructor(elem) {
-		this.container = $(elem);
+  constructor(elem) {
+    this.$container = $(elem);
 
-		this.findDOMElements();
-		this.setInfoCutawayCurrentRoom();
-	}
+    this.findRoomDOMElements();
+    this.setInfoCutawayCurrentRoom();
+  }
 
-	findDOMElements(){
-		this.room_id = this.container.find('.js-room-info-card__id');
-		this.room_isLux = this.container.find('.js-room-info-card__lux');
-		this.room_dayPrice = this.container.find('.js-room-info-card__price');
-		this.room_calcStartPrice = this.container.find('.js-room-info-card__calc-start-price');
-		this.room_serviceFirstPrice = this.container.find('.js-room-info-card__service-first');
-		this.room_serviceSecondPrice = this.container.find('.js-room-info-card__service-second');
-		this.room_endPrice = this.container.find('.js-room-info-card__end-price');
-	}
+  findRoomDOMElements() {
+    this.$id = this.$container.find('.js-room-info-card__id');
+    this.$isLux = this.$container.find('.js-room-info-card__lux');
+    this.$dayPrice = this.$container.find('.js-room-info-card__price');
+    this.$calcStartPrice = this.$container.find('.js-room-info-card__calc-start-price');
+    this.$serviceFirstPrice = this.$container.find('.js-room-info-card__service-first');
+    this.$serviceSecondPrice = this.$container.find('.js-room-info-card__service-second');
+    this.$endPrice = this.$container.find('.js-room-info-card__end-price');
+  }
 
-	setInfoCutawayCurrentRoom(){
-		var currentRoom = JSON.parse(sessionStorage.getItem('CutawayRoom'));
-		if(currentRoom){
-			this.set_roomID(currentRoom);
-			this.set_Lux(currentRoom);
-			this.set_DayPrice(currentRoom);
-			this.set_endPrice(currentRoom);
-		}
-	}
+  setInfoCutawayCurrentRoom() {
+    const currentRoom = JSON.parse(sessionStorage.getItem('CutawayRoom'));
 
-	set_roomID(curr){
-		this.room_id.html(curr.number);
-	}
+    if (currentRoom) {
+      this.setRoomID(currentRoom);
+      this.setLux(currentRoom);
+      this.setDayPrice(currentRoom);
+      this.setEndPrice(currentRoom);
+    }
+  }
 
-	set_Lux(curr){
-		if(curr.isLux){
-			if(!this.room_isLux.hasClass('room-info-card__number-lux--active')){
-				this.room_isLux.addClass('room-info-card__number-lux--active');
-			}
-		} else {
-			if(this.room_isLux.hasClass('room-info-card__number-lux--active')){
-				this.room_isLux.removeClass('room-info-card__number-lux--active');
-			}
-		}
-	}
+  setRoomID(current) {
+    this.$id.html(current.number);
+  }
 
-	set_DayPrice(curr){
-		for(const item of this.room_dayPrice){
-			$(item).html(Number(curr.price).toLocaleString('ru-RU'));
-		}
-	}
+  setLux(current) {
+    if (current.isLux) {
+      if (!this.$isLux.hasClass('room-info-card__number-lux--active')) {
+        this.$isLux.addClass('room-info-card__number-lux--active');
+      }
+    } else if (this.isRoomLux.hasClass('room-info-card__number-lux--active')) {
+      this.isRoomLux.removeClass('room-info-card__number-lux--active');
+    }
+  }
 
-	set_endPrice(curr){
-		var price_firstService = Number((this.room_serviceFirstPrice.html().replace(/\s/g, '')).match(/\d+/));
-		var price_secondService = Number(this.room_serviceSecondPrice.html().match(/\d+/));
-		var calc_price = Number(curr.price)*4;
-		var price_end = (calc_price-price_firstService)+price_secondService;
+  setDayPrice(current) {
+    this.$dayPrice.forEach((item) => {
+      $(item).html(Number(current.price).toLocaleString('ru-RU'));
+    });
+  }
 
-		this.room_calcStartPrice.html(calc_price.toLocaleString('ru-RU'));
-		this.room_endPrice.html(price_end.toLocaleString('ru-RU').replace(' ', '&nbsp;'));
-	}
+  setEndPrice(current) {
+    const priceFirstService = Number((this.$serviceFirstPrice.html().replace(/\s/g, '')).match(/\d+/));
+    const priceSecondService = Number(this.$serviceSecondPrice.html().match(/\d+/));
+    const calcPrice = Number(current.price) * 4;
+    const priceEnd = (calcPrice - priceFirstService) + priceSecondService;
+
+    this.$calcStartPrice.html(calcPrice.toLocaleString('ru-RU'));
+    this.$endPrice.html(priceEnd.toLocaleString('ru-RU').replace(' ', '&nbsp;'));
+  }
 }
 
 export default RoomMainCard;
