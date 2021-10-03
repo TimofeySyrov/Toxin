@@ -4,7 +4,7 @@ class DonutChart {
   constructor(elem, options) {
     this.container = elem;
     this.diagram = this.container.querySelector('.js-donut-chart-diagram');
-    this.list =  this.container.querySelector('.js-donut-chart-list');
+    this.list = this.container.querySelector('.js-donut-chart-list');
     this.options = options;
 
     this.render();
