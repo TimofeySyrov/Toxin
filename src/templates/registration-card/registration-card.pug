@@ -3,7 +3,7 @@ include ../radio-buttons/radio-buttons.pug
 include ../toggle-button/toggle-button.pug
 include ../buttons/buttons.pug
 
-mixin registration-card({  }={})
+mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' }={})
   .registration-card.js-registration-card
     p.registration-card__tittle Регистрация аккаунта
     .registration-card__user
@@ -38,14 +38,15 @@ mixin registration-card({  }={})
       +button({
         groupName: 'long',
         text: 'зарегистрироваться',
-        icon: true
+        icon: true,
+        href: hrefJoin
       })
     .registration-card__login-container
       p.registration-card__login-container-tittle Уже есть аккаунт на Toxin
       +button({
         groupName: 'border',
         text: 'войти',
-        href: 'sign-in.html'
+        href: hrefLogin
       })
 
 
