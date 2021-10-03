@@ -29,7 +29,7 @@ class RegCard {
       uEmail,
       uPassword;
 
-    for (const item of this.listToSafe) {
+    this.listToSafe.forEach((item) => {
       const $itemBody = item.find('input.text-field__input');
       const itemValue = $itemBody.val();
 
@@ -44,7 +44,7 @@ class RegCard {
           uPassword = itemValue;
         }
       }
-    }
+    });
 
     if (uFirstName && uLastName && uEmail && uPassword) {
       const arr = [uEmail, uPassword, uFirstName, uLastName];
