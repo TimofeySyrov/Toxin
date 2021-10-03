@@ -1,35 +1,34 @@
 import '../rate-button/rate-button-init';
-import 'slick-carousel/slick/slick.min.js';
+import 'slick-carousel/slick/slick.min';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-class CutawayRoom{
-  constructor(elem){
+class CutawayRoom {
+  constructor(elem) {
     this.container = elem;
 
     this.findDOMElement();
     this.sliderInit();
-    this.cutaway_eventListener();
-    
+    this.bindEventListener();
   }
 
-  findDOMElement(){
+  findDOMElement() {
     this.sliderBody = $(this.container).find('.js-cutaway-room-card__slider');
     this.cutawayInfoBody = $(this.container).find('.js-cutaway-room-card__info-box');
 
-    this.room_number = this.cutawayInfoBody.find('.js-cutaway-room-card-id');
-    this.is_lux = this.cutawayInfoBody.find('.js-cutaway-room-card-lux').length;
-    this.price_day = this.cutawayInfoBody.find('.js-cutaway-room-card-price-of-day');
-    this.cleared_price_day = Number(parseInt(this.price_day.html().match(/\d+/)));
+    this.roomId = this.cutawayInfoBody.find('.js-cutaway-room-card-id');
+    this.isLux = this.cutawayInfoBody.find('.js-cutaway-room-card-lux').length;
+    this.dayPrice = this.cutawayInfoBody.find('.js-cutaway-room-card-price-of-day');
+    this.clearedDayPrice = Number(parseInt(this.dayPrice.html().match(/\d+/)));
 
-    if(this.is_lux){
-      this.is_lux = true;
-    } else this.is_lux = false;
+    if (this.isLux) {
+      this.isLux = true;
+    } else this.isLux = false;
 
     this.convertPrice();
   }
 
-  sliderInit(){
+  sliderInit() {
     this.sliderBody.slick({
       dots: true,
       infinite: true,
@@ -39,30 +38,29 @@ class CutawayRoom{
     });
   }
 
-  convertPrice(){
-    this.price_day.html(Number(parseInt(this.price_day.html().match(/\d+/))).toLocaleString('ru-RU')+this.price_day.html().slice(-1));
+  convertPrice() {
+    this.dayPrice.html(Number(parseInt(this.dayPrice.html().match(/\d+/))).toLocaleString('ru-RU') + this.dayPrice.html().slice(-1));
   }
 
-  cutaway_eventListener(){
+  bindEventListener() {
     this.cutawayInfoBody.on('click', this.saveValues.bind(this));
   }
 
-  saveValues(){
-    this.info_about_room = {
-      number: this.room_number.html(),
-      isLux: this.is_lux,
-      price: this.cleared_price_day
+  saveValues() {
+    this.roomCard = {
+      number: this.roomId.html(),
+      isLux: this.isLux,
+      price: this.clearedDayPrice,
     };
 
-    if(this.room_number && this.price_day){
-      sessionStorage.setItem('CutawayRoom', JSON.stringify(this.info_about_room));
-      var get_room_info = JSON.parse(sessionStorage.getItem('CutawayRoom'));
-      
-      if(get_room_info){
+    if (this.roomId && this.dayPrice) {
+      sessionStorage.setItem('CutawayRoom', JSON.stringify(this.roomCard));
+      const getRoomCard = JSON.parse(sessionStorage.getItem('CutawayRoom'));
+
+      if (getRoomCard) {
         window.location.href = 'room-details.html';
       }
     }
-    
   }
 }
 
