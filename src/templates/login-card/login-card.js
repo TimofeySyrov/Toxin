@@ -18,7 +18,7 @@ class LoginCard {
     let uEmail,
       uPassword;
 
-    for (const item of this.listToSafe) {
+    this.listToSafe.forEach((item) => {
       const $itemBody = item.find('input.text-field__input');
       const itemValue = $($itemBody).val();
 
@@ -29,7 +29,7 @@ class LoginCard {
           uPassword = itemValue;
         }
       }
-    }
+    });
 
     if (uEmail && uPassword) {
       const uInfo = JSON.parse(localStorage.getItem(uEmail));
