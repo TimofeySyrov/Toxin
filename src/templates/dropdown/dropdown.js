@@ -60,9 +60,7 @@ class Dropdown {
   checkCounts() {
     const num = [];
 
-    for (const item of this.dropCounts) {
-      num.push(Number(item.innerHTML));
-    }
+    this.dropCounts.forEach((item) => num.push(Number(item.innerHTML)));
     this.displayCount(num);
   }
 
@@ -177,7 +175,7 @@ class Dropdown {
   }
 
   handlerList(event) {
-    const target = event.target;
+    const { target } = event;
 
     if (target.classList.contains('js-dropdown-plus')) {
       this.plusButton(target);
@@ -187,7 +185,8 @@ class Dropdown {
   }
 
   plusButton(elem) {
-    const number = elem.previousElementSibling;
+    const target = elem;
+    const number = target.previousElementSibling;
     number.innerHTML = Number(number.innerHTML) + 1;
     this.checkMinusPlusButtons();
     if (this.dropType === 'room-about') {
@@ -196,8 +195,9 @@ class Dropdown {
   }
 
   minusButton(elem) {
-    if (Number(elem.nextElementSibling.innerHTML) > 0) {
-      elem.nextElementSibling.innerHTML = `${Number(elem.nextElementSibling.innerHTML) - 1}`;
+    const target = elem;
+    if (Number(target.nextElementSibling.innerHTML) > 0) {
+      target.nextElementSibling.innerHTML = `${Number(target.nextElementSibling.innerHTML) - 1}`;
     }
     this.checkMinusPlusButtons();
     if (this.dropType === 'room-about') {
@@ -206,28 +206,31 @@ class Dropdown {
   }
 
   checkMinusPlusButtons() {
-    for (const btn of this.dropItems) {
-      btn.number = btn.querySelector('.js-dropdown-number');
-      btn.plus = btn.querySelector('.js-dropdown-plus');
-      btn.minus = btn.querySelector('.js-dropdown-minus');
+    this.dropItems.forEach((item) => {
+      const confirmed = item;
+      confirmed.number = confirmed.querySelector('.js-dropdown-number');
+      confirmed.plus = confirmed.querySelector('.js-dropdown-plus');
+      confirmed.minus = confirmed.querySelector('.js-dropdown-minus');
 
-      if (!(btn.plus.classList.contains('dropdown__list-item-count-btn-active'))) {
-        btn.plus.classList.add('dropdown__list-item-count-btn-active');
+      if (!(confirmed.plus.classList.contains('dropdown__list-item-count-btn-active'))) {
+        confirmed.plus.classList.add('dropdown__list-item-count-btn-active');
       }
 
-      if (Number(btn.number.innerHTML) <= 0) {
-        btn.number.innerHTML = 0;
-        if (btn.minus.classList.contains('dropdown__list-item-count-btn-active')) {
-          btn.minus.classList.remove('dropdown__list-item-count-btn-active');
+      if (Number(confirmed.number.innerHTML) <= 0) {
+        confirmed.number.innerHTML = 0;
+        if (confirmed.minus.classList.contains('dropdown__list-item-count-btn-active')) {
+          confirmed.minus.classList.remove('dropdown__list-item-count-btn-active');
         }
       }
 
-      if (Number(btn.number.innerHTML) > 0) {
-        if (!(btn.minus.classList.contains('dropdown__list-item-count-btn-active'))) {
-          btn.minus.classList.add('dropdown__list-item-count-btn-active');
+      if (Number(confirmed.number.innerHTML) > 0) {
+        if (!(confirmed.minus.classList.contains('dropdown__list-item-count-btn-active'))) {
+          confirmed.minus.classList.add('dropdown__list-item-count-btn-active');
         }
       }
-    }
+
+      return confirmed;
+    });
   }
 
   eventListenerConfirmButton() {
@@ -243,9 +246,12 @@ class Dropdown {
   }
 
   clearButton() {
-    for (const count of this.dropCounts) {
-      count.innerHTML = 0;
-    }
+    this.dropCounts.forEach((item) => {
+      const cleared = item;
+      cleared.innerHTML = 0;
+      return cleared;
+    });
+
     this.checkCounts();
     this.checkMinusPlusButtons();
   }
