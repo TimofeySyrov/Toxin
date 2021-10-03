@@ -1,8 +1,4 @@
-import DateDropdown from "./date-dropdown";
+import DateDropdown from './date-dropdown';
 
-$(() => {
-  let $DateDropdown = $('.js-date-dropdown');
-  $DateDropdown.each((i, val) => {
-    new DateDropdown(val);
-  });   
-});
+const dateDropdownDOMs = document.querySelectorAll('.js-date-dropdown');
+dateDropdownDOMs.forEach((item) => new DateDropdown(item));
