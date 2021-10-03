@@ -9,7 +9,11 @@
     }],
     "no-new": 0,
     "one-var": 0,
-    "func-names": ["error", "as-needed"]
+    "func-names": ["error", "as-needed"],
+    "no-trailing-spaces": ["error", {
+      "skipBlankLines": true,
+      "ignoreComments": true
+    }]
   },
   "globals": {
     "window": true,
