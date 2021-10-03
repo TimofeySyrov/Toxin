@@ -1,11 +1,11 @@
 class CheckboxList {
   constructor(container) {
     this.container = container;
-    this.findDomElement();
+    this.findDomElements();
     this.bindEventListener();
   }
 
-  findDomElement() {
+  findDomElements() {
     this.checkboxNameContainer = this.container.querySelector('.js-checkbox-list__name');
     this.checkboxArrow = this.container.querySelector('.js-checkbox-list__arrow');
     this.checkboxMenu = this.container.querySelector('.js-checkbox-list__menu');
@@ -16,7 +16,7 @@ class CheckboxList {
   }
 
   handlerCheckboxMenu() {
-    if(this.checkboxMenu.classList.contains('checkbox-list__menu_active')) {
+    if (this.checkboxMenu.classList.contains('checkbox-list__menu_active')) {
       this.checkboxMenu.classList.remove('checkbox-list__menu_active');
       this.checkboxArrow.classList.remove('checkbox-list__arrow_active');
     } else {
