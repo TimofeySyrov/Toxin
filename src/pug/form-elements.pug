@@ -45,12 +45,13 @@ html(lang="en")
                   arr: 'date Dropdown',
                   dep: 'date Dropdown',
                 })
-              .basic-item.text-field-custom-column__item
+              .basic-item.text-field-custom-column__item.filter-dates
                 p.basic-item__tittle filter date dropdown
                 include ../templates/filter-date-dropdown/filter-date-dropdown.pug
-                +filter-date-dropdown({
-                  isOpen: false,
-                })
+                .filter-dates__calendar
+                  +filter-date-dropdown({
+                    isOpen: false,
+                  })
               .basic-item.text-field-custom-column__item
                 p.basic-item__tittle subscription text field
                 include ../templates/subscription-text-field/subscription-text-field.pug
