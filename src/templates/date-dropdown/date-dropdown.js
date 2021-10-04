@@ -2,16 +2,20 @@ import Calendar from '../calendar/calendar';
 
 class DateDropdown {
   constructor(container) {
-    this.dateDrop = container;
-    this.dateDropArrival = this.dateDrop.querySelector('.js-date-dropdown-arrival');
-    this.dateDropDepature = this.dateDrop.querySelector('.js-date-dropdown-depature');
-    this.isCalOpen = this.dateDrop.getAttribute('data-calendar-isopen');
+    this.container = container;
+    this.calendarBody = this.container.querySelector('.js-date-dropdown__calendar-container');
+    this.arrivalInput = this.container.querySelector('.js-date-dropdown-arrival');
+    this.depatureInput = this.container.querySelector('.js-date-dropdown-depature');
+    this.isCalendarOpen = Boolean.prototype.valueOf(this.container.getAttribute('data-calendar-isOpen'));
 
     this.init();
   }
 
   init() {
-    new Calendar(this.dateDrop, this.isCalOpen, this.dateDropArrival, this.dateDropDepature);
+    new Calendar(this.calendarBody, {
+      isOpen: this.isCalendarOpen,
+      inputs: [this.arrivalInput, this.depatureInput],
+    });
   }
 }
 export default DateDropdown;

@@ -1,7 +1,7 @@
 include ../calendar/calendar.pug
 
-mixin date-dropdown({ isOpen = true, placeholder='ДД.ММ.ГГГГ', arr = 'прибытие', dep = 'выезд' }={})
-  .date-dropdown.js-date-dropdown(data-calendar-isopen= `${isOpen}`)
+mixin date-dropdown({ isOpen = false, placeholder='ДД.ММ.ГГГГ', arr = 'прибытие', dep = 'выезд' }={})
+  .date-dropdown.js-date-dropdown(data-calendar-isOpen= `${isOpen}`)
     .date-dropdown__items
       .date-dropdown__item
         span.date-dropdown__tittle= arr
@@ -14,5 +14,5 @@ mixin date-dropdown({ isOpen = true, placeholder='ДД.ММ.ГГГГ', arr = 'п
           span.js-date-dropdown-depature #{placeholder}
           i.material-icons.date-dropdown__arrow expand_more
     .date-dropdown__calendar
-      .date-dropdown__calendar-container
+      .date-dropdown__calendar-container.js-date-dropdown__calendar-container
         +calendar
