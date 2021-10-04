@@ -21,7 +21,6 @@
     background: #fff;
     border: 1px solid $dark_shade_25;
     border-radius: 4px;
-    margin-bottom: 5px;
     padding-left: 15px;
     display: flex;
     align-items: center;
@@ -30,6 +29,7 @@
     font-size: 14px;
     line-height: 24px;
     color: $dark_shade_75;
+    cursor: pointer;
 
     .material-icons{
       position: absolute;
@@ -50,6 +50,7 @@
   &__calendar{
     position: absolute;
     width: 100%;
+    margin-top: 5px;
     z-index: 100;
   }
 }

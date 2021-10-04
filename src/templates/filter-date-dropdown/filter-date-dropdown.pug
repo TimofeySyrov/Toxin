@@ -1,11 +1,11 @@
 include ../calendar/calendar.pug
 
-mixin filter-date-dropdown({ tittle, isOpen = true, placeholder='Выберите даты' }={})
-  .filter-date-dropdown.js-filter-date-dropdown(data-calendar-isopen= `${isOpen}`)
+mixin filter-date-dropdown({ tittle, isOpen = false, placeholder='Выберите даты' }={})
+  .filter-date-dropdown.js-filter-date-dropdown(data-calendar-isOpen=`${isOpen}`)
     if tittle
       span.filter-date-dropdown__tittle !{tittle}
     .filter-date-dropdown__name-box
       p.filter-date-dropdown__input.js-filter-date-dropdown__input #{placeholder}
       i.material-icons expand_more
-    .filter-date-dropdown__calendar
+    .filter-date-dropdown__calendar.js-filter-date-dropdown__calendar
       +calendar
