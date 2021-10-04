@@ -1,24 +1,14 @@
 import 'air-datepicker';
 
 class AirCalendar {
-  constructor(container, isOpen, firstInput, secondInput) {
-    if (!$(container).hasClass('js-date-picker-calendar')) {
-      this.calendarContainer = $(container).find('.js-date-picker-calendar');
-      this.isOpen = isOpen;
-      this.arrivalInput = firstInput;
-      this.depatureInput = secondInput;
-      this.singleInput = firstInput;
+  /* options = { isOpen: boolean, inputs: [] } */
+  constructor(container, options) {
+    this.$container = $(container);
+    this.isOpen = options.isOpen || false;
+    this.arrivalInput = options.inputs[0];
+    this.depatureInput = options.inputs[1];
 
-      if (secondInput === undefined && secondInput === null) {
-        this.isDI = false;
-      } else {
-        this.isDI = true;
-      }
-    } else {
-      this.calendarContainer = $(container);
-    }
-
-    this.transformToAirDatepicker();
+    this.initDatepicker();
     this.checkIsOpen();
     this.addCalendarButtons();
 
@@ -27,126 +17,113 @@ class AirCalendar {
     this.bindEventListenerConfirmCalendarButton();
   }
 
-  transformToAirDatepicker() {
-    const calendar1 = {
-      isDouble: this.isDI,
-      containerArrival: $(this.arrivalInput),
-      containerDepature: $(this.depatureInput),
-      containerSingle: $(this.singleInput),
-      options: {
-        inline: false,
-        toggleSelected: true,
-        range: true,
-        multipleDates: 2,
-        multipleDatesSeparator: '-',
-        navTitles: {
-          days: '<span>MM yyyy</span>',
-        },
-        dateFormat: 'dd.mm.yyyy',
-        prevHtml: '<i class="material-icons">arrow_back</i>',
-        nextHtml: '<i class="material-icons">arrow_forward</i>',
-        onSelect: function onSelect(selectedDates) {
-          if (selectedDates !== undefined && selectedDates !== '' && selectedDates.indexOf('-') > -1) {
-            const mdy = selectedDates.split('-');
-            const CalDates = [mdy[0], mdy[1]];
+  initDatepicker() {
+    const $arrivalInput = $(this.arrivalInput);
+    const $depatureInput = $(this.depatureInput);
+    const isArrivalInput = this.arrivalInput;
+    const isDepatureInput = this.depatureInput;
+    const isDoubleInputs = isArrivalInput && isDepatureInput;
+    const isSingleInput = isArrivalInput && !isDepatureInput;
 
-            // Если значение true, задействованы два инпута. Если false, то задействован один.
-            if (calendar1.isDouble === true) {
-              calendar1.containerArrival.html(mdy[0]);
-              calendar1.containerDepature.html(mdy[1]);
-              localStorage.setItem('CalendarDates', JSON.stringify(CalDates));
-            } else if (calendar1.isDouble === false) {
-              calendar1.containerSingle.html(`${mdy[0]} - ${mdy[1]}`);
-              localStorage.setItem('CalendarDates', JSON.stringify(CalDates));
-            }
+    const options = {
+      inline: false,
+      toggleSelected: true,
+      range: true,
+      multipleDates: 2,
+      multipleDatesSeparator: '-',
+      navTitles: {
+        days: '<span>MM yyyy</span>',
+      },
+      dateFormat: isDoubleInputs ? 'dd.mm.yyyy' : 'd M',
+      prevHtml: '<i class="material-icons">arrow_back</i>',
+      nextHtml: '<i class="material-icons">arrow_forward</i>',
+      onSelect: function onSelect(selectedDates) {
+        const isSelectedDates = selectedDates !== undefined && selectedDates !== '' && selectedDates.indexOf('-') > -1;
+
+        if (isSelectedDates) {
+          const dates = selectedDates.split('-');
+
+          if (isSingleInput) {
+            $arrivalInput.html(`${dates[0]} - ${dates[1]}`);
           }
-        },
+
+          if (isDoubleInputs) {
+            $arrivalInput.html(dates[0]);
+            $depatureInput.html(dates[1]);
+          }
+        }
       },
     };
 
-    // Если doubleInputs == false, то меняется формат даты на "День Месяц"
-    if (!(this.isDI)) {
-      calendar1.options.dateFormat = 'd M';
-    }
-
-    $(this.calendarContainer).datepicker(calendar1.options).data('datepicker');
+    this.$container.datepicker(options).data('datepicker');
   }
 
   addCalendarButtons() {
-    $(this.calendarContainer).find('.datepicker').append('<div class="date-picker-calendar__buttons"></div>');
+    this.$container.find('.datepicker').append('<div class="date-picker-calendar__buttons"></div>');
 
-    const buttonsContainer = $(this.calendarContainer).find('.date-picker-calendar__buttons');
+    const buttonsContainer = this.$container.find('.date-picker-calendar__buttons');
     buttonsContainer.append('<div class="calendar__buttons calendar__buttons-clear js-calendar-clear">Очистить</div>');
     buttonsContainer.append('<div class="calendar__buttons calendar__buttons-confirm js-calendar-confirm">Применить</div>');
   }
 
   checkIsOpen() {
-    if (this.isOpen === 'true') {
+    if (this.isOpen) {
       this.showCalendar();
-    }
-    if (this.isOpen === 'false') {
+    } else {
       this.hideCalendar();
     }
   }
 
   bindEventListenerCalendarInputs() {
-    $(this.arrivalInput).on('click', this.calendarInputs.bind(this));
-    $(this.depatureInput).on('click', this.calendarInputs.bind(this));
+    $(this.arrivalInput).parent().on('click', this.calendarInputs.bind(this));
+    $(this.depatureInput).parent().on('click', this.calendarInputs.bind(this));
   }
 
   calendarInputs() {
-    const myD = $(this.calendarContainer);
-
-    if (this.isOpen === 'true') {
-      this.isOpen = 'false';
-      $(myD).hide();
+    if (this.isOpen) {
+      this.isOpen = false;
+      this.$container.hide();
     } else {
-      this.isOpen = 'true';
-      $(myD).show();
+      this.isOpen = true;
+      this.$container.show();
     }
   }
 
   showCalendar() {
-    const myD = $(this.calendarContainer);
-
-    $(myD).show();
+    this.$container.show();
   }
 
   clearAllCalendar() {
-    const myD = $(this.calendarContainer).data('datepicker');
+    const myD = this.$container.data('datepicker');
+    const isArrivalInput = this.arrivalInput;
+    const isDepatureInput = this.depatureInput;
+    const isDoubleInputs = isArrivalInput && isDepatureInput;
+    const isSingleInput = isArrivalInput && !isDepatureInput;
 
     myD.clear();
 
-    const inputsPlaceholder = {
-      isDouble: this.isDI,
-      arr: $(this.arrivalInput),
-      dep: $(this.depatureInput),
-      containerSingle: $(this.singleInput),
-    };
-
-    if (inputsPlaceholder.isDouble) {
-      inputsPlaceholder.arr.html('ДД.ММ.ГГГГ');
-      inputsPlaceholder.dep.html('ДД.ММ.ГГГГ');
+    if (isSingleInput) {
+      $(this.arrivalInput).html('Выберите даты');
     }
-    if (!(inputsPlaceholder.isDouble)) {
-      inputsPlaceholder.containerSingle.html('Выберите даты');
+
+    if (isDoubleInputs) {
+      $(this.arrivalInput).html('ДД.ММ.ГГГГ');
+      $(this.depatureInput).html('ДД.ММ.ГГГГ');
     }
   }
 
   bindEventListenerClearCalendarButton() {
-    const clearb = $(this.calendarContainer).find('.js-calendar-clear');
+    const clearb = this.$container.find('.js-calendar-clear');
 
     clearb.on('click', this.clearAllCalendar.bind(this));
   }
 
   hideCalendar() {
-    const myD = $(this.calendarContainer);
-
-    $(myD).hide();
+    this.$container.hide();
   }
 
   bindEventListenerConfirmCalendarButton() {
-    const clearb = $(this.calendarContainer).find('.js-calendar-confirm');
+    const clearb = this.$container.find('.js-calendar-confirm');
 
     clearb.on('click', this.calendarInputs.bind(this));
   }
