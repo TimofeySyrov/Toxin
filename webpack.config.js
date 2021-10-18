@@ -1,13 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
-const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -148,8 +145,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: './assets/img/[name].[ext]',
-              outputPath: './',
+              name: '/img/[name].[ext]',
+              outputPath: './assets',
               useRelativePath: true
         },
           }
@@ -161,8 +158,8 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: './assets/fonts/[name].[ext]',
-            outputPath: './',
+            name: '/fonts/[name].[ext]',
+            outputPath: './assets',
             useRelativePath: true
           }
         }
