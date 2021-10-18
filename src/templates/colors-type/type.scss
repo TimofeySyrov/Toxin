@@ -20,3 +20,30 @@ a {
 ul {
   list-style: none;
 }
+
+.material-icons {
+  font-family: 'MaterialIcons';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 20px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+.font-awesome{
+  font-family: 'Font-Awesome-5-Brands';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 23px;
+}
