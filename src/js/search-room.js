@@ -1,5 +1,4 @@
 import '../scss/search-room.scss';
-
 import '../templates/filter-date-dropdown/filter-date-dropdown-init';
 import '../templates/dropdown/dropdown-init';
 import '../templates/range-slider/range-slider-init';

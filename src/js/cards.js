@@ -1,5 +1,4 @@
 import '../scss/cards.scss';
-
 import '../templates/start-filter/start-filter-init';
 import '../templates/registration-card/registration-card-init';
 import '../templates/room-info-card/room-info-card-init';

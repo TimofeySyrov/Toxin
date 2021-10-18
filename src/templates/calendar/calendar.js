@@ -5,8 +5,7 @@ class AirCalendar {
   constructor(container, options) {
     this.$container = $(container);
     this.isOpen = options.isOpen || false;
-    this.arrivalInput = options.inputs[0];
-    this.depatureInput = options.inputs[1];
+    this.inputs = options.inputs;
 
     this.initDatepicker();
     this.checkIsOpen();
@@ -18,10 +17,11 @@ class AirCalendar {
   }
 
   initDatepicker() {
-    const $arrivalInput = $(this.arrivalInput);
+    const [arrivalInput, depatureInput] = this.inputs;
+    const $arrivalInput = $(arrivalInput);
     const $depatureInput = $(this.depatureInput);
-    const isArrivalInput = this.arrivalInput;
-    const isDepatureInput = this.depatureInput;
+    const isArrivalInput = arrivalInput;
+    const isDepatureInput = depatureInput;
     const isDoubleInputs = isArrivalInput && isDepatureInput;
     const isSingleInput = isArrivalInput && !isDepatureInput;
 
@@ -75,8 +75,9 @@ class AirCalendar {
   }
 
   bindEventListenerCalendarInputs() {
-    $(this.arrivalInput).parent().on('click', this.calendarInputs.bind(this));
-    $(this.depatureInput).parent().on('click', this.calendarInputs.bind(this));
+    const [arrivalInput, depatureInput] = this.inputs;
+    $(arrivalInput).parent().on('click', this.calendarInputs.bind(this));
+    $(depatureInput).parent().on('click', this.calendarInputs.bind(this));
   }
 
   calendarInputs() {
@@ -94,21 +95,22 @@ class AirCalendar {
   }
 
   clearAllCalendar() {
+    const [arrivalInput, depatureInput] = this.inputs;
     const myD = this.$container.data('datepicker');
-    const isArrivalInput = this.arrivalInput;
-    const isDepatureInput = this.depatureInput;
+    const isArrivalInput = arrivalInput;
+    const isDepatureInput = depatureInput;
     const isDoubleInputs = isArrivalInput && isDepatureInput;
     const isSingleInput = isArrivalInput && !isDepatureInput;
 
     myD.clear();
 
     if (isSingleInput) {
-      $(this.arrivalInput).html('Выберите даты');
+      $(arrivalInput).html('Выберите даты');
     }
 
     if (isDoubleInputs) {
-      $(this.arrivalInput).html('ДД.ММ.ГГГГ');
-      $(this.depatureInput).html('ДД.ММ.ГГГГ');
+      $(arrivalInput).html('ДД.ММ.ГГГГ');
+      $(depatureInput).html('ДД.ММ.ГГГГ');
     }
   }
 

@@ -4,5 +4,5 @@ mixin checkbox-buttons({ title, list=[], }={})
       .checkbox-btns__tittle #{title}
     each btn in list
       label.checkbox-btns__item
-        input.checkbox-btns__input(type="checkbox" checked= btn.check)
+        input.checkbox-btns__input(type='checkbox' checked= btn.check)
         span.checkbox-btns__box #{btn.name}

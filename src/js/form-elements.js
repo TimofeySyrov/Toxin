@@ -1,5 +1,4 @@
 import '../scss/form-elements.scss';
-
 import '../templates/text-field/text-field-init';
 import '../templates/dropdown/dropdown-init';
 import '../templates/date-dropdown/date-dropdown-init';

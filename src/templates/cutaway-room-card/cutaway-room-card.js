@@ -1,7 +1,8 @@
-import '../rate-button/rate-button-init';
 import 'slick-carousel/slick/slick.min';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import '../rate-button/rate-button-init';
 
 class CutawayRoom {
   constructor(elem) {
