@@ -1,5 +1,4 @@
 import noUiSlider from 'nouislider';
-import 'nouislider/dist/nouislider.min.css';
 
 class RangeSlider {
   constructor(elem) {
