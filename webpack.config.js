@@ -56,47 +56,47 @@ module.exports = {
       filename: 'css/[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/index.html',
+      filename: 'index.html',
       template: './pug/index.pug',
       chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/search-room.html',
+      filename: 'search-room.html',
       template: './pug/search-room.pug',
       chunks: ['search-room'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/room-details.html',
+      filename: 'room-details.html',
       template: './pug/room-details.pug',
       chunks: ['room-details'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/sign-in.html',
+      filename: 'sign-in.html',
       template: './pug/sign-in.pug',
       chunks: ['sign-in'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/sign-up.html',
+      filename: 'sign-up.html',
       template: './pug/sign-up.pug',
       chunks: ['sign-up'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/colors-type.html',
+      filename: 'colors-type.html',
       template: './pug/colors-type.pug',
       chunks: ['colors-type'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/form-elements.html',
+      filename: 'form-elements.html',
       template: './pug/form-elements.pug',
       chunks: ['form-elements'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/cards.html',
+      filename: 'cards.html',
       template: './pug/cards.pug',
       chunks: ['cards'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'html/headers-footers.html',
+      filename: 'headers-footers.html',
       template: './pug/headers-footers.pug',
       chunks: ['headers-footers'],
     }),
@@ -160,7 +160,7 @@ module.exports = {
           options: {
             name: '/fonts/[name].[ext]',
             outputPath: './assets',
-            useRelativePath: true
+            useRelativePath: true,
           }
         }
       },
