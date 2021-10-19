@@ -2,60 +2,60 @@
   display: flex;
   flex-direction: column;
   max-width: 266px;
-}
 
-.rich-checkbox-btns__tittle{
-  margin-bottom: 16px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  color: $dark_shade_100;
-  text-transform: uppercase;
-}
-
-.rich-checkbox-btns__item {
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  line-height: 18px;
-  color: $dark_shade_50;
-  cursor: pointer;
-
-  &:last-child {
-    margin-bottom: 0;
+  &__tittle{
+    margin-bottom: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark_shade_100;
+    text-transform: uppercase;
   }
-} 
 
-.rich-checkbox-btns__input {
-  position: absolute;
-	appearance: none;
-	top: 0;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	border: 1px solid $dark_shade_25;
-	border-radius: 4px;
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-  cursor: pointer;
+  &__item {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    line-height: 18px;
+    color: $dark_shade_50;
+    cursor: pointer;
+  
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    appearance: none;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dark_shade_25;
+    border-radius: 4px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    cursor: pointer;
+
+    &:checked {
+      border-color: $purple;
+      background-image: url(../assets/img/check.svg);
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark_shade_75;
+    margin-bottom: 5px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
-
-.rich-checkbox-btns__name {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-  color: $dark_shade_75;
-  margin-bottom: 5px;
-}
-
-.rich-checkbox-btns__desc {
-  font-size: 12px;
-  line-height: 14px;
-}
-
-.rich-checkbox-btns__input:checked {
-  border-color: $purple;
-  background-image: url(../assets/img/check.svg);
-}  

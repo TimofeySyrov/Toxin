@@ -27,11 +27,11 @@
 			}
 		}
 
-		a.br-active::after {
+		.br-active::after {
 			content: 'star';
 		}
 
-		a.br-selected::after {
+		.br-selected::after {
 			content: 'star';
 		}
 	}

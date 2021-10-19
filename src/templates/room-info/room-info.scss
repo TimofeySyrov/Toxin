@@ -17,16 +17,13 @@
   &__icon {
     padding-top: 5px;
     margin-right: 10px;
-
-    .material-icons {
-      width: 48px;
-      height: 48px;
-      font-size: 48px;
-      line-height: 41px;
-      background: $main-gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    line-height: 41px;
+    background: $main-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   &__name {

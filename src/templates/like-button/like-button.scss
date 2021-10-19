@@ -25,31 +25,28 @@
       border-color: $purple;
     }
   }
-}
 
-.like-button__icon {
-  width: 20px;
-  height: 18px;
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .material-icons {
+  &__icon {
+    width: 20px;
+    height: 18px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 10px;
     line-height: 9px;
+  
+    &_active {
+      background: $main-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
-  &_active {
-    background: $main-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &__count {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    float: left;
   }
-}
-
-.like-button__count {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  line-height: 12px;
-  float: left;
 }
