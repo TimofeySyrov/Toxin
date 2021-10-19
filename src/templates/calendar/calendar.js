@@ -19,7 +19,7 @@ class AirCalendar {
   initDatepicker() {
     const [arrivalInput, depatureInput] = this.inputs;
     const $arrivalInput = $(arrivalInput);
-    const $depatureInput = $(this.depatureInput);
+    const $depatureInput = $(depatureInput);
     const isArrivalInput = arrivalInput;
     const isDepatureInput = depatureInput;
     const isDoubleInputs = isArrivalInput && isDepatureInput;
