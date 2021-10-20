@@ -1,3 +1,4 @@
+import '../assets/favicons/favicons';
 import '../scss/form-elements.scss';
 import '../templates/text-field/text-field-init';
 import '../templates/dropdown/dropdown-init';

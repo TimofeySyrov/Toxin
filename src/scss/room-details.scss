@@ -1,9 +1,7 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
-@import "../templates/colors-type/colors.scss";
-@import "../templates/colors-type/type.scss";
-@import "../templates/colors-type/fonts.scss";
-@import "../templates/header-unauth/header-unauth.scss";
+@import '../styles/global.scss';
+@import '../templates/header-unauth/header-unauth.scss';
 @import '../templates/room-info/room-info.scss';
 @import '../templates/donut-chart/donut-chart.scss';
 @import '../templates/room-info-card/room-info-card.scss';

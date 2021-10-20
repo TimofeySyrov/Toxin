@@ -1,8 +1,6 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
-@import "../templates/colors-type/colors.scss";
-@import "../templates/colors-type/type.scss";
-@import "../templates/colors-type/fonts.scss";
+@import '../styles/global.scss';
 @import '../templates/logo/logo.scss';
 @import '../templates/start-filter/start-filter.scss';
 @import '../templates/registration-card/registration-card.scss';

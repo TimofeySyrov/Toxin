@@ -1,3 +1,4 @@
+import '../assets/favicons/favicons';
 import '../scss/cards.scss';
 import '../templates/start-filter/start-filter-init';
 import '../templates/registration-card/registration-card-init';

@@ -1,3 +1,4 @@
+import '../assets/favicons/favicons';
 import '../scss/search-room.scss';
 import '../templates/filter-date-dropdown/filter-date-dropdown-init';
 import '../templates/dropdown/dropdown-init';
