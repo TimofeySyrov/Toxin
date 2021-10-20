@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -40,11 +39,6 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/assets')
         }
       ],
-    }),
-    new FaviconsWebpackPlugin({
-      logo: './assets/favicons/favicon.ico',
-      outputPath: './assets/favicons/',
-      prefix: 'assets/favicons/'
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
