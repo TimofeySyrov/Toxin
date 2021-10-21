@@ -1,8 +1,4 @@
 /node_modules
-/.babelrc
-/package.json
-/package-lock.json
-/webpack.config.js
-/PP
+package-lock.json
 /.vscode
 /dist
