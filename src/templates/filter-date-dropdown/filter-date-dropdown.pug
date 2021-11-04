@@ -4,7 +4,7 @@ mixin filter-date-dropdown({ tittle, isOpen = false, placeholder='Выберит
   .filter-date-dropdown.js-filter-date-dropdown(data-calendar-isOpen=`${isOpen}`)
     if tittle
       span.filter-date-dropdown__tittle !{tittle}
-    .filter-date-dropdown__name-box
+    .filter-date-dropdown__name-box.js-filter-date-dropdown__name-box
       p.filter-date-dropdown__input.js-filter-date-dropdown__input #{placeholder}
       i.material-icons.filter-date-dropdown__arrow expand_more
     .filter-date-dropdown__calendar.js-filter-date-dropdown__calendar

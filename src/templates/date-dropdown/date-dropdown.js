@@ -4,6 +4,7 @@ class DateDropdown {
   constructor(body) {
     this.body = body;
     this.calendarBody = this.body.querySelector('.js-date-dropdown__calendar-container');
+    this.bodyInputs = this.body.querySelectorAll('.js-date-dropdown__input');
     this.arrivalInput = this.body.querySelector('.js-date-dropdown-arrival');
     this.depatureInput = this.body.querySelector('.js-date-dropdown-depature');
     this.isCalendarOpen = this.body.getAttribute('data-calendar-isOpen');
@@ -26,9 +27,10 @@ class DateDropdown {
 
   bindEventListenerInputs() {
     const { calendar } = this;
+    const [bodyArrivalInput, bodyDepatureInput] = this.bodyInputs;
 
-    this.arrivalInput.addEventListener('click', calendar.checkIsOpen.bind(calendar));
-    this.depatureInput.addEventListener('click', calendar.checkIsOpen.bind(calendar));
+    bodyArrivalInput.addEventListener('click', calendar.checkIsOpen.bind(calendar));
+    bodyDepatureInput.addEventListener('click', calendar.checkIsOpen.bind(calendar));
   }
 
   setDates(dates) {

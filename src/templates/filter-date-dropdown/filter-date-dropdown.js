@@ -3,6 +3,7 @@ import Calendar from '../calendar/calendar';
 class FilterDateDropdown {
   constructor(body) {
     this.body = body;
+    this.nameBox = this.body.querySelector('.js-filter-date-dropdown__name-box');
     this.calendarBody = this.body.querySelector('.js-filter-date-dropdown__calendar');
     this.calendarInput = this.body.querySelector('.js-filter-date-dropdown__input');
     this.isCalendarOpen = this.body.getAttribute('data-calendar-isopen');
@@ -51,7 +52,7 @@ class FilterDateDropdown {
   }
 
   bindEventListener() {
-    this.calendarInput.addEventListener('click', this.calendar.checkIsOpen.bind(this.calendar));
+    this.nameBox.addEventListener('click', this.calendar.checkIsOpen.bind(this.calendar));
   }
 }
 
