@@ -3,6 +3,7 @@
   position: relative;
 
   &__name {
+    padding: 0 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,6 +38,7 @@
 
   &__menu {
     width: 100%;
+    padding: 0 6px;
     display: none;
     flex-direction: column;
     align-items: flex-start;
