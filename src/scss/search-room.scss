@@ -1,16 +1,16 @@
-@import '~normalize.css';
+@import "~normalize.css";
 
-@import '../styles/global.scss';
-@import '../templates/header-unauth/header-unauth.scss';
-@import '../templates/filter-date-dropdown/filter-date-dropdown.scss';
-@import '../templates/dropdown/dropdown.scss';
-@import '../templates/range-slider/range-slider.scss';
-@import '../templates/checkbox-buttons/checkbox-buttons.scss';
-@import '../templates/rich-checkbox-buttons/rich-checkbox-buttons.scss';
-@import '../templates/checkbox-list/checkbox-list.scss';
-@import '../templates/cutaway-room-card/cutaway-room-card.scss';
-@import '../templates/pagination/pagination.scss';
-@import '../templates/footer/footer.scss';
+@import "../styles/global.scss";
+@import "../templates/header-unauth/header-unauth.scss";
+@import "../templates/filter-date-dropdown/filter-date-dropdown.scss";
+@import "../templates/dropdown/dropdown.scss";
+@import "../templates/range-slider/range-slider.scss";
+@import "../templates/checkbox-buttons/checkbox-buttons.scss";
+@import "../templates/rich-checkbox-buttons/rich-checkbox-buttons.scss";
+@import "../templates/checkbox-list/checkbox-list.scss";
+@import "../templates/cutaway-room-card/cutaway-room-card.scss";
+@import "../templates/pagination/pagination.scss";
+@import "../templates/footer/footer.scss";
 
 .main {
   border-bottom: 1px solid $dark_shade_25;
@@ -102,24 +102,33 @@
 }
 
 @media screen and (max-width: 920px) {
-  .room-cards-grid {
-    grid-template-columns: repeat(1, 270px);
-  }
-}
-
-@media screen and (max-width: 640px) {
   .basic-wrap {
-    grid-template-columns: min-content;
-    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+
+  .filter-room-sidebar {
+    margin: 0 auto;
   }
 
   .room-cards-list {
     grid-column: 1;
     grid-row: 2;
+    margin: 0 auto;
   }
 
   .pagination-block {
     grid-column: 1;
     grid-row: 3;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .page-title {
+    text-align: center;
+  }
+
+  .room-cards-grid {
+    grid-template-columns: repeat(1, 270px);
+    justify-content: center;
   }
 }
