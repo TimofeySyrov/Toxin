@@ -5,16 +5,18 @@ class FilterDateDropdown {
     this.body = body;
     this.calendarBody = this.body.querySelector('.js-filter-date-dropdown__calendar');
     this.calendarInput = this.body.querySelector('.js-filter-date-dropdown__input');
-    this.isCalendarOpen = Boolean.prototype.valueOf(this.body.getAttribute('data-calendar-isopen'));
+    this.isCalendarOpen = this.body.getAttribute('data-calendar-isopen');
 
     this.init();
     this.bindEventListener();
   }
 
   init() {
+    const isOpen = this.isCalendarOpen === 'true';
+
     this.calendar = new Calendar({
       body: this.calendarBody,
-      isOpen: true,
+      isOpen,
       options: {
         dateFormat: 'd M',
         onSelect: (formattedDate) => this.setDates(formattedDate),
