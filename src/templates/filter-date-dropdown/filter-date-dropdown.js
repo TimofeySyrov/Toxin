@@ -1,16 +1,55 @@
 import Calendar from '../calendar/calendar';
 
 class FilterDateDropdown {
-  constructor(container) {
-    this.container = container;
-    this.calendarBody = this.container.querySelector('.js-filter-date-dropdown__calendar');
-    this.calendarInput = this.container.querySelector('.js-filter-date-dropdown__input');
-    this.isCalendarOpen = Boolean.prototype.valueOf(this.container.getAttribute('data-calendar-isopen'));
+  constructor(body) {
+    this.body = body;
+    this.calendarBody = this.body.querySelector('.js-filter-date-dropdown__calendar');
+    this.calendarInput = this.body.querySelector('.js-filter-date-dropdown__input');
+    this.isCalendarOpen = Boolean.prototype.valueOf(this.body.getAttribute('data-calendar-isopen'));
 
-    new Calendar(this.calendarBody, {
-      isOpen: this.isCalendarOpen,
-      inputs: [this.calendarInput],
-    });
+    this.init();
+    this.bindEventListener();
+  }
+
+  init() {
+    this.calendar = new Calendar({
+      body: this.calendarBody,
+      isOpen: true,
+      options: {
+        dateFormat: 'd M',
+        onSelect: (formattedDate) => this.setDates(formattedDate),
+      }
+    })
+  }
+
+  setDates(dates) {
+    const inputPlaceholder = 'Выберите даты';
+    const isSelectedDate = (date) => {
+      const isUndefined  = date === undefined;
+      const isEmpty = date === '';
+
+      if (!isUndefined && !isEmpty) return true;
+      return false;
+    };
+
+    if (isSelectedDate(dates)) {
+      const isRange = dates.indexOf('-') !== -1;
+      const lowerCaseDates = dates.toLowerCase();
+
+      if (isRange) {
+        const [arrDate, depDate] = lowerCaseDates.split('-');
+
+        this.calendarInput.innerHTML = `${arrDate} - ${depDate}`;
+      } else {
+        this.calendarInput.innerHTML = lowerCaseDates;
+      }
+    } else {
+      this.calendarInput.innerHTML = inputPlaceholder;
+    }
+  }
+
+  bindEventListener() {
+    this.calendarInput.addEventListener('click', this.calendar.checkIsOpen.bind(this.calendar));
   }
 }
 
