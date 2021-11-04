@@ -1,14 +1,13 @@
-@import '~normalize.css';
+@import "~normalize.css";
 
-@import '../styles/global.scss';
-@import '../templates/logo/logo.scss';
-@import '../templates/header-unauth/header-unauth.scss';
-@import '../templates/header-auth/header-auth.scss';
-@import '../templates/footer/footer.scss';
-@import '../templates/footer-mobile/footer-mobile.scss';
+@import "../styles/global.scss";
+@import "../templates/logo/logo.scss";
+@import "../templates/header-unauth/header-unauth.scss";
+@import "../templates/header-auth/header-auth.scss";
+@import "../templates/footer/footer.scss";
 
 .body {
-  background: #F4F4F6;
+  background: #f4f4f6;
 }
 
 .header {
@@ -18,7 +17,6 @@
 }
 
 .article-header-unreg-user,
-.article-header-authorized-user,
-.article-footer-desktop{
-  margin-bottom: 40px
+.article-header-authorized-user {
+  margin-bottom: 40px;
 }
