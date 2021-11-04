@@ -86,6 +86,12 @@
 
   .slick-slider {
 
+    &:hover {
+      .slick-arrow {
+        display: block !important;
+      }
+    }
+
     .slick-slide {
       height: 100%;
     }
@@ -133,6 +139,7 @@
     }
 
     .slick-arrow {
+      display: none !important;
       width: 42px;
       height: 151px;
 
