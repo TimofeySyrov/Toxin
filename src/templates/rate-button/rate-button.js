@@ -9,22 +9,18 @@ class RateButton {
 
   findDOMElement() {
     this.$rateButton = this.$container.find('.js-rate-button__container');
-    this.$valueRating = this.$rateButton.attr('data-rating');
-    this.$valueReadonly = this.$rateButton.attr('data-readonly');
+    this.valueRating = this.$rateButton.attr('data-rating');
+    this.valueReadonly =  this.$rateButton.attr('data-readonly');
   }
 
   initPlugin() {
-    if (this.$valueReadonly === 'true') {
-      this.$valueReadonly = true;
-    } else {
-      this.$valueReadonly = false;
-    }
+    const isReadonly = this.valueReadonly === 'true';
 
     this.$rateButton.barrating({
       theme: 'css-stars',
       showSelectedRating: false,
-      initialRating: this.valueRating,
-      readonly: this.valueReadonly,
+      initialRating: parseInt(this.valueRating),
+      readonly: isReadonly,
     });
   }
 }
