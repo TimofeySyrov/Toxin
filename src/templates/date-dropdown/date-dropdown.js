@@ -6,7 +6,7 @@ class DateDropdown {
     this.calendarBody = this.body.querySelector('.js-date-dropdown__calendar-container');
     this.arrivalInput = this.body.querySelector('.js-date-dropdown-arrival');
     this.depatureInput = this.body.querySelector('.js-date-dropdown-depature');
-    this.isCalendarOpen = this.body.getAttribute('data-calendar-isOpen') === 'true';
+    this.isCalendarOpen = Boolean.prototype.valueOf(this.body.getAttribute('data-calendar-isOpen'));
 
     this.init();
     this.bindEventListenerInputs();
@@ -15,7 +15,7 @@ class DateDropdown {
   init() {
     this.calendar = new Calendar({
       body: this.calendarBody,
-      isOpen: true,
+      isOpen: this.isCalendarOpen,
       options: {
         onSelect: (formattedDate) => this.setDates(formattedDate)
       }
@@ -32,15 +32,11 @@ class DateDropdown {
   setDates(dates) {
     const { arrivalInput, depatureInput } = this;
     const inputPlaceholder = 'ДД.ММ.ГГГГ'.toUpperCase();
-
     const isSelectedDate = (date) => {
       const isUndefined  = date === undefined;
       const isEmpty = date === '';
 
-      if (!isUndefined && !isEmpty) {
-        return true;
-      }
-
+      if (!isUndefined && !isEmpty) return true;
       return false;
     };
 
