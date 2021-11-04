@@ -125,8 +125,6 @@ class Dropdown {
       if (room === 0 && bedroom === 0 && bathroom === 0) {
         this.dropTittle.innerHTML = 'спальни, кровати, ванные комн...';
       }
-
-      localStorage.setItem('NumRoomAbout', JSON.stringify([room, bedroom, bathroom]));
     }
 
     if (this.dropType === 'guests') {
@@ -165,8 +163,6 @@ class Dropdown {
       if (adultsCount > 0 && babiesCount > 0) {
         this.dropTittle.innerHTML = `${adults}, ${babies}`;
       }
-
-      localStorage.setItem('NumGuests', JSON.stringify([adultsCount, babiesCount]));
     }
   }
 
@@ -239,6 +235,7 @@ class Dropdown {
 
   confirmButton() {
     this.checkCounts();
+    this.openDropList();
   }
 
   eventListenerClearButton() {
