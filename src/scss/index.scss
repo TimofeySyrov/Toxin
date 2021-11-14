@@ -40,3 +40,19 @@
     margin: 0 15px 18px;
   }
 }
+
+@media screen and (max-width: 410px) {
+  .main__container{
+    padding: 70px 0px;
+  }
+
+  .start-filter {
+    margin: 0 auto;
+
+    &__dates {
+      .date-dropdown__items {
+        flex-direction: column;
+      }
+    }
+  }
+}
