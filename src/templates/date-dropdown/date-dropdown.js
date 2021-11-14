@@ -8,9 +8,22 @@ class DateDropdown {
     this.arrivalInput = this.body.querySelector('.js-date-dropdown-arrival');
     this.depatureInput = this.body.querySelector('.js-date-dropdown-depature');
     this.isCalendarOpen = this.body.getAttribute('data-calendar-isOpen');
+    this.observers = [];
 
     this.init();
     this.bindEventListenerInputs();
+  }
+
+  notifyObservers(data) {
+    this.observers.forEach((observer) => observer(data));
+  }
+
+  observeDateChanges(observer) {
+    const isCorrectObserver = observer !== undefined && observer !== null;
+
+    if (isCorrectObserver) {
+      this.observers.push(observer);
+    }
   }
 
   init() {
@@ -20,8 +33,8 @@ class DateDropdown {
       body: this.calendarBody,
       isOpen,
       options: {
-        onSelect: (formattedDate) => this.setDates(formattedDate)
-      }
+        onSelect: (formattedDate) => this.setDates(formattedDate),
+      },
     });
   }
 
@@ -37,7 +50,7 @@ class DateDropdown {
     const { arrivalInput, depatureInput } = this;
     const inputPlaceholder = 'ДД.ММ.ГГГГ'.toUpperCase();
     const isSelectedDate = (date) => {
-      const isUndefined  = date === undefined;
+      const isUndefined = date === undefined;
       const isEmpty = date === '';
 
       if (!isUndefined && !isEmpty) return true;
@@ -59,6 +72,8 @@ class DateDropdown {
       arrivalInput.innerHTML = inputPlaceholder;
       depatureInput.innerHTML = inputPlaceholder;
     }
+
+    this.notifyObservers(dates);
   }
 }
 export default DateDropdown;
