@@ -2,12 +2,12 @@
 @import '../logo/logo.scss';
 @import '../buttons/buttons';
 
-.header-auth{
-  background: #FFFFFF;
+.header-auth {
+  background: #ffffff;
   box-shadow: 0px 10px 20px $dark_shade_5;
   font-family: 'Montserrat', Arial, sans-serif;
 
-  &__container{
+  &__container {
     max-width: 1160px;
     min-height: 70px;
     padding: 15px 0;
@@ -16,19 +16,20 @@
     align-items: center;
   }
 
-  &__logo{
+  &__logo {
+    max-width: fit-content;
     flex-grow: 1;
     margin: 0 auto;
   }
 
-  &__nav-menu{
+  &__nav-menu {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
   }
 
-  &__user-box{
+  &__user-box {
     display: flex;
     align-items: center;
     height: 30px;
@@ -37,28 +38,29 @@
     margin: 0 auto;
   }
 
-  &__user-link{
+  &__user-link {
     font-size: 14px;
     line-height: 17px;
     color: $dark_shade_50;
   }
 
-  @media screen and (max-width: 1200px){
-    &__container{
+  @media screen and (max-width: 1200px) {
+    &__container {
       padding: 15px 15px;
     }
   }
 
   @media screen and (max-width: 940px) {
-    &__container{
+    &__container {
       flex-direction: column;
     }
 
-    &__logo, &__nav-menu{
+    &__logo,
+    &__nav-menu {
       margin-bottom: 10px;
     }
 
-    &__user-box{
+    &__user-box {
       height: auto;
       padding: 10px 10px 0;
       border-left: 0;
@@ -67,7 +69,7 @@
   }
 
   @media screen and (max-width: 515px) {
-    &__nav-menu{
+    &__nav-menu {
       margin: 0 auto 10px;
     }
   }
