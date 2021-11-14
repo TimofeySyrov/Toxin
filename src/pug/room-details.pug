@@ -1,9 +1,9 @@
 doctype html
-html(lang="ru")
+html(lang='ru')
     head
-      meta(charset="UTF-8")
-      meta(http-equiv="X-UA-Compatible", content="IE=edge")
-      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      meta(charset='UTF-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
       title room-details
     body
       include ../templates/header-unauth/header-unauth.pug
@@ -13,10 +13,10 @@ html(lang="ru")
           .room-img-gallery
             .room-img-gallery__grid
               .room-img-gallery__left-box
-                img.room-main-img(src="assets/img/rooms/room-888.jpg", alt="room #888")
+                img.room-main-img(src='assets/img/rooms/room-888.jpg', alt='room #888')
               .room-img-gallery__right-box
-                img.room-secondary-img.room-secondary-img--revert(src="assets/img/rooms/room-888-2.jpg", alt="room #888")
-                img.room-secondary-img(src="assets/img/rooms/room-888-3.jpg", alt="room #888")
+                img.room-secondary-img.room-secondary-img--revert(src='assets/img/rooms/room-888-2.jpg', alt='room #888')
+                img.room-secondary-img(src='assets/img/rooms/room-888-3.jpg', alt='room #888')
           .room-main-info
             .room-main-info__container
               .room-main-info__grid
@@ -42,38 +42,36 @@ html(lang="ru")
                     include ../templates/room-info-card/room-info-card.pug
                     +room-info-card
                 .visitor-reviews
-                  .visitor-reviews__container
-                    .visitor-reviews__box-title
-                      p.room-main-info__box-title Отзывы посетителей номера
-                      p.visitor-reviews__title 2 отзыва
-                    include ../templates/user-comment/user-comment.pug
-                    .visitor-reviews__item
-                      +user-comment({
-                        desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-                      })
-                    .visitor-reviews__item
-                      +user-comment({
-                        likeCount: 2,
-                        likeCheck: false,
-                        srcImg: 'assets/img/users/user-image-2.jpg',
-                        name: 'Патрисия Стёклышкова',
-                        data: 'Неделю назад',
-                        desc: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
-                      })
+                  .visitor-reviews__box-title
+                    p.room-main-info__box-title Отзывы посетителей номера
+                    p.visitor-reviews__title 2 отзыва
+                  include ../templates/user-comment/user-comment.pug
+                  .visitor-reviews__item
+                    +user-comment({
+                      desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                    })
+                  .visitor-reviews__item
+                    +user-comment({
+                      likeCount: 2,
+                      likeCheck: false,
+                      srcImg: 'assets/img/users/user-image-2.jpg',
+                      name: 'Патрисия Стёклышкова',
+                      data: 'Неделю назад',
+                      desc: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+                    })
                 .additional-info
-                  .additional-info__container
-                    .additional-info__rules-box.rules-box
-                      p.room-main-info__box-title.rules-box__title Правила
-                      include ../templates/bullet-list/bullet-list.pug
-                      +bullet-list({
-                        list: [
-                          {name: 'Нельзя с питомцами'},
-                          {name: 'Без вечеринок и мероприятий'},
-                          {name: 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00'}
-                        ]
-                      })
-                    .additional-info__cancel-box
-                      p.room-main-info__box-title Отмена
-                      p.room-main-info__box-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                  .additional-info__rules-box.rules-box
+                    p.room-main-info__box-title.rules-box__title Правила
+                    include ../templates/bullet-list/bullet-list.pug
+                    +bullet-list({
+                      list: [
+                        {name: 'Нельзя с питомцами'},
+                        {name: 'Без вечеринок и мероприятий'},
+                        {name: 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00'}
+                      ]
+                    })
+                  .additional-info__cancel-box
+                    p.room-main-info__box-title Отмена
+                    p.room-main-info__box-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       include ../templates/footer/footer.pug
       +footer
