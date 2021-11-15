@@ -21,11 +21,11 @@ html(lang="ru")
               .filter-room-sidebar__item.sidebar-guests-dropdown
                 include ../templates/dropdown/dropdown.pug
                 +dropdown({
-                  isOpenList: false,
+                  isOpen: false,
                   list: [
-                    {name: 'взрослые', number: 2},
-                    {name: 'дети', number: 1},
-                    {name: 'младенцы', number: 0},
+                    {name: 'взрослые', total: 2},
+                    {name: 'дети', total: 1},
+                    {name: 'младенцы', total: 1},
                   ]
                 })
               .filter-room-sidebar__item.sidebar-range-slider
@@ -55,13 +55,12 @@ html(lang="ru")
                 })
               .filter-room-sidebar__item.sidebar-room-about-dropdown
                 +dropdown({
-                  title: 'удобства номера',
                   dropType: 'room-about',
-                  isOpenList: false,
+                  isOpen: false,
                   list: [
-                    {name: 'спальни', number: 2},
-                    {name: 'кровати', number: 2},
-                    {name: 'младенцы', number: 0},
+                    {name: 'спальни', total: 2},
+                    {name: 'кровати', total: 2},
+                    {name: 'ванные комнаты', total: 0},
                   ]
                 })
               .filter-room-sidebar__item.sidebar-checkbox-list
