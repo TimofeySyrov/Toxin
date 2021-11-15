@@ -2,266 +2,350 @@ class Dropdown {
   constructor(container) {
     this.container = container;
 
-    this.findDomElement();
-    this.init();
+    this._findDomElements();
+    this._init();
   }
 
-  findDomElement() {
-    this.dropType = this.container.getAttribute('dropType');
-    this.dropIsOpen = this.container.getAttribute('isopen');
-    this.dropName = this.container.querySelector('.js-dropdown-name');
-    this.dropTittle = this.container.querySelector('.js-dropdown-name-text');
-    this.dropIcon = this.container.querySelector('.js-dropdown-icon');
-    this.dropList = this.container.querySelector('.js-dropdown-list');
-    this.dropCounts = this.container.querySelectorAll('.js-dropdown-number');
-    this.dropItems = this.dropList.querySelectorAll('.js-dropdown-item');
+  _findDomElements() {
+    this.type = this.container.getAttribute('data-type');
+    this.isOpen = this.container.getAttribute('data-is-open');
+    this.$name = this.container.querySelector('.js-dropdown__name');
+    this.$placeholder = this.container.querySelector('.js-dropdown__placeholder');
+    this.$icon = this.container.querySelector('.js-dropdown__icon');
+    this.$list = this.container.querySelector('.js-dropdown__list');
+    this.$totals = this.container.querySelectorAll('.js-dropdown__item-total');
+    this.$items = this.container.querySelectorAll('.js-dropdown__item');
+    this.$itemsMinusBtn = this.container.querySelectorAll('.js-dropdown__minus-btn');
+    this.$itemsPlusBtn = this.container.querySelectorAll('.js-dropdown__plus-btn');
+    const isGuestsType = this.type === 'guests';
 
-    if (this.dropType === 'guests') {
-      this.dropConfirm = this.dropList.querySelector('.js-dropdown-confirm');
-      this.dropClear = this.dropList.querySelector('.js-dropdown-clear');
+    if (isGuestsType) {
+      this.$confirmBtn = this.container.querySelector('.js-dropdown__confirm-btn');
+      this.$clearBtn = this.container.querySelector('.js-dropdown__clear-btn ');
     }
   }
 
-  init() {
-    this.checkDropIsOpen();
-    this.checkMinusPlusButtons();
-    this.eventListenerDropList();
-    this.eventListenerList();
-    this.checkCounts();
+  _init() {
+    const isOpen = this.isOpen === 'true';
+    const isGuestsType = this.type === 'guests';
+    const isRoomAboutType = this.type === 'room-about';
 
-    if (this.dropType === 'guests') {
-      this.eventListenerConfirmButton();
-      this.eventListenerClearButton();
+    this._bindEventListeners();
+
+    if (isGuestsType) {
+      this._showTotalGuests();
+    }
+
+    if (isRoomAboutType) {
+      this._showTotalAboutRoom();
+    }
+
+    if (isOpen) {
+      this._showList();
+    }
+
+    this.$items.forEach((item) => {
+      const counter = item.lastChild;
+      this._checkItemBtnsStatus(counter)
+    });
+  }
+
+  _bindEventListeners() {
+    const isGuestsType = this.type === 'guests';
+
+    this.$name.addEventListener('click', this._handleList.bind(this));
+    this._bindEventListenerItemButtons();
+
+    if(isGuestsType) {
+      this._bindEventListenerDropdownButtons();
     }
   }
 
-  checkDropIsOpen() {
-    if (this.dropIsOpen === 'true') {
-      this.openDropList();
-    }
+  _bindEventListenerItemButtons() {
+    this.$itemsMinusBtn.forEach((btn) => {
+      btn.addEventListener('click', this._handleMinusBtn.bind(this));
+    });
+    this.$itemsPlusBtn.forEach((btn) => {
+      btn.addEventListener('click', this._handlePlusBtn.bind(this));
+    });
   }
 
-  openDropList() {
-    if (!(this.dropList.classList.contains('dropdown__list-active'))) {
-      this.dropList.classList.add('dropdown__list-active');
-      this.dropName.classList.add('dropdown__name-active');
-      this.dropIcon.classList.add('dropdown__icon-active');
+  _bindEventListenerDropdownButtons() {
+    this.$confirmBtn.addEventListener('click', this._handleConfirmBtn.bind(this));
+    this.$clearBtn.addEventListener('click', this._handleClearBtn.bind(this));
+  }
+
+  _handleList() {
+    const isActive = this.$list.classList.contains('dropdown__list_active');
+
+    if (!isActive) {
+      this._showList();
     } else {
-      this.dropList.classList.remove('dropdown__list-active');
-      this.dropName.classList.remove('dropdown__name-active');
-      this.dropIcon.classList.remove('dropdown__icon-active');
+      this._hideList();
     }
   }
 
-  eventListenerDropList() {
-    this.dropName.addEventListener('click', this.openDropList.bind(this));
+  _showList() {
+    this.$list.classList.add('dropdown__list_active');
+    this.$name.classList.add('dropdown__name_active');
+    this.$icon.classList.add('dropdown__icon_active');
   }
 
-  checkCounts() {
-    const num = [];
-
-    this.dropCounts.forEach((item) => num.push(Number(item.innerHTML)));
-    this.displayCount(num);
+  _hideList() {
+    this.$list.classList.remove('dropdown__list_active');
+    this.$name.classList.remove('dropdown__name_active');
+    this.$icon.classList.remove('dropdown__icon_active');
   }
 
-  displayCount(x) {
-    if (this.dropType === 'room-about') {
-      const [room, bedroom, bathroom] = x;
-      let roomDesc,
-        bedDesc,
-        bathDesc = '';
+  _handleMinusBtn(event) {
+    const $btn = event.currentTarget;
+    const $btnItem = $btn.parentNode;
+    const $total = $btn.nextSibling;
+    const totalIsZero = parseInt($total.innerHTML) === 0;
+    const isRoomAboutType = this.type === 'room-about';
 
-      if (room > 0) {
-        if (room === 1) {
-          roomDesc = `${room} спальня`;
-        } else if (room > 1 && room < 5) {
-          roomDesc = `${room} спальни`;
-        } else if (room > 4) {
-          roomDesc = `${room} спален`;
-        }
-        this.dropTittle.innerHTML = `${roomDesc}...`;
-      } else {
-        roomDesc = '';
-      }
-
-      if (bedroom > 0) {
-        if (bedroom === 1) {
-          bedDesc = `${bedroom} кровать`;
-        } else if (bedroom > 1 && bedroom < 5) {
-          bedDesc = `${bedroom} кровати`;
-        } else if (bedroom > 4) {
-          bedDesc = `${bedroom} кроватей`;
-        }
-        this.dropTittle.innerHTML = `${bedDesc}...`;
-      } else {
-        bedDesc = '';
-      }
-
-      if (bathroom > 0) {
-        if (bathroom === 1) {
-          bathDesc = `${bathroom} ванная комн`;
-        } else if (bathroom > 1 && bathroom < 5) {
-          bathDesc = `${bathroom} ванные комн`;
-        } else if (bathroom > 4) {
-          bathDesc = `${bathroom} ванных комн`;
-        }
-        this.dropTittle.innerHTML = `${bathDesc}...`;
-      } else {
-        bathDesc = '';
-      }
-
-      if (room > 0 && bedroom > 0) {
-        this.dropTittle.innerHTML = `${roomDesc}, ${bedDesc}...`;
-      } else if (room > 0 && bathroom > 0) {
-        this.dropTittle.innerHTML = `${roomDesc}, ${bathDesc}...`;
-      } else if (bedroom > 0 && bathroom > 0) {
-        this.dropTittle.innerHTML = `${bedDesc}, ${bathDesc}...`;
-      }
-
-      if (room > 0 && bedroom > 0 && bathroom > 0) {
-        this.dropTittle.innerHTML = `${roomDesc}, ${bedDesc}, ${bathDesc}...`;
-      }
-
-      if (room === 0 && bedroom === 0 && bathroom === 0) {
-        this.dropTittle.innerHTML = 'спальни, кровати, ванные комн...';
-      }
+    if(!totalIsZero) {
+      $total.innerHTML = parseInt($total.innerHTML) - 1;
     }
 
-    if (this.dropType === 'guests') {
-      let adults = '';
-      let babies = '';
-      const adultsCount = x[0] + x[1];
-      const babiesCount = x[2];
+    this._checkItemBtnsStatus($btnItem);
 
-      if (adultsCount > 0) {
-        if (adultsCount === 1) {
-          adults = `${adultsCount} гость`;
-        } else if (adultsCount > 1 && adultsCount < 5) {
-          adults = `${adultsCount} гостя`;
-        } else if (adultsCount > 4) {
-          adults = `${adultsCount} гостей`;
-        }
-
-        this.dropTittle.innerHTML = adults;
-        this.displayClearButton();
-      } else {
-        this.dropTittle.innerHTML = 'Сколько гостей';
-        this.deleteClearButton();
-      }
-
-      if (babiesCount > 0) {
-        if (babiesCount === 1) {
-          babies = `${babiesCount} младенец`;
-        } else if (babiesCount > 1 && babiesCount < 5) {
-          babies = `${babiesCount} младенца`;
-        } else if (babiesCount > 4) {
-          babies = `${babiesCount} младенцев`;
-        } else {
-          babies = '';
-        }
-      }
-      if (adultsCount > 0 && babiesCount > 0) {
-        this.dropTittle.innerHTML = `${adults}, ${babies}`;
-      }
+    if (isRoomAboutType) {
+      this._showTotalAboutRoom($btnItem);
     }
   }
 
-  eventListenerList() {
-    this.dropList.addEventListener('click', this.handlerList.bind(this));
-  }
+  _handlePlusBtn(event) {
+    const $btn = event.currentTarget;
+    const $btnItem = $btn.parentNode;
+    const $total = $btn.previousSibling;
+    const isRoomAboutType = this.type === 'room-about';
+    $total.innerHTML = parseInt($total.innerHTML) + 1;
 
-  handlerList(event) {
-    const { target } = event;
-
-    if (target.classList.contains('js-dropdown-plus')) {
-      this.plusButton(target);
-    } else if (target.classList.contains('js-dropdown-minus')) {
-      this.minusButton(target);
+    this._checkItemBtnsStatus($btnItem);
+    
+    if (isRoomAboutType) {
+      this._showTotalAboutRoom($btnItem);
     }
   }
 
-  plusButton(elem) {
-    const target = elem;
-    const number = target.previousElementSibling;
-    number.innerHTML = Number(number.innerHTML) + 1;
-    this.checkMinusPlusButtons();
-    if (this.dropType === 'room-about') {
-      this.checkCounts();
+  _checkItemBtnsStatus(item) {
+    const $minus = item.firstChild;
+    const $total = $minus.nextSibling;
+    const totalIsZero = parseInt($total.innerHTML) === 0;
+    const isActiveMinus = $minus.classList.contains('dropdown__item-btn_active');
+
+    if (!totalIsZero && !isActiveMinus) {
+      $minus.classList.add('dropdown__item-btn_active');
+    }
+
+    if (totalIsZero && isActiveMinus) {
+      $minus.classList.remove('dropdown__item-btn_active');
     }
   }
 
-  minusButton(elem) {
-    const target = elem;
-    if (Number(target.nextElementSibling.innerHTML) > 0) {
-      target.nextElementSibling.innerHTML = `${Number(target.nextElementSibling.innerHTML) - 1}`;
-    }
-    this.checkMinusPlusButtons();
-    if (this.dropType === 'room-about') {
-      this.checkCounts();
-    }
+  _showClearBtn() {
+    this.$clearBtn.classList.add('dropdown__clear-btn_active');
   }
 
-  checkMinusPlusButtons() {
-    this.dropItems.forEach((item) => {
-      const confirmed = item;
-      confirmed.number = confirmed.querySelector('.js-dropdown-number');
-      confirmed.plus = confirmed.querySelector('.js-dropdown-plus');
-      confirmed.minus = confirmed.querySelector('.js-dropdown-minus');
+  _hideClearBtn() {
+    this.$clearBtn.classList.remove('dropdown__clear-btn_active');
+  }
 
-      if (!(confirmed.plus.classList.contains('dropdown__list-item-count-btn-active'))) {
-        confirmed.plus.classList.add('dropdown__list-item-count-btn-active');
+  _handleConfirmBtn() {
+    this.$totals.forEach((total) => {
+      const totalIsZero = parseInt(total.innerHTML) === 0;
+
+      if (!totalIsZero) {
+        this._showClearBtn();
       }
-
-      if (Number(confirmed.number.innerHTML) <= 0) {
-        confirmed.number.innerHTML = 0;
-        if (confirmed.minus.classList.contains('dropdown__list-item-count-btn-active')) {
-          confirmed.minus.classList.remove('dropdown__list-item-count-btn-active');
-        }
-      }
-
-      if (Number(confirmed.number.innerHTML) > 0) {
-        if (!(confirmed.minus.classList.contains('dropdown__list-item-count-btn-active'))) {
-          confirmed.minus.classList.add('dropdown__list-item-count-btn-active');
-        }
-      }
-
-      return confirmed;
-    });
-  }
-
-  eventListenerConfirmButton() {
-    this.dropConfirm.addEventListener('click', this.confirmButton.bind(this));
-  }
-
-  confirmButton() {
-    this.checkCounts();
-    this.openDropList();
-  }
-
-  eventListenerClearButton() {
-    this.dropClear.addEventListener('click', this.clearButton.bind(this));
-  }
-
-  clearButton() {
-    this.dropCounts.forEach((item) => {
-      const cleared = item;
-      cleared.innerHTML = 0;
-      return cleared;
     });
 
-    this.checkCounts();
-    this.checkMinusPlusButtons();
+    this._showTotalGuests();
+    this._hideList();
   }
 
-  deleteClearButton() {
-    if (this.dropClear.classList.contains('dropdown__btns-clear-active')) {
-      this.dropClear.classList.remove('dropdown__btns-clear-active');
+  _handleClearBtn() {
+    const isGuestsType = this.type === 'guests';
+    const isRoomAboutType = this.type === 'room-about';
+
+    this.$totals.forEach((total) => {
+      const $totalItem = total.parentNode;
+      total.innerHTML = 0;
+      this._checkItemBtnsStatus($totalItem);
+    });
+
+    if (isGuestsType) {
+      this._showTotalGuests();
     }
+
+    if (isRoomAboutType) {
+      this._showTotalAboutRoom();
+    }
+    
+    this._hideClearBtn();
   }
 
-  displayClearButton() {
-    if (!(this.dropClear.classList.contains('dropdown__btns-clear-active'))) {
-      this.dropClear.classList.add('dropdown__btns-clear-active');
+  _showTotalGuests() {
+    const placeholder = 'Сколько гостей';
+    const getAdultsPlaceholder = (number) => {
+      const isOne = number === 1;
+      const isTwo = number > 1 && number <= 4;
+      const isFive = number > 4;
+
+      if (isOne) return 'гость';
+      if (isTwo) return 'гостя';
+      if (isFive) return 'гостей';
+    };
+    const getBabiesPlaceholder = (number) => {
+      const isOne = number === 1;
+      const isTwo = number > 1 && number <= 4;
+      const isFive = number > 4;
+
+      if (isOne) return 'младенец';
+      if (isTwo) return 'младенца';
+      if (isFive) return 'младенцев';
+    };
+    let adults = 0;
+    let babies = 0;
+
+    this.$items.forEach((item) => {
+      const itemType = item.getAttribute('data-item-type');
+      const $itemTotal = item.querySelector('.js-dropdown__item-total');
+
+      switch (itemType) {
+        case 'взрослые':
+          adults += parseInt($itemTotal.innerHTML);
+          break;
+        case 'дети':
+          adults += parseInt($itemTotal.innerHTML);
+          break;
+        case 'младенцы':
+          babies = parseInt($itemTotal.innerHTML);
+          break;
+        default:
+          break;
+      }
+    });
+
+    const totalAmountIsZero = adults === 0;
+
+    if  (totalAmountIsZero) {
+      this.$placeholder.innerHTML = placeholder;
+    }
+
+    if (!totalAmountIsZero) {
+      const isAdults = adults !== 0;
+      const isBabies = babies !== 0;
+      const adultsPlaceholder = `${adults} ${getAdultsPlaceholder(adults)}`;
+
+      if (isAdults && isBabies) {
+        const babiesPlaceholder = `${babies} ${getBabiesPlaceholder(babies)}`;
+
+        this.$placeholder.innerHTML = `${adultsPlaceholder}, ${babiesPlaceholder}`;
+      }
+      
+      if (isAdults && !isBabies) {
+        this.$placeholder.innerHTML = `${adultsPlaceholder}`;
+      }
+    }
+    
+  }
+
+  _showTotalAboutRoom() {
+    const placeholder = 'Выберите удобства';
+    const getBedroomsPlaceholder = (number) => {
+      const isOne = number === 1;
+      const isTwo = number > 1 && number <= 4;
+      const isFive = number > 4;
+
+      if (isOne) return 'спальня';
+      if (isTwo) return 'спальни';
+      if (isFive) return 'спальней';
+    };
+    const getBedsPlaceholder = (number) => {
+      const isOne = number === 1;
+      const isTwo = number > 1 && number <= 4;
+      const isFive = number > 4;
+
+      if (isOne) return 'кровать';
+      if (isTwo) return 'кровати';
+      if (isFive) return 'кроватей';
+    };
+    const getBathroomsPlaceholder = (number) => {
+      const isOne = number === 1;
+      const isTwo = number > 1 && number <= 4;
+      const isFive = number > 4;
+
+      if (isOne) return 'ванная комната';
+      if (isTwo) return 'ванные комнаты';
+      if (isFive) return 'ванных комнат';
+    };
+    let bedrooms = 0;
+    let beds = 0;
+    let bathrooms = 0;
+
+    this.$items.forEach((item) => {
+      const itemType = item.getAttribute('data-item-type');
+      const $itemTotal = item.querySelector('.js-dropdown__item-total');
+
+      switch (itemType) {
+        case 'спальни':
+          bedrooms = parseInt($itemTotal.innerHTML);
+          break;
+        case 'кровати':
+          beds = parseInt($itemTotal.innerHTML);
+          break;
+        case 'ванные комнаты':
+          bathrooms = parseInt($itemTotal.innerHTML);
+          break;
+        default:
+          break;
+      }
+    });
+
+    const totalAmount = bedrooms + beds + bathrooms;
+    const totalAmountIsZero = totalAmount === 0;
+
+    if  (totalAmountIsZero) {
+      this.$placeholder.innerHTML = placeholder;
+    }
+
+    if (!totalAmountIsZero) {
+      const isBedrooms = bedrooms !== 0;
+      const isBeds = beds !== 0;
+      const isBathrooms = bathrooms !== 0;
+      const bedroomsPlaceholder = `${bedrooms} ${getBedroomsPlaceholder(bedrooms)}`;
+      const bedsPlaceholder = `${beds} ${getBedsPlaceholder(beds)}`;
+      const bathroomsPlaceholder = `${bathrooms} ${getBathroomsPlaceholder(bathrooms)}`;
+
+      if (isBedrooms) {
+        if (isBeds) {
+          this.$placeholder.innerHTML = `${bedroomsPlaceholder}, ${bedsPlaceholder}...`;
+        }
+
+        if (!isBeds && isBathrooms) {
+          this.$placeholder.innerHTML = `${bedroomsPlaceholder}...`;
+        }
+
+        if (!isBeds && !isBathrooms) {
+          this.$placeholder.innerHTML = `${bedroomsPlaceholder}`;
+        }
+      }
+
+      if (!isBedrooms) {
+        if (isBeds && isBathrooms) {
+          this.$placeholder.innerHTML = `${bedsPlaceholder}...`;
+        }
+
+        if (isBeds && !isBathrooms) {
+          this.$placeholder.innerHTML = `${bedsPlaceholder}`;
+        }
+
+        if (!isBeds && isBathrooms) {
+          this.$placeholder.innerHTML = `${bathroomsPlaceholder}`;
+        }
+      }
     }
   }
 }
