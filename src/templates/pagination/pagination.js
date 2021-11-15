@@ -6,10 +6,10 @@ class Pagination {
     this.$pagBody = this.$container.find('.js-pagination__body');
     this.$pagTittle = this.$container.find('.js-pagination__tittle');
 
-    this.init();
+    this._init();
   }
 
-  init() {
+  _init() {
     this.$pagBody.pagination({
       items: 15,
       itemsOnPage: 1,

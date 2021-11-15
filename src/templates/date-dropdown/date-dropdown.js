@@ -10,12 +10,8 @@ class DateDropdown {
     this.isCalendarOpen = this.body.getAttribute('data-calendar-isOpen');
     this.observers = [];
 
-    this.init();
-    this.bindEventListenerInputs();
-  }
-
-  notifyObservers(data) {
-    this.observers.forEach((observer) => observer(data));
+    this._init();
+    this._bindEventListenerInputs();
   }
 
   observeDateChanges(observer) {
@@ -26,19 +22,19 @@ class DateDropdown {
     }
   }
 
-  init() {
+  _init() {
     const isOpen = this.isCalendarOpen === 'true';
 
     this.calendar = new Calendar({
       body: this.calendarBody,
       isOpen,
       options: {
-        onSelect: (formattedDate) => this.setDates(formattedDate),
+        onSelect: (formattedDate) => this._setDates(formattedDate),
       },
     });
   }
 
-  bindEventListenerInputs() {
+  _bindEventListenerInputs() {
     const { calendar } = this;
     const [bodyArrivalInput, bodyDepatureInput] = this.bodyInputs;
 
@@ -46,7 +42,11 @@ class DateDropdown {
     bodyDepatureInput.addEventListener('click', calendar.checkIsOpen.bind(calendar));
   }
 
-  setDates(dates) {
+  _notifyObservers(data) {
+    this.observers.forEach((observer) => observer(data));
+  }
+
+  _setDates(dates) {
     const { arrivalInput, depatureInput } = this;
     const inputPlaceholder = 'ДД.ММ.ГГГГ'.toUpperCase();
     const isSelectedDate = (date) => {
@@ -73,7 +73,7 @@ class DateDropdown {
       depatureInput.innerHTML = inputPlaceholder;
     }
 
-    this.notifyObservers(dates);
+    this._notifyObservers(dates);
   }
 }
 export default DateDropdown;

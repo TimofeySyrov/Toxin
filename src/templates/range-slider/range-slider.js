@@ -8,11 +8,11 @@ class RangeSlider {
     this.maxPrice = elem.querySelector('.js-range-slider__max-price');
     this.rangeBody = elem.querySelector('.js-range-slider__slider');
 
-    this.init();
-    this.bindEventListener();
+    this._init();
+    this._bindEventListener();
   }
 
-  init() {
+  _init() {
     if (this.rangeBody) {
       noUiSlider.create(this.rangeBody, {
         start: [Number(parseInt(this.minPrice.innerHTML.match(/\d+/))), Number(parseInt(this.maxPrice.innerHTML.match(/\d+/)))],
@@ -26,11 +26,11 @@ class RangeSlider {
     }
   }
 
-  bindEventListener() {
-    this.rangeBody.noUiSlider.on('update', this.setValues.bind(this));
+  _bindEventListener() {
+    this.rangeBody.noUiSlider.on('update', this._setValues.bind(this));
   }
 
-  setValues(values, handle) {
+  _setValues(values, handle) {
     const prices = [this.minPrice, this.maxPrice];
     prices[handle].innerHTML = Math.round(values[handle]).toLocaleString('ru-RU') + prices[handle].innerHTML.slice(-1);
   }

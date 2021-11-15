@@ -53,7 +53,7 @@ class Dropdown {
   _bindEventListeners() {
     const isGuestsType = this.type === 'guests';
 
-    this.$name.addEventListener('click', this._handleList.bind(this));
+    this.$name.addEventListener('click', this._handleListClick.bind(this));
     this._bindEventListenerItemButtons();
 
     if(isGuestsType) {
@@ -63,19 +63,19 @@ class Dropdown {
 
   _bindEventListenerItemButtons() {
     this.$itemsMinusBtn.forEach((btn) => {
-      btn.addEventListener('click', this._handleMinusBtn.bind(this));
+      btn.addEventListener('click', this._handleMinusBtnClick.bind(this));
     });
     this.$itemsPlusBtn.forEach((btn) => {
-      btn.addEventListener('click', this._handlePlusBtn.bind(this));
+      btn.addEventListener('click', this._handlePlusBtnClick.bind(this));
     });
   }
 
   _bindEventListenerDropdownButtons() {
-    this.$confirmBtn.addEventListener('click', this._handleConfirmBtn.bind(this));
-    this.$clearBtn.addEventListener('click', this._handleClearBtn.bind(this));
+    this.$confirmBtn.addEventListener('click', this._handleConfirmBtnClick.bind(this));
+    this.$clearBtn.addEventListener('click', this._handleClearBtnClick.bind(this));
   }
 
-  _handleList() {
+  _handleListClick() {
     const isActive = this.$list.classList.contains('dropdown__list_active');
 
     if (!isActive) {
@@ -97,7 +97,7 @@ class Dropdown {
     this.$icon.classList.remove('dropdown__icon_active');
   }
 
-  _handleMinusBtn(event) {
+  _handleMinusBtnClick(event) {
     const $btn = event.currentTarget;
     const $btnItem = $btn.parentNode;
     const $total = $btn.nextSibling;
@@ -115,7 +115,7 @@ class Dropdown {
     }
   }
 
-  _handlePlusBtn(event) {
+  _handlePlusBtnClick(event) {
     const $btn = event.currentTarget;
     const $btnItem = $btn.parentNode;
     const $total = $btn.previousSibling;
@@ -152,7 +152,7 @@ class Dropdown {
     this.$clearBtn.classList.remove('dropdown__clear-btn_active');
   }
 
-  _handleConfirmBtn() {
+  _handleConfirmBtnClick() {
     this.$totals.forEach((total) => {
       const totalIsZero = parseInt(total.innerHTML) === 0;
 
@@ -165,7 +165,7 @@ class Dropdown {
     this._hideList();
   }
 
-  _handleClearBtn() {
+  _handleClearBtnClick() {
     const isGuestsType = this.type === 'guests';
     const isRoomAboutType = this.type === 'room-about';
 

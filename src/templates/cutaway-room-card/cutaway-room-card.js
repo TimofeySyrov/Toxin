@@ -4,18 +4,14 @@ import '../rate-button/rate-button-init';
 
 class CutawayRoom {
   constructor(elem) {
-    this.container = elem;
+    this.$container = $(elem);
+    this.$sliderBody = this.$container.find('.js-cutaway-room-card__slider');
 
-    this.findDOMElements();
-    this.sliderInit();
+    this._initImageSlider();
   }
 
-  findDOMElements() {
-    this.sliderBody = $(this.container).find('.js-cutaway-room-card__slider');
-  }
-
-  sliderInit() {
-    this.sliderBody.slick({
+  _initImageSlider() {
+    this.$sliderBody.slick({
       dots: true,
       infinite: true,
       slidesToShow: 1,

@@ -8,7 +8,7 @@ class Calendar {
     this.firstInitIsOpen = params.isOpen;
 
     this._init(this.options);
-    this._bindEventListenerBtns();
+    this._bindEventListenerBtnsClick();
   }
 
   checkIsOpen() {
@@ -64,7 +64,7 @@ class Calendar {
       append([clearBtnTemplate, confirmBtnTemplate]);
   }
 
-  _bindEventListenerBtns() {
+  _bindEventListenerBtnsClick() {
     const $clearBtn = this.$body.find('.js-calendar-clear');
     const $confirmBtn = this.$body.find('.js-calendar-confirm');
 

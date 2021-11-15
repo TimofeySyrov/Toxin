@@ -8,11 +8,11 @@ class FilterDateDropdown {
     this.calendarInput = this.body.querySelector('.js-filter-date-dropdown__input');
     this.isCalendarOpen = this.body.getAttribute('data-calendar-isopen');
 
-    this.init();
-    this.bindEventListener();
+    this._init();
+    this._bindEventListener();
   }
 
-  init() {
+  _init() {
     const isOpen = this.isCalendarOpen === 'true';
 
     this.calendar = new Calendar({
@@ -20,12 +20,16 @@ class FilterDateDropdown {
       isOpen,
       options: {
         dateFormat: 'd M',
-        onSelect: (formattedDate) => this.setDates(formattedDate),
+        onSelect: (formattedDate) => this._setDates(formattedDate),
       }
     })
   }
 
-  setDates(dates) {
+  _bindEventListener() {
+    this.nameBox.addEventListener('click', this.calendar.checkIsOpen.bind(this.calendar));
+  }
+
+  _setDates(dates) {
     const inputPlaceholder = 'Выберите даты';
     const isSelectedDate = (date) => {
       const isUndefined  = date === undefined;
@@ -49,10 +53,6 @@ class FilterDateDropdown {
     } else {
       this.calendarInput.innerHTML = inputPlaceholder;
     }
-  }
-
-  bindEventListener() {
-    this.nameBox.addEventListener('click', this.calendar.checkIsOpen.bind(this.calendar));
   }
 }
 

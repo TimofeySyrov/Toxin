@@ -7,21 +7,21 @@ class DonutChart {
     this.list = this.container.querySelector('.js-donut-chart-list');
     this.options = options;
 
-    this.render();
+    this._render();
   }
 
-  render() {
+  _render() {
     const { data, options } = this.options;
 
-    this.initChart();
-    this.createChartTextInside(data, options);
-    this.createChartLabelsList(data);
+    this._initChart();
+    this._createChartTextInside(data, options);
+    this._createChartLabelsList(data);
   }
 
-  initChart() {
+  _initChart() {
     const { size, data } = this.options;
-    const chart = this.createChart();
-    const chartDataGradients = this.createChartGradients(chart);
+    const chart = this._createChart();
+    const chartDataGradients = this._createChartGradients(chart);
     const radiusOutSide = size.radius.outside;
     const radiusInSide = size.radius.inside;
 
@@ -54,7 +54,7 @@ class DonutChart {
       .style('stroke-width', '2px');
   }
 
-  createChart() {
+  _createChart() {
     const { size } = this.options;
     const svg = d3.select(this.diagram)
       .append('svg')
@@ -67,7 +67,7 @@ class DonutChart {
     return svg;
   }
 
-  createChartGradients(chart) {
+  _createChartGradients(chart) {
     const { data } = this.options;
     const defs = chart.append('defs');
     const dataGradients = [];
@@ -100,7 +100,7 @@ class DonutChart {
     return dataGradients;
   }
 
-  createChartTextInside(data, options) {
+  _createChartTextInside(data, options) {
     let total = 0;
     data.forEach((item) => {
       total += Number(item.value);
@@ -114,7 +114,7 @@ class DonutChart {
     this.diagram.innerHTML += templateTextInside;
   }
 
-  createChartLabelsList(data) {
+  _createChartLabelsList(data) {
     const items = data.map((item) => `
       <li class='donut-chart__list-item'>
         <svg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
