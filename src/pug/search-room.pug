@@ -19,6 +19,7 @@ html(lang="ru")
                   isOpen: false
                 })
               .filter-room-sidebar__item.sidebar-guests-dropdown
+                span.filter-room-sidebar__input-title гости
                 include ../templates/dropdown/dropdown.pug
                 +dropdown({
                   isOpen: false,
@@ -54,6 +55,7 @@ html(lang="ru")
                   ]
                 })
               .filter-room-sidebar__item.sidebar-room-about-dropdown
+                span.filter-room-sidebar__input-title удобства номера
                 +dropdown({
                   dropType: 'room-about',
                   isOpen: false,
