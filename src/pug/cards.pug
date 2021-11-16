@@ -1,3 +1,10 @@
+include ../templates/logo/logo.pug
+include ../templates/start-filter/start-filter.pug
+include ../templates/registration-card/registration-card.pug
+include ../templates/room-info-card/room-info-card.pug
+include ../templates/login-card/login-card.pug
+include ../templates/cutaway-room-card/cutaway-room-card.pug
+
 doctype html
 html(lang="en")
   head
@@ -8,7 +15,6 @@ html(lang="en")
   body.body
     header.header
       .header__container
-        include ../templates/logo/logo.pug
         .header__logo
           +logo({
             full: false
@@ -19,21 +25,16 @@ html(lang="en")
           .basic-wrap
             .start-cards-custom-column
               .start-cards-custom-column__item
-                include ../templates/start-filter/start-filter.pug
                 +start-filter
               .start-cards-custom-column__item
-                include ../templates/registration-card/registration-card.pug
                 +registration-card
             .middle-cards-custom-column
               .middle-cards-custom-column__item
-                include ../templates/room-info-card/room-info-card.pug
                 +room-info-card
               .middle-cards-custom-column__item
-                include ../templates/login-card/login-card.pug
                 +login-card
             .end-cards-custom-column
               .end-cards-custom-column__item
-                include ../templates/cutaway-room-card/cutaway-room-card.pug
                 +cutaway-room-card({
                   sliders: [
                     {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
