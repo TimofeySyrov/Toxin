@@ -60,8 +60,8 @@ class Calendar {
 
     this.$body.find('.datepicker')
       .append('<div class="date-picker-calendar__buttons"></div>');
-    this.$body.find('.date-picker-calendar__buttons').
-      append([clearBtnTemplate, confirmBtnTemplate]);
+    this.$body.find('.date-picker-calendar__buttons')
+      .append([clearBtnTemplate, confirmBtnTemplate]);
   }
 
   _bindEventListenerBtnsClick() {

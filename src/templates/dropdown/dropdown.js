@@ -9,19 +9,19 @@ class Dropdown {
   _findDomElements() {
     this.type = this.container.getAttribute('data-type');
     this.isOpen = this.container.getAttribute('data-is-open');
-    this.$name = this.container.querySelector('.js-dropdown__name');
-    this.$placeholder = this.container.querySelector('.js-dropdown__placeholder');
-    this.$icon = this.container.querySelector('.js-dropdown__icon');
-    this.$list = this.container.querySelector('.js-dropdown__list');
-    this.$totals = this.container.querySelectorAll('.js-dropdown__item-total');
-    this.$items = this.container.querySelectorAll('.js-dropdown__item');
-    this.$itemsMinusBtn = this.container.querySelectorAll('.js-dropdown__minus-btn');
-    this.$itemsPlusBtn = this.container.querySelectorAll('.js-dropdown__plus-btn');
+    this.nameBox = this.container.querySelector('.js-dropdown__name');
+    this.placeholderBox = this.container.querySelector('.js-dropdown__placeholder');
+    this.iconBox = this.container.querySelector('.js-dropdown__icon');
+    this.listBox = this.container.querySelector('.js-dropdown__list');
+    this.totalBoxes = this.container.querySelectorAll('.js-dropdown__item-total');
+    this.itemBoxes = this.container.querySelectorAll('.js-dropdown__item');
+    this.itemsMinusBtn = this.container.querySelectorAll('.js-dropdown__minus-btn');
+    this.itemPlusBtn = this.container.querySelectorAll('.js-dropdown__plus-btn');
     const isGuestsType = this.type === 'guests';
 
     if (isGuestsType) {
-      this.$confirmBtn = this.container.querySelector('.js-dropdown__confirm-btn');
-      this.$clearBtn = this.container.querySelector('.js-dropdown__clear-btn ');
+      this.confirmBtn = this.container.querySelector('.js-dropdown__confirm-btn');
+      this.clearBtn = this.container.querySelector('.js-dropdown__clear-btn ');
     }
   }
 
@@ -44,7 +44,7 @@ class Dropdown {
       this._showList();
     }
 
-    this.$items.forEach((item) => {
+    this.itemBoxes.forEach((item) => {
       const counter = item.lastChild;
       this._checkItemBtnsStatus(counter)
     });
@@ -53,7 +53,7 @@ class Dropdown {
   _bindEventListeners() {
     const isGuestsType = this.type === 'guests';
 
-    this.$name.addEventListener('click', this._handleListClick.bind(this));
+    this.nameBox.addEventListener('click', this._handleListClick.bind(this));
     this._bindEventListenerItemButtons();
 
     if(isGuestsType) {
@@ -62,21 +62,21 @@ class Dropdown {
   }
 
   _bindEventListenerItemButtons() {
-    this.$itemsMinusBtn.forEach((btn) => {
+    this.itemsMinusBtn.forEach((btn) => {
       btn.addEventListener('click', this._handleMinusBtnClick.bind(this));
     });
-    this.$itemsPlusBtn.forEach((btn) => {
+    this.itemPlusBtn.forEach((btn) => {
       btn.addEventListener('click', this._handlePlusBtnClick.bind(this));
     });
   }
 
   _bindEventListenerDropdownButtons() {
-    this.$confirmBtn.addEventListener('click', this._handleConfirmBtnClick.bind(this));
-    this.$clearBtn.addEventListener('click', this._handleClearBtnClick.bind(this));
+    this.confirmBtn.addEventListener('click', this._handleConfirmBtnClick.bind(this));
+    this.clearBtn.addEventListener('click', this._handleClearBtnClick.bind(this));
   }
 
   _handleListClick() {
-    const isActive = this.$list.classList.contains('dropdown__list_active');
+    const isActive = this.listBox.classList.contains('dropdown__list_active');
 
     if (!isActive) {
       this._showList();
@@ -86,15 +86,15 @@ class Dropdown {
   }
 
   _showList() {
-    this.$list.classList.add('dropdown__list_active');
-    this.$name.classList.add('dropdown__name_active');
-    this.$icon.classList.add('dropdown__icon_active');
+    this.listBox.classList.add('dropdown__list_active');
+    this.nameBox.classList.add('dropdown__name_active');
+    this.iconBox.classList.add('dropdown__icon_active');
   }
 
   _hideList() {
-    this.$list.classList.remove('dropdown__list_active');
-    this.$name.classList.remove('dropdown__name_active');
-    this.$icon.classList.remove('dropdown__icon_active');
+    this.listBox.classList.remove('dropdown__list_active');
+    this.nameBox.classList.remove('dropdown__name_active');
+    this.iconBox.classList.remove('dropdown__icon_active');
   }
 
   _handleMinusBtnClick(event) {
@@ -145,15 +145,15 @@ class Dropdown {
   }
 
   _showClearBtn() {
-    this.$clearBtn.classList.add('dropdown__clear-btn_active');
+    this.clearBtn.classList.add('dropdown__clear-btn_active');
   }
 
   _hideClearBtn() {
-    this.$clearBtn.classList.remove('dropdown__clear-btn_active');
+    this.clearBtn.classList.remove('dropdown__clear-btn_active');
   }
 
   _handleConfirmBtnClick() {
-    this.$totals.forEach((total) => {
+    this.totalBoxes.forEach((total) => {
       const totalIsZero = parseInt(total.innerHTML) === 0;
 
       if (!totalIsZero) {
@@ -169,7 +169,7 @@ class Dropdown {
     const isGuestsType = this.type === 'guests';
     const isRoomAboutType = this.type === 'room-about';
 
-    this.$totals.forEach((total) => {
+    this.totalBoxes.forEach((total) => {
       const $totalItem = total.parentNode;
       total.innerHTML = 0;
       this._checkItemBtnsStatus($totalItem);
@@ -209,7 +209,7 @@ class Dropdown {
     let adults = 0;
     let babies = 0;
 
-    this.$items.forEach((item) => {
+    this.itemBoxes.forEach((item) => {
       const itemType = item.getAttribute('data-item-type');
       const $itemTotal = item.querySelector('.js-dropdown__item-total');
 
@@ -231,7 +231,7 @@ class Dropdown {
     const totalAmountIsZero = adults === 0;
 
     if  (totalAmountIsZero) {
-      this.$placeholder.innerHTML = placeholder;
+      this.placeholderBox.innerHTML = placeholder;
     }
 
     if (!totalAmountIsZero) {
@@ -242,11 +242,11 @@ class Dropdown {
       if (isAdults && isBabies) {
         const babiesPlaceholder = `${babies} ${getBabiesPlaceholder(babies)}`;
 
-        this.$placeholder.innerHTML = `${adultsPlaceholder}, ${babiesPlaceholder}`;
+        this.placeholderBox.innerHTML = `${adultsPlaceholder}, ${babiesPlaceholder}`;
       }
       
       if (isAdults && !isBabies) {
-        this.$placeholder.innerHTML = `${adultsPlaceholder}`;
+        this.placeholderBox.innerHTML = `${adultsPlaceholder}`;
       }
     }
     
@@ -285,7 +285,7 @@ class Dropdown {
     let beds = 0;
     let bathrooms = 0;
 
-    this.$items.forEach((item) => {
+    this.itemBoxes.forEach((item) => {
       const itemType = item.getAttribute('data-item-type');
       const $itemTotal = item.querySelector('.js-dropdown__item-total');
 
@@ -308,7 +308,7 @@ class Dropdown {
     const totalAmountIsZero = totalAmount === 0;
 
     if  (totalAmountIsZero) {
-      this.$placeholder.innerHTML = placeholder;
+      this.placeholderBox.innerHTML = placeholder;
     }
 
     if (!totalAmountIsZero) {
@@ -321,29 +321,29 @@ class Dropdown {
 
       if (isBedrooms) {
         if (isBeds) {
-          this.$placeholder.innerHTML = `${bedroomsPlaceholder}, ${bedsPlaceholder}...`;
+          this.placeholderBox.innerHTML = `${bedroomsPlaceholder}, ${bedsPlaceholder}...`;
         }
 
         if (!isBeds && isBathrooms) {
-          this.$placeholder.innerHTML = `${bedroomsPlaceholder}...`;
+          this.placeholderBox.innerHTML = `${bedroomsPlaceholder}...`;
         }
 
         if (!isBeds && !isBathrooms) {
-          this.$placeholder.innerHTML = `${bedroomsPlaceholder}`;
+          this.placeholderBox.innerHTML = `${bedroomsPlaceholder}`;
         }
       }
 
       if (!isBedrooms) {
         if (isBeds && isBathrooms) {
-          this.$placeholder.innerHTML = `${bedsPlaceholder}...`;
+          this.placeholderBox.innerHTML = `${bedsPlaceholder}...`;
         }
 
         if (isBeds && !isBathrooms) {
-          this.$placeholder.innerHTML = `${bedsPlaceholder}`;
+          this.placeholderBox.innerHTML = `${bedsPlaceholder}`;
         }
 
         if (!isBeds && isBathrooms) {
-          this.$placeholder.innerHTML = `${bathroomsPlaceholder}`;
+          this.placeholderBox.innerHTML = `${bathroomsPlaceholder}`;
         }
       }
     }

@@ -1,12 +1,12 @@
 import noUiSlider from 'nouislider';
 
 class RangeSlider {
-  constructor(elem) {
-    this.element = elem;
+  constructor(container) {
+    this.container = container;
 
-    this.minPrice = elem.querySelector('.js-range-slider__min-price');
-    this.maxPrice = elem.querySelector('.js-range-slider__max-price');
-    this.rangeBody = elem.querySelector('.js-range-slider__slider');
+    this.minPrice = this.container.querySelector('.js-range-slider__min-price');
+    this.maxPrice = this.container.querySelector('.js-range-slider__max-price');
+    this.rangeBody = this.container.querySelector('.js-range-slider__slider');
 
     this._init();
     this._bindEventListener();
