@@ -4,7 +4,7 @@ include ../buttons/buttons.pug
 
 mixin room-info-card({  }={})
   .room-info-card.js-room-info-card
-    .room-info-card__tittle
+    .room-info-card__title
       .room-info-card__room-number
         span.room-info-card__separator №!{' '}
         span.room-info-card__number-id.js-room-info-card__id 888
@@ -18,6 +18,7 @@ mixin room-info-card({  }={})
         isOpen: false,
       })
     .room-info-card__guests
+      span.room-info-card__input-title гости
       +dropdown({
         isOpenList: false,
         list: [

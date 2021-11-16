@@ -4,12 +4,13 @@ include ../buttons/buttons.pug
 
 mixin start-filter({ tittle = 'Найдём номера под ваши пожелания' }={})
   .start-filter.js-start-filter
-    p.start-filter__tittle #{tittle}
+    p.start-filter__title #{tittle}
     .start-filter__dates
       +date-dropdown({
         isOpen: false,
       })
     .start-filter__guests
+      span.start-filter__input-title гости
       +dropdown({
         dropType: 'guests',
         isOpenList: false,
