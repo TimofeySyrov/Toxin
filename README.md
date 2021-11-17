@@ -23,9 +23,23 @@ $ cd Toxin
 $ npm i && npm run start
 ```
 
-## NPM commands
+## NPM команды
 ```js
 $ npm run start  // Запуск webpack devServer
 $ npm run dev  // Инициализация приложения в режиме development
 $ npm run build  // Инициализация приложения в режиме production
 ```
+
+## Используемые библиотеки
+<h3>NPM библиотеки</h3>
+
+* <a href="https://github.com/t1m0n/air-datepicker">air-datepicker</a>
+* <a href="https://github.com/d3/d3">d3</a>
+* <a href="https://github.com/RobinHerbots/Inputmask">inputmask</a>
+* <a href="https://github.com/antennaio/jquery-bar-rating">jquery-bar-rating</a>
+* <a href="https://github.com/necolas/normalize.css">normalize.css</a>
+* <a href="https://github.com/leongersen/noUiSlider">nouislider</a>
+* <a href="https://github.com/kenwheeler/slick">slick-carousel</a>
+
+<h3>Локальные библиотеки (директория libs)</h3>
+* <a>simplePagination</a>
