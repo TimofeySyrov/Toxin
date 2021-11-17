@@ -42,4 +42,5 @@ $ npm run build  // Инициализация приложения в режи�
 * <a href="https://github.com/kenwheeler/slick">slick-carousel</a>
 
 <h3>Локальные библиотеки (директория libs)</h3>
+
 * <a>simplePagination</a>
