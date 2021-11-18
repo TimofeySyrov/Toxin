@@ -8,17 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: {
-    'index': ['./js/index.js'],
-    'search-room': ['./js/search-room.js'],
-    'room-details': ['./js/room-details.js'],
-    'sign-in': ['./js/sign-in.js'],
-    'sign-up': ['./js/sign-up.js'],
-    'colors-type': ['./js/colors-type.js'],
-    'form-elements': ['./js/form-elements.js'],
-    'cards': ['./js/cards.js'],
-    'headers-footers': ['./js/headers-footers.js']
-  },
+  entry: './js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js'
@@ -52,47 +42,38 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './pug/index.pug',
-      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
       filename: 'search-room.html',
       template: './pug/search-room.pug',
-      chunks: ['search-room'],
     }),
     new HtmlWebpackPlugin({
       filename: 'room-details.html',
       template: './pug/room-details.pug',
-      chunks: ['room-details'],
     }),
     new HtmlWebpackPlugin({
       filename: 'sign-in.html',
       template: './pug/sign-in.pug',
-      chunks: ['sign-in'],
     }),
     new HtmlWebpackPlugin({
       filename: 'sign-up.html',
       template: './pug/sign-up.pug',
-      chunks: ['sign-up'],
     }),
     new HtmlWebpackPlugin({
       filename: 'colors-type.html',
       template: './pug/colors-type.pug',
-      chunks: ['colors-type'],
     }),
     new HtmlWebpackPlugin({
       filename: 'form-elements.html',
       template: './pug/form-elements.pug',
-      chunks: ['form-elements'],
     }),
     new HtmlWebpackPlugin({
       filename: 'cards.html',
       template: './pug/cards.pug',
-      chunks: ['cards'],
     }),
     new HtmlWebpackPlugin({
       filename: 'headers-footers.html',
       template: './pug/headers-footers.pug',
-      chunks: ['headers-footers'],
     }),
   ],
   module: {
@@ -107,12 +88,12 @@ module.exports = {
           }
         }
       },
+      // {
+      //   test: /\.css$/i,
+      //   use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      // },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.s[ac]ss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -122,8 +103,18 @@ module.exports = {
               }
             },
           },
-          'css-loader',
-          'sass-loader',
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, 'src/styles/colors.scss'),
+            },
+          },
         ],
       },
       {
@@ -139,9 +130,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '/img/[name].[ext]',
-              outputPath: './assets',
-              useRelativePath: true
+              name: 'assets/img/[name].[ext]',
+              publicPath: '../',
         },
           }
         ]
@@ -152,8 +142,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '/fonts/[name].[ext]',
-            outputPath: './assets',
+            name: './assets/fonts/[name].[ext]',
             useRelativePath: true,
           }
         }
