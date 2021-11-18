@@ -1,0 +1,86 @@
+.button {
+  max-width: 320px;
+  min-height: 34px;
+  height: fit-content;
+  padding: 14px 20px 14px 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+  }
+
+  &_type {
+    &_default {
+      color: $purple;
+    
+      &:hover {
+        color: $dark_shade_50;
+      }
+    }
+
+    &_background {
+      padding: 0 20px;
+      border-radius: 22px;
+      color: #fff;
+      background: $main-gradient;
+          
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &_border {
+      padding: 0 18px;
+      border: 2px solid transparent;
+      border-radius: 22px;
+      color: $purple;
+      background: $main-gradient;
+      background-position: center center;
+      box-shadow: inset 0 0 0 100px #fff;
+      background-size:  110% 110%;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &_long {
+      width: 100%;
+      padding-right: 44px;
+      position: relative;
+      border-radius: 22px;
+      color: #fff;
+      background: $main-gradient;
+          
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &_size {
+    &_small {
+      min-height: 34px;
+      padding: 9px 20px 9px 20px;
+    }
+  }
+}

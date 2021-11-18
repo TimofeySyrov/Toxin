@@ -1,0 +1,9 @@
+//- type = ['default', 'background', 'border', 'long'];
+mixin button({ type = 'default', small = false, href = '/mock-address/change-me', text = 'click me', target }={})
+  - var typeClassName = 'button_type_' + type;
+  - var sizeClassName = small && 'button_size_small';
+
+  a.button(href= href target= target class= [typeClassName, sizeClassName])
+    span.button__title #{text}
+    if type === 'long'
+      span.material-icons.button__icon arrow_forward
