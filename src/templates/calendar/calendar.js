@@ -8,7 +8,7 @@ class Calendar {
     this.firstInitIsOpen = params.isOpen;
 
     this._init(this.options);
-    this._bindEventListenerBtnsClick();
+    this._bindEventListenerBtns();
   }
 
   checkIsOpen() {
@@ -30,7 +30,6 @@ class Calendar {
         days: '<span>MM yyyy</span>',
       },
       dateFormat: 'dd.mm.yyyy',
-      minDate: new Date(),
       prevHtml: '<i class="material-icons">arrow_back</i>',
       nextHtml: '<i class="material-icons">arrow_forward</i>',
     };
@@ -64,12 +63,20 @@ class Calendar {
       .append([clearBtnTemplate, confirmBtnTemplate]);
   }
 
-  _bindEventListenerBtnsClick() {
+  _bindEventListenerBtns() {
     const $clearBtn = this.$body.find('.js-calendar-clear');
     const $confirmBtn = this.$body.find('.js-calendar-confirm');
 
-    $clearBtn.on('click', this._resetDate.bind(this));
-    $confirmBtn.on('click', this._hideCalendar.bind(this));
+    $clearBtn.on('click', this._handleClearBtnClick.bind(this));
+    $confirmBtn.on('click', this._handleConfirmBtnClick.bind(this));
+  }
+
+  _handleClearBtnClick() {
+    this._resetDate();
+  }
+
+  _handleConfirmBtnClick() {
+    this._hideCalendar();
   }
 
   _showCalendar() {

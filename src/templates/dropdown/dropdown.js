@@ -53,7 +53,7 @@ class Dropdown {
   _bindEventListeners() {
     const isGuestsType = this.type === 'guests';
 
-    this.nameBox.addEventListener('click', this._handleListClick.bind(this));
+    this.nameBox.addEventListener('click', this._handleNameBoxClick.bind(this));
     this._bindEventListenerItemButtons();
 
     if(isGuestsType) {
@@ -75,7 +75,7 @@ class Dropdown {
     this.clearBtn.addEventListener('click', this._handleClearBtnClick.bind(this));
   }
 
-  _handleListClick() {
+  _handleNameBoxClick() {
     const isActive = this.listBox.classList.contains('dropdown__list_active');
 
     if (!isActive) {

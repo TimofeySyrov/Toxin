@@ -9,7 +9,11 @@ class CheckboxList {
   }
 
   _bindEventListener() {
-    this.checkboxNameContainer.addEventListener('click', this._checkIsOpen.bind(this));
+    this.checkboxNameContainer.addEventListener('click', this._handleCheckboxNameContainerClick.bind(this));
+  }
+
+  _handleCheckboxNameContainerClick() {
+    this._checkIsOpen();
   }
 
   _checkIsOpen() {

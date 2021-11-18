@@ -27,7 +27,11 @@ class RangeSlider {
   }
 
   _bindEventListener() {
-    this.rangeBody.noUiSlider.on('update', this._setValues.bind(this));
+    this.rangeBody.noUiSlider.on('update', this._handleRangeBodyUpdate.bind(this));
+  }
+
+  _handleRangeBodyUpdate(values, handle) {
+    this._setValues(values, handle);
   }
 
   _setValues(values, handle) {

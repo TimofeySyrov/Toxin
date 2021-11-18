@@ -26,7 +26,11 @@ class FilterDateDropdown {
   }
 
   _bindEventListener() {
-    this.nameBox.addEventListener('click', this.calendar.checkIsOpen.bind(this.calendar));
+    this.nameBox.addEventListener('click', this._handleNameBoxClick.bind(this));
+  }
+
+  _handleNameBoxClick() {
+    this.calendar.checkIsOpen();
   }
 
   _setDates(dates) {
