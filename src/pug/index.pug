@@ -1,17 +1,9 @@
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title index
-  body.body
-    include ../templates/header-unauth/header-unauth.pug
-    +header-unauth
-    main.main(style="background-image: url('assets/img/index.jpg')")
-      .main__container
-        include ../templates/start-filter/start-filter.pug
-        +start-filter
-        p.site-description-box Лучшие номера для вашей работы, отдыха и просто вдохновения
-    include ../templates/footer/footer.pug
-    +footer
+extends ../layout/default.pug
+
+include ../templates/start-filter/start-filter.pug
+
+block content
+  main.index-main(style="background-image: url('assets/img/index.jpg')")
+    .index-main__container
+      +start-filter
+      p.site-description-box Лучшие номера для вашей работы, отдыха и просто вдохновения

@@ -1,26 +1,26 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Headers & Footers
+extends ../layout/ui-kit.pug
+
+include ../templates/logo/logo.pug
+include ../templates/header-unauth/header-unauth.pug
+include ../templates/header-auth/header-auth.pug
+include ../templates/footer/footer.pug
+
+block variables
+  - pageTitle = 'Headers & footers'
+
+block content
   body.body
     header.header
       .header__container
-        include ../templates/logo/logo.pug
         .header__logo
           +logo({
             full: false
           })
-    main.main 
-      section.hero
+    main.headers-footers-main
+      section.headers-footers-hero
         article.article-header-unreg-user
-          include ../templates/header-unauth/header-unauth.pug
           +header-unauth
         article.article-header-authorized-user
-          include ../templates/header-auth/header-auth.pug
           +header-auth
         article.article-footer
-          include ../templates/footer/footer.pug
           +footer

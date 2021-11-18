@@ -1,16 +1,11 @@
-doctype html
-html(lang="ru")
-    head
-      meta(charset="UTF-8")
-      meta(http-equiv="X-UA-Compatible", content="IE=edge")
-      meta(name="viewport", content="width=device-width, initial-scale=1.0")
-      title sign-up
-    body
-      include ../templates/header-unauth/header-unauth.pug
-      +header-unauth
-      main.main(style="background-image: url('assets/img/auth.jpg')")
-        .main__container
-          include ../templates/registration-card/registration-card.pug
-          +registration-card
-      include ../templates/footer/footer.pug
-      +footer
+extends ../layout/default.pug
+
+include ../templates/registration-card/registration-card.pug
+
+block variables
+  - pageTitle = 'Sign-up'
+
+block content
+  main.sign-up-main(style="background-image: url('assets/img/auth.jpg')")
+    .sign-up-main__container
+      +registration-card
