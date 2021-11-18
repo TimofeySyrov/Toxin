@@ -1,15 +1,6 @@
 @import "~normalize.css";
 
-@import "../styles/global.scss";
-@import "../templates/header-unauth/header-unauth.scss";
-@import "../templates/room-info/room-info.scss";
-@import "../templates/donut-chart/donut-chart.scss";
-@import "../templates/room-info-card/room-info-card.scss";
-@import "../templates/user-comment/user-comment.scss";
-@import "../templates/bullet-list/bullet-list.scss";
-@import "../templates/footer/footer.scss";
-
-.main {
+.room-details-main {
   border-bottom: 1px solid $dark_shade_25;
 
   &__container {

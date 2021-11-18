@@ -1,16 +1,11 @@
 @import '~normalize.css';
 
-@import '../styles/global.scss';
-@import '../templates/header-unauth/header-unauth.scss';
-@import '../templates/login-card/login-card.scss';
-@import '../templates/footer/footer.scss';
-
-.main{
+.sign-in-main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  &__container{
+  &__container {
     max-width: 1175px;
     min-height: 830px;
     padding: 70px 15px;

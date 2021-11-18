@@ -1,27 +1,24 @@
 @import '~normalize.css';
 
-@import '../styles/global.scss';
-@import '../templates/logo/logo.scss';
-
 .header {
   &__container {
     padding: 30px;
   }
 }
 
-.container {
-  max-width: 1162px;
-  margin: 0 auto;
-  padding: 37px 30px;
-  @media screen and (max-width: 860px) {
-    padding: 37px 10px;
-  }
-}
-
-.hero {
+.colors-type-hero {
   font-family: 'Montserrat', sans-serif;
 
-  .basic-wrap {
+  &__container {
+    max-width: 1162px;
+    margin: 0 auto;
+    padding: 37px 30px;
+    @media screen and (max-width: 860px) {
+      padding: 37px 10px;
+    }
+  }
+
+  &__basic-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

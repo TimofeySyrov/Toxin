@@ -1,76 +1,57 @@
 @import '~normalize.css';
 
-@import '../styles/global.scss';
-@import '../templates/logo/logo.scss';
-@import '../templates/text-field/text-field.scss';
-@import '../templates/dropdown/dropdown.scss';
-@import '../templates/date-dropdown/date-dropdown.scss';
-@import '../templates/filter-date-dropdown/filter-date-dropdown.scss';
-@import '../templates/subscription-text-field/subscription-text-field.scss';
-@import '../templates/checkbox-buttons/checkbox-buttons.scss';
-@import '../templates/radio-buttons/radio-buttons.scss';
-@import '../templates/toggle-button/toggle-button.scss';
-@import '../templates/like-button/like-button.scss';
-@import '../templates/rate-button/rate-button.scss';
-@import '../templates/range-slider/range-slider.scss';
-@import '../templates/buttons/buttons.scss';
-@import '../templates/pagination/pagination.scss';
-@import '../templates/checkbox-list/checkbox-list.scss';
-@import '../templates/rich-checkbox-buttons/rich-checkbox-buttons.scss';
-@import '../templates/bullet-list/bullet-list.scss';
-@import '../templates/room-info/room-info.scss';
-@import '../templates/user-comment/user-comment.scss';
-
 .header {
   &__container {
     padding: 30px;
   }
 }
 
-.container {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 37px 30px;
-  @media screen and (max-width: 860px) {
-    padding: 37px 10px;
+.form-elements-hero {
+  &__container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 37px 30px;
+    @media screen and (max-width: 860px) {
+      padding: 37px 10px;
+    }
   }
-}
 
-.basic-wrap{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas: 
-    'text-field-custom-column checkbox-buttons-custom-column range-slider-custom-column'
-    'drop-first-custom-column drop-second-custom-column drop-third-custom-column'
-    'exp-checkbox-list-custom-column rich-checkbox-buttons-custom-column bullet-list-custom-column'
-    'room-comfort-custom-column comment-custom-column comment-custom-column';
-  grid-row-gap: 50px;
-  
-  @media screen and (max-width: 1150px) {
-    grid-template-columns: repeat(2, 1fr);
+  &__basic-wrap{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
     grid-template-areas: 
-      'text-field-custom-column checkbox-buttons-custom-column'
-      'range-slider-custom-column drop-first-custom-column'
-      'drop-second-custom-column drop-third-custom-column'
-      'exp-checkbox-list-custom-column rich-checkbox-buttons-custom-column'
-      'bullet-list-custom-column room-comfort-custom-column'
-      'comment-custom-column comment-custom-column';
-  }
-  @media screen and (max-width: 750px) {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      'text-field-custom-column'
-      'checkbox-buttons-custom-column'
-      'range-slider-custom-column'
-      'drop-first-custom-column'
-      'drop-second-custom-column'
-      'drop-third-custom-column'
-      'exp-checkbox-list-custom-column'
-      'rich-checkbox-buttons-custom-column'
-      'bullet-list-custom-column'
-      'room-comfort-custom-column'
-      'comment-custom-column';
+      'text-field-custom-column checkbox-buttons-custom-column range-slider-custom-column'
+      'drop-first-custom-column drop-second-custom-column drop-third-custom-column'
+      'exp-checkbox-list-custom-column rich-checkbox-buttons-custom-column bullet-list-custom-column'
+      'room-comfort-custom-column comment-custom-column comment-custom-column';
+    grid-row-gap: 50px;
+    
+    @media screen and (max-width: 1150px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+        'text-field-custom-column checkbox-buttons-custom-column'
+        'range-slider-custom-column drop-first-custom-column'
+        'drop-second-custom-column drop-third-custom-column'
+        'exp-checkbox-list-custom-column rich-checkbox-buttons-custom-column'
+        'bullet-list-custom-column room-comfort-custom-column'
+        'comment-custom-column comment-custom-column';
+    }
+    @media screen and (max-width: 750px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        'text-field-custom-column'
+        'checkbox-buttons-custom-column'
+        'range-slider-custom-column'
+        'drop-first-custom-column'
+        'drop-second-custom-column'
+        'drop-third-custom-column'
+        'exp-checkbox-list-custom-column'
+        'rich-checkbox-buttons-custom-column'
+        'bullet-list-custom-column'
+        'room-comfort-custom-column'
+        'comment-custom-column';
+    }
   }
 }
 
