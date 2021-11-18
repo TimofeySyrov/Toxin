@@ -1,3 +1,5 @@
-import '../assets/favicons/favicons';
-import '../scss/index.scss';
-import '../templates/start-filter/start-filter';
+function importAll(resolve) {
+  resolve.keys().forEach(resolve);
+}
+
+importAll(require.context('../../src', true, /\.js$|\.scss$/));
