@@ -2,7 +2,7 @@
   position: relative;
   max-width: 267px;
 
-  &__tittle{
+  &__tittle {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: 700;
@@ -22,12 +22,13 @@
     padding: 0 59px 0 15px;
     font-size: 14px;
     line-height: 24px;
-  
+
     &::placeholder {
       color: $dark_shade_25;
     }
-  
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       color: $dark_shade_75;
       border-color: $dark_shade_50;
     }

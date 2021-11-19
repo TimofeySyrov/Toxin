@@ -1,6 +1,6 @@
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
-include ../buttons/buttons.pug
+include ../button/button.pug
 
 mixin room-info-card({  }={})
   .room-info-card.js-room-info-card
@@ -62,9 +62,8 @@ mixin room-info-card({  }={})
         span.room-info-card__price-currency.room-info-card__final-currency ₽
     .room-info-card__btn-confirm
       +button({
-        groupName: 'long',
+        type: 'long',
         text: 'забронировать',
-        icon: true,
       })
 
     

@@ -1,10 +1,10 @@
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
-include ../buttons/buttons.pug
+include ../button/button.pug
 
-mixin start-filter({ tittle = 'Найдём номера под ваши пожелания' }={})
+mixin start-filter({ title = 'Найдём номера под ваши пожелания' }={})
   .start-filter.js-start-filter
-    p.start-filter__title #{tittle}
+    p.start-filter__title #{title}
     .start-filter__dates
       +date-dropdown({
         isOpen: false,
@@ -22,7 +22,7 @@ mixin start-filter({ tittle = 'Найдём номера под ваши пож�
       })
     .start-filter__confirm-btn
       +button({
-        groupName: 'long',
+        type: 'long',
         text: 'подобрать номер',
         href: 'search-room.html'
       })

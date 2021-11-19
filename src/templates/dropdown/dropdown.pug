@@ -1,5 +1,5 @@
 //- dropType: 'guests' or 'room-about'
-mixin dropdown({ placeholder = 'Сколько гостей', dropType = 'guests', isOpen = true, list = {} }={})
+mixin dropdown({ placeholder = 'Сколько гостей', dropType = 'guests', isOpen = true, list = [] }={})
   .dropdown.js-dropdown(data-type= dropType data-is-open= isOpen)
     .dropdown__name.js-dropdown__name
       span.dropdown__placeholder.js-dropdown__placeholder= placeholder

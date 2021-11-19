@@ -3,7 +3,7 @@
   flex-direction: column;
   max-width: 266px;
 
-  &__tittle{
+  &__tittle {
     margin-bottom: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -20,7 +20,7 @@
     line-height: 18px;
     color: $dark_shade_50;
     cursor: pointer;
-  
+
     &:last-child {
       margin-bottom: 0;
     }

@@ -56,11 +56,16 @@ class Calendar {
         Применить
       </div>
     `;
+    const $datepicker = this.$body.find('.datepicker');
+    const $buttons = $datepicker.find('.date-picker-calendar__buttons');
+    const isHaveButtons = $buttons.length > 0;
 
-    this.$body.find('.datepicker')
-      .append('<div class="date-picker-calendar__buttons"></div>');
-    this.$body.find('.date-picker-calendar__buttons')
-      .append([clearBtnTemplate, confirmBtnTemplate]);
+    if (!isHaveButtons) {
+      $datepicker.append('<div class="date-picker-calendar__buttons"></div>');
+      this.$body
+        .find('.date-picker-calendar__buttons')
+        .append([clearBtnTemplate, confirmBtnTemplate]);
+    }
   }
 
   _bindEventListenerBtns() {

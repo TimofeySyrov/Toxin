@@ -1,7 +1,5 @@
-mixin subscription-text-field({ tittle, type='text', name='Email', placeholder='Email', href='/mock-address/change-me', target }={})
+mixin subscription-text-field({ type='text', name='Email', placeholder='Email', href='/mock-address/change-me', target }={})
   .subscription-text-field
-    if tittle
-      span.subscription-text-field__tittle !{tittle}
     input.subscription-text-field__input(type=type name=name placeholder=placeholder)
     a.subscription-text-field__icon(href= href target= target)
       i.material-icons arrow_forward

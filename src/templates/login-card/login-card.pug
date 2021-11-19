@@ -1,7 +1,7 @@
 include ../text-field/text-field.pug
-include ../buttons/buttons.pug
+include ../button/button.pug
 
-mixin login-card({ hrefLogin='search-room.html', hrefRegistr='sign-up.html' }={})
+mixin login-card({ hrefLogin='search-room.html', hrefRegister='sign-up.html' }={})
   .login-card.js-login-card
     p.login-card__tittle Войти
     .login-card__user-form
@@ -15,16 +15,15 @@ mixin login-card({ hrefLogin='search-room.html', hrefRegistr='sign-up.html' }={}
         })
     .login-card__sign-in.js-login-card-login-btn
       +button({
-          groupName: 'long',
+          type: 'long',
           text: 'войти',
-          icon: true,
           href: hrefLogin
         })
     .login-card__registration-container
       p.login-card__registration-tittle Нет аккаунта на Toxin?
       +button({
-        groupName: 'border',
+        type: 'border',
         text: 'создать',
-        href: hrefRegistr
+        href: hrefRegister
       })
       

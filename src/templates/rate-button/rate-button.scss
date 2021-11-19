@@ -1,5 +1,5 @@
 .rate-button {
-	&__tittle{
+  &__tittle {
     display: inline-block;
     margin-bottom: 16px;
     font-weight: 700;
@@ -9,31 +9,30 @@
     color: $dark_shade_100;
   }
 
-	.br-widget {
-		display: flex;
+  .br-widget {
+    display: flex;
 
-		a {
-			width: 24px;
-			height: 24px;
-			font-family: 'MaterialIcons';
-			font-size: 24px;
-			line-height: 20px;
-			background: $main-gradient;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+    a {
+      width: 24px;
+      height: 24px;
+      font-family: 'MaterialIcons';
+      font-size: 24px;
+      line-height: 20px;
+      background: $main-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
-			&::after {
-				content: 'star_border';
-			}
-		}
+      &::after {
+        content: 'star_border';
+      }
+    }
 
-		.br-active::after {
-			content: 'star';
-		}
+    .br-active::after {
+      content: 'star';
+    }
 
-		.br-selected::after {
-			content: 'star';
-		}
-	}
+    .br-selected::after {
+      content: 'star';
+    }
+  }
 }
-  

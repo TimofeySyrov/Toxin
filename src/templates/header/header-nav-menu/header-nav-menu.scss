@@ -1,38 +1,40 @@
-.nav-menu{
+.nav-menu {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', Arial, sans-serif;
 
-  &__item{
+  &__item {
     position: relative;
     display: flex;
     align-items: center;
     margin-right: 20px;
     cursor: pointer;
 
-    &:last-child{
+    &:last-child {
       margin: 0;
     }
 
     &:hover > .submenu,
-    &:focus > .submenu{
+    &:focus > .submenu {
       display: flex;
     }
   }
 
-  &__link{
+  &__link {
     display: block;
     align-items: center;
     font-size: 14px;
     line-height: 17px;
     color: $dark_shade_50;
 
-    &:hover, &:focus, &:active{
+    &:hover,
+    &:focus,
+    &:active {
       font-weight: 700;
       color: $dark_shade_75;
     }
 
-    &::before{
+    &::before {
       display: block;
       content: attr(title);
       font-family: 'Montserrat', Arial, sans-serif;
@@ -43,7 +45,7 @@
     }
   }
 
-  &__icon{
+  &__icon {
     width: 24px;
     height: 21px;
     font-size: 24px;
@@ -54,19 +56,19 @@
   @media screen and (max-width: 515px) {
     display: block;
 
-    &__item{
+    &__item {
       margin-right: 0;
       margin-bottom: 5px;
       justify-content: center;
 
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
       }
     }
   }
 }
 
-.submenu{
+.submenu {
   display: none;
   position: absolute;
   top: 20px;
@@ -80,21 +82,23 @@
   box-shadow: 0px 10px 20px $dark_shade_5;
   font-weight: 400;
 
-  &__item{
+  &__item {
     padding: 10px 18px;
   }
 
-  &__link{
+  &__link {
     font-size: 14px;
     line-height: 17px;
     color: $dark_shade_50;
 
-    &:hover, &:focus, &:active{
+    &:hover,
+    &:focus,
+    &:active {
       font-weight: 700;
       color: $dark_shade_75;
     }
 
-    &::before{
+    &::before {
       display: block;
       content: attr(title);
       font-family: 'Montserrat', Arial, sans-serif;
@@ -105,7 +109,9 @@
     }
   }
 
-  &:hover, &:focus, &:active{
+  &:hover,
+  &:focus,
+  &:active {
     display: flex;
   }
 }

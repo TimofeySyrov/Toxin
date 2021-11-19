@@ -1,4 +1,4 @@
-@import "../calendar/calendar.scss";
+@import '../calendar/calendar.scss';
 
 .date-dropdown {
   max-width: 320px;
@@ -17,7 +17,7 @@
     flex-direction: column;
   }
 
-  &__tittle{
+  &__tittle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 12px;
@@ -52,7 +52,7 @@
     font-size: 24px;
     line-height: 24px;
     color: $dark_shade_50;
-    background: #fff;
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;

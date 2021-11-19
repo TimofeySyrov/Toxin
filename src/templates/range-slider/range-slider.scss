@@ -1,10 +1,10 @@
 @import '~nouislider/dist/nouislider.min.css';
 
-.range-slider{
+.range-slider {
   max-width: 266px;
   font-family: 'Montserrat', sans-serif;
 
-  &__tittle{
+  &__tittle {
     display: flex;
     text-align: center;
     justify-content: space-between;
@@ -13,43 +13,43 @@
     text-transform: uppercase;
   }
 
-  &__name{
+  &__name {
     font-weight: 700;
     color: $dark_shade_100;
   }
 
-  &__prices{
+  &__prices {
     font-weight: 400;
     color: $dark_shade_50;
   }
 
-  &__slider{
+  &__slider {
     margin-top: 20px;
   }
 
-  .noUi-target{
+  .noUi-target {
     background: #fff;
     border: 1px solid $dark_shade_25;
     border-radius: 3px;
     box-shadow: none;
   }
 
-  .noUi-horizontal{
+  .noUi-horizontal {
     height: 6px;
   }
 
-  .noUi-connect{
+  .noUi-connect {
     background: $green_gradient;
   }
 
-  .noUi-handle{
+  .noUi-handle {
     border: 2px solid #fff;
     border-radius: 10px;
     background: $green_gradient;
     box-shadow: none;
   }
 
-  .noUi-horizontal .noUi-handle{
+  .noUi-horizontal .noUi-handle {
     width: 14px;
     height: 14px;
     right: -9px;
@@ -59,7 +59,7 @@
   }
 
   .noUi-handle::after,
-  .noUi-handle::before{
+  .noUi-handle::before {
     display: none;
   }
 }

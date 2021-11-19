@@ -1,5 +1,5 @@
 .like-button {
-  &__tittle{
+  &__tittle {
     display: inline-block;
     margin-bottom: 16px;
     font-weight: 700;
@@ -9,7 +9,7 @@
     color: $dark_shade_100;
   }
 
-  &__btn{
+  &__btn {
     width: 40px;
     height: 20px;
     border: 1px solid $dark_shade_25;
@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
 
-    &_active{
+    &_active {
       color: $purple;
       border-color: $purple;
     }
@@ -35,7 +35,7 @@
     align-items: center;
     font-size: 10px;
     line-height: 9px;
-  
+
     &_active {
       background: $main-gradient;
       -webkit-background-clip: text;

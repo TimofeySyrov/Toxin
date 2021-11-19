@@ -31,7 +31,7 @@
   &_type {
     &_default {
       color: $purple;
-    
+
       &:hover {
         color: $dark_shade_50;
       }
@@ -42,7 +42,7 @@
       border-radius: 22px;
       color: #fff;
       background: $main-gradient;
-          
+
       &:hover {
         opacity: 0.5;
       }
@@ -56,7 +56,11 @@
       background: $main-gradient;
       background-position: center center;
       box-shadow: inset 0 0 0 100px #fff;
-      background-size:  110% 110%;
+      background-size: 110% 110%;
+
+      &.button_size_small {
+        padding: 0 18px;
+      }
 
       &:hover {
         opacity: 0.5;
@@ -70,7 +74,7 @@
       border-radius: 22px;
       color: #fff;
       background: $main-gradient;
-          
+
       &:hover {
         opacity: 0.5;
       }

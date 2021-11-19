@@ -1,7 +1,5 @@
-mixin checkbox-buttons({ title, list=[], }={})
+mixin checkbox-buttons({ list= [] }={})
   .checkbox-btns
-    if title
-      .checkbox-btns__tittle #{title}
     each btn in list
       label.checkbox-btns__item
         input.checkbox-btns__input(type='checkbox' checked= btn.check)

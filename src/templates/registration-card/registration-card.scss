@@ -1,9 +1,9 @@
 @import '../text-field/text-field.scss';
 @import '../radio-buttons/radio-buttons.scss';
 @import '../toggle-button/toggle-button.scss';
-@import '../buttons/buttons.scss';
+@import '../button/button.scss';
 
-.registration-card{
+.registration-card {
   max-width: 380px;
   width: 100%;
   height: fit-content;
@@ -16,7 +16,7 @@
   border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
 
-  &__tittle{
+  &__tittle {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
@@ -24,44 +24,43 @@
     margin-bottom: 20px;
   }
 
-  &__user{
-
-    &-first-name{
+  &__user {
+    &-first-name {
       margin-bottom: 10px;
     }
 
-    &-last-name{
+    &-last-name {
       margin-bottom: 10px;
     }
 
-    &-sex{
+    &-sex {
       margin-bottom: 23px;
     }
 
-    &-birthday{
+    &-birthday {
       margin-bottom: 20px;
     }
 
-    &-info{
-      &-email{
+    &-info {
+      &-email {
         margin-bottom: 10px;
       }
-      &-distribution{
+      &-distribution {
         margin-top: 10px;
       }
     }
   }
 
-  &__confirm-btn{
+  &__confirm-btn {
     margin: 24px 0 30px 0;
   }
 
-  &__login-container{
+  &__login-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    &-tittle{
+    &-tittle {
       font-size: 14px;
       line-height: 18px;
       color: #000000;

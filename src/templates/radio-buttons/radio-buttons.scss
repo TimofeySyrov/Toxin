@@ -1,5 +1,5 @@
 .radio-buttons {
-  &__tittle{
+  &__tittle {
     display: inline-block;
     margin-bottom: 16px;
     font-weight: 700;
@@ -9,7 +9,7 @@
     color: $dark_shade_100;
   }
 
-  &__form{
+  &__form {
     display: flex;
     align-items: center;
   }
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-  
+
     &:last-child {
       margin-right: 0;
     }
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-  
+
     &::after {
       content: '';
       width: 12px;

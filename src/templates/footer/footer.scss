@@ -1,10 +1,10 @@
-@import "../logo/logo.scss";
-@import "../subscription-text-field/subscription-text-field.scss";
+@import '../logo/logo.scss';
+@import '../subscription-text-field/subscription-text-field.scss';
 
 .footer {
   background: #fff;
   box-shadow: 0px 10px 20px $dark_shade_5;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 
   &__container {
     max-width: 1160px;
@@ -83,7 +83,7 @@
 
   @media screen and (max-width: 1200px) {
     padding: 0 15px;
-    
+
     &__content {
       flex-direction: column;
     }
@@ -93,7 +93,6 @@
     &__distribution {
       margin: 0 auto;
     }
-    
   }
 
   @media screen and (max-width: 768px) {
