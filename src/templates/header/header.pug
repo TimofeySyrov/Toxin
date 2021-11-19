@@ -1,0 +1,31 @@
+include ../logo/logo.pug
+include ../button/button.pug
+include ./header-nav-menu/header-nav-menu.pug
+
+mixin header({ user, navMenu }={})
+  header.header
+    .header__container
+      .header__logo
+        +logo
+      .header__nav-menu
+        +header-nav-menu({ listMenu: navMenu })
+      .header__auth-box
+        if user
+          .header__user
+            a.header__user-name(href='/mock-address/change-me')= user
+        else
+          .header__login-btn
+            +button({
+              type: 'border',
+              text: 'Войти',
+              href: 'sign-in.html',
+              small: true
+            })
+          .header__registration-btn
+            +button({
+              type: 'background',
+              text: 'зарегистрироваться',
+              href: 'sign-up.html',
+              small: true
+            })
+            
