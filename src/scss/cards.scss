@@ -1,13 +1,7 @@
 @import '~normalize.css';
 
 .body {
-  background: #F4F4F6;
-}
-
-.header {
-  &__container {
-    padding: 30px;
-  }
+  background: #f4f4f6;
 }
 
 .cards-hero {
@@ -20,11 +14,11 @@
     }
   }
 
-  &__basic-wrap{
+  &__basic-wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 'start-cards-custom-column middle-cards-custom-column end-cards-custom-column';
-  
+
     @media screen and (max-width: 1140px) {
       grid-template-columns: repeat(2, 1fr);
       grid-row-gap: 40px;
@@ -44,15 +38,15 @@
 
 .start-cards-custom-column,
 .middle-cards-custom-column,
-.end-cards-custom-column{
+.end-cards-custom-column {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  &__item{
+  &__item {
     margin-bottom: 40px;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
   }

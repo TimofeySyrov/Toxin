@@ -1,13 +1,7 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
 .body {
   background: #f4f4f6;
-}
-
-.header {
-  &__container {
-    padding: 30px;
-  }
 }
 
 .article-header-unreg-user,

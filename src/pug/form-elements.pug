@@ -12,7 +12,7 @@ include ../templates/toggle-button/toggle-button.pug
 include ../templates/like-button/like-button.pug
 include ../templates/rate-button/rate-button.pug
 include ../templates/range-slider/range-slider.pug
-include ../templates/buttons/buttons.pug
+include ../templates/button/button.pug
 include ../templates/pagination/pagination.pug
 include ../templates/checkbox-list/checkbox-list.pug
 include ../templates/rich-checkbox-buttons/rich-checkbox-buttons.pug
@@ -25,12 +25,6 @@ block variables
 
 block content
   body
-    header.header
-      .header__container
-        .header__logo
-          +logo({
-            full: false
-          })
     main.form-elements-main 
       section.form-elements-hero
         .form-elements-hero__container
@@ -116,17 +110,17 @@ block content
                 p.basic-item__tittle.basic-item__tittle_long-indent buttons
                 .range-slider-custom-column__buttons-group
                   +button({
-                    groupName: 'background',
+                    type: 'background',
                   })
                 .range-slider-custom-column__buttons-group
                   +button({
-                    groupName: 'border'
+                    type: 'border'
                   })
               .basic-item.range-slider-custom-column__item
                 +button
               .basic-item.range-slider-custom-column__item
                 +button({
-                  groupName: 'long',
+                  type: 'long',
                   text: 'перейти к оплате'
                 })
               .basic-item.range-slider-custom-column__item

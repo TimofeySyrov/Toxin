@@ -1,11 +1,5 @@
 @import '~normalize.css';
 
-.header {
-  &__container {
-    padding: 30px;
-  }
-}
-
 .form-elements-hero {
   &__container {
     max-width: 1160px;
@@ -16,20 +10,20 @@
     }
   }
 
-  &__basic-wrap{
+  &__basic-wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
-    grid-template-areas: 
+    grid-template-areas:
       'text-field-custom-column checkbox-buttons-custom-column range-slider-custom-column'
       'drop-first-custom-column drop-second-custom-column drop-third-custom-column'
       'exp-checkbox-list-custom-column rich-checkbox-buttons-custom-column bullet-list-custom-column'
       'room-comfort-custom-column comment-custom-column comment-custom-column';
     grid-row-gap: 50px;
-    
+
     @media screen and (max-width: 1150px) {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: 
+      grid-template-areas:
         'text-field-custom-column checkbox-buttons-custom-column'
         'range-slider-custom-column drop-first-custom-column'
         'drop-second-custom-column drop-third-custom-column'
@@ -39,7 +33,7 @@
     }
     @media screen and (max-width: 750px) {
       grid-template-columns: 1fr;
-      grid-template-areas: 
+      grid-template-areas:
         'text-field-custom-column'
         'checkbox-buttons-custom-column'
         'range-slider-custom-column'
@@ -55,7 +49,7 @@
   }
 }
 
-.basic-item{
+.basic-item {
   margin-bottom: 20px;
 
   &__tittle {
@@ -72,7 +66,7 @@
     margin-bottom: 16px;
   }
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
 }
@@ -82,32 +76,31 @@
   z-index: 99;
 }
 
-
-.checkbox-buttons-custom-column{
-  &__like-group{
+.checkbox-buttons-custom-column {
+  &__like-group {
     display: inline-flex;
     margin-right: 10px;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
   }
-  &__rate-group{
+  &__rate-group {
     display: inline-flex;
     margin-right: 20px;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
   }
 }
 
-.range-slider-custom-column{
-  &__buttons-group{
+.range-slider-custom-column {
+  &__buttons-group {
     display: inline-flex;
     margin-right: 20px;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
   }

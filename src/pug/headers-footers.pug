@@ -1,8 +1,7 @@
 extends ../layout/ui-kit.pug
 
 include ../templates/logo/logo.pug
-include ../templates/header-unauth/header-unauth.pug
-include ../templates/header-auth/header-auth.pug
+include ../templates/header/header.pug
 include ../templates/footer/footer.pug
 
 block variables
@@ -10,17 +9,98 @@ block variables
 
 block content
   body.body
-    header.header
-      .header__container
-        .header__logo
-          +logo({
-            full: false
-          })
     main.headers-footers-main
       section.headers-footers-hero
         article.article-header-unreg-user
-          +header-unauth
+          +header({
+            navMenu: [
+              {
+                name: 'О нас',
+                href: '/mock-address/change-me',
+              },
+              {
+                name: 'Услуги',
+                href: '/mock-address/change-me',
+                submenu: [
+                  {
+                    name: 'Соглашения',
+                    href: '/mock-address/change-me',
+                  },
+                  {
+                    name: 'Вакансии',
+                    href: '/mock-address/change-me',
+                  },
+                ]
+              },
+              {
+                name: 'Вакансии',
+                href: '/mock-address/change-me',
+              },
+              {
+                name: 'Новости',
+                href: '/mock-address/change-me',
+              },
+              {
+                name: 'Соглашения',
+                href: '/mock-address/change-me',
+                submenu: [
+                  {
+                    name: 'Соглашения',
+                    href: '/mock-address/change-me',
+                  },
+                  {
+                    name: 'Вакансии',
+                    href: '/mock-address/change-me',
+                  },
+                ]
+              },
+            ]
+          })
         article.article-header-authorized-user
-          +header-auth
+          +header({
+            user: 'Юлий Цезарь',
+            navMenu: [
+              {
+                name: 'О нас',
+                href: '/mock-address/change-me',
+              },
+              {
+                name: 'Услуги',
+                href: '/mock-address/change-me',
+                submenu: [
+                  {
+                    name: 'Соглашения',
+                    href: '/mock-address/change-me',
+                  },
+                  {
+                    name: 'Вакансии',
+                    href: '/mock-address/change-me',
+                  },
+                ]
+              },
+              {
+                name: 'Вакансии',
+                href: '/mock-address/change-me',
+              },
+              {
+                name: 'Новости',
+                href: '/mock-address/change-me',
+              },
+              {
+                name: 'Соглашения',
+                href: '/mock-address/change-me',
+                submenu: [
+                  {
+                    name: 'Соглашения',
+                    href: '/mock-address/change-me',
+                  },
+                  {
+                    name: 'Вакансии',
+                    href: '/mock-address/change-me',
+                  },
+                ]
+              },
+            ]
+          })
         article.article-footer
           +footer
