@@ -1,7 +1,8 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
 .search-room-main {
   border-bottom: 1px solid $dark_shade_25;
+
   &__container {
     max-width: 1175px;
     padding: 30px 0 70px;
@@ -36,6 +37,7 @@
   min-width: 266px;
 
   &__input-title {
+    display: block;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 12px;

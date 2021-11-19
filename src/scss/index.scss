@@ -6,9 +6,9 @@
   background-position-y: bottom;
 
   &__container {
-    max-width: 1160px;
+    max-width: 1175px;
     min-height: 830px;
-    padding: 70px 0;
+    padding: 70px 15px;
     margin: 0 auto;
     position: relative;
   }
@@ -27,17 +27,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .main__container{
-    padding: 70px 15px;
-  }
-
-  .site-description-box{
+  .site-description-box {
     margin: 0 15px 18px;
   }
 }
 
 @media screen and (max-width: 410px) {
-  .main__container{
+  .index-main__container {
     padding: 70px 0px;
   }
 

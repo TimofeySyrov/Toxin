@@ -1,4 +1,4 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
 .room-details-main {
   border-bottom: 1px solid $dark_shade_25;
@@ -59,9 +59,9 @@
     margin: 0 auto;
     display: grid;
     grid-template-areas:
-      "room-details impressions-room booking-card"
-      "visitor-reviews visitor-reviews booking-card"
-      "additional-info additional-info booking-card";
+      'room-details impressions-room booking-card'
+      'visitor-reviews visitor-reviews booking-card'
+      'additional-info additional-info booking-card';
     row-gap: 30px;
     column-gap: 70px;
   }
@@ -136,20 +136,20 @@
 @media screen and (max-width: 1120px) {
   .room-main-info__grid {
     grid-template-areas:
-      "room-details booking-card"
-      "impressions-room booking-card"
-      "visitor-reviews visitor-reviews"
-      "additional-info additional-info";
+      'room-details booking-card'
+      'impressions-room booking-card'
+      'visitor-reviews visitor-reviews'
+      'additional-info additional-info';
   }
 }
 
 @media screen and (max-width: 830px) {
   .room-main-info__grid {
     grid-template-areas:
-      "booking-card booking-card"
-      "room-details impressions-room"
-      "visitor-reviews visitor-reviews"
-      "additional-info additional-info";
+      'booking-card booking-card'
+      'room-details impressions-room'
+      'visitor-reviews visitor-reviews'
+      'additional-info additional-info';
   }
 
   .booking-card {
@@ -194,11 +194,11 @@
 @media screen and (max-width: 700px) {
   .room-main-info__grid {
     grid-template-areas:
-      "booking-card"
-      "room-details"
-      "impressions-room"
-      "visitor-reviews"
-      "additional-info";
+      'booking-card'
+      'room-details'
+      'impressions-room'
+      'visitor-reviews'
+      'additional-info';
   }
 
   .room-details,
