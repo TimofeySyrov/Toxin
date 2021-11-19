@@ -1,8 +1,9 @@
-include ../templates/header-unauth/header-unauth.pug
+include ../templates/header/header.pug
 include ../templates/footer/footer.pug
 
 block variables
   - pageTitle = 'Toxin'
+  - authUser
 
 html
   head
@@ -11,6 +12,60 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= pageTitle
   body
-    +header-unauth
+    +header({
+      user: authUser,
+      navMenu: [
+        { name: 'О нас', href: '/mock-address/change-me' },
+        {
+          name: 'Услуги',
+          href: '/mock-address/change-me',
+          submenu: [
+            { name: 'Соглашения', href: '/mock-address/change-me' },
+            { name: 'Вакансии', href: '/mock-address/change-me' },
+          ],
+        },
+        { name: 'Вакансии', href: '/mock-address/change-me' },
+        { name: 'Новости', href: '/mock-address/change-me' },
+        {
+          name: 'Соглашения',
+          href: '/mock-address/change-me',
+          submenu: [
+            { name: 'Соглашения', href: '/mock-address/change-me' },
+            { name: 'Вакансии', href: '/mock-address/change-me' },
+          ],
+        },
+      ]
+    })
     block content
-    +footer
+    +footer({
+      desc: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+      copyright: 'Copyright © 2018 Toxin отель. Все права защищены.',
+      navMenu: [
+        {
+          title: 'Навигация',
+          links: [
+            { title: 'О нас', href: '/mock-address/change-me' },
+            { title: 'Новости', href: '/mock-address/change-me' },
+            { title: 'Служба поддержки', href: '/mock-address/change-me' },
+            { title: 'Услуги', href: '/mock-address/change-me' },
+          ]
+        },
+        {
+          title: 'О нас',
+          links: [
+            { title: 'О сервисе', href: '/mock-address/change-me' },
+            { title: 'Наша команда', href: '/mock-address/change-me' },
+            { title: 'Вакансии', href: '/mock-address/change-me' },
+            { title: 'Инвесторы', href: '/mock-address/change-me' },
+          ]
+        },
+        {
+          title: 'Служба поддержки',
+          links: [
+            { title: 'Соглашения', href: '/mock-address/change-me' },
+            { title: 'Сообщества', href: '/mock-address/change-me' },
+            { title: 'Связь с нами', href: '/mock-address/change-me' },
+          ]
+        },
+      ]
+    })
