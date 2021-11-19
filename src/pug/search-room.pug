@@ -18,10 +18,8 @@ block content
       .basic-wrap
         .filter-room-sidebar
           .filter-room-sidebar__item.sidebar-date-dropdown
-            +filter-date-dropdown({
-              tittle: 'даты пребывания в отеле',
-              isOpen: false
-            })
+            span.filter-room-sidebar__input-title даты пребывания в отеле
+            +filter-date-dropdown({ isOpen: false })
           .filter-room-sidebar__item.sidebar-guests-dropdown
             span.filter-room-sidebar__input-title гости
             +dropdown({
