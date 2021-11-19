@@ -1,45 +1,18 @@
 include ../logo/logo.pug
 include ../subscription-text-field/subscription-text-field.pug
 
-mixin footer({  }={})
+include ./footer-nav-menu/footer-nav-menu.pug
+
+mixin footer({ navMenu, desc, copyright }={})
   footer.footer
     .footer__container
       .footer__content
           .footer__logo-box
               .footer__logo-img
                 +logo
-              span.footer__logo-description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-          nav.footer__menu
-            .footer__menu-title навигация
-            ul.footer__menu-list
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="О нас") О нас
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Новости") Новости
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Служба поддержки") Служба поддержки
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Услуги") Услуги
-          nav.footer__menu
-            .footer__menu-title о нас
-            ul.footer__menu-list
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="О нас") О сервисе
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Новости") Наша команда
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Служба поддержки") Вакансии
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Услуги") Инвесторы
-          nav.footer__menu
-            .footer__menu-title Служба поддержки
-            ul.footer__menu-list
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="О нас") Соглашения
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Новости") Сообщества
-              li.footer__menu-item
-                a.footer__menu-link(href="/mock-address/change-me" title="Служба поддержки") Связь с нами
+              span.footer__logo-description= desc
+          .footer__nav-box
+            +footer-nav-menu({ listMenu: navMenu })
           .footer__distribution
             .footer__distribution-box
               span.footer__distribution-title Подписка
@@ -47,7 +20,7 @@ mixin footer({  }={})
             .footer__distribution-input
               +subscription-text-field
       .footer__copyright
-          .footer__copyright-title Copyright © 2018 Toxin отель. Все права защищены.
+          .footer__copyright-title= copyright
           .footer__copyright-social
             a.footer__copyright-link(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
               img(src="assets/img/icons/twitter-icon.svg", alt="twitter")

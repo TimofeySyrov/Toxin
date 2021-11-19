@@ -1,0 +1,31 @@
+.footer-nav-menu {
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: repeat(3, 150px);
+  gap: 50px;
+
+  &__list {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__list-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark_shade_100;
+  }
+
+  &__item-name {
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 17px;
+    color: $dark_shade_50;
+
+    &:hover {
+      font-weight: 700;
+      color: $dark_shade_75;
+    }
+  }
+}
