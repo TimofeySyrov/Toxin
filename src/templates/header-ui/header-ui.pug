@@ -1,0 +1,7 @@
+include ../logo/logo.pug
+
+mixin header-ui({ logoHref }={})
+  header.header-ui
+    .header-ui__container
+      .header-ui__logo
+        +logo({ full: false, href: logoHref })
