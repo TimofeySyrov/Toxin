@@ -1,11 +1,11 @@
 .rich-checkbox-btns {
+  max-width: 266px;
   display: flex;
   flex-direction: column;
-  max-width: 266px;
+  font-family: $main-font-family;
 
   &__tittle {
     margin-bottom: 16px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;

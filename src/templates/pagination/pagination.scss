@@ -2,7 +2,7 @@
   &__tittle {
     margin-top: 10px;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $main-font-family;
     font-size: 14px;
     line-height: 24px;
     color: $dark_shade_75;
@@ -37,7 +37,6 @@
     }
 
     .current {
-      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;

@@ -3,6 +3,7 @@
 .user-comment {
   max-width: 711px;
   display: inline-flex;
+  font-family: $main-font-family;
 
   &__left-box {
     width: 48px;
@@ -22,7 +23,6 @@
 
   &__user-name {
     margin-bottom: 2px;
-    font-family: 'Montserrat';
     font-weight: 700;
   }
 

@@ -1,7 +1,6 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  font-family: 'Montserrat', Arial, sans-serif;
 
   &__item {
     position: relative;
@@ -37,7 +36,6 @@
     &::before {
       display: block;
       content: attr(title);
-      font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
       height: 0;
       overflow: hidden;
@@ -101,7 +99,6 @@
     &::before {
       display: block;
       content: attr(title);
-      font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
       height: 0;
       overflow: hidden;

@@ -1,15 +1,14 @@
 .button {
   max-width: 320px;
   min-height: 34px;
-  height: fit-content;
   padding: 14px 20px 14px 20px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
@@ -38,7 +37,6 @@
     }
 
     &_background {
-      padding: 0 20px;
       border-radius: 22px;
       color: #fff;
       background: $main-gradient;
@@ -49,7 +47,7 @@
     }
 
     &_border {
-      padding: 0 18px;
+      padding: 12px 20px 12px 20px;
       border: 2px solid transparent;
       border-radius: 22px;
       color: $purple;
@@ -59,7 +57,7 @@
       background-size: 110% 110%;
 
       &.button_size_small {
-        padding: 0 18px;
+        padding: 7px 20px 7px 20px;
       }
 
       &:hover {

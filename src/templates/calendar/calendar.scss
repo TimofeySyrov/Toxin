@@ -4,7 +4,7 @@
   margin-top: 20px;
 
   .calendar__buttons {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $main-font-family;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
@@ -25,7 +25,7 @@
 .-selected-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -34,7 +34,7 @@
 .-selected-.-focus-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -76,7 +76,7 @@
 .datepicker--cell.-current- {
   background: $green-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -145,7 +145,7 @@
 .datepicker--cell.-selected- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -153,7 +153,7 @@
 .datepicker--cell.-selected-.-current- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -161,7 +161,7 @@
 .datepicker--cell.-selected-.-focus- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -177,7 +177,7 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: $purple;
 }
@@ -231,7 +231,7 @@
 .-selected-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -240,7 +240,7 @@
 .-selected-.-focus-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -444,7 +444,7 @@
 .-selected-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -453,7 +453,7 @@
 .-selected-.-focus-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -532,7 +532,7 @@
 }
 
 .datepicker--nav-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   font-size: 19px;
   line-height: 23px;
@@ -553,7 +553,7 @@
 .-selected-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -562,7 +562,7 @@
 .-selected-.-focus-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -577,7 +577,7 @@
 .-selected-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }
@@ -586,7 +586,7 @@
 .-selected-.-focus-.datepicker--cell-year.-other-decade- {
   background: $main-gradient;
   border-radius: 50%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
   font-weight: 700;
   color: white;
 }

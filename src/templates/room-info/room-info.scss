@@ -1,5 +1,6 @@
 .room-info {
   max-width: 291px;
+  font-family: $main-font-family;
 
   &__item {
     display: flex;
@@ -27,7 +28,6 @@
   }
 
   &__name {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   }
 }

@@ -1,6 +1,7 @@
 .checkbox-list {
   max-width: 266px;
   position: relative;
+  font-family: $main-font-family;
 
   &__name {
     padding: 0 6px;
@@ -12,7 +13,6 @@
   }
 
   &__tittle {
-    font-family: 'Montserrat';
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;

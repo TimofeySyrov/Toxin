@@ -1,9 +1,9 @@
 .text-field {
   max-width: 320px;
+  font-family: $main-font-family;
 
   &__tittle {
     margin-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;

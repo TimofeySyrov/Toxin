@@ -4,6 +4,7 @@
   max-width: 320px;
   display: flex;
   flex-direction: column;
+  font-family: $main-font-family;
 
   &__items {
     display: inline-flex;
@@ -18,7 +19,6 @@
   }
 
   &__tittle {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
@@ -35,7 +35,6 @@
     border: 1px solid $dark_shade_25;
     border-radius: 4px;
     padding: 12px 0 8px 15px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;

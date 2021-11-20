@@ -1,11 +1,11 @@
-@import "../calendar/calendar.scss";
+@import '../calendar/calendar.scss';
 
-.filter-date-dropdown{
+.filter-date-dropdown {
   max-width: 266px;
-  font-family: 'Montserrat', sans-serif;
   position: relative;
+  font-family: $main-font-family;
 
-  &__tittle{
+  &__tittle {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: 700;
@@ -15,7 +15,7 @@
     color: $dark_shade_100;
   }
 
-  &__name-box{
+  &__name-box {
     position: relative;
     height: 44px;
     background: #fff;
@@ -47,7 +47,7 @@
     user-select: none;
   }
 
-  &__calendar{
+  &__calendar {
     position: absolute;
     width: 100%;
     margin-top: 5px;
