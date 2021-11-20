@@ -1,7 +1,6 @@
 .button {
   max-width: 320px;
   min-height: 34px;
-  padding: 14px 20px 14px 20px;
   font-family: $main-font-family;
   font-weight: 700;
   font-size: 12px;
@@ -29,6 +28,7 @@
 
   &_type {
     &_default {
+      width: fit-content;
       color: $purple;
 
       &:hover {
@@ -37,6 +37,7 @@
     }
 
     &_background {
+      padding: 14px 20px 14px 20px;
       border-radius: 22px;
       color: #fff;
       background: $main-gradient;
@@ -67,7 +68,7 @@
 
     &_long {
       width: 100%;
-      padding-right: 44px;
+      padding: 14px 44px 14px 20px;
       position: relative;
       border-radius: 22px;
       color: #fff;
