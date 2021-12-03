@@ -16,7 +16,7 @@
   border-radius: 4px;
   font-family: $main-font-family;
 
-  &__tittle {
+  &__title {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
@@ -24,31 +24,20 @@
     margin-bottom: 20px;
   }
 
-  &__user {
-    &-first-name {
-      margin-bottom: 10px;
-    }
+  &__user-name {
+    margin-bottom: 10px;
+  }
 
-    &-last-name {
-      margin-bottom: 10px;
-    }
+  &__user-sex {
+    margin-bottom: 23px;
+  }
 
-    &-sex {
-      margin-bottom: 23px;
-    }
+  &__user-birthday {
+    margin-bottom: 20px;
+  }
 
-    &-birthday {
-      margin-bottom: 20px;
-    }
-
-    &-info {
-      &-email {
-        margin-bottom: 10px;
-      }
-      &-distribution {
-        margin-top: 10px;
-      }
-    }
+  &__email-password {
+    margin-bottom: 10px;
   }
 
   &__confirm-btn {

@@ -1,16 +1,16 @@
-mixin text-field({ type='text', name, placeholder='Email', disabled=false, readonly=false, isMasked }={})
-  - let maskedModifier = ''
-
-  if isMasked
-    - maskedModifier = 'text-field__masked',
-    - placeholder = 'ДД.ММ.ГГГГ'
-
+mixin text-field({ title, list }={})
   .text-field.js-text-field
-    input.text-field__input.js-text-field-input(
-      class= `${maskedModifier}`
-      type=type
-      name=name
-      placeholder=placeholder
-      disabled=disabled
-      readonly=readonly)
+    if title
+      .text-field__title !{title}
+    .text-field__labels
+      each input in list
+        label.text-field__label
+          input.text-field__input(
+            class= input.isMasked && 'js-text-field__input_masked'
+            type=input.type
+            name=input.name
+            placeholder= input.isMasked ? 'ДД.ММ.ГГГГ' : input.placeholder
+            disabled=input.disabled
+            readonly=input.readonly
+          )
                 

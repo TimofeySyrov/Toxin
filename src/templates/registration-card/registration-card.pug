@@ -5,35 +5,35 @@ include ../button/button.pug
 
 mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' }={})
   .registration-card.js-registration-card
-    p.registration-card__tittle Регистрация аккаунта
-    .registration-card__user
-      .registration-card__user-first-name.js-registration-card-first-name
-        +text-field({
-          placeholder: 'Имя',
-        })
-      .registration-card__user-last-name.js-registration-card-last-name
-        +text-field({
-          placeholder: 'Фамилия',
-        })
-      .registration-card__user-sex
-        +radio-buttons
-      .registration-card__user-birthday
-        +text-field({
-          tittle: 'дата рождения',
-          isMasked: true
-        })
-      .registration-card__user-info
-        .registration-card__user-info-email.js-registration-card-email
-          +text-field({
-            tittle: 'данные для входа в сервис',
-            placeholder: 'Email',
-          })
-        .registration-card__user-info-password.js-registration-card-password
-          +text-field({
-            placeholder: 'Пароль',
-          })
-        .registration-card__user-info-distribution
-          +toggle-button
+    p.registration-card__title Регистрация аккаунта
+    .registration-card__user-name
+      +text-field({
+        list: [
+          { type: 'text', placeholder: 'Имя' },
+          { type: 'text', placeholder: 'Фамилия' },
+        ],
+      })
+    .registration-card__user-sex
+      +radio-buttons
+    .registration-card__user-birthday
+      +text-field({
+        title: 'дата рождения',
+        list: [
+          { type: 'text', isMasked: true },
+        ],
+      })
+    .registration-card__email-password
+      +text-field({
+        title: 'данные для входа в сервис',
+        list: [
+          { type: 'text', placeholder: 'Email' },
+          { type: 'password', placeholder: 'Пароль' },
+        ],
+      })
+    .registration-card__user-info-distribution
+      +toggle-button([
+        { name: 'Получать спецпредложения' },
+      ])
     .registration-card__confirm-btn.js-registration-card-registr
       +button({
         type: 'long',

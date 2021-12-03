@@ -3,15 +3,25 @@
   display: flex;
   flex-direction: column;
 
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark_shade_100;
+  }
+
   &__item {
+    width: fit-content;
     position: relative;
     margin-bottom: 11px;
     padding-left: 30px;
     line-height: 18px;
     color: $dark_shade_50;
-    cursor: pointer;
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
   }
 
   &__input {
@@ -26,6 +36,7 @@
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    cursor: pointer;
 
     &:checked {
       border-color: $purple;

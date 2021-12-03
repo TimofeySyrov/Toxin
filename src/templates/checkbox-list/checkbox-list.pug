@@ -7,5 +7,5 @@ mixin checkbox-list({ title = 'expandable checkbox list', list = [] }={})
       each btn in list
         label.checkbox-list__item
           input.checkbox-list__input(type="checkbox" checked= btn.check)
-          span.checkbox-list__box #{btn.name}
+          span.checkbox-list__box !{btn.name}
 

@@ -1,14 +1,7 @@
 import TextField from './text-field';
 
 $(() => {
-  const $textFields = $('.js-text-field');
+  const $textFields = $('.js-text-field__input_masked');
 
-  $textFields.each((i, val) => {
-    const textInput = $(val).find('.js-text-field-input');
-    const isMaskedTextField = $(textInput).hasClass('text-field__masked');
-
-    if (isMaskedTextField) {
-      new TextField(val);
-    }
-  });
+  $textFields.each((i, val) => new TextField(val));
 });

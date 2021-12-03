@@ -1,5 +1,14 @@
-mixin pagination({  }={})
-  .pagination.js-pagination
+mixin pagination({ items, pageSize, pageRange }={})
+  .pagination.js-pagination(
+    data-items-count= items
+    data-page-size= pageSize
+    data-page-range= pageRange
+  )
     .pagination__body.js-pagination__body
-    .pagination__tittle.js-pagination__tittle 1 – 12 из 100+ вариантов аренды
-
+    p.pagination__title
+      span.pagination__title-current-min.js-pagination__title-current-min 1
+      span.pagination__title-separator !{' – '}
+      span.pagination__title-current-min.js-pagination__title-current-max 12
+      span.pagination__title-text !{' из '}
+      span.pagination__title-items-count.js-pagination__title-items-count 100+
+      span.pagination__title-text !{' вариантов аренды'}

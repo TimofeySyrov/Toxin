@@ -5,14 +5,12 @@ mixin login-card({ hrefLogin='search-room.html', hrefRegister='sign-up.html' }={
   .login-card.js-login-card
     p.login-card__tittle Войти
     .login-card__user-form
-      .login-card__user-form-email.js-login-card-email
-        +text-field({
-          placeholder: 'Email'
-        })
-      .login-card__user-form-password.js-login-card-password
-        +text-field({
-          placeholder: 'Пароль'
-        })
+      +text-field({
+        list: [
+          { type: 'text', placeholder: 'Email' },
+          { type: 'password', placeholder: 'Пароль' }
+        ],
+      })
     .login-card__sign-in.js-login-card-login-btn
       +button({
           type: 'long',

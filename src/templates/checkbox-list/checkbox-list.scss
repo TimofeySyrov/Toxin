@@ -53,6 +53,7 @@
   }
 
   &__item {
+    width: fit-content;
     position: relative;
     margin-bottom: 11px;
     padding-left: 30px;
@@ -61,6 +62,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   &__input {
@@ -76,6 +78,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     overflow: hidden;
+    cursor: pointer;
 
     &:checked {
       border-color: $purple;
