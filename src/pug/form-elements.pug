@@ -32,7 +32,11 @@ block content
             .text-field-custom-column
               .basic-item.text-field-custom-column__item
                 p.basic-item__tittle text field
-                +text-field
+                +text-field({
+                  list: [
+                    {type: 'text', placeholder: 'Email'},
+                  ],
+                })
               .basic-item.text-field-custom-column__item
                 +dropdown({
                   tittle: 'dropdown',
@@ -46,7 +50,9 @@ block content
               .basic-item.text-field-custom-column__item
                 p.basic-item__tittle masked text field
                 +text-field({
-                  isMasked: true,
+                  list: [
+                    {type: 'text', isMasked: true},
+                  ],
                 })
               .basic-item.text-field-custom-column__item
                 +date-dropdown({
@@ -68,21 +74,20 @@ block content
                 p.basic-item__tittle.basic-item__tittle_long-indent Checkbox Buttons
                 +checkbox-buttons({
                   list: [
-                    {name: 'Можно курить'},
-                    {name: 'Можно с питомцами', check: true},
-                    {name: 'Можно пригласить гостей (до 10 человек)', check: true}
-                  ]
+                    { name: 'Можно курить' },
+                    { name: 'Можно с питомцами', check: true },
+                    { name: 'Можно пригласить гостей (до 10 человек)', check: true }
+                  ],
                 })
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent Radio Buttons
                 +radio-buttons
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent Toggle
-                +toggle-button({
-                  check: true,
-                })
-              .basic-item.checkbox-buttons-custom-column__item
-                +toggle-button
+                +toggle-button([
+                  { name: 'Получать спецпредложения', check: true },
+                  { name: 'Получать спецпредложения' },
+                ])
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent like button
                 .checkbox-buttons-custom-column__like-group
@@ -125,7 +130,11 @@ block content
                 })
               .basic-item.range-slider-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent pagination
-                +pagination
+                +pagination({
+                  items: 180,
+                  pageSize: 12,
+                  pageRange: 3,
+                })
             .drop-first-custom-column
               .basic-item.drop-first-custom-column__item
                 +dropdown({

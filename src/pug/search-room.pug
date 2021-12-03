@@ -249,5 +249,9 @@ block content
                 ],
               })
         .pagination-block
-          +pagination
+          +pagination({
+            items: 180,
+            pageSize: 12,
+            pageRange: 3,
+          })
         
