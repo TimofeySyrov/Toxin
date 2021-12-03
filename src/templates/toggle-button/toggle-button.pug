@@ -1,7 +1,6 @@
-mixin toggle-button ({ name = 'Получать спецпредложения', check, tittle }={})
+mixin toggle-button(list)
   .toggle-btn
-    if tittle
-      span.toggle-btn__tittle !{tittle}
-    label.toggle-btn__item
-      input.toggle-btn__input(type="checkbox" checked= check)
-      span.toggle-btn__box #{name}
+    each btn in list
+      label.toggle-btn__item
+        input.toggle-btn__input(type="checkbox" checked= btn.check)
+        span.toggle-btn__box !{btn.name}
