@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -22,6 +23,7 @@ module.exports = {
     port: 3000,
   },
   plugins: [
+    new FaviconsWebpackPlugin('./assets/favicons/favicon.ico'),
     new CopyWebpackPlugin({
       patterns: [
         {
