@@ -18,7 +18,9 @@ mixin footer({ navMenu, desc, copyright }={})
               span.footer__distribution-title Подписка
               span.footer__distribution-description Получайте специальные предложения и новости сервиса
             .footer__distribution-input
-              +subscription-text-field
+              +subscription-text-field([
+                  { type: 'text', name: 'Email', placeholder: 'Email', iconHref: '/mock-address/change-me' },
+                ])
       .footer__copyright
           .footer__copyright-title= copyright
           .footer__copyright-social

@@ -68,7 +68,9 @@ block content
                   })
               .basic-item.text-field-custom-column__item
                 p.basic-item__tittle subscription text field
-                +subscription-text-field
+                +subscription-text-field([
+                  { type: 'text', name: 'Email', placeholder: 'Email', iconHref: '/mock-address/change-me' },
+                ])
             .checkbox-buttons-custom-column
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent Checkbox Buttons
@@ -76,7 +78,7 @@ block content
                   list: [
                     { name: 'Можно курить' },
                     { name: 'Можно с питомцами', check: true },
-                    { name: 'Можно пригласить гостей (до 10 человек)', check: true }
+                    { name: 'Можно пригласить гостей (до 10 человек)', check: true },
                   ],
                 })
               .basic-item.checkbox-buttons-custom-column__item
