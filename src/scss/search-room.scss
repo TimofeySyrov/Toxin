@@ -1,11 +1,11 @@
 @import '~normalize.css';
 
 .search-room-main {
+  padding: 30px 15px 70px 15px;
   border-bottom: 1px solid $dark_shade_25;
 
   &__container {
     max-width: 1175px;
-    padding: 30px 0 70px;
     margin: 0 auto;
     position: relative;
   }
