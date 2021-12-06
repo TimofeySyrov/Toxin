@@ -33,13 +33,13 @@ $ npm run build  // Инициализация приложения в режи�
 ## Используемые библиотеки
 <h3>NPM библиотеки</h3>
 
-* <a href="https://github.com/t1m0n/air-datepicker">air-datepicker</a>
-* <a href="https://github.com/d3/d3">d3</a>
-* <a href="https://github.com/RobinHerbots/Inputmask">inputmask</a>
-* <a href="https://github.com/antennaio/jquery-bar-rating">jquery-bar-rating</a>
-* <a href="https://github.com/necolas/normalize.css">normalize.css</a>
-* <a href="https://github.com/leongersen/noUiSlider">nouislider</a>
-* <a href="https://github.com/kenwheeler/slick">slick-carousel</a>
+* <a href="https://github.com/t1m0n/air-datepicker">air-datepicker ^2.2.3</a>
+* <a href="https://github.com/d3/d3">d3 ^4.13.0</a>
+* <a href="https://github.com/RobinHerbots/Inputmask">inputmask ^5.0.5</a>
+* <a href="https://github.com/antennaio/jquery-bar-rating">jquery-bar-rating ^1.2.2</a>
+* <a href="https://github.com/necolas/normalize.css">normalize.css ^8.0.1</a>
+* <a href="https://github.com/leongersen/noUiSlider">nouislider ^15.2.0</a>
+* <a href="https://github.com/kenwheeler/slick">slick-carousel ^1.8.1</a>
 
 <h3>Локальные библиотеки (директория libs)</h3>
 
