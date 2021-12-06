@@ -1,5 +1,13 @@
-mixin subscription-text-field({ type='text', name='Email', placeholder='Email', href='/mock-address/change-me', target }={})
+//- type='text', name='Email', placeholder='Email', href='/mock-address/change-me', target
+mixin subscription-text-field(list)
   .subscription-text-field
-    input.subscription-text-field__input(type=type name=name placeholder=placeholder)
-    a.subscription-text-field__icon(href= href target= target)
-      i.material-icons arrow_forward
+    .subscription-text-field__labels
+      each input in list
+        label.subscription-text-field__label
+          input.subscription-text-field__input(
+            type= input.type
+            name= input.name
+            placeholder= input.placeholder
+          )
+          a.subscription-text-field__icon(href= input.iconHref target= input.iconTarget)
+            i.material-icons arrow_forward
