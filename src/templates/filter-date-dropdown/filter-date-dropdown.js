@@ -6,6 +6,7 @@ class FilterDateDropdown {
     this.nameBox = this.body.querySelector('.js-filter-date-dropdown__name-box');
     this.calendarBody = this.body.querySelector('.js-filter-date-dropdown__calendar');
     this.calendarInput = this.body.querySelector('.js-filter-date-dropdown__input');
+    this.inputArrow = this.body.querySelector('.js-filter-date-dropdown__arrow');
     this.isCalendarOpen = this.body.getAttribute('data-calendar-isopen');
 
     this._init();
@@ -31,6 +32,7 @@ class FilterDateDropdown {
 
   _handleNameBoxClick() {
     this.calendar.checkIsOpen();
+    this._rotateArrow();
   }
 
   _setDates(dates) {
@@ -57,6 +59,10 @@ class FilterDateDropdown {
     } else {
       this.calendarInput.innerHTML = inputPlaceholder;
     }
+  }
+
+  _rotateArrow() {
+    this.inputArrow.classList.toggle('filter-date-dropdown__arrow_active');
   }
 }
 
