@@ -1,3 +1,5 @@
+include ../checkbox/checkbox.pug
+
 mixin checkbox-list({ title = 'expandable checkbox list', list = [] }={})
   .checkbox-list.js-checkbox-list
     .checkbox-list__name.js-checkbox-list__name
@@ -5,7 +7,5 @@ mixin checkbox-list({ title = 'expandable checkbox list', list = [] }={})
       span.checkbox-list__arrow.js-checkbox-list__arrow expand_more
     .checkbox-list__menu.js-checkbox-list__menu
       each btn in list
-        label.checkbox-list__item
-          input.checkbox-list__input(type="checkbox" checked= btn.check)
-          span.checkbox-list__box !{btn.name}
+        +checkbox(btn)
 

@@ -1,3 +1,5 @@
+@import '../checkbox/checkbox.scss';
+
 .checkbox-list {
   max-width: 266px;
   position: relative;
@@ -49,40 +51,6 @@
 
     &_active {
       display: flex;
-    }
-  }
-
-  &__item {
-    width: fit-content;
-    position: relative;
-    margin-bottom: 11px;
-    padding-left: 30px;
-    line-height: 18px;
-    color: $dark_shade_50;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  &__input {
-    position: absolute;
-    appearance: none;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid $dark_shade_25;
-    border-radius: 4px;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    overflow: hidden;
-    cursor: pointer;
-
-    &:checked {
-      border-color: $purple;
-      background-image: url(../../assets/img/icons/check.svg);
     }
   }
 }

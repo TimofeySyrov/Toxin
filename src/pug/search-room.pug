@@ -3,7 +3,7 @@ extends ../layout/default.pug
 include ../templates/filter-date-dropdown/filter-date-dropdown.pug
 include ../templates/dropdown/dropdown.pug
 include ../templates/range-slider/range-slider.pug
-include ../templates/checkbox-buttons/checkbox-buttons.pug
+include ../templates/checkbox/checkbox.pug
 include ../templates/rich-checkbox-buttons/rich-checkbox-buttons.pug
 include ../templates/checkbox-list/checkbox-list.pug
 include ../templates/cutaway-room-card/cutaway-room-card.pug
@@ -36,14 +36,9 @@ block content
             })
             p.sidebar-range-slider__description Стоимость за сутки пребывания в номере
           .filter-room-sidebar__item.sidebar-checkbox-buttons
-            +checkbox-buttons({
-              title: 'правила дома',
-              list: [
-                {name: 'Можно курить'},
-                {name: 'Можно с питомцами', check: true},
-                {name: 'Можно курить', check: true}
-              ]
-            })
+              +checkbox({text: 'Можно курить', isChecked: false})
+              +checkbox({text: 'Можно с питомцами'})
+              +checkbox({text: 'Можно курить'})
           .filter-room-sidebar__item.sidebar-rich-checkbox-buttons
             +rich-checkbox-buttons({
               title: 'доступность',
@@ -67,14 +62,14 @@ block content
             +checkbox-list({
               title: 'дополнительные удобства',
               list: [
-                  {name: 'Завтрак'},
-                  {name: 'Письменный стол', check: true},
-                  {name: 'Стул для кормления', check: true},
-                  {name: 'Кроватка', check: true},
-                  {name: 'Телевизор'},
-                  {name: 'Шампунь'},
-                  {name: 'Телевизор'},
-                  {name: 'Шампунь'}
+                  {text: 'Завтрак', isChecked: false},
+                  {text: 'Письменный стол'},
+                  {text: 'Стул для кормления'},
+                  {text: 'Кроватка'},
+                  {text: 'Телевизор', isChecked: false},
+                  {text: 'Шампунь', isChecked: false},
+                  {text: 'Телевизор', isChecked: false},
+                  {text: 'Шампунь', isChecked: false}
                 ]
             })
         .room-cards-list

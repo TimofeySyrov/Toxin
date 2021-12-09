@@ -6,7 +6,7 @@ include ../templates/dropdown/dropdown.pug
 include ../templates/date-dropdown/date-dropdown.pug
 include ../templates/filter-date-dropdown/filter-date-dropdown.pug
 include ../templates/subscription-text-field/subscription-text-field.pug
-include ../templates/checkbox-buttons/checkbox-buttons.pug
+include ../templates/checkbox/checkbox.pug
 include ../templates/radio-buttons/radio-buttons.pug
 include ../templates/toggle-button/toggle-button.pug
 include ../templates/like-button/like-button.pug
@@ -74,13 +74,9 @@ block content
             .checkbox-buttons-custom-column
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent Checkbox Buttons
-                +checkbox-buttons({
-                  list: [
-                    { name: 'Можно курить' },
-                    { name: 'Можно с питомцами', check: true },
-                    { name: 'Можно пригласить гостей (до 10 человек)', check: true },
-                  ],
-                })
+                +checkbox({ text: 'Можно курить', isChecked: false })
+                +checkbox({ text: 'Можно с питомцами' })
+                +checkbox({ text: 'Можно пригласить гостей (до 10 человек)' })
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent Radio Buttons
                 +radio-buttons
@@ -175,14 +171,14 @@ block content
               .basic-item.exp-checkbox-list-custom-column__item
                 +checkbox-list({
                   list: [
-                    {name: 'Завтрак'},
-                    {name: 'Письменный стол', check: true},
-                    {name: 'Стул для кормления', check: true},
-                    {name: 'Кроватка', check: true},
-                    {name: 'Телевизор'},
-                    {name: 'Шампунь'},
-                    {name: 'Телевизор'},
-                    {name: 'Шампунь'}
+                    { text: 'Завтрак', isChecked: false },
+                    { text: 'Письменный стол' },
+                    { text: 'Стул для кормления' },
+                    { text: 'Кроватка' },
+                    { text: 'Телевизор', isChecked: false },
+                    { text: 'Шампунь', isChecked: false },
+                    { text: 'Телевизор', isChecked: false },
+                    { text: 'Шампунь', isChecked: false }
                   ]
                 })
             .rich-checkbox-buttons-custom-column
