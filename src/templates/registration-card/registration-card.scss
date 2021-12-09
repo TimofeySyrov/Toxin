@@ -24,6 +24,22 @@
     margin-bottom: 20px;
   }
 
+  &__input-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark_shade_100;
+    margin-bottom: 5px;
+  }
+
+  &__inputs-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
   &__user-name {
     margin-bottom: 10px;
   }
@@ -49,7 +65,7 @@
     align-items: center;
     justify-content: space-between;
 
-    &-tittle {
+    &-title {
       font-size: 14px;
       line-height: 18px;
       color: #000000;

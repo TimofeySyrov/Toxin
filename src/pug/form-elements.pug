@@ -32,11 +32,7 @@ block content
             .text-field-custom-column
               .basic-item.text-field-custom-column__item
                 p.basic-item__tittle text field
-                +text-field({
-                  list: [
-                    {type: 'text', placeholder: 'Email'},
-                  ],
-                })
+                +text-field({ placeholder: 'Email' })
               .basic-item.text-field-custom-column__item
                 +dropdown({
                   tittle: 'dropdown',
@@ -49,11 +45,7 @@ block content
                 })
               .basic-item.text-field-custom-column__item
                 p.basic-item__tittle masked text field
-                +text-field({
-                  list: [
-                    {type: 'text', isMasked: true},
-                  ],
-                })
+                +text-field({ isMasked: true })
               .basic-item.text-field-custom-column__item
                 +date-dropdown({
                   isOpen: false,
@@ -68,9 +60,7 @@ block content
                   })
               .basic-item.text-field-custom-column__item
                 p.basic-item__tittle subscription text field
-                +subscription-text-field([
-                  { type: 'text', name: 'Email', placeholder: 'Email', iconHref: '/mock-address/change-me' },
-                ])
+                +subscription-text-field({ name: 'Email', placeholder: 'Email', iconHref: '/mock-address/change-me' })
             .checkbox-buttons-custom-column
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent Checkbox Buttons

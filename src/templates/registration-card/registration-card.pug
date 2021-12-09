@@ -7,43 +7,39 @@ mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' 
   .registration-card.js-registration-card
     p.registration-card__title Регистрация аккаунта
     .registration-card__user-name
-      +text-field({
-        list: [
-          { type: 'text', placeholder: 'Имя' },
-          { type: 'text', placeholder: 'Фамилия' },
-        ],
-      })
+      .registration-card__inputs-wrap
+        +text-field({ placeholder: 'Имя' })
+        +text-field({ placeholder: 'Фамилия' })
     .registration-card__user-sex
       +radio-buttons
     .registration-card__user-birthday
-      +text-field({
-        title: 'дата рождения',
-        list: [
-          { type: 'text', isMasked: true },
-        ],
-      })
+      p.registration-card__input-title дата рождения
+      +text-field({ isMasked: true })
     .registration-card__email-password
-      +text-field({
-        title: 'данные для входа в сервис',
-        list: [
-          { type: 'text', placeholder: 'Email' },
-          { type: 'password', placeholder: 'Пароль' },
-        ],
-      })
+      p.registration-card__input-title данные для входа в сервис
+      .registration-card__inputs-wrap
+        +text-field({ placeholder: 'Email' })
+        +text-field({
+          type: 'password',
+          placeholder: 'Пароль',
+        })
     .registration-card__user-info-distribution
-      +toggle({ text: 'Получать спецпредложения', isChecked: false })
+      +toggle({
+        text: 'Получать спецпредложения',
+        isChecked: false,
+      })
     .registration-card__confirm-btn.js-registration-card-registr
       +button({
         type: 'long',
         text: 'зарегистрироваться',
-        href: hrefJoin
+        href: hrefJoin,
       })
     .registration-card__login-container
-      p.registration-card__login-container-tittle Уже есть аккаунт на Toxin
+      p.registration-card__login-container-title Уже есть аккаунт на Toxin
       +button({
         type: 'border',
         text: 'войти',
-        href: hrefLogin
+        href: hrefLogin,
       })
 
 
