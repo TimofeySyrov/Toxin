@@ -7,6 +7,7 @@ class DateDropdown {
     this.bodyInputs = this.body.querySelectorAll('.js-date-dropdown__input');
     this.arrivalInput = this.body.querySelector('.js-date-dropdown-arrival');
     this.depatureInput = this.body.querySelector('.js-date-dropdown-depature');
+    this.inputArrows = this.body.querySelectorAll('.js-date-dropdown__arrow');
     this.isCalendarOpen = this.body.getAttribute('data-calendar-isOpen');
     this.observers = [];
 
@@ -43,6 +44,7 @@ class DateDropdown {
 
   _handleInputClick() {
     this.calendar.checkIsOpen();
+    this._rotateArrows();
   }
 
   _notifyObservers(data) {
@@ -77,6 +79,12 @@ class DateDropdown {
     }
 
     this._notifyObservers(dates);
+  }
+
+  _rotateArrows() {
+    this.inputArrows.forEach((arrow) => {
+      arrow.classList.toggle('date-dropdown__arrow_active');
+    });
   }
 }
 export default DateDropdown;

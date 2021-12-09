@@ -18,7 +18,7 @@
     flex-direction: column;
   }
 
-  &__tittle {
+  &__title {
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
@@ -56,6 +56,10 @@
     justify-content: center;
     align-items: center;
     user-select: none;
+
+    &_active {
+      transform: rotate(-180deg);
+    }
   }
 
   &__calendar {
