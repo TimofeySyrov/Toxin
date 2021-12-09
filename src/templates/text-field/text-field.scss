@@ -2,7 +2,6 @@
   max-width: 320px;
   width: 100%;
   display: inline-block;
-  font-family: $main-font-family;
 
   &__input {
     width: 100%;
@@ -10,6 +9,7 @@
     padding: 0 15px;
     border: 1px solid $dark_shade_25;
     border-radius: 4px;
+    font-family: $main-font-family;
     font-size: 14px;
     line-height: 24px;
     color: $dark_shade_25;
