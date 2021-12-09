@@ -1,12 +1,21 @@
-mixin subscription-text-field(list)
-  .subscription-text-field
-    .subscription-text-field__labels
-      each input in list
-        label.subscription-text-field__label
-          input.subscription-text-field__input(
-            type= input.type
-            name= input.name
-            placeholder= input.placeholder
-          )
-          a.subscription-text-field__icon(href= input.iconHref target= input.iconTarget)
-            i.material-icons arrow_forward
+mixin subscription-text-field(options={})
+  -
+    const {
+      type = 'text',
+      name = '',
+      placeholder = '',
+      iconHref = '/mock-address/change-me',
+      iconContent = 'arrow_forward',
+      iconTarget,
+    } = options;
+
+  label.subscription-text-field
+    input.subscription-text-field__input(
+      type= type
+      name= name
+      placeholder= placeholder
+    )
+    a.subscription-text-field__icon.material-icons(
+      href= iconHref
+      target= iconTarget
+    )= iconContent
