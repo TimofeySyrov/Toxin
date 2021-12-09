@@ -1,0 +1,6 @@
+mixin checkbox(options={})
+  - const { isChecked = true, text = '' } = options;
+
+  label.checkbox
+    input.checkbox__input(type='checkbox' checked= isChecked)
+    span.checkbox__text !{text}
