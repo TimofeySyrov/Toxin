@@ -1,22 +1,8 @@
 .text-field {
   max-width: 320px;
+  width: 100%;
+  display: inline-block;
   font-family: $main-font-family;
-
-  &__title {
-    margin-bottom: 5px;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $dark_shade_100;
-  }
-
-  &__labels {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    row-gap: 10px;
-  }
 
   &__input {
     width: 100%;

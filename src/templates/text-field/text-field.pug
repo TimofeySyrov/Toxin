@@ -1,16 +1,21 @@
-mixin text-field({ title, list }={})
-  .text-field.js-text-field
-    if title
-      .text-field__title !{title}
-    .text-field__labels
-      each input in list
-        label.text-field__label
-          input.text-field__input(
-            class= input.isMasked && 'js-text-field__input_masked'
-            type=input.type
-            name=input.name
-            placeholder= input.isMasked ? 'ДД.ММ.ГГГГ' : input.placeholder
-            disabled=input.disabled
-            readonly=input.readonly
-          )
+mixin text-field(options={})
+  -
+    const {
+      name = '',
+      placeholder = '',
+      type = 'text',
+      disabled = false,
+      readonly = false,
+      isMasked = false,
+    } = options;
+
+  label.text-field.js-text-field
+    input.text-field__input(
+      class= isMasked && 'js-text-field__input_masked'
+      type= type
+      name= name
+      placeholder= isMasked ? 'ДД.ММ.ГГГГ' : placeholder
+      disabled= disabled
+      readonly= readonly
+    )
                 
