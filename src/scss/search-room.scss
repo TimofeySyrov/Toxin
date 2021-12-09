@@ -43,6 +43,10 @@
     text-transform: uppercase;
     color: $dark_shade_100;
     margin-bottom: 5px;
+
+    &_long {
+      margin-bottom: 16px;
+    }
   }
 
   &__item {

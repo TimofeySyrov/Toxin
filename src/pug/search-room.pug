@@ -36,12 +36,13 @@ block content
             })
             p.sidebar-range-slider__description Стоимость за сутки пребывания в номере
           .filter-room-sidebar__item.sidebar-checkbox-buttons
-              +checkbox({text: 'Можно курить', isChecked: false})
-              +checkbox({text: 'Можно с питомцами'})
-              +checkbox({text: 'Можно курить'})
+            span.filter-room-sidebar__input-title.filter-room-sidebar__input-title_long правила дома
+            +checkbox({text: 'Можно курить', isChecked: false})
+            +checkbox({text: 'Можно с питомцами'})
+            +checkbox({text: 'Можно курить'})
           .filter-room-sidebar__item.sidebar-rich-checkbox-buttons
+            span.filter-room-sidebar__input-title.filter-room-sidebar__input-title_long доступность
             +rich-checkbox-buttons({
-              title: 'доступность',
               list: [
                 {name: 'Широкий коридор', desc: 'Ширина коридоров в номере не менее 91 см.'},
                 {name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
