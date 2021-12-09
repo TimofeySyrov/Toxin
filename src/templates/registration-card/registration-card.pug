@@ -1,6 +1,6 @@
 include ../text-field/text-field.pug
 include ../radio-buttons/radio-buttons.pug
-include ../toggle-button/toggle-button.pug
+include ../toggle/toggle.pug
 include ../button/button.pug
 
 mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' }={})
@@ -31,9 +31,7 @@ mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' 
         ],
       })
     .registration-card__user-info-distribution
-      +toggle-button([
-        { name: 'Получать спецпредложения' },
-      ])
+      +toggle({ text: 'Получать спецпредложения', isChecked: false })
     .registration-card__confirm-btn.js-registration-card-registr
       +button({
         type: 'long',

@@ -8,7 +8,7 @@ include ../templates/filter-date-dropdown/filter-date-dropdown.pug
 include ../templates/subscription-text-field/subscription-text-field.pug
 include ../templates/checkbox/checkbox.pug
 include ../templates/radio-buttons/radio-buttons.pug
-include ../templates/toggle-button/toggle-button.pug
+include ../templates/toggle/toggle.pug
 include ../templates/like-button/like-button.pug
 include ../templates/rate-button/rate-button.pug
 include ../templates/range-slider/range-slider.pug
@@ -82,10 +82,8 @@ block content
                 +radio-buttons
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent Toggle
-                +toggle-button([
-                  { name: 'Получать спецпредложения', check: true },
-                  { name: 'Получать спецпредложения' },
-                ])
+                +toggle({ text: 'Получать спецпредложения' })
+                +toggle({ text: 'Получать спецпредложения', isChecked: false })
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent like button
                 .checkbox-buttons-custom-column__like-group
