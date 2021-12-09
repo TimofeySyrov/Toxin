@@ -54,7 +54,7 @@ class RoomMainCard {
         const finalCost = (daysPeriodPrice - parseInt(discount)) + parseInt(additionalCharges);
 
         this.daysPeriod.innerHTML = periodNumber;
-        this.daysPeriodPrice.innerHTML = daysPeriodPrice;
+        this.daysPeriodPrice.innerHTML = daysPeriodPrice.toLocaleString();
         this.finalCost.innerHTML = finalCost.toLocaleString();
       }
     }
