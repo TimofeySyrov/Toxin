@@ -23,7 +23,13 @@ block content
                 +registration-card
             .middle-cards-custom-column
               .middle-cards-custom-column__item
-                +room-info-card
+                +room-info-card({
+                  id: '888',
+                  priceOfDay: '9 990',
+                  discount: '2 179',
+                  services: '300',
+                  isLux: true,
+                })
               .middle-cards-custom-column__item
                 +login-card
             .end-cards-custom-column

@@ -39,7 +39,13 @@ block content
                   +donut-chart
             .booking-card
               .booking-card__container
-                +room-info-card
+                +room-info-card({
+                  id: '888',
+                  priceOfDay: '9 990',
+                  discount: '2 179',
+                  services: '300',
+                  isLux: true,
+                })
             .visitor-reviews
               .visitor-reviews__box-title
                 p.room-main-info__box-title Отзывы посетителей номера
