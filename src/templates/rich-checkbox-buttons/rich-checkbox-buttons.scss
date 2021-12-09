@@ -4,15 +4,6 @@
   flex-direction: column;
   font-family: $main-font-family;
 
-  &__tittle {
-    margin-bottom: 16px;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    color: $dark_shade_100;
-    text-transform: uppercase;
-  }
-
   &__item {
     position: relative;
     margin-bottom: 10px;
