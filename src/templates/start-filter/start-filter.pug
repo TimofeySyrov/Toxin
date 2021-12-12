@@ -2,27 +2,21 @@ include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin start-filter({ title = 'Найдём номера под ваши пожелания' }={})
+mixin start-filter(options={})
+  -
+    const {
+      title = '',
+      dateOptions,
+      dropdownOptions,
+      buttonOptions,
+    } = options;
+
   .start-filter.js-start-filter
-    p.start-filter__title #{title}
+    p.start-filter__title !{title}
     .start-filter__dates
-      +date-dropdown({
-        isOpen: false,
-      })
+      +date-dropdown(dateOptions)
     .start-filter__guests
       span.start-filter__input-title гости
-      +dropdown({
-        dropType: 'guests',
-        isOpenList: false,
-        list: [
-          {name: 'взрослые', number: 0},
-          {name: 'дети', number: 0},
-          {name: 'младенцы', number: 0}
-        ]
-      })
+      +dropdown(dropdownOptions)
     .start-filter__confirm-btn
-      +button({
-        type: 'long',
-        text: 'подобрать номер',
-        href: 'search-room.html'
-      })
+      +button(buttonOptions)
