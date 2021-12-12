@@ -1,11 +1,11 @@
-extends ../layout/ui-kit.pug
+extends ../../layout/ui-kit.pug
 
-include ../templates/logo/logo.pug
-include ../templates/start-filter/start-filter.pug
-include ../templates/registration-card/registration-card.pug
-include ../templates/room-info-card/room-info-card.pug
-include ../templates/login-card/login-card.pug
-include ../templates/cutaway-room-card/cutaway-room-card.pug
+include ../../templates/logo/logo.pug
+include ../../templates/start-filter/start-filter.pug
+include ../../templates/registration-card/registration-card.pug
+include ../../templates/room-info-card/room-info-card.pug
+include ../../templates/login-card/login-card.pug
+include ../../templates/cutaway-room-card/cutaway-room-card.pug
 
 block variables
   - pageTitle = 'Cards'
@@ -18,7 +18,24 @@ block content
           .cards-hero__basic-wrap
             .start-cards-custom-column
               .start-cards-custom-column__item
-                +start-filter
+                +start-filter({
+                  title: 'Найдём номера под ваши пожелания',
+                  dateOptions: { isOpen: false },
+                  dropdownOptions: {
+                    dropType: 'guests',
+                    isOpenList: false,
+                    list: [
+                      { name: 'взрослые', number: 0 },
+                      { name: 'дети', number: 0 },
+                      { name: 'младенцы', number: 0 }
+                    ]
+                  },
+                  buttonOptions: {
+                    type: 'long',
+                    text: 'подобрать номер',
+                    href: 'search-room.html',
+                  },
+                })
               .start-cards-custom-column__item
                 +registration-card
             .middle-cards-custom-column

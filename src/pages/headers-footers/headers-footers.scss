@@ -1,0 +1,14 @@
+@import '../../styles/global.scss';
+@import '../../templates/logo/logo.scss';
+@import '../../templates/header-ui/header-ui.scss';
+@import '../../templates/header/header.scss';
+@import '../../templates/footer/footer.scss';
+
+.body {
+  background: #f4f4f6;
+}
+
+.article-header-unreg-user,
+.article-header-authorized-user {
+  margin-bottom: 40px;
+}

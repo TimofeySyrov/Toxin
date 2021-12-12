@@ -1,3 +1,24 @@
+@import '../../styles/global.scss';
+@import '../../templates/logo/logo.scss';
+@import '../../templates/text-field/text-field.scss';
+@import '../../templates/dropdown/dropdown.scss';
+@import '../../templates/date-dropdown/date-dropdown.scss';
+@import '../../templates/filter-date-dropdown/filter-date-dropdown.scss';
+@import '../../templates/subscription-text-field/subscription-text-field.scss';
+@import '../../templates/checkbox/checkbox.scss';
+@import '../../templates/radio-buttons/radio-buttons.scss';
+@import '../../templates/toggle/toggle.scss';
+@import '../../templates/like-button/like-button.scss';
+@import '../../templates/rate-button/rate-button.scss';
+@import '../../templates/range-slider/range-slider.scss';
+@import '../../templates/button/button.scss';
+@import '../../templates/pagination/pagination.scss';
+@import '../../templates/checkbox-list/checkbox-list.scss';
+@import '../../templates/rich-checkbox-buttons/rich-checkbox-buttons.scss';
+@import '../../templates/bullet-list/bullet-list.scss';
+@import '../../templates/room-info/room-info.scss';
+@import '../../templates/user-comment/user-comment.scss';
+
 .form-elements-hero {
   &__container {
     max-width: 1160px;

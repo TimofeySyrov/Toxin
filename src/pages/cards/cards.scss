@@ -1,3 +1,12 @@
+@import '../../styles/global.scss';
+@import '../../templates/logo/logo.scss';
+@import '../../templates/start-filter/start-filter.scss';
+@import '../../templates/registration-card/registration-card.scss';
+@import '../../templates/room-info-card/room-info-card.scss';
+@import '../../templates/login-card/login-card.scss';
+@import '../../templates/calendar/calendar.scss';
+@import '../../templates/cutaway-room-card/cutaway-room-card.scss';
+
 .body {
   background: #f4f4f6;
 }

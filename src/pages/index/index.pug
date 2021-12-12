@@ -1,0 +1,26 @@
+extends ../../layout/default.pug
+
+include ../../templates/start-filter/start-filter.pug
+
+block content
+  main.index-main(style="background-image: url('assets/img/index.jpg')")
+    .index-main__container
+      +start-filter({
+        title: 'Найдём номера под ваши пожелания',
+        dateOptions: { isOpen: false },
+        dropdownOptions: {
+          dropType: 'guests',
+          isOpenList: false,
+          list: [
+            { name: 'взрослые', number: 0 },
+            { name: 'дети', number: 0 },
+            { name: 'младенцы', number: 0 }
+          ]
+        },
+        buttonOptions: {
+          type: 'long',
+          text: 'подобрать номер',
+          href: 'search-room.html',
+        },
+      })
+      p.site-description-box Лучшие номера для вашей работы, отдыха и просто вдохновения

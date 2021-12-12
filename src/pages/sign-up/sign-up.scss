@@ -1,4 +1,9 @@
-.sign-in-main {
+@import '../../styles/global.scss';
+@import '../../templates/header/header.scss';
+@import '../../templates/registration-card/registration-card.scss';
+@import '../../templates/footer/footer.scss';
+
+.sign-up-main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

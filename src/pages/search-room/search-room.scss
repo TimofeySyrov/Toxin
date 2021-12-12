@@ -1,3 +1,15 @@
+@import '../../styles/global.scss';
+@import '../../templates/header/header.scss';
+@import '../../templates/filter-date-dropdown/filter-date-dropdown.scss';
+@import '../../templates/dropdown/dropdown.scss';
+@import '../../templates/range-slider/range-slider.scss';
+@import '../../templates/checkbox/checkbox.scss';
+@import '../../templates/rich-checkbox-buttons/rich-checkbox-buttons.scss';
+@import '../../templates/checkbox-list/checkbox-list.scss';
+@import '../../templates/cutaway-room-card/cutaway-room-card.scss';
+@import '../../templates/pagination/pagination.scss';
+@import '../../templates/footer/footer.scss';
+
 .search-room-main {
   padding: 30px 15px 70px 15px;
   border-bottom: 1px solid $dark_shade_25;
