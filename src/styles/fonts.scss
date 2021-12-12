@@ -3,9 +3,9 @@
   font-style: normal;
   font-weight: 400;
   src:
-    url('../assets/fonts/monserrat/montserrat-regular.woff2') format('woff2'),
-    url('../assets/fonts/monserrat/montserrat-regular.woff') format('woff'),
-    url('../assets/fonts/monserrat/montserrat-regular.svg#Montserrat') format('svg');
+    url('../../assets/fonts/monserrat/montserrat-regular.woff2') format('woff2'),
+    url('../../assets/fonts/monserrat/montserrat-regular.woff') format('woff'),
+    url('../../assets/fonts/monserrat/montserrat-regular.svg#Montserrat') format('svg');
 }
 
 @font-face {
@@ -13,16 +13,16 @@
   font-style: normal;
   font-weight: 700;
   src:
-    url('../assets/fonts/monserrat/montserrat-bold.woff2') format('woff2'),
-    url('../assets/fonts/monserrat/montserrat-bold.woff') format('woff'),
-    url('../assets/fonts/monserrat/montserrat-bold.svg#Montserrat') format('svg');
+    url('../../assets/fonts/monserrat/montserrat-bold.woff2') format('woff2'),
+    url('../../assets/fonts/monserrat/montserrat-bold.woff') format('woff'),
+    url('../../assets/fonts/monserrat/montserrat-bold.svg#Montserrat') format('svg');
 }
 
 @font-face {
   font-family: 'MaterialIcons';
   src:
-    url('../assets/fonts/material-icons/material-icons-regular.woff') format('woff'),
-    url('../assets/fonts/material-icons/material-icons-regular.svg') format('svg');
+    url('../../assets/fonts/material-icons/material-icons-regular.woff') format('woff'),
+    url('../../assets/fonts/material-icons/material-icons-regular.svg') format('svg');
   font-weight: 400;
   font-style: normal;
 }
@@ -30,8 +30,8 @@
 @font-face {
   font-family: 'Font-Awesome-5-Brands';
   src:
-    url('../assets/fonts/font-awesome-5-brands/font-awesome-5-brands-regular.woff') format('woff'),
-    url('../assets/fonts/font-awesome-5-brands/font-awesome-5-brands-regular.svg') format('svg');
+    url('../../assets/fonts/font-awesome-5-brands/font-awesome-5-brands-regular.woff') format('woff'),
+    url('../../assets/fonts/font-awesome-5-brands/font-awesome-5-brands-regular.svg') format('svg');
   font-weight: 400;
   font-style: normal;
 }
