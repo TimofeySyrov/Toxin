@@ -1,6 +1,6 @@
 class Dropdown {
-  constructor(container) {
-    this.container = container;
+  constructor(domParent) {
+    this.container = domParent.querySelector('.js-dropdown');
 
     this._findDomElements();
     this._init();
@@ -56,7 +56,7 @@ class Dropdown {
     this.nameBox.addEventListener('click', this._handleNameBoxClick.bind(this));
     this._bindEventListenerItemButtons();
 
-    if(isGuestsType) {
+    if (isGuestsType) {
       this._bindEventListenerDropdownButtons();
     }
   }
@@ -104,7 +104,7 @@ class Dropdown {
     const totalIsZero = parseInt($total.innerHTML) === 0;
     const isRoomAboutType = this.type === 'room-about';
 
-    if(!totalIsZero) {
+    if (!totalIsZero) {
       $total.innerHTML = parseInt($total.innerHTML) - 1;
     }
 
@@ -307,7 +307,7 @@ class Dropdown {
     const totalAmount = bedrooms + beds + bathrooms;
     const totalAmountIsZero = totalAmount === 0;
 
-    if  (totalAmountIsZero) {
+    if (totalAmountIsZero) {
       this.placeholderBox.innerHTML = placeholder;
     }
 

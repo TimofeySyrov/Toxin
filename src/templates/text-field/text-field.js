@@ -1,8 +1,8 @@
 import 'inputmask/dist/jquery.inputmask.min';
 
 class TextField {
-  constructor(body) {
-    this.$body = $(body);
+  constructor(domParent) {
+    this.$body = $(domParent).find('.js-text-field__input_masked');
 
     this._init();
   }

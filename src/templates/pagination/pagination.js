@@ -1,20 +1,19 @@
 import '../../../libs/simplePagination.js-master/jquery.simplePagination';
 
 class Pagination {
-  constructor(body) {
-    this.$body = $(body);
+  constructor(domParent, options) {
+    this.options = options;
+    this.$body = $(domParent).find('.js-pagination');
     this.$pagBody = this.$body.find('.js-pagination__body');
-    this.$currentMin = this.$body.find('.js-pagination__title-current-min');
-    this.$currentMax = this.$body.find('.js-pagination__title-current-max');
-    this.$allItemsCount = this.$body.find('.js-pagination__title-items-count');
+    this.$currentMin = this.$body.find('.js-pagination__current-min');
+    this.$currentMax = this.$body.find('.js-pagination__current-max');
+    this.$allItemsCount = this.$body.find('.js-pagination__items-count');
 
     this._init();
   }
 
   _init() {
-    const items = parseInt(this.$body.attr('data-items-count'));
-    const pageSize = parseInt(this.$body.attr('data-page-size'));
-    const pageRange = parseInt(this.$body.attr('data-page-range'));
+    const { items, pageSize, pageRange } = this.options;
     const amountAllItems = items * pageSize;
 
     this.$pagBody.pagination({
@@ -38,8 +37,8 @@ class Pagination {
   }
 
   _updateCurrentCounts(pageNumber) {
+    const { pageSize } = this.options;
     const { $currentMin, $currentMax } = this;
-    const pageSize = parseInt(this.$body.attr('data-page-size'));
     const max = pageNumber * pageSize;
     const min = max - (pageSize - 1);
 

@@ -1,9 +1,9 @@
 import 'jquery-bar-rating/dist/jquery.barrating.min';
 
 class RateButton {
-  constructor(element) {
-    this.$container = $(element);
-    
+  constructor(domParent) {
+    this.$container = $(domParent).find('.js-rate-button');
+
     this._findDOMElements();
     this._init();
   }
@@ -11,7 +11,7 @@ class RateButton {
   _findDOMElements() {
     this.$rateButton = this.$container.find('.js-rate-button__container');
     this.valueRating = this.$rateButton.attr('data-rating');
-    this.valueReadonly =  this.$rateButton.attr('data-readonly');
+    this.valueReadonly = this.$rateButton.attr('data-readonly');
   }
 
   _init() {

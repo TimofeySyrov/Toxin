@@ -1,8 +1,8 @@
 import Calendar from '../calendar/calendar';
 
 class FilterDateDropdown {
-  constructor(body) {
-    this.body = body;
+  constructor(domParent) {
+    this.body = domParent.querySelector('.js-filter-date-dropdown');
     this.nameBox = this.body.querySelector('.js-filter-date-dropdown__name-box');
     this.calendarBody = this.body.querySelector('.js-filter-date-dropdown__calendar');
     this.calendarInput = this.body.querySelector('.js-filter-date-dropdown__input');

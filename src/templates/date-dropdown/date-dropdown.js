@@ -1,8 +1,8 @@
 import Calendar from '../calendar/calendar';
 
 class DateDropdown {
-  constructor(body) {
-    this.body = body;
+  constructor(domParent) {
+    this.body = domParent.querySelector('.js-date-dropdown');
     this.calendarBody = this.body.querySelector('.js-date-dropdown__calendar-container');
     this.bodyInputs = this.body.querySelectorAll('.js-date-dropdown__input');
     this.arrivalInput = this.body.querySelector('.js-date-dropdown-arrival');
@@ -12,7 +12,7 @@ class DateDropdown {
     this.observers = [];
 
     this._init();
-    this._bindEventListenerInputs();
+    this._bindEventListener();
   }
 
   observeDateChanges(observer) {
@@ -35,11 +35,13 @@ class DateDropdown {
     });
   }
 
-  _bindEventListenerInputs() {
+  _bindEventListener() {
     const [bodyArrivalInput, bodyDepatureInput] = this.bodyInputs;
+    const { calendar } = this;
 
     bodyArrivalInput.addEventListener('click', this._handleInputClick.bind(this));
     bodyDepatureInput.addEventListener('click', this._handleInputClick.bind(this));
+    calendar.observeShowCalendarEvent(this._rotateArrows.bind(this));
   }
 
   _handleInputClick() {

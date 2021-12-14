@@ -1,8 +1,8 @@
 import noUiSlider from 'nouislider';
 
 class RangeSlider {
-  constructor(container) {
-    this.container = container;
+  constructor(domParent) {
+    this.container = domParent.querySelector('.js-range-slider');
 
     this.minPrice = this.container.querySelector('.js-range-slider__min-price');
     this.maxPrice = this.container.querySelector('.js-range-slider__max-price');

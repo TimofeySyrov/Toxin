@@ -6,6 +6,7 @@ class Calendar {
     this.options = params.options || {};
     this.isOpen = false;
     this.firstInitIsOpen = params.isOpen;
+    this.observers = [];
 
     this._init(this.options);
     this._bindEventListenerBtns();
@@ -16,6 +17,14 @@ class Calendar {
       this._hideCalendar();
     } else {
       this._showCalendar();
+    }
+  }
+
+  observeShowCalendarEvent(observer) {
+    const isCorrectObserver = observer !== undefined && observer !== null;
+
+    if (isCorrectObserver) {
+      this.observers.push(observer);
     }
   }
 
@@ -43,6 +52,10 @@ class Calendar {
     } else {
       this._hideCalendar();
     }
+  }
+
+  _notifyObservers(data) {
+    this.observers.forEach((observer) => observer(data));
   }
 
   _addCalendarButtons() {
@@ -82,6 +95,7 @@ class Calendar {
 
   _handleConfirmBtnClick() {
     this._hideCalendar();
+    this._notifyObservers({ isOpen: this.isOpen });
   }
 
   _showCalendar() {

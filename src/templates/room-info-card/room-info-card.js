@@ -1,23 +1,36 @@
 import DateDropdown from '../date-dropdown/date-dropdown';
-import '../dropdown/dropdown-init';
+import Dropdown from '../dropdown/dropdown';
 
-class RoomMainCard {
-  constructor(body) {
-    this.body = body;
-    this.pricePerDay = this.body.querySelector('.js-room-info-card__price-per-day');
-    this.daysPeriod = this.body.querySelector('.js-room-info-card__table-row-period');
-    this.daysPeriodPrice = this.body.querySelector('.js-room-info-card__days-period-price');
-    this.discount = this.body.querySelector('.js-room-info-card__discount');
-    this.additionalCharges = this.body.querySelector('.js-room-info-card__additional-charges');
-    this.finalCost = this.body.querySelector('.js-room-info-card__final-cost');
+class RoomInfoCard {
+  constructor(domParent) {
+    this.body = domParent.querySelector('.js-room-info-card');
+    
+    this._init();
+  }
 
+  _init() {
+    this._findDOMElements();
+    this._initComponents();
     this._subscribeToDateChanges();
   }
 
-  _subscribeToDateChanges() {
-    const dateDropdownBody = this.body.querySelector('.js-date-dropdown');
-    this.dateDropdown = new DateDropdown(dateDropdownBody);
+  _findDOMElements() {
+    const { body } = this;
+    this.pricePerDay = body.querySelector('.js-room-info-card__price-per-day');
+    this.daysPeriod = body.querySelector('.js-room-info-card__table-row-period');
+    this.daysPeriodPrice = body.querySelector('.js-room-info-card__days-period-price');
+    this.discount = body.querySelector('.js-room-info-card__discount');
+    this.additionalCharges = body.querySelector('.js-room-info-card__additional-charges');
+    this.finalCost = body.querySelector('.js-room-info-card__final-cost');
+  }
 
+  _initComponents() {
+    const { body } = this;
+    this.dateDropdown = new DateDropdown(body);
+    this.dropdown = new Dropdown(body);
+  }
+
+  _subscribeToDateChanges() {
     this.dateDropdown.observeDateChanges(this._calculateTheFinalCost.bind(this));
   }
 
@@ -61,4 +74,4 @@ class RoomMainCard {
   }
 }
 
-export default RoomMainCard;
+export default RoomInfoCard;

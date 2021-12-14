@@ -1,6 +1,6 @@
 class LikeButton {
-  constructor(element) {
-    this.container = element;
+  constructor(domParent) {
+    this.container = domParent.querySelector('.js-like-button');
     this.button = this.container.querySelector('.js-like-button__btn');
 
     this._findDomElements();
