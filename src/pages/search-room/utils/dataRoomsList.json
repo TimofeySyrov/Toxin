@@ -1,0 +1,302 @@
+[
+  {
+    "number": 888,
+    "lux": true,
+    "price": "9 990",
+    "stars": 5,
+    "reviews": 145,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-888.jpg",
+        "alt": "room №888"
+      },
+      {
+        "src": "assets/img/rooms/room-888.jpg",
+        "alt": "room №888"
+      },
+      {
+        "src": "assets/img/rooms/room-888.jpg",
+        "alt": "room №888"
+      },
+      {
+        "src": "assets/img/rooms/room-888.jpg",
+        "alt": "room №888"
+      }
+    ]
+  },
+  {
+    "number": 840,
+    "lux": false,
+    "price": "9 990",
+    "stars": 4,
+    "reviews": 65,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-840.jpg",
+        "alt": "room №840"
+      },
+      {
+        "src": "assets/img/rooms/room-840.jpg",
+        "alt": "room №840"
+      },
+      {
+        "src": "assets/img/rooms/room-840.jpg",
+        "alt": "room №840"
+      },
+      {
+        "src": "assets/img/rooms/room-840.jpg",
+        "alt": "room №840"
+      }
+    ]
+  },
+  {
+    "number": 980,
+    "lux": true,
+    "price": "8 500",
+    "stars": 3,
+    "reviews": 35,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-980.jpg",
+        "alt": "room №980"
+      },
+      {
+        "src": "assets/img/rooms/room-980.jpg",
+        "alt": "room №980"
+      },
+      {
+        "src": "assets/img/rooms/room-980.jpg",
+        "alt": "room №980"
+      },
+      {
+        "src": "assets/img/rooms/room-980.jpg",
+        "alt": "room №980"
+      }
+    ]
+  },
+  {
+    "number": 856,
+    "lux": false,
+    "price": "7 300",
+    "stars": 5,
+    "reviews": 19,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-856.jpg",
+        "alt": "room №856"
+      },
+      {
+        "src": "assets/img/rooms/room-856.jpg",
+        "alt": "room №856"
+      },
+      {
+        "src": "assets/img/rooms/room-856.jpg",
+        "alt": "room №856"
+      },
+      {
+        "src": "assets/img/rooms/room-856.jpg",
+        "alt": "room №856"
+      }
+    ]
+  },
+  {
+    "number": 740,
+    "lux": false,
+    "price": "6 000",
+    "stars": 4,
+    "reviews": 44,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-740.jpg",
+        "alt": "room №740"
+      },
+      {
+        "src": "assets/img/rooms/room-740.jpg",
+        "alt": "room №740"
+      },
+      {
+        "src": "assets/img/rooms/room-740.jpg",
+        "alt": "room №740"
+      },
+      {
+        "src": "assets/img/rooms/room-740.jpg",
+        "alt": "room №740"
+      }
+    ]
+  },
+  {
+    "number": 982,
+    "lux": false,
+    "price": "5 800",
+    "stars": 3,
+    "reviews": 56,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-982.jpg",
+        "alt": "room №982"
+      },
+      {
+        "src": "assets/img/rooms/room-982.jpg",
+        "alt": "room №982"
+      },
+      {
+        "src": "assets/img/rooms/room-982.jpg",
+        "alt": "room №982"
+      },
+      {
+        "src": "assets/img/rooms/room-982.jpg",
+        "alt": "room №982"
+      }
+    ]
+  },
+  {
+    "number": 678,
+    "lux": false,
+    "price": "5 500",
+    "stars": 5,
+    "reviews": 45,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-678.jpg",
+        "alt": "room №678"
+      },
+      {
+        "src": "assets/img/rooms/room-678.jpg",
+        "alt": "room №678"
+      },
+      {
+        "src": "assets/img/rooms/room-678.jpg",
+        "alt": "room №678"
+      },
+      {
+        "src": "assets/img/rooms/room-678.jpg",
+        "alt": "room №678"
+      }
+    ]
+  },
+  {
+    "number": 450,
+    "lux": false,
+    "price": "5 300",
+    "stars": 4,
+    "reviews": 39,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-450.jpg",
+        "alt": "room №450"
+      },
+      {
+        "src": "assets/img/rooms/room-450.jpg",
+        "alt": "room №450"
+      },
+      {
+        "src": "assets/img/rooms/room-450.jpg",
+        "alt": "room №450"
+      },
+      {
+        "src": "assets/img/rooms/room-450.jpg",
+        "alt": "room №450"
+      }
+    ]
+  },
+  {
+    "number": 350,
+    "lux": false,
+    "price": "5 000",
+    "stars": 3,
+    "reviews": 77,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-350.jpg",
+        "alt": "room №350"
+      },
+      {
+        "src": "assets/img/rooms/room-350.jpg",
+        "alt": "room №350"
+      },
+      {
+        "src": "assets/img/rooms/room-350.jpg",
+        "alt": "room №350"
+      },
+      {
+        "src": "assets/img/rooms/room-350.jpg",
+        "alt": "room №350"
+      }
+    ]
+  },
+  {
+    "number": 666,
+    "lux": false,
+    "price": "5 000",
+    "stars": 5,
+    "reviews": 25,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-666.jpg",
+        "alt": "room №666"
+      },
+      {
+        "src": "assets/img/rooms/room-666.jpg",
+        "alt": "room №666"
+      },
+      {
+        "src": "assets/img/rooms/room-666.jpg",
+        "alt": "room №666"
+      },
+      {
+        "src": "assets/img/rooms/room-666.jpg",
+        "alt": "room №666"
+      }
+    ]
+  },
+  {
+    "number": 444,
+    "lux": false,
+    "price": "5 000",
+    "stars": 3,
+    "reviews": 15,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-444.jpg",
+        "alt": "room №444"
+      },
+      {
+        "src": "assets/img/rooms/room-444.jpg",
+        "alt": "room №444"
+      },
+      {
+        "src": "assets/img/rooms/room-444.jpg",
+        "alt": "room №444"
+      },
+      {
+        "src": "assets/img/rooms/room-444.jpg",
+        "alt": "room №444"
+      }
+    ]
+  },
+  {
+    "number": 352,
+    "lux": false,
+    "price": "5 000",
+    "stars": 3,
+    "reviews": 55,
+    "sliders": [
+      {
+        "src": "assets/img/rooms/room-352.jpg",
+        "alt": "room №352"
+      },
+      {
+        "src": "assets/img/rooms/room-352.jpg",
+        "alt": "room №352"
+      },
+      {
+        "src": "assets/img/rooms/room-352.jpg",
+        "alt": "room №352"
+      },
+      {
+        "src": "assets/img/rooms/room-352.jpg",
+        "alt": "room №352"
+      }
+    ]
+  }
+]
