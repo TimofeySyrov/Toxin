@@ -30,10 +30,10 @@ block content
         .form-elements-hero__container
           .form-elements-hero__basic-wrap
             .text-field-custom-column
-              .basic-item.text-field-custom-column__item
+              .basic-item.text-field-custom-column__item.text-field-item.js-text-field-item
                 p.basic-item__tittle text field
                 +text-field({ placeholder: 'Email' })
-              .basic-item.text-field-custom-column__item
+              .basic-item.text-field-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
                   tittle: 'dropdown',
                   isOpenList: false,
@@ -43,16 +43,16 @@ block content
                     {name: 'младенцы', total: 0},
                   ]
                 })
-              .basic-item.text-field-custom-column__item
+              .basic-item.text-field-custom-column__item.text-field-item.js-text-field-item
                 p.basic-item__tittle masked text field
                 +text-field({ isMasked: true })
-              .basic-item.text-field-custom-column__item
+              .basic-item.text-field-custom-column__item.date-dropdown-item.js-date-dropdown-item
                 +date-dropdown({
                   isOpen: false,
                   arr: 'date Dropdown',
                   dep: 'date Dropdown',
                 })
-              .basic-item.text-field-custom-column__item.filter-dates
+              .basic-item.text-field-custom-column__item.filter-dates.filter-date-dropdown-item.js-filter-date-dropdown-item
                 p.basic-item__tittle filter date dropdown
                 .filter-dates__calendar
                   +filter-date-dropdown({
@@ -76,26 +76,26 @@ block content
                 +toggle({ text: 'Получать спецпредложения', isChecked: false })
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent like button
-                .checkbox-buttons-custom-column__like-group
+                .checkbox-buttons-custom-column__like-group.like-button-item.js-like-button-item
                   +like-button
-                .checkbox-buttons-custom-column__like-group
+                .checkbox-buttons-custom-column__like-group.like-button-item.js-like-button-item
                   +like-button({
                     count: 12,
                     checked: true
                   })
               .basic-item.checkbox-buttons-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent rate button
-                .checkbox-buttons-custom-column__rate-group
+                .checkbox-buttons-custom-column__rate-group.rate-button-item.js-rate-button-item
                   +rate-button({
                     rating: 4,
                   })
-                .checkbox-buttons-custom-column__rate-group
+                .checkbox-buttons-custom-column__rate-group.rate-button-item.js-rate-button-item
                   +rate-button({
                     rating: 5,
                     readonly: true,
                   })
             .range-slider-custom-column
-              .basic-item.range-slider-custom-column__item
+              .basic-item.range-slider-custom-column__item.range-slider-item.js-range-slider-item
                 +range-slider
               .basic-item.range-slider-custom-column__item
                 p.basic-item__tittle.basic-item__tittle_long-indent buttons
@@ -114,7 +114,7 @@ block content
                   type: 'long',
                   text: 'перейти к оплате'
                 })
-              .basic-item.range-slider-custom-column__item
+              .basic-item.range-slider-custom-column__item.pagination-item.js-pagination-item
                 p.basic-item__tittle.basic-item__tittle_long-indent pagination
                 +pagination({
                   items: 180,
@@ -122,7 +122,7 @@ block content
                   pageRange: 3,
                 })
             .drop-first-custom-column
-              .basic-item.drop-first-custom-column__item
+              .basic-item.drop-first-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
                   tittle: 'dropdown',
                   dropType: 'room-about',
@@ -134,7 +134,7 @@ block content
                   ]
                 })
             .drop-second-custom-column
-              .basic-item.drop-second-custom-column__item
+              .basic-item.drop-second-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
                   tittle: 'dropdown',
                   isOpenList: false,
@@ -145,7 +145,7 @@ block content
                   ]
                 })
             .drop-third-custom-column
-              .basic-item.drop-third-custom-column__item
+              .basic-item.drop-third-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
                   tittle: 'dropdown',
                   isOpenList: false,
@@ -156,7 +156,7 @@ block content
                   ]
                 })
             .exp-checkbox-list-custom-column
-              .basic-item.exp-checkbox-list-custom-column__item
+              .basic-item.exp-checkbox-list-custom-column__item.checkbox-list-item.js-checkbox-list-item
                 +checkbox-list({
                   list: [
                     { text: 'Завтрак', isChecked: false },
@@ -197,7 +197,7 @@ block content
                   ]
                 })
             .comment-custom-column
-              .basic-item.comment-custom-column__item
+              .basic-item.comment-custom-column__item.user-comment-item.js-user-comment-item
                 +user-comment({
                   desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
                 })
