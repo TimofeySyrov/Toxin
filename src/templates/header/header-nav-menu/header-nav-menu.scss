@@ -9,14 +9,21 @@
     align-items: center;
     margin-right: 20px;
     cursor: pointer;
+    user-select: none;
 
     &:last-child {
       margin: 0;
     }
 
-    &:hover > .submenu,
-    &:focus > .submenu {
-      display: flex;
+    &_active {
+      .nav-menu__link {
+        font-weight: 700;
+        color: $dark_shade_75;
+      }
+
+      .submenu {
+        display: flex;
+      }
     }
   }
 
@@ -108,11 +115,5 @@
       overflow: hidden;
       visibility: hidden;
     }
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    display: flex;
   }
 }

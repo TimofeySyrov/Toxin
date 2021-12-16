@@ -3,12 +3,12 @@ include ../button/button.pug
 include ./header-nav-menu/header-nav-menu.pug
 
 mixin header({ user, navMenu }={})
-  header.header
+  header.header.js-header
     .header__container
       .header__logo
         +logo
-      .header__nav-menu
-        +header-nav-menu({ listMenu: navMenu })
+      .header__nav-menu.js-header__nav-menu
+        +header-nav-menu(navMenu)
       .header__auth-box
         if user
           .header__user
