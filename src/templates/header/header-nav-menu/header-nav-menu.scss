@@ -11,18 +11,35 @@
     cursor: pointer;
     user-select: none;
 
-    &:last-child {
-      margin: 0;
-    }
-
     &_active {
       .nav-menu__link {
         font-weight: 700;
         color: $dark_shade_75;
       }
 
+      .nav-menu__icon {
+        color: $dark_shade_75;
+      }
+
       .submenu {
         display: flex;
+      }
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .nav-menu__link {
+        font-weight: 700;
+        color: $dark_shade_75;
+      }
+
+      .nav-menu__icon {
+        color: $dark_shade_75;
       }
     }
   }
@@ -34,13 +51,6 @@
     line-height: 17px;
     color: $dark_shade_50;
     text-decoration: none;
-
-    &:hover,
-    &:focus,
-    &:active {
-      font-weight: 700;
-      color: $dark_shade_75;
-    }
 
     &::before {
       display: block;

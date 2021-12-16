@@ -1,8 +1,8 @@
 import HeaderNavMenu from './header-nav-menu/header-nav-menu';
 
 class Header {
-  constructor() {
-    this.body = document.querySelector('.js-header');
+  constructor(domParent) {
+    this.body = domParent.querySelector('.js-header');
     this.headerNavMenuBody = this.body.querySelector('.js-header__nav-menu');
 
     this._init();
@@ -13,4 +13,4 @@ class Header {
   }
 }
 
-export default new Header();
+export default Header;
