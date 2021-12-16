@@ -1,11 +1,8 @@
 .pagination {
-  &__tittle {
-    margin-top: 10px;
+  width: fit-content;
+
+  &__title {
     text-align: center;
-    font-family: $main-font-family;
-    font-size: 14px;
-    line-height: 24px;
-    color: $dark_shade_75;
   }
 
   &__body {
