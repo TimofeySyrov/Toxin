@@ -8,21 +8,26 @@ mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' 
     p.registration-card__title Регистрация аккаунта
     .registration-card__user-name
       .registration-card__inputs-wrap
-        +text-field({ placeholder: 'Имя' })
-        +text-field({ placeholder: 'Фамилия' })
+        .registration-card__input.js-registration-card__input
+          +text-field({ placeholder: 'Имя' })
+        .registration-card__input.js-registration-card__input
+          +text-field({ placeholder: 'Фамилия' })
     .registration-card__user-sex
       +radio-buttons
     .registration-card__user-birthday
       p.registration-card__input-title дата рождения
-      +text-field({ isMasked: true })
+      .registration-card__input.js-registration-card__input
+        +text-field({ isMasked: true })
     .registration-card__email-password
       p.registration-card__input-title данные для входа в сервис
       .registration-card__inputs-wrap
-        +text-field({ placeholder: 'Email' })
-        +text-field({
-          type: 'password',
-          placeholder: 'Пароль',
-        })
+        .registration-card__input.js-registration-card__input
+          +text-field({ placeholder: 'Email' })
+        .registration-card__input.js-registration-card__input
+          +text-field({
+            type: 'password',
+            placeholder: 'Пароль',
+          })
     .registration-card__user-info-distribution
       +toggle({
         text: 'Получать спецпредложения',
