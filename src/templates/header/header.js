@@ -20,7 +20,18 @@ class Header {
   }
 
   _bindEventListeners() {
+    window.addEventListener('click', this._handleWindowClick.bind(this));
     this.menuButton.addEventListener('click', this._handleMenuButtonClick.bind(this));
+  }
+
+  _handleWindowClick(event) {
+    const { target } = event;
+    const clickOnMenuButton = target === this.menuButton;
+    const clickOnMenu = this.menuContainer.contains(target);
+
+    if (!clickOnMenu && !clickOnMenuButton) {
+      this.menuContainer.classList.remove('header__nav-container_active');
+    }
   }
 
   _handleMenuButtonClick() {
