@@ -7,7 +7,7 @@ mixin user-comment({ likeCount = 12, likeCheck = true, srcImg = "assets/img/user
       .user-comment__like-btn.js-user-comment__like-btn
         +like-button({
           count: likeCount,
-          checked: likeCheck
+          isChecked: likeCheck
         })
     .user-comment__right-box
       p.user-comment__user-name= name
