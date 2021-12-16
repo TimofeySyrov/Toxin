@@ -1,7 +1,6 @@
 class LikeButton {
   constructor(domParent) {
-    this.container = domParent.querySelector('.js-like-button');
-    this.button = this.container.querySelector('.js-like-button__btn');
+    this.button = domParent.querySelector('.js-like-button');
 
     this._findDomElements();
     this._bindEventListener();
@@ -9,10 +8,9 @@ class LikeButton {
   }
 
   _findDomElements() {
-    this.heartContainer = this.button.querySelector('.js-like-button__icon');
-    this.stageData = this.button.getAttribute('data-checked');
+    this.icon = this.button.querySelector('.js-like-button__icon');
+    this.isChecked = this.button.getAttribute('data-checked');
     this.countLikes = this.button.querySelector('.js-like-button__count');
-    this.heart = this.button.querySelector('.material-icons');
   }
 
   _bindEventListener() {
@@ -20,9 +18,9 @@ class LikeButton {
   }
 
   _handleButtonClick() {
-    this.button.classList.toggle('like-button__btn_active');
+    this.button.classList.toggle('like-button_active');
 
-    if (this.button.className.includes('like-button__btn_active')) {
+    if (this.button.className.includes('like-button_active')) {
       this._setActive();
       this.countLikes.textContent = Number(this.countLikes.textContent) + 1;
     } else {
@@ -35,23 +33,25 @@ class LikeButton {
   }
 
   _setStage() {
-    if (this.stageData === 'true') {
+    if (this.isChecked === 'true') {
       this._setActive();
-    } else if (this.stageData === 'false') {
+    }
+    
+    if (this.isChecked === 'false') {
       this._setUnActive();
     }
   }
 
   _setActive() {
-    this.button.classList.add('like-button__btn_active');
-    this.heartContainer.classList.add('like-button__icon_active');
-    this.heart.textContent = 'favorite';
+    this.button.classList.add('like-button_active');
+    this.icon.classList.add('like-button__icon_active');
+    this.icon.innerHTML = 'favorite';
   }
 
   _setUnActive() {
-    this.button.classList.remove('like-button__btn_active');
-    this.heartContainer.classList.remove('like-button__icon_active');
-    this.heart.textContent = 'favorite_border';
+    this.button.classList.remove('like-button_active');
+    this.icon.classList.remove('like-button__icon_active');
+    this.icon.innerHTML = 'favorite_border';
   }
 }
 

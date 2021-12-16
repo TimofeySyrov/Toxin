@@ -1,36 +1,24 @@
 .like-button {
-  &__tittle {
-    display: inline-block;
-    margin-bottom: 16px;
-    font-family: $main-font-family;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $dark_shade_100;
-  }
+  min-width: 40px;
+  min-height: 20px;
+  padding: 2px 8px 2px 0px;
+  border: 1px solid $dark_shade_25;
+  border-radius: 10px;
+  background: #fff;
+  color: $dark_shade_25;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
 
-  &__btn {
-    width: 40px;
-    height: 20px;
-    border: 1px solid $dark_shade_25;
-    border-radius: 10px;
-    background: #fff;
-    color: $dark_shade_25;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    user-select: none;
-
-    &_active {
-      color: $purple;
-      border-color: $purple;
-    }
+  &_active {
+    color: $purple;
+    border-color: $purple;
   }
 
   &__icon {
     width: 20px;
-    height: 18px;
+    height: fit-content;
     float: left;
     display: flex;
     justify-content: center;
