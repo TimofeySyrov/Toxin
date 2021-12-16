@@ -1,3 +1,4 @@
+import Header from '../../templates/header/header';
 import RoomInfoCard from '../../templates/room-info-card/room-info-card';
 import DonutChart from '../../templates/donut-chart/donut-chart';
 import UserComment from '../../templates/user-comment/user-comment';
@@ -12,10 +13,12 @@ class RoomDetails {
   _initComponents() {
     const { donutChart, roomInfoCard, userComment } = this._getDOMElements();
     const chartOptions = JSON.parse(JSON.stringify(dataDonutChartOptions));
+    this.headers = [];
     this.donutCharts = [];
     this.roomInfoCards = [];
     this.userComments = [];
 
+    this.headers.push(new Header(document));
     this.donutCharts.push(new DonutChart(donutChart, chartOptions));
     roomInfoCard.forEach((item) => {
       this.roomInfoCards.push(new RoomInfoCard(item));

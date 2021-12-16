@@ -1,3 +1,4 @@
+import Header from '../../templates/header/header';
 import FilterDateDropdown from '../../templates/filter-date-dropdown/filter-date-dropdown';
 import Dropdown from '../../templates/dropdown/dropdown';
 import RangeSlider from '../../templates/range-slider/range-slider';
@@ -20,6 +21,7 @@ class SearchRoom {
       cutawayRoomCard,
       pagination,
     } = this._getDOMElements();
+    this.headers = [];
     this.filterDateDropdowns = [];
     this.dropdowns = [];
     this.rangeSliders = [];
@@ -27,6 +29,7 @@ class SearchRoom {
     this.cutawayRoomCards = [];
     this.paginations = [];
 
+    this.headers.push(new Header(document));
     this.paginations.push(new Pagination(pagination, {
       items: 180,
       pageSize: 12,

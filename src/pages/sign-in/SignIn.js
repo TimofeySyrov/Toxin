@@ -1,3 +1,4 @@
+import Header from '../../templates/header/header';
 import LoginCard from '../../templates/login-card/login-card';
 import './sign-in.scss';
 
@@ -8,8 +9,10 @@ class SignIn {
 
   _initComponents() {
     const { loginCard } = this._getDOMElements();
+    this.headers = [];
     this.loginCards = [];
 
+    this.headers.push(new Header(document));
     loginCard.forEach((item) => {
       this.loginCards.push(new LoginCard(item));
     });
