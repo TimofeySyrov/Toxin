@@ -10,6 +10,7 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+  user-select: none;
 
   &__input {
     position: absolute;

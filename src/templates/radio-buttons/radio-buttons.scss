@@ -1,20 +1,9 @@
 .radio-buttons {
-  &__tittle {
-    display: inline-block;
-    margin-bottom: 16px;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $dark_shade_100;
-  }
+  display: flex;
+  align-items: center;
+  user-select: none;
 
-  &__form {
-    display: flex;
-    align-items: center;
-  }
-
-  &__item {
+  &__label {
     margin-right: 20px;
     display: flex;
     align-items: center;
@@ -40,6 +29,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
 
     &::after {
       content: '';
@@ -64,7 +54,7 @@
     }
   }
 
-  &__box {
+  &__input-name {
     color: $dark_shade_50;
   }
 }
