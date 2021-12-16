@@ -10,6 +10,7 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $purple;
+    user-select: none;
 
     &-clear {
       cursor: pointer;
