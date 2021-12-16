@@ -17,10 +17,10 @@ block content
     .search-room-main__container
       .basic-wrap
         .filter-room-sidebar
-          .filter-room-sidebar__item.sidebar-date-dropdown
+          .filter-room-sidebar__item.sidebar-date-dropdown.filter-date-dropdown-item.js-filter-date-dropdown-item
             span.filter-room-sidebar__input-title даты пребывания в отеле
             +filter-date-dropdown({ isOpen: false })
-          .filter-room-sidebar__item.sidebar-guests-dropdown
+          .filter-room-sidebar__item.sidebar-guests-dropdown.dropdown-item.js-dropdown-item
             span.filter-room-sidebar__input-title гости
             +dropdown({
               isOpen: false,
@@ -30,7 +30,7 @@ block content
                 {name: 'младенцы', total: 1},
               ]
             })
-          .filter-room-sidebar__item.sidebar-range-slider
+          .filter-room-sidebar__item.sidebar-range-slider.range-slider-item.js-range-slider-item
             +range-slider({
               title: 'диапазон цены'
             })
@@ -48,7 +48,7 @@ block content
                 {name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
               ]
             })
-          .filter-room-sidebar__item.sidebar-room-about-dropdown
+          .filter-room-sidebar__item.sidebar-room-about-dropdown.dropdown-item.js-dropdown-item
             span.filter-room-sidebar__input-title удобства номера
             +dropdown({
               dropType: 'room-about',
@@ -59,7 +59,7 @@ block content
                 {name: 'ванные комнаты', total: 0},
               ]
             })
-          .filter-room-sidebar__item.sidebar-checkbox-list
+          .filter-room-sidebar__item.sidebar-checkbox-list.checkbox-list-item.js-checkbox-list-item
             +checkbox-list({
               title: 'дополнительные удобства',
               list: [
@@ -76,178 +76,17 @@ block content
         .room-cards-list
           h1.page-title Номера, которые мы для вас подобрали
           .room-cards-grid
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 888,
-                lux: true,
-                price: '9 990',
-                stars: 5,
-                reviews: 145,
-                sliders: [
-                  {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
-                  {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
-                  {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
-                  {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 840,
-                lux: false,
-                price: '9 990',
-                stars: 4,
-                reviews: 65,
-                sliders: [
-                  {src: 'assets/img/rooms/room-840.jpg', alt: 'room №840'},
-                  {src: 'assets/img/rooms/room-840.jpg', alt: 'room №840'},
-                  {src: 'assets/img/rooms/room-840.jpg', alt: 'room №840'},
-                  {src: 'assets/img/rooms/room-840.jpg', alt: 'room №840'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 980,
-                lux: true,
-                price: '8 500',
-                stars: 3,
-                reviews: 35,
-                sliders: [
-                  {src: 'assets/img/rooms/room-980.jpg', alt: 'room №980'},
-                  {src: 'assets/img/rooms/room-980.jpg', alt: 'room №980'},
-                  {src: 'assets/img/rooms/room-980.jpg', alt: 'room №980'},
-                  {src: 'assets/img/rooms/room-980.jpg', alt: 'room №980'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 856,
-                lux: false,
-                price: '7 300',
-                stars: 5,
-                reviews: 19,
-                sliders: [
-                  {src: 'assets/img/rooms/room-856.jpg', alt: 'room №856'},
-                  {src: 'assets/img/rooms/room-856.jpg', alt: 'room №856'},
-                  {src: 'assets/img/rooms/room-856.jpg', alt: 'room №856'},
-                  {src: 'assets/img/rooms/room-856.jpg', alt: 'room №856'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 740,
-                lux: false,
-                price: '6 000',
-                stars: 4,
-                reviews: 44,
-                sliders: [
-                  {src: 'assets/img/rooms/room-740.jpg', alt: 'room №740'},
-                  {src: 'assets/img/rooms/room-740.jpg', alt: 'room №740'},
-                  {src: 'assets/img/rooms/room-740.jpg', alt: 'room №740'},
-                  {src: 'assets/img/rooms/room-740.jpg', alt: 'room №740'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 982,
-                lux: false,
-                price: '5 800',
-                stars: 3,
-                reviews: 56,
-                sliders: [
-                  {src: 'assets/img/rooms/room-982.jpg', alt: 'room №982'},
-                  {src: 'assets/img/rooms/room-982.jpg', alt: 'room №982'},
-                  {src: 'assets/img/rooms/room-982.jpg', alt: 'room №982'},
-                  {src: 'assets/img/rooms/room-982.jpg', alt: 'room №982'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 678,
-                lux: false,
-                price: '5 500',
-                stars: 5,
-                reviews: 45,
-                sliders: [
-                  {src: 'assets/img/rooms/room-678.jpg', alt: 'room №678'},
-                  {src: 'assets/img/rooms/room-678.jpg', alt: 'room №678'},
-                  {src: 'assets/img/rooms/room-678.jpg', alt: 'room №678'},
-                  {src: 'assets/img/rooms/room-678.jpg', alt: 'room №678'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 450,
-                lux: false,
-                price: '5 300',
-                stars: 4,
-                reviews: 39,
-                sliders: [
-                  {src: 'assets/img/rooms/room-450.jpg', alt: 'room №450'},
-                  {src: 'assets/img/rooms/room-450.jpg', alt: 'room №450'},
-                  {src: 'assets/img/rooms/room-450.jpg', alt: 'room №450'},
-                  {src: 'assets/img/rooms/room-450.jpg', alt: 'room №450'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 350,
-                lux: false,
-                price: '5 000',
-                stars: 3,
-                reviews: 77,
-                sliders: [
-                  {src: 'assets/img/rooms/room-350.jpg', alt: 'room №350'},
-                  {src: 'assets/img/rooms/room-350.jpg', alt: 'room №350'},
-                  {src: 'assets/img/rooms/room-350.jpg', alt: 'room №350'},
-                  {src: 'assets/img/rooms/room-350.jpg', alt: 'room №350'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 666,
-                lux: false,
-                price: '5 000',
-                stars: 5,
-                reviews: 25,
-                sliders: [
-                  {src: 'assets/img/rooms/room-666.jpg', alt: 'room №666'},
-                  {src: 'assets/img/rooms/room-666.jpg', alt: 'room №666'},
-                  {src: 'assets/img/rooms/room-666.jpg', alt: 'room №666'},
-                  {src: 'assets/img/rooms/room-666.jpg', alt: 'room №666'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 444,
-                lux: false,
-                price: '5 000',
-                stars: 3,
-                reviews: 15,
-                sliders: [
-                  {src: 'assets/img/rooms/room-444.jpg', alt: 'room №444'},
-                  {src: 'assets/img/rooms/room-444.jpg', alt: 'room №444'},
-                  {src: 'assets/img/rooms/room-444.jpg', alt: 'room №444'},
-                  {src: 'assets/img/rooms/room-444.jpg', alt: 'room №444'},
-                ],
-              })
-            .room-cards-grid__box
-              +cutaway-room-card({
-                number: 352,
-                lux: false,
-                price: '5 000',
-                stars: 3,
-                reviews: 55,
-                sliders: [
-                  {src: 'assets/img/rooms/room-352.jpg', alt: 'room №352'},
-                  {src: 'assets/img/rooms/room-352.jpg', alt: 'room №352'},
-                  {src: 'assets/img/rooms/room-352.jpg', alt: 'room №352'},
-                  {src: 'assets/img/rooms/room-352.jpg', alt: 'room №352'},
-                ],
-              })
-        .pagination-block
-          +pagination({
-            items: 180,
-            pageSize: 12,
-            pageRange: 3,
-          })
+            - var roomsList = require('./utils/dataRoomsList.json');
+            each room in roomsList
+              .room-cards-grid__box.cutaway-room-card.js-cutaway-room-card
+                +cutaway-room-card({
+                  number: room.number,
+                  lux: room.lux,
+                  price: room.price,
+                  stars: room.start,
+                  reviews: room.reviews,
+                  sliders: room.sliders,
+                })
+        .pagination-block.pagintation-item.js-pagintation-item
+          +pagination
         
