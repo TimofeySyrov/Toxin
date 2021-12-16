@@ -23,6 +23,7 @@
     &:focus {
       color: $dark_shade_75;
       border-color: $dark_shade_50;
+      outline: none;
     }
   }
 }
