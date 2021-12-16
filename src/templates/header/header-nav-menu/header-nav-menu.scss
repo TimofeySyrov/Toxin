@@ -69,20 +69,6 @@
     line-height: 20px;
     color: $dark_shade_50;
   }
-
-  @media screen and (max-width: 515px) {
-    display: block;
-
-    &__item {
-      margin-right: 0;
-      margin-bottom: 5px;
-      justify-content: center;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 }
 
 .submenu {

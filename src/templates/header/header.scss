@@ -4,7 +4,8 @@
 @import './header-nav-menu/header-nav-menu.scss';
 
 .header {
-  background: #FFFFFF;
+  position: relative;
+  background: #ffffff;
   box-shadow: 0px 10px 20px $dark_shade_5;
   font-family: $main-font-family;
 
@@ -15,12 +16,22 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__logo {
     max-width: fit-content;
     flex-grow: 1;
-    margin: 0 auto;
+  }
+
+  &__menu-button {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__nav-container {
+    display: flex;
   }
 
   &__nav-menu {
@@ -51,6 +62,7 @@
   }
 
   &__login-btn {
+    width: fit-content;
     margin-right: 20px;
   }
 
@@ -61,30 +73,53 @@
   }
 
   @media screen and (max-width: 940px) {
-    &__container {
+    &__menu-button {
+      display: flex;
+    }
+
+    &__nav-container {
+      display: none;
+      padding: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 5px;
+      position: absolute;
+      z-index: 99;
+      top: 105%;
+      right: 15px;
+      background-color: #ffffff;
       flex-direction: column;
+      row-gap: 20px;
+
+      &_active {
+        display: flex;
+      }
     }
 
-    &__logo,
     &__nav-menu {
-      margin-bottom: 10px;
+      margin: 0;
+      justify-content: flex-start;
     }
-  }
 
-  @media screen and (max-width: 515px) {
-    &__nav-menu {
-      margin: 0 auto 10px;
-    }
-  }
-
-  @media screen and (max-width: 350px) {
     &__auth-box {
       flex-direction: column;
+      align-items: center;
+      row-gap: 10px;
+    }
+
+    &__user {
+      padding: 20px 0 0 0;
+      border: 0;
+      border-top: 1px solid $dark_shade_1;
     }
 
     &__login-btn {
-      margin-right: 0;
-      margin: 0 auto 10px;
+      margin: 0;
+    }
+
+    .nav-menu {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 10px;
     }
   }
 }

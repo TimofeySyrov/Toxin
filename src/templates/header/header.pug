@@ -7,25 +7,27 @@ mixin header({ user, navMenu }={})
     .header__container
       .header__logo
         +logo
-      .header__nav-menu.js-header__nav-menu
-        +header-nav-menu(navMenu)
-      .header__auth-box
-        if user
-          .header__user
-            a.header__user-name(href='/mock-address/change-me')= user
-        else
-          .header__login-btn
-            +button({
-              type: 'border',
-              text: 'Войти',
-              href: 'sign-in.html',
-              small: true
-            })
-          .header__registration-btn
-            +button({
-              type: 'background',
-              text: 'зарегистрироваться',
-              href: 'sign-up.html',
-              small: true
-            })
+      .material-icons.header__menu-button.js-header__menu-button menu
+      .header__nav-container.js-header__nav-container
+        .header__nav-menu.js-header__nav-menu
+          +header-nav-menu(navMenu)
+        .header__auth-box
+          if user
+            .header__user
+              a.header__user-name(href='/mock-address/change-me')= user
+          else
+            .header__login-btn
+              +button({
+                type: 'border',
+                text: 'Войти',
+                href: 'sign-in.html',
+                small: true
+              })
+            .header__registration-btn
+              +button({
+                type: 'background',
+                text: 'зарегистрироваться',
+                href: 'sign-up.html',
+                small: true
+              })
             
