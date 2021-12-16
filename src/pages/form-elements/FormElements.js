@@ -76,7 +76,7 @@ class FormElements {
   _getDOMElements() {
     return {
       pagination: document.querySelector('.js-pagination-item'),
-      textField: document.querySelectorAll('.js-start-filter-item'),
+      textField: document.querySelectorAll('.js-text-field-item'),
       dropdown: document.querySelectorAll('.js-dropdown-item'),
       dateDropdown: document.querySelectorAll('.js-date-dropdown-item'),
       filterDateDropdown: document.querySelectorAll('.js-filter-date-dropdown-item'),
