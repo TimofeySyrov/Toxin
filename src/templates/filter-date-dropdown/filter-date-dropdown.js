@@ -22,12 +22,25 @@ class FilterDateDropdown {
       options: {
         dateFormat: 'd M',
         onSelect: (formattedDate) => this._setDates(formattedDate),
-      }
-    })
+      },
+    });
   }
 
   _bindEventListener() {
+    window.addEventListener('click', this._handleWindowClick.bind(this), true);
     this.nameBox.addEventListener('click', this._handleNameBoxClick.bind(this));
+    this.calendar.observeShowCalendarEvent(this._rotateArrow.bind(this));
+  }
+
+  _handleWindowClick(event) {
+    const { target } = event;
+    const clickOnDropdown = this.body.contains(target);
+    const isOpenCalendar = this.calendar.isOpen;
+
+    if (!clickOnDropdown && isOpenCalendar) {
+      this.calendar.hideCalendar();
+      this._rotateArrow();
+    }
   }
 
   _handleNameBoxClick() {
@@ -38,7 +51,7 @@ class FilterDateDropdown {
   _setDates(dates) {
     const inputPlaceholder = 'Выберите даты';
     const isSelectedDate = (date) => {
-      const isUndefined  = date === undefined;
+      const isUndefined = date === undefined;
       const isEmpty = date === '';
 
       if (!isUndefined && !isEmpty) return true;
