@@ -39,7 +39,7 @@ class DateDropdown {
     const [bodyArrivalInput, bodyDepatureInput] = this.bodyInputs;
     const { calendar } = this;
 
-    window.addEventListener('click', this._handleWindowClick.bind(this), false);
+    window.addEventListener('click', this._handleWindowClick.bind(this), true);
     bodyArrivalInput.addEventListener('click', this._handleInputClick.bind(this));
     bodyDepatureInput.addEventListener('click', this._handleInputClick.bind(this));
     calendar.observeShowCalendarEvent(this._rotateArrows.bind(this));

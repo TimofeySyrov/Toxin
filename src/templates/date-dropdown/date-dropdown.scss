@@ -70,6 +70,8 @@
   &__calendar-container {
     position: absolute;
     z-index: 100;
-    width: 100%;
+    width: 320px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
