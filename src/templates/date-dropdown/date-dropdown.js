@@ -39,9 +39,21 @@ class DateDropdown {
     const [bodyArrivalInput, bodyDepatureInput] = this.bodyInputs;
     const { calendar } = this;
 
+    window.addEventListener('click', this._handleWindowClick.bind(this), false);
     bodyArrivalInput.addEventListener('click', this._handleInputClick.bind(this));
     bodyDepatureInput.addEventListener('click', this._handleInputClick.bind(this));
     calendar.observeShowCalendarEvent(this._rotateArrows.bind(this));
+  }
+
+  _handleWindowClick(event) {
+    const { target } = event;
+    const clickOnDropdown = this.body.contains(target);
+    const isOpenCalendar = this.calendar.isOpen;
+
+    if (!clickOnDropdown && isOpenCalendar) {
+      this.calendar.hideCalendar();
+      this._rotateArrows();
+    }
   }
 
   _handleInputClick() {

@@ -46,13 +46,14 @@ class Dropdown {
 
     this.itemBoxes.forEach((item) => {
       const counter = item.lastChild;
-      this._checkItemBtnsStatus(counter)
+      this._checkItemBtnsStatus(counter);
     });
   }
 
   _bindEventListeners() {
     const isGuestsType = this.type === 'guests';
 
+    window.addEventListener('click', this._handleWindowClick.bind(this), false);
     this.nameBox.addEventListener('click', this._handleNameBoxClick.bind(this));
     this._bindEventListenerItemButtons();
 
@@ -81,6 +82,15 @@ class Dropdown {
     if (!isActive) {
       this._showList();
     } else {
+      this._hideList();
+    }
+  }
+
+  _handleWindowClick(event) {
+    const { target } = event;
+    const clickOnDropdown = this.container.contains(target);
+
+    if (!clickOnDropdown) {
       this._hideList();
     }
   }
@@ -230,7 +240,7 @@ class Dropdown {
 
     const totalAmountIsZero = adults === 0;
 
-    if  (totalAmountIsZero) {
+    if (totalAmountIsZero) {
       this.placeholderBox.innerHTML = placeholder;
     }
 
@@ -249,7 +259,6 @@ class Dropdown {
         this.placeholderBox.innerHTML = `${adultsPlaceholder}`;
       }
     }
-    
   }
 
   _showTotalAboutRoom() {
