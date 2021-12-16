@@ -62,7 +62,7 @@ block content
                 p.basic-item__tittle subscription text field
                 +subscription-text-field({ name: 'Email', placeholder: 'Email', iconHref: '/mock-address/change-me' })
             .checkbox-buttons-custom-column
-              .basic-item.checkbox-buttons-custom-column__item
+              .basic-item.checkbox-buttons-custom-column__checkbox-group
                 p.basic-item__tittle.basic-item__tittle_long-indent Checkbox Buttons
                 +checkbox({ text: 'Можно курить', isChecked: false })
                 +checkbox({ text: 'Можно с питомцами' })
@@ -116,11 +116,7 @@ block content
                 })
               .basic-item.range-slider-custom-column__item.pagination-item.js-pagination-item
                 p.basic-item__tittle.basic-item__tittle_long-indent pagination
-                +pagination({
-                  items: 180,
-                  pageSize: 12,
-                  pageRange: 3,
-                })
+                +pagination
             .drop-first-custom-column
               .basic-item.drop-first-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({

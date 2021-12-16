@@ -96,6 +96,12 @@
 }
 
 .checkbox-buttons-custom-column {
+  &__checkbox-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   &__like-group {
     display: inline-flex;
     margin-right: 10px;
@@ -104,6 +110,7 @@
       margin-right: 0;
     }
   }
+
   &__rate-group {
     display: inline-flex;
     margin-right: 20px;
