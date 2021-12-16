@@ -14,10 +14,20 @@ class Calendar {
 
   checkIsOpen() {
     if (this.isOpen) {
-      this._hideCalendar();
+      this.hideCalendar();
     } else {
-      this._showCalendar();
+      this.showCalendar();
     }
+  }
+
+  showCalendar() {
+    this.$body.show();
+    this.isOpen = true;
+  }
+
+  hideCalendar() {
+    this.$body.hide();
+    this.isOpen = false;
   }
 
   observeShowCalendarEvent(observer) {
@@ -48,9 +58,9 @@ class Calendar {
     this._addCalendarButtons();
 
     if (this.firstInitIsOpen) {
-      this._showCalendar();
+      this.showCalendar();
     } else {
-      this._hideCalendar();
+      this.hideCalendar();
     }
   }
 
@@ -94,18 +104,8 @@ class Calendar {
   }
 
   _handleConfirmBtnClick() {
-    this._hideCalendar();
+    this.hideCalendar();
     this._notifyObservers({ isOpen: this.isOpen });
-  }
-
-  _showCalendar() {
-    this.$body.show();
-    this.isOpen = true;
-  }
-
-  _hideCalendar() {
-    this.$body.hide();
-    this.isOpen = false;
   }
 
   _resetDate() {
