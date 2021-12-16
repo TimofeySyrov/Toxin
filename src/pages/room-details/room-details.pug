@@ -35,26 +35,27 @@ block content
             .impressions-room
               .impressions-room__container
                 p.room-main-info__box-title Впечатления от номера
-                .impressions-room__diagram
+                .impressions-room__diagram.donut-chart-item.js-donut-chart-item
                   +donut-chart
             .booking-card
               .booking-card__container
-                +room-info-card({
-                  id: '888',
-                  priceOfDay: '9 990',
-                  discount: '2 179',
-                  services: '300',
-                  isLux: true,
-                })
+                .room-info-card-item.js-room-info-card-item
+                  +room-info-card({
+                    id: '888',
+                    priceOfDay: '9 990',
+                    discount: '2 179',
+                    services: '300',
+                    isLux: true,
+                  })
             .visitor-reviews
               .visitor-reviews__box-title
                 p.room-main-info__box-title Отзывы посетителей номера
                 p.visitor-reviews__title 2 отзыва
-              .visitor-reviews__item
+              .visitor-reviews__item.user-comment-item.js-user-comment-item
                 +user-comment({
                   desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
                 })
-              .visitor-reviews__item
+              .visitor-reviews__item.user-comment-item.js-user-comment-item
                 +user-comment({
                   likeCount: 2,
                   likeCheck: false,
