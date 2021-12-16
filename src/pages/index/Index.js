@@ -8,8 +8,11 @@ class Index {
 
   _initComponents() {
     const { startFilter } = this._getDOMElements();
+    this.startFilters = [];
 
-    this.startFilters = startFilter.map((item) => new StartFilter(item));
+    startFilter.forEach((item) => {
+      this.startFilters.push(new StartFilter(item));
+    });
   }
 
   _getDOMElements() {
