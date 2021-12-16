@@ -1,10 +1,10 @@
 include ../like-button/like-button.pug
 
 mixin user-comment({ likeCount = 12, likeCheck = true, srcImg = "assets/img/users/user-image.jpg", name = "Мурад Сарафанов", data = "5 дней назад", desc = "Описание" }={})
-  .user-comment
+  .user-comment.js-user-comment
     .user-comment__left-box
       img.user-comment__user-img(src=srcImg, alt=name)
-      .user-comment__like-btn
+      .user-comment__like-btn.js-user-comment__like-btn
         +like-button({
           count: likeCount,
           checked: likeCheck
