@@ -3,7 +3,7 @@ include ../button/button.pug
 
 mixin login-card({ hrefLogin='search-room.html', hrefRegister='sign-up.html' }={})
   .login-card.js-login-card
-    p.login-card__tittle Войти
+    p.login-card__title Войти
     .login-card__user-form
       +text-field({ placeholder: 'Email' })
       +text-field({ type: 'password', placeholder: 'Пароль' })
@@ -14,7 +14,7 @@ mixin login-card({ hrefLogin='search-room.html', hrefRegister='sign-up.html' }={
           href: hrefLogin
         })
     .login-card__registration-container
-      p.login-card__registration-tittle Нет аккаунта на Toxin?
+      p.login-card__registration-title Нет аккаунта на Toxin?
       +button({
         type: 'border',
         text: 'создать',
