@@ -31,11 +31,11 @@ block content
           .form-elements-hero__basic-wrap
             .text-field-custom-column
               .basic-item.text-field-custom-column__item.text-field-item.js-text-field-item
-                p.basic-item__tittle text field
+                p.basic-item__title text field
                 +text-field({ placeholder: 'Email' })
               .basic-item.text-field-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
-                  tittle: 'dropdown',
+                  title: 'dropdown',
                   isOpenList: false,
                   list: [
                     {name: 'взрослые', total: 0},
@@ -44,7 +44,7 @@ block content
                   ]
                 })
               .basic-item.text-field-custom-column__item.text-field-item.js-text-field-item
-                p.basic-item__tittle masked text field
+                p.basic-item__title masked text field
                 +text-field({ isMasked: true })
               .basic-item.text-field-custom-column__item.date-dropdown-item.js-date-dropdown-item
                 +date-dropdown({
@@ -53,29 +53,29 @@ block content
                   dep: 'date Dropdown',
                 })
               .basic-item.text-field-custom-column__item.filter-dates.filter-date-dropdown-item.js-filter-date-dropdown-item
-                p.basic-item__tittle filter date dropdown
+                p.basic-item__title filter date dropdown
                 .filter-dates__calendar
                   +filter-date-dropdown({
                     isOpen: false,
                   })
               .basic-item.text-field-custom-column__item
-                p.basic-item__tittle subscription text field
+                p.basic-item__title subscription text field
                 +subscription-text-field({ name: 'Email', placeholder: 'Email', iconHref: '/mock-address/change-me' })
             .checkbox-buttons-custom-column
               .basic-item.checkbox-buttons-custom-column__checkbox-group
-                p.basic-item__tittle.basic-item__tittle_long-indent Checkbox Buttons
+                p.basic-item__title.basic-item__title_long-indent Checkbox Buttons
                 +checkbox({ text: 'Можно курить', isChecked: false })
                 +checkbox({ text: 'Можно с питомцами' })
                 +checkbox({ text: 'Можно пригласить гостей (до 10 человек)' })
               .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__tittle.basic-item__tittle_long-indent Radio Buttons
+                p.basic-item__title.basic-item__title_long-indent Radio Buttons
                 +radio-buttons
               .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__tittle.basic-item__tittle_long-indent Toggle
+                p.basic-item__title.basic-item__title_long-indent Toggle
                 +toggle({ text: 'Получать спецпредложения' })
                 +toggle({ text: 'Получать спецпредложения', isChecked: false })
               .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__tittle.basic-item__tittle_long-indent like button
+                p.basic-item__title.basic-item__title_long-indent like button
                 .checkbox-buttons-custom-column__like-group.like-button-item.js-like-button-item
                   +like-button
                 .checkbox-buttons-custom-column__like-group.like-button-item.js-like-button-item
@@ -84,7 +84,7 @@ block content
                     isChecked: true
                   })
               .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__tittle.basic-item__tittle_long-indent rate button
+                p.basic-item__title.basic-item__title_long-indent rate button
                 .checkbox-buttons-custom-column__rate-group.rate-button-item.js-rate-button-item
                   +rate-button({
                     rating: 4,
@@ -98,7 +98,7 @@ block content
               .basic-item.range-slider-custom-column__item.range-slider-item.js-range-slider-item
                 +range-slider
               .basic-item.range-slider-custom-column__item
-                p.basic-item__tittle.basic-item__tittle_long-indent buttons
+                p.basic-item__title.basic-item__title_long-indent buttons
                 .range-slider-custom-column__buttons-group
                   +button({
                     type: 'background',
@@ -115,12 +115,12 @@ block content
                   text: 'перейти к оплате'
                 })
               .basic-item.range-slider-custom-column__item.pagination-item.js-pagination-item
-                p.basic-item__tittle.basic-item__tittle_long-indent pagination
+                p.basic-item__title.basic-item__title_long-indent pagination
                 +pagination
             .drop-first-custom-column
               .basic-item.drop-first-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
-                  tittle: 'dropdown',
+                  title: 'dropdown',
                   dropType: 'room-about',
                   isOpenList: false,
                   list: [
@@ -132,7 +132,7 @@ block content
             .drop-second-custom-column
               .basic-item.drop-second-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
-                  tittle: 'dropdown',
+                  title: 'dropdown',
                   isOpenList: false,
                   list: [
                     {name: 'взрослые', total: 0},
@@ -143,7 +143,7 @@ block content
             .drop-third-custom-column
               .basic-item.drop-third-custom-column__item.dropdown-item.js-dropdown-item
                 +dropdown({
-                  tittle: 'dropdown',
+                  title: 'dropdown',
                   isOpenList: false,
                   list: [
                     {name: 'взрослые', total: 2},
@@ -168,7 +168,7 @@ block content
             .rich-checkbox-buttons-custom-column
               .basic-item.rich-checkbox-buttons-custom-column__item
                 +rich-checkbox-buttons({
-                  tittle: 'rich Checkbox Buttons',
+                  title: 'rich Checkbox Buttons',
                   list: [
                     {name: 'Широкий коридор', desc: 'Ширина коридоров в номере не менее 91 см.'},
                     {name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
@@ -176,7 +176,7 @@ block content
                 })
             .bullet-list-custom-column
               .basic-item.bullet-list-custom-column__item
-                p.basic-item__tittle.basic-item__tittle_long-indent bullet list
+                p.basic-item__title.basic-item__title_long-indent bullet list
                 +bullet-list({
                   list: [
                     {name: 'Нельзя с питомцами'},
