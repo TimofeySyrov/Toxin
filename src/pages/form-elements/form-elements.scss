@@ -71,8 +71,8 @@
 .basic-item {
   margin-bottom: 20px;
 
-  &__tittle {
-    font-family: 'Montserrat', sans-serif;
+  &__title {
+    font-family: $main-font-family;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
@@ -81,7 +81,7 @@
     margin-bottom: 5px;
   }
 
-  &__tittle_long-indent {
+  &__title_long-indent {
     margin-bottom: 16px;
   }
 

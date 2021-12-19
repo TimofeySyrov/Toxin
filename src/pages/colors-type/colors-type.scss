@@ -2,7 +2,7 @@
 @import '../../templates/logo/logo.scss';
 
 .colors-type-hero {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font-family;
 
   &__container {
     max-width: 1162px;
@@ -75,7 +75,7 @@
     line-height: 28px;
   }
 
-  &__tittle {
+  &__title {
     font-weight: 700;
     color: $dark_shade_100;
   }
@@ -95,7 +95,7 @@
     text-transform: uppercase;
   }
 
-  &__tittle {
+  &__title {
     font-weight: 700;
     color: $dark_shade_100;
   }
@@ -119,7 +119,7 @@
         font-size: 12px;
         line-height: 15px;
 
-        .text-type-block__tittle {
+        .text-type-block__title {
           text-transform: uppercase;
         }
       }
@@ -132,7 +132,7 @@
           text-transform: none;
         }
 
-        .text-type-block__tittle {
+        .text-type-block__title {
           font-weight: 400;
           color: $dark_shade_75;
         }
