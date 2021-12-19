@@ -10,7 +10,6 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  user-select: none;
 
   &__input {
     position: absolute;
@@ -24,6 +23,7 @@
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    cursor: pointer;
 
     &:checked {
       border-color: $purple;
