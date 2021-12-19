@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: border-color 0.5s ease;
+    transition: border-color 0.3s ease;
 
     &::after {
       content: '';
@@ -27,7 +27,7 @@
       background-color: $dark_shade_25;
       border-radius: 50%;
       margin: 0 4px;
-      transition: transform 0.5s ease;
+      transition: transform 0.3s ease;
     }
 
     &:checked {
