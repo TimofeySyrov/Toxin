@@ -1,3 +1,5 @@
+include ../rate-button/rate-button.pug
+
 mixin cutaway-room-card({ href = 'room-details.html', number = 888, lux = true, price = '9 990', stars = 5, reviews = 145, sliders = [{src: 'assets/img/rooms/room-888.png', alt: 'room №888'}, {src: 'assets/img/rooms/room-888.png', alt: 'room №888'}, {src: 'assets/img/rooms/room-888.png', alt: 'room №888'}] }={})
   .cutaway-room-card.js-cutaway-room-card
     .cutaway-room-card__slider.js-cutaway-room-card__slider
@@ -14,7 +16,6 @@ mixin cutaway-room-card({ href = 'room-details.html', number = 888, lux = true, 
           | !{' '}в сутки
       .cutaway-room-card__rating-box
         .cutaway-room-card__rating-box-stars
-          include ../rate-button/rate-button.pug
           +rate-button({
             rating: stars,
             readonly: true
