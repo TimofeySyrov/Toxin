@@ -3,14 +3,14 @@ mixin cutaway-room-card({ href = 'room-details.html', number = 888, lux = true, 
     .cutaway-room-card__slider.js-cutaway-room-card__slider
       each slider in sliders
         img(src= slider.src, alt= slider.alt).cutaway-room-card__slider-item
-    a(href= href).cutaway-room-card__info-box.js-cutaway-room-card__info-box
-      .cutaway-room-card__tittle
+    a(href= href).cutaway-room-card__info-box
+      .cutaway-room-card__title
         p.cutaway-room-card__room-id №!{' '}
-          span.cutaway-room-card__room-id-number.js-cutaway-room-card-id #{number}
+          span.cutaway-room-card__room-id-number #{number}
           if lux
-            span.cutaway-room-card__lux.js-cutaway-room-card-lux люкс
+            span.cutaway-room-card__lux люкс
         p.cutaway-room-card__price
-          span.cutaway-room-card__price-number.js-cutaway-room-card-price-of-day #{price}₽
+          span.cutaway-room-card__price-number #{price}₽
           | !{' '}в сутки
       .cutaway-room-card__rating-box
         .cutaway-room-card__rating-box-stars

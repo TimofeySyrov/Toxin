@@ -17,7 +17,7 @@ mixin room-info-card(options={})
     .room-info-card__title
       .room-info-card__room-number
         span.room-info-card__separator №!{' '}
-        span.room-info-card__number-id.js-room-info-card__id= id
+        span.room-info-card__number-id= id
         span.room-info-card__number-lux(class= isLux && 'room-info-card__number-lux_active') люкс
       .room-info-card__room-price
         span.room-info-card__price-amount.js-room-info-card__price-per-day= priceOfDay
@@ -40,7 +40,7 @@ mixin room-info-card(options={})
     table.room-info-card__price-table
       tr.room-info-card__table-row.room-info-card__accommodation-price
         td.room-info-card__table-row-name
-          span.room-info-card__table-row-amount.js-room-info-card__price= priceOfDay
+          span.room-info-card__table-row-amount= priceOfDay
           span.room-info-card__table-row-currency= currency
           span !{' x '}
           span.room-info-card__table-row-text.room-info-card__table-row-period.js-room-info-card__table-row-period 0
