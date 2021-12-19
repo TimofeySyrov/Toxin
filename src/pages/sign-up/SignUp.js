@@ -9,13 +9,9 @@ class SignUp {
 
   _initComponents() {
     const { registrationCard } = this._getDOMElements();
-    this.headers = [];
-    this.registrationCards = [];
 
-    this.headers.push(new Header(document));
-    registrationCard.forEach((item) => {
-      this.registrationCards.push(new RegistrationCard(item));
-    });
+    new Header(document);
+    registrationCard.forEach((item) => new RegistrationCard(item));
   }
 
   _getDOMElements() {

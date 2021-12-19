@@ -13,19 +13,11 @@ class RoomDetails {
   _initComponents() {
     const { donutChart, roomInfoCard, userComment } = this._getDOMElements();
     const chartOptions = JSON.parse(JSON.stringify(dataDonutChartOptions));
-    this.headers = [];
-    this.donutCharts = [];
-    this.roomInfoCards = [];
-    this.userComments = [];
 
-    this.headers.push(new Header(document));
-    this.donutCharts.push(new DonutChart(donutChart, chartOptions));
-    roomInfoCard.forEach((item) => {
-      this.roomInfoCards.push(new RoomInfoCard(item));
-    });
-    userComment.forEach((item) => {
-      this.userComments.push(new UserComment(item));
-    });
+    new Header(document);
+    new DonutChart(donutChart, chartOptions);
+    roomInfoCard.forEach((item) => new RoomInfoCard(item));
+    userComment.forEach((item) => new UserComment(item));
   }
 
   _getDOMElements() {

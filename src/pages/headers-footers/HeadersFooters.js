@@ -8,9 +8,8 @@ class HeadersFooters {
 
   _initComponents() {
     const { header } = this._getDOMElements();
-    this.headers = [];
 
-    header.forEach((item) => this.headers.push(new Header(item)));
+    header.forEach((item) => new Header(item));
   }
 
   _getDOMElements() {

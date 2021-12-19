@@ -21,35 +21,18 @@ class SearchRoom {
       cutawayRoomCard,
       pagination,
     } = this._getDOMElements();
-    this.headers = [];
-    this.filterDateDropdowns = [];
-    this.dropdowns = [];
-    this.rangeSliders = [];
-    this.checkboxLists = [];
-    this.cutawayRoomCards = [];
-    this.paginations = [];
 
-    this.headers.push(new Header(document));
-    this.paginations.push(new Pagination(pagination, {
+    new Header(document);
+    new Pagination(pagination, {
       items: 180,
       pageSize: 12,
       pageRange: 3,
-    }));
-    filterDateDropdown.forEach((item) => {
-      this.filterDateDropdowns.push(new FilterDateDropdown(item));
     });
-    dropdown.forEach((item) => {
-      this.dropdowns.push(new Dropdown(item));
-    });
-    rangeSlider.forEach((item) => {
-      this.rangeSliders.push(new RangeSlider(item));
-    });
-    checkboxList.forEach((item) => {
-      this.checkboxLists.push(new CheckboxList(item));
-    });
-    cutawayRoomCard.forEach((item) => {
-      this.cutawayRoomCards.push(new CutawayRoomCard(item));
-    });
+    filterDateDropdown.forEach((item) => new FilterDateDropdown(item));
+    dropdown.forEach((item) => new Dropdown(item));
+    rangeSlider.forEach((item) => new RangeSlider(item));
+    checkboxList.forEach((item) => new CheckboxList(item));
+    cutawayRoomCard.forEach((item) => new CutawayRoomCard(item));
   }
 
   _getDOMElements() {

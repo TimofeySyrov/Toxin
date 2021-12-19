@@ -9,13 +9,9 @@ class Index {
 
   _initComponents() {
     const { startFilter } = this._getDOMElements();
-    this.startFilters = [];
-    this.headers = [];
 
-    this.headers.push(new Header(document));
-    startFilter.forEach((item) => {
-      this.startFilters.push(new StartFilter(item));
-    });
+    new Header(document);
+    startFilter.forEach((item) => new StartFilter(item));
   }
 
   _getDOMElements() {

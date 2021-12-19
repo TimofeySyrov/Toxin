@@ -9,13 +9,9 @@ class SignIn {
 
   _initComponents() {
     const { loginCard } = this._getDOMElements();
-    this.headers = [];
-    this.loginCards = [];
 
-    this.headers.push(new Header(document));
-    loginCard.forEach((item) => {
-      this.loginCards.push(new LoginCard(item));
-    });
+    new Header(document);
+    loginCard.forEach((item) => new LoginCard(item));
   }
 
   _getDOMElements() {

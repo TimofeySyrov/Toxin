@@ -18,27 +18,12 @@ class Cards {
       cutawayRoomCard,
       loginCard,
     } = this._getDOMElements();
-    this.startFilters = [];
-    this.registrationCards = [];
-    this.roomInfoCards = [];
-    this.cutawayRoomCards = [];
-    this.loginCards = [];
 
-    startFilter.forEach((item) => {
-      this.startFilters.push(new StartFilter(item));
-    });
-    registrationCard.forEach((item) => {
-      this.registrationCards.push(new RegistrationCard(item));
-    });
-    roomInfoCard.forEach((item) => {
-      this.roomInfoCards.push(new RoomInfoCard(item));
-    });
-    cutawayRoomCard.forEach((item) => {
-      this.cutawayRoomCards.push(new CutawayRoomCard(item));
-    });
-    loginCard.forEach((item) => {
-      this.loginCards.push(new LoginCard(item));
-    });
+    startFilter.forEach((item) => new StartFilter(item));
+    registrationCard.forEach((item) => new RegistrationCard(item));
+    roomInfoCard.forEach((item) => new RoomInfoCard(item));
+    cutawayRoomCard.forEach((item) => new CutawayRoomCard(item));
+    loginCard.forEach((item) => new LoginCard(item));
   }
 
   _getDOMElements() {

@@ -28,49 +28,21 @@ class FormElements {
       checkboxList,
       userComment,
     } = this._getDOMElements();
-    this.textFields = [];
-    this.dropdowns = [];
-    this.dateDropdowns = [];
-    this.filterDateDropdowns = [];
-    this.likeButtons = [];
-    this.rateButtons = [];
-    this.rangeSliders = [];
-    this.paginations = [];
-    this.checkboxLists = [];
-    this.userComments = [];
 
-    this.paginations.push(new Pagination(pagination, {
+    new Pagination(pagination, {
       items: 180,
       pageSize: 12,
       pageRange: 3,
-    }));
-    textField.forEach((item) => {
-      this.textFields.push(new TextField(item));
     });
-    dropdown.forEach((item) => {
-      this.dropdowns.push(new Dropdown(item));
-    });
-    dateDropdown.forEach((item) => {
-      this.dateDropdowns.push(new DateDropdown(item));
-    });
-    filterDateDropdown.forEach((item) => {
-      this.filterDateDropdowns.push(new FilterDateDropdown(item));
-    });
-    likeButton.forEach((item) => {
-      this.likeButtons.push(new LikeButton(item));
-    });
-    rateButton.forEach((item) => {
-      this.rateButtons.push(new RateButton(item));
-    });
-    rangeSlider.forEach((item) => {
-      this.rangeSliders.push(new RangeSlider(item));
-    });
-    checkboxList.forEach((item) => {
-      this.checkboxLists.push(new CheckboxList(item));
-    });
-    userComment.forEach((item) => {
-      this.userComments.push(new UserComment(item));
-    });
+    textField.forEach((item) => new TextField(item));
+    dropdown.forEach((item) => new Dropdown(item));
+    dateDropdown.forEach((item) => new DateDropdown(item));
+    filterDateDropdown.forEach((item) => new FilterDateDropdown(item));
+    likeButton.forEach((item) => new LikeButton(item));
+    rateButton.forEach((item) => new RateButton(item));
+    rangeSlider.forEach((item) => new RangeSlider(item));
+    checkboxList.forEach((item) => new CheckboxList(item));
+    userComment.forEach((item) => new UserComment(item));
   }
 
   _getDOMElements() {
