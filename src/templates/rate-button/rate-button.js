@@ -23,6 +23,10 @@ class RateButton {
       initialRating: parseInt(this.valueRating),
       readonly: isReadonly,
     });
+
+    if (isReadonly) {
+      this.$container.addClass('rate-button_readonly');
+    }
   }
 }
 

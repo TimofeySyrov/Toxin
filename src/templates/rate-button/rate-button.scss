@@ -35,4 +35,10 @@
       content: 'star';
     }
   }
+  
+  &_readonly {
+    .br-widget a {
+      cursor: default;
+    }
+  }
 }
