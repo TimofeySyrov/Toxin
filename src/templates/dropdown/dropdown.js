@@ -113,6 +113,7 @@ class Dropdown {
     const $total = $btn.nextSibling;
     const totalIsZero = parseInt($total.innerHTML) === 0;
     const isRoomAboutType = this.type === 'room-about';
+    const isGuestsType = this.type === 'guests';
 
     if (!totalIsZero) {
       $total.innerHTML = parseInt($total.innerHTML) - 1;
@@ -122,6 +123,8 @@ class Dropdown {
 
     if (isRoomAboutType) {
       this._showTotalAboutRoom($btnItem);
+    } else if (isGuestsType) {
+      this._showTotalGuests();
     }
   }
 
@@ -130,12 +133,15 @@ class Dropdown {
     const $btnItem = $btn.parentNode;
     const $total = $btn.previousSibling;
     const isRoomAboutType = this.type === 'room-about';
+    const isGuestsType = this.type === 'guests';
     $total.innerHTML = parseInt($total.innerHTML) + 1;
 
     this._checkItemBtnsStatus($btnItem);
     
     if (isRoomAboutType) {
       this._showTotalAboutRoom($btnItem);
+    } else if (isGuestsType) {
+      this._showTotalGuests();
     }
   }
 
@@ -242,6 +248,7 @@ class Dropdown {
 
     if (totalAmountIsZero) {
       this.placeholderBox.innerHTML = placeholder;
+      this._hideClearBtn();
     }
 
     if (!totalAmountIsZero) {
@@ -258,6 +265,8 @@ class Dropdown {
       if (isAdults && !isBabies) {
         this.placeholderBox.innerHTML = `${adultsPlaceholder}`;
       }
+
+      this._showClearBtn();
     }
   }
 
