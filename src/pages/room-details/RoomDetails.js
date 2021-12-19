@@ -29,4 +29,4 @@ class RoomDetails {
   }
 }
 
-export default new RoomDetails();
+export default RoomDetails;

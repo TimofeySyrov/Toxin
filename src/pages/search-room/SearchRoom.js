@@ -47,4 +47,4 @@ class SearchRoom {
   }
 }
 
-export default new SearchRoom();
+export default SearchRoom;

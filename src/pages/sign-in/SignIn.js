@@ -21,4 +21,4 @@ class SignIn {
   }
 }
 
-export default new SignIn();
+export default SignIn;

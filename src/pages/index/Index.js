@@ -21,4 +21,6 @@ class Index {
   }
 }
 
-export default new Index();
+export default Index;
+
+new Index();

@@ -19,4 +19,4 @@ class HeadersFooters {
   }
 }
 
-export default new HeadersFooters();
+export default HeadersFooters;

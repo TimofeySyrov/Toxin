@@ -61,4 +61,4 @@ class FormElements {
   }
 }
 
-export default new FormElements();
+export default FormElements;

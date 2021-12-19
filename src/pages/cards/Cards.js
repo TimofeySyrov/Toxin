@@ -37,4 +37,4 @@ class Cards {
   }
 }
 
-export default new Cards();
+export default Cards;
