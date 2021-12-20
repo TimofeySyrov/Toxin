@@ -72,8 +72,13 @@
     row-gap: 30px;
     column-gap: 70px;
   }
+}
 
-  &__box-title {
+.room-details,
+.impressions-room,
+.visitor-reviews,
+.additional-info {
+  &__title {
     font-weight: 700;
     font-size: 19px;
     line-height: 23px;
@@ -104,20 +109,21 @@
   grid-area: visitor-reviews;
   max-width: 712px;
 
-  &__box-title {
+  &__title {
     display: flex;
     justify-content: space-between;
   }
 
-  &__title {
+  &__count-review {
     font-size: 14px;
+    font-weight: 400;
     line-height: 14px;
     text-align: right;
     color: $dark_shade_50;
     white-space: nowrap;
   }
 
-  &__item {
+  &__comment {
     margin-bottom: 22px;
 
     &:last-child {
@@ -131,13 +137,15 @@
   display: flex;
   column-gap: 98px;
 
+  &__title {
+    &_indented {
+      margin-left: 20px;
+    }
+  }
+
   &__cancel-box {
     max-width: 341px;
   }
-}
-
-.rules-box__title {
-  margin-left: 20px;
 }
 
 @media screen and (max-width: 1120px) {
@@ -216,7 +224,7 @@
 }
 
 @media screen and (max-width: 440px) {
-  .visitor-reviews__box-title {
+  .visitor-reviews__title {
     column-gap: 15px;
   }
 

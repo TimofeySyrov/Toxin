@@ -24,52 +24,7 @@
     max-width: 1160px;
     margin: 0 auto;
     padding: 37px 30px;
-    @media screen and (max-width: 860px) {
-      padding: 37px 10px;
-    }
   }
-
-  &__basic-wrap {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas:
-      'text-field-custom-column checkbox-buttons-custom-column range-slider-custom-column'
-      'drop-first-custom-column drop-second-custom-column drop-third-custom-column'
-      'exp-checkbox-list-custom-column rich-checkbox-buttons-custom-column bullet-list-custom-column'
-      'room-comfort-custom-column comment-custom-column comment-custom-column';
-    grid-row-gap: 50px;
-
-    @media screen and (max-width: 1150px) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas:
-        'text-field-custom-column checkbox-buttons-custom-column'
-        'range-slider-custom-column drop-first-custom-column'
-        'drop-second-custom-column drop-third-custom-column'
-        'exp-checkbox-list-custom-column rich-checkbox-buttons-custom-column'
-        'bullet-list-custom-column room-comfort-custom-column'
-        'comment-custom-column comment-custom-column';
-    }
-    @media screen and (max-width: 750px) {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        'text-field-custom-column'
-        'checkbox-buttons-custom-column'
-        'range-slider-custom-column'
-        'drop-first-custom-column'
-        'drop-second-custom-column'
-        'drop-third-custom-column'
-        'exp-checkbox-list-custom-column'
-        'rich-checkbox-buttons-custom-column'
-        'bullet-list-custom-column'
-        'room-comfort-custom-column'
-        'comment-custom-column';
-    }
-  }
-}
-
-.basic-item {
-  margin-bottom: 20px;
 
   &__title {
     font-family: $main-font-family;
@@ -79,59 +34,85 @@
     text-transform: uppercase;
     color: $dark_shade_100;
     margin-bottom: 5px;
+
+    &_long-indent {
+      margin-bottom: 16px;
+    }
   }
 
-  &__title_long-indent {
-    margin-bottom: 16px;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 70px;
+    row-gap: 100px;
   }
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-.filter-dates__calendar {
-  position: relative;
-  width: 100%;
-  z-index: 99;
-}
-
-.checkbox-buttons-custom-column {
-  &__checkbox-group {
+  &__column {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-  }
+    row-gap: 40px;
 
-  &__like-group {
-    display: inline-flex;
-    margin-right: 10px;
-
-    &:last-child {
-      margin-right: 0;
+    &_option {
+      &_user-comment {
+        grid-column: span 2;
+      }
     }
   }
 
-  &__rate-group {
-    display: inline-flex;
-    margin-right: 20px;
+  &__item {
+    max-width: 320px;
 
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
+    &_option {
+      &_checkbox {
+        display: flex;
+        flex-direction: column;
+      }
 
-.range-slider-custom-column {
-  &__buttons-group {
-    display: inline-flex;
-    margin-right: 20px;
-
-    &:last-child {
-      margin-right: 0;
+      &_user-comment {
+        max-width: fit-content;
+      }
     }
   }
 }
 
-.comment-custom-column {
-  grid-area: comment-custom-column;
+.like-button-item,
+.rate-button-item {
+  display: inline-block;
+  margin-right: 10px;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .form-elements-hero {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .form-elements-hero {
+    &__container {
+      padding: 37px 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .form-elements-hero {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__column {
+      &_option {
+        &_user-comment {
+          grid-column: span 1;
+        }
+      }
+    }
+  }
 }

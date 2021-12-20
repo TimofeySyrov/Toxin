@@ -8,32 +8,45 @@
     max-width: 1162px;
     margin: 0 auto;
     padding: 37px 30px;
-    @media screen and (max-width: 860px) {
-      padding: 37px 10px;
-    }
   }
 
-  &__basic-wrap {
+  &__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     min-width: 286px;
-
-    @media screen and (max-width: 860px) {
-      flex-direction: column;
-      align-items: center;
-    }
   }
 }
 
-.color-type-block {
-  display: flex;
+.colors-list {
   align-items: center;
   margin-bottom: 20px;
+  list-style: none;
+
+  &__title {
+    font-weight: 700;
+    color: $dark_shade_100;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__info-box {
+    display: flex;
+    flex-direction: column;
+    font-size: 19px;
+    line-height: 28px;
+  }
 
   &__palette {
-    min-width: 70px;
-    min-height: 70px;
+    width: 70px;
+    height: 70px;
     border-radius: 6px;
     margin-right: 40px;
 
@@ -67,40 +80,29 @@
       }
     }
   }
-
-  &__box {
-    display: flex;
-    flex-direction: column;
-    font-size: 19px;
-    line-height: 28px;
-  }
-
-  &__title {
-    font-weight: 700;
-    color: $dark_shade_100;
-  }
 }
 
-.text-type-block {
+.fonts-list {
   max-width: 436px;
   color: $dark_shade_25;
   margin-bottom: 50px;
+  list-style: none;
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  &__tag-preview {
+  &__title {
     margin-right: 30px;
     text-transform: uppercase;
   }
 
-  &__title {
+  &__description {
     font-weight: 700;
     color: $dark_shade_100;
   }
 
-  &__box {
+  &__info-box {
     display: flex;
     align-self: start;
 
@@ -119,7 +121,7 @@
         font-size: 12px;
         line-height: 15px;
 
-        .text-type-block__title {
+        .fonts-list__description {
           text-transform: uppercase;
         }
       }
@@ -128,15 +130,28 @@
         font-size: 14px;
         line-height: 24px;
 
-        .text-type-block__tag-preview {
+        .fonts-list__title {
           text-transform: none;
         }
 
-        .text-type-block__title {
+        .fonts-list__description {
           font-weight: 400;
           color: $dark_shade_75;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .colors-type-hero {
+    &__container {
+      padding: 37px 10px;
+    }
+
+    &__grid {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
