@@ -22,9 +22,9 @@ class RoomDetails {
 
   _getDOMElements() {
     return {
-      donutChart: document.querySelector('.js-donut-chart-item'),
+      donutChart: document.querySelector('.js-impressions-room__diagram'),
       roomInfoCard: document.querySelectorAll('.js-room-info-card-item'),
-      userComment: document.querySelectorAll('.js-user-comment-item'),
+      userComment: document.querySelectorAll('.js-visitor-reviews__comment'),
     };
   }
 }

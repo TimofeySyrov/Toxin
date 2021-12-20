@@ -7,14 +7,16 @@ class HeadersFooters {
   }
 
   _initComponents() {
-    const { header } = this._getDOMElements();
+    const { headerUnreg, headerLoginIn } = this._getDOMElements();
 
-    header.forEach((item) => new Header(item));
+    headerUnreg.forEach((item) => new Header(item));
+    headerLoginIn.forEach((item) => new Header(item));
   }
 
   _getDOMElements() {
     return {
-      header: document.querySelectorAll('.js-header-item'),
+      headerUnreg: document.querySelectorAll('.js-article-header-unreg-user'),
+      headerLoginIn: document.querySelectorAll('.js-article-header-authorized-user'),
     };
   }
 }

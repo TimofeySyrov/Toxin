@@ -15,8 +15,9 @@ class SearchRoom {
   _initComponents() {
     const {
       filterDateDropdown,
-      dropdown,
+      guestsDropdown,
       rangeSlider,
+      roomAboutDropdown,
       checkboxList,
       cutawayRoomCard,
       pagination,
@@ -29,20 +30,22 @@ class SearchRoom {
       pageRange: 3,
     });
     filterDateDropdown.forEach((item) => new FilterDateDropdown(item));
-    dropdown.forEach((item) => new Dropdown(item));
+    guestsDropdown.forEach((item) => new Dropdown(item));
     rangeSlider.forEach((item) => new RangeSlider(item));
+    roomAboutDropdown.forEach((item) => new Dropdown(item));
     checkboxList.forEach((item) => new CheckboxList(item));
     cutawayRoomCard.forEach((item) => new CutawayRoomCard(item));
   }
 
   _getDOMElements() {
     return {
-      pagination: document.querySelector('.js-pagintation-item'),
-      filterDateDropdown: document.querySelectorAll('.js-filter-date-dropdown-item'),
-      dropdown: document.querySelectorAll('.js-dropdown-item'),
-      rangeSlider: document.querySelectorAll('.js-range-slider-item'),
-      checkboxList: document.querySelectorAll('.js-checkbox-list-item'),
-      cutawayRoomCard: document.querySelectorAll('.js-cutaway-room-card'),
+      pagination: document.querySelector('.js-pagintation-block'),
+      filterDateDropdown: document.querySelectorAll('.js-filter-room-sidebar__item_option_filter-date'),
+      guestsDropdown: document.querySelectorAll('.js-filter-room-sidebar__item_option_guests-dropdown'),
+      rangeSlider: document.querySelectorAll('.js-filter-room-sidebar__item_option_range-slider'),
+      roomAboutDropdown: document.querySelectorAll('.js-filter-room-sidebar__item_option_room-about-dropdown'),
+      checkboxList: document.querySelectorAll('.js-filter-room-sidebar__item_option_checkbox-list'),
+      cutawayRoomCard: document.querySelectorAll('.js-rooms-list__item'),
     };
   }
 }
