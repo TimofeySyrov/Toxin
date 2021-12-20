@@ -25,15 +25,16 @@ block variables
 
 block content
   body
-    main.form-elements-main 
+    main.form-elements-main
       section.form-elements-hero
         .form-elements-hero__container
-          .form-elements-hero__basic-wrap
-            .text-field-custom-column
-              .basic-item.text-field-custom-column__item.text-field-item.js-text-field-item
-                p.basic-item__title text field
+          .form-elements-hero__grid
+            .form-elements-hero__column
+              .form-elements-hero__item.form-elements-hero__item_option_text-field.js-form-elements-hero__item_option_text-field
+                p.form-elements-hero__title text field
                 +text-field({ placeholder: 'Email' })
-              .basic-item.text-field-custom-column__item.dropdown-item.js-dropdown-item
+              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+                p.form-elements-hero__title dropdown
                 +dropdown({
                   title: 'dropdown',
                   isOpenList: false,
@@ -43,82 +44,85 @@ block content
                     {name: 'младенцы', total: 0},
                   ]
                 })
-              .basic-item.text-field-custom-column__item.text-field-item.js-text-field-item
-                p.basic-item__title masked text field
+              .form-elements-hero__item.form-elements-hero__item_option_text-field.js-form-elements-hero__item_option_text-field
+                p.form-elements-hero__title masked text field
                 +text-field({ isMasked: true })
-              .basic-item.text-field-custom-column__item.date-dropdown-item.js-date-dropdown-item
+              .form-elements-hero__item.form-elements-hero__item_option_date-dropdown.js-form-elements-hero__item_option_date-dropdown
                 +date-dropdown({
                   isOpen: false,
                   arr: 'date Dropdown',
                   dep: 'date Dropdown',
                 })
-              .basic-item.text-field-custom-column__item.filter-dates.filter-date-dropdown-item.js-filter-date-dropdown-item
-                p.basic-item__title filter date dropdown
-                .filter-dates__calendar
-                  +filter-date-dropdown({
-                    isOpen: false,
-                  })
-              .basic-item.text-field-custom-column__item
-                p.basic-item__title subscription text field
-                +subscription-text-field({ name: 'Email', placeholder: 'Email', iconHref: '/mock-address/change-me' })
-            .checkbox-buttons-custom-column
-              .basic-item.checkbox-buttons-custom-column__checkbox-group
-                p.basic-item__title.basic-item__title_long-indent Checkbox Buttons
+              .form-elements-hero__item.form-elements-hero__item_option_filter-date.js-form-elements-hero__item_option_filter-date
+                p.form-elements-hero__title filter date dropdown
+                +filter-date-dropdown({
+                  isOpen: false,
+                })
+              .form-elements-hero__item.form-elements-hero__item_option_subs-text-field.js-form-elements-hero__item_option_subs-text-field
+                p.form-elements-hero__title subscription text field
+                +subscription-text-field({
+                  name: 'Email',
+                  placeholder: 'Email',
+                  iconHref: '/mock-address/change-me'
+                })
+            .form-elements-hero__column
+              .form-elements-hero__item.form-elements-hero__item_option_checkbox
+                p.form-elements-hero__title.form-elements-hero__title_long-indent Checkbox Buttons
                 +checkbox({ text: 'Можно курить', isChecked: false })
                 +checkbox({ text: 'Можно с питомцами' })
                 +checkbox({ text: 'Можно пригласить гостей (до 10 человек)' })
-              .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__title.basic-item__title_long-indent Radio Buttons
+              .form-elements-hero__item.form-elements-hero__item_option_radio
+                p.form-elements-hero__title.form-elements-hero__title_long-indent Radio Buttons
                 +radio-buttons
-              .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__title.basic-item__title_long-indent Toggle
+              .form-elements-hero__item.form-elements-hero__item_option_toggle
+                p.form-elements-hero__title.form-elements-hero__title_long-indent Toggle
                 +toggle({ text: 'Получать спецпредложения' })
                 +toggle({ text: 'Получать спецпредложения', isChecked: false })
-              .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__title.basic-item__title_long-indent like button
-                .checkbox-buttons-custom-column__like-group.like-button-item.js-like-button-item
+              .form-elements-hero__item.form-elements-hero__item_option_like-button
+                p.form-elements-hero__title.form-elements-hero__title_long-indent like button
+                .like-button-item.js-like-button-item
                   +like-button
-                .checkbox-buttons-custom-column__like-group.like-button-item.js-like-button-item
+                .like-button-item.js-like-button-item
                   +like-button({
                     count: 12,
                     isChecked: true
                   })
-              .basic-item.checkbox-buttons-custom-column__item
-                p.basic-item__title.basic-item__title_long-indent rate button
-                .checkbox-buttons-custom-column__rate-group.rate-button-item.js-rate-button-item
+              .form-elements-hero__item.form-elements-hero__item_option_rate-button
+                p.form-elements-hero__title.form-elements-hero__title_long-indent rate button
+                .rate-button-item.js-rate-button-item
                   +rate-button({
                     rating: 4,
                   })
-                .checkbox-buttons-custom-column__rate-group.rate-button-item.js-rate-button-item
+                .rate-button-item.js-rate-button-item
                   +rate-button({
                     rating: 5,
                     readonly: true,
                   })
-            .range-slider-custom-column
-              .basic-item.range-slider-custom-column__item.range-slider-item.js-range-slider-item
+            .form-elements-hero__column
+              .form-elements-hero__item.form-elements-hero__item_option_slider.js-form-elements-hero__item_option_slider
                 +range-slider
-              .basic-item.range-slider-custom-column__item
-                p.basic-item__title.basic-item__title_long-indent buttons
-                .range-slider-custom-column__buttons-group
-                  +button({
-                    type: 'background',
-                  })
-                .range-slider-custom-column__buttons-group
-                  +button({
-                    type: 'border'
-                  })
-              .basic-item.range-slider-custom-column__item
+              .form-elements-hero__item.form-elements-hero__item_option_button
+                p.form-elements-hero__title.form-elements-hero__title_long-indent buttons
+                +button({
+                  type: 'background',
+                })
+              .form-elements-hero__item.form-elements-hero__item_option_button
+                +button({
+                  type: 'border'
+                })
+              .form-elements-hero__item.form-elements-hero__item_option_button
                 +button
-              .basic-item.range-slider-custom-column__item
+              .form-elements-hero__item.form-elements-hero__item_option_button
                 +button({
                   type: 'long',
                   text: 'перейти к оплате'
                 })
-              .basic-item.range-slider-custom-column__item.pagination-item.js-pagination-item
-                p.basic-item__title.basic-item__title_long-indent pagination
+              .form-elements-hero__item.form-elements-hero__item_option_pagination.js-form-elements-hero__item_option_pagination
+                p.form-elements-hero__title.form-elements-hero__title_long-indent pagination
                 +pagination
-            .drop-first-custom-column
-              .basic-item.drop-first-custom-column__item.dropdown-item.js-dropdown-item
+            .form-elements-hero__column
+              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+                p.form-elements-hero__title dropdown
                 +dropdown({
                   title: 'dropdown',
                   dropType: 'room-about',
@@ -129,30 +133,7 @@ block content
                     {name: 'ванные комнаты', total: 0}
                   ]
                 })
-            .drop-second-custom-column
-              .basic-item.drop-second-custom-column__item.dropdown-item.js-dropdown-item
-                +dropdown({
-                  title: 'dropdown',
-                  isOpenList: false,
-                  list: [
-                    {name: 'взрослые', total: 0},
-                    {name: 'дети', total: 0},
-                    {name: 'младенцы', total: 0}
-                  ]
-                })
-            .drop-third-custom-column
-              .basic-item.drop-third-custom-column__item.dropdown-item.js-dropdown-item
-                +dropdown({
-                  title: 'dropdown',
-                  isOpenList: false,
-                  list: [
-                    {name: 'взрослые', total: 2},
-                    {name: 'дети', total: 1},
-                    {name: 'младенцы', total: 0}
-                  ]
-                })
-            .exp-checkbox-list-custom-column
-              .basic-item.exp-checkbox-list-custom-column__item.checkbox-list-item.js-checkbox-list-item
+              .form-elements-hero__item.form-elements-hero__item_option_checkbox-list.js-form-elements-hero__item_option_checkbox-list
                 +checkbox-list({
                   list: [
                     { text: 'Завтрак', isChecked: false },
@@ -165,8 +146,27 @@ block content
                     { text: 'Шампунь', isChecked: false }
                   ]
                 })
-            .rich-checkbox-buttons-custom-column
-              .basic-item.rich-checkbox-buttons-custom-column__item
+              .form-elements-hero__item.form-elements-hero__item_option_room-info
+                +room-info({
+                  list: [
+                    {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
+                    {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'}
+                  ]
+                })
+            .form-elements-hero__column
+              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+                p.form-elements-hero__title dropdown
+                +dropdown({
+                  title: 'dropdown',
+                  isOpenList: false,
+                  list: [
+                    {name: 'взрослые', total: 0},
+                    {name: 'дети', total: 0},
+                    {name: 'младенцы', total: 0}
+                  ]
+                })
+              .form-elements-hero__item.form-elements-hero__item_option_rich-checkbox
+                p.form-elements-hero__title.form-elements-hero__title_long-indent rich Checkbox Buttons
                 +rich-checkbox-buttons({
                   title: 'rich Checkbox Buttons',
                   list: [
@@ -174,9 +174,20 @@ block content
                     {name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
                   ]
                 })
-            .bullet-list-custom-column
-              .basic-item.bullet-list-custom-column__item
-                p.basic-item__title.basic-item__title_long-indent bullet list
+            .form-elements-hero__column
+              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+                p.form-elements-hero__title dropdown
+                +dropdown({
+                  title: 'dropdown',
+                  isOpenList: false,
+                  list: [
+                    {name: 'взрослые', total: 2},
+                    {name: 'дети', total: 1},
+                    {name: 'младенцы', total: 0}
+                  ]
+                })
+              .form-elements-hero__item.form-elements-hero__item_option_bullet-list
+                p.form-elements-hero__title.form-elements-hero__title_long-indent bullet list
                 +bullet-list({
                   list: [
                     {name: 'Нельзя с питомцами'},
@@ -184,16 +195,8 @@ block content
                     {name: 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00'}
                   ]
                 })
-            .room-comfort-custom-column
-              .basic-item.room-comfort-custom-column__item
-                +room-info({
-                  list: [
-                    {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
-                    {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'}
-                  ]
-                })
-            .comment-custom-column
-              .basic-item.comment-custom-column__item.user-comment-item.js-user-comment-item
+            .form-elements-hero__column.form-elements-hero__column_option_user-comment
+              .form-elements-hero__item.form-elements-hero__item_option_user-comment.js-form-elements-hero__item_option_user-comment
                 +user-comment({
                   desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
                 })

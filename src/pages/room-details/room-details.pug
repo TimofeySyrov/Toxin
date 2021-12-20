@@ -24,7 +24,7 @@ block content
           .room-main-info__grid
             .room-details
               .room-details__container
-                p.room-main-info__box-title Сведения о номере
+                p.room-details__title Сведения о номере
                 +room-info({
                   list: [
                     {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
@@ -34,8 +34,8 @@ block content
                 })
             .impressions-room
               .impressions-room__container
-                p.room-main-info__box-title Впечатления от номера
-                .impressions-room__diagram.donut-chart-item.js-donut-chart-item
+                p.impressions-room__title Впечатления от номера
+                .impressions-room__diagram.js-impressions-room__diagram
                   +donut-chart
             .booking-card
               .booking-card__container
@@ -48,14 +48,14 @@ block content
                     isLux: true,
                   })
             .visitor-reviews
-              .visitor-reviews__box-title
-                p.room-main-info__box-title Отзывы посетителей номера
-                p.visitor-reviews__title 2 отзыва
-              .visitor-reviews__item.user-comment-item.js-user-comment-item
+              .visitor-reviews__title
+                p.visitor-reviews__title-text Отзывы посетителей номера
+                p.visitor-reviews__count-review 2 отзыва
+              .visitor-reviews__comment.js-visitor-reviews__comment
                 +user-comment({
                   desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
                 })
-              .visitor-reviews__item.user-comment-item.js-user-comment-item
+              .visitor-reviews__comment.js-visitor-reviews__comment
                 +user-comment({
                   likeCount: 2,
                   likeCheck: false,
@@ -65,8 +65,8 @@ block content
                   desc: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
                 })
             .additional-info
-              .additional-info__rules-box.rules-box
-                p.room-main-info__box-title.rules-box__title Правила
+              .additional-info__rules-box
+                p.additional-info__title.additional-info__title_indented Правила
                 +bullet-list({
                   list: [
                     {name: 'Нельзя с питомцами'},
@@ -75,5 +75,5 @@ block content
                   ]
                 })
               .additional-info__cancel-box
-                p.room-main-info__box-title Отмена
-                p.room-main-info__box-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                p.additional-info__title Отмена
+                p.additional-info__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

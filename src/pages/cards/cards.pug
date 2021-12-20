@@ -5,6 +5,7 @@ include ../../templates/start-filter/start-filter.pug
 include ../../templates/registration-card/registration-card.pug
 include ../../templates/room-info-card/room-info-card.pug
 include ../../templates/login-card/login-card.pug
+include ../../templates/calendar/calendar.pug
 include ../../templates/cutaway-room-card/cutaway-room-card.pug
 
 block variables
@@ -15,9 +16,9 @@ block content
     main.cards-main 
       section.cards-hero
         .cards-hero__container
-          .cards-hero__basic-wrap
-            .start-cards-custom-column
-              .start-cards-custom-column__item.start-filter-item.js-start-filter-item
+          .cards-hero__grid
+            .cards-hero__column
+              .cards-hero__item.cards-hero__item_option_start-filter.js-cards-hero__item_option_start-filter
                 +start-filter({
                   title: 'Найдём номера под ваши пожелания',
                   dateOptions: { isOpen: false },
@@ -36,10 +37,10 @@ block content
                     href: 'search-room.html',
                   },
                 })
-              .start-cards-custom-column__item.registartion-card-item.js-registartion-card-item
+              .cards-hero__item.cards-hero__item_option_registration.js-cards-hero__item_option_registration
                 +registration-card
-            .middle-cards-custom-column
-              .middle-cards-custom-column__item.room-info-card-item.js-room-info-card-item
+            .cards-hero__column
+              .cards-hero__item.cards-hero__item_option_room-card.js-cards-hero__item_option_room-card
                 +room-info-card({
                   id: '888',
                   priceOfDay: '9 990',
@@ -47,10 +48,12 @@ block content
                   services: '300',
                   isLux: true,
                 })
-              .middle-cards-custom-column__item.login-card-item.js-login-card-item
+              .cards-hero__item.cards-hero__item_option_login-card.js-cards-hero__item_option_login-card
                 +login-card
-            .end-cards-custom-column
-              .end-cards-custom-column__item.cutaway-room-card-item.js-cutaway-room-card-item
+            .cards-hero__column
+              .cards-hero__item.cards-hero__item_option_calendar.js-cards-hero__item_option_calendar
+                +calendar
+              .cards-hero__item.cards-hero__item_option_cutaway-room.js-cards-hero__item_option_cutaway-room
                 +cutaway-room-card({
                   sliders: [
                     {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
@@ -59,7 +62,7 @@ block content
                     {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
                   ],
                 })
-              .end-cards-custom-column__item.cutaway-room-card-item.js-cutaway-room-card-item
+              .cards-hero__item.cards-hero__item_option_cutaway-room.js-cards-hero__item_option_cutaway-room
                 +cutaway-room-card({
                   number: 840,
                   lux: false,

@@ -10,83 +10,81 @@ include ../../templates/cutaway-room-card/cutaway-room-card.pug
 include ../../templates/pagination/pagination.pug
 
 block variables
-  - pageTitle = 'Search-room'
+  - pageTitle = 'Search-room';
+  - roomsList = require('./utils/dataRoomsList.json');
 
 block content
-  main.search-room-main
-    .search-room-main__container
-      .basic-wrap
-        .filter-room-sidebar
-          .filter-room-sidebar__item.sidebar-date-dropdown.filter-date-dropdown-item.js-filter-date-dropdown-item
-            span.filter-room-sidebar__input-title даты пребывания в отеле
-            +filter-date-dropdown({ isOpen: false })
-          .filter-room-sidebar__item.sidebar-guests-dropdown.dropdown-item.js-dropdown-item
-            span.filter-room-sidebar__input-title гости
-            +dropdown({
-              isOpen: false,
-              list: [
-                {name: 'взрослые', total: 2},
-                {name: 'дети', total: 1},
-                {name: 'младенцы', total: 1},
-              ]
-            })
-          .filter-room-sidebar__item.sidebar-range-slider.range-slider-item.js-range-slider-item
-            +range-slider({
-              title: 'диапазон цены'
-            })
-            p.sidebar-range-slider__description Стоимость за сутки пребывания в номере
-          .filter-room-sidebar__item.sidebar-checkbox-buttons
-            span.filter-room-sidebar__input-title.filter-room-sidebar__input-title_long правила дома
-            +checkbox({text: 'Можно курить', isChecked: false})
-            +checkbox({text: 'Можно с питомцами'})
-            +checkbox({text: 'Можно курить'})
-          .filter-room-sidebar__item.sidebar-rich-checkbox-buttons
-            span.filter-room-sidebar__input-title.filter-room-sidebar__input-title_long доступность
-            +rich-checkbox-buttons({
-              list: [
-                {name: 'Широкий коридор', desc: 'Ширина коридоров в номере не менее 91 см.'},
-                {name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
-              ]
-            })
-          .filter-room-sidebar__item.sidebar-room-about-dropdown.dropdown-item.js-dropdown-item
-            span.filter-room-sidebar__input-title удобства номера
-            +dropdown({
-              dropType: 'room-about',
-              isOpen: false,
-              list: [
-                {name: 'спальни', total: 2},
-                {name: 'кровати', total: 2},
-                {name: 'ванные комнаты', total: 0},
-              ]
-            })
-          .filter-room-sidebar__item.sidebar-checkbox-list.checkbox-list-item.js-checkbox-list-item
-            +checkbox-list({
-              title: 'дополнительные удобства',
-              list: [
-                  {text: 'Завтрак', isChecked: false},
-                  {text: 'Письменный стол'},
-                  {text: 'Стул для кормления'},
-                  {text: 'Кроватка'},
-                  {text: 'Телевизор', isChecked: false},
-                  {text: 'Шампунь', isChecked: false},
-                  {text: 'Телевизор', isChecked: false},
-                  {text: 'Шампунь', isChecked: false}
-                ]
-            })
-        .room-cards-list
-          h1.page-title Номера, которые мы для вас подобрали
-          .room-cards-grid
-            - var roomsList = require('./utils/dataRoomsList.json');
-            each room in roomsList
-              .room-cards-grid__box.cutaway-room-card.js-cutaway-room-card
-                +cutaway-room-card({
-                  number: room.number,
-                  lux: room.lux,
-                  price: room.price,
-                  stars: room.start,
-                  reviews: room.reviews,
-                  sliders: room.sliders,
-                })
-        .pagination-block.pagintation-item.js-pagintation-item
-          +pagination
+  main.search-room
+    .search-room__container
+      .filter-sidebar
+        .filter-sidebar__item.filter-sidebar__item_option_filter-date.js-filter-room-sidebar__item_option_filter-date
+          span.filter-sidebar__input-title даты пребывания в отеле
+          +filter-date-dropdown({ isOpen: false })
+        .filter-sidebar__item.filter-sidebar__item_option_guests-dropdown.js-filter-room-sidebar__item_option_guests-dropdown
+          span.filter-sidebar__input-title гости
+          +dropdown({
+            isOpen: false,
+            list: [
+              { name: 'взрослые', total: 2 },
+              { name: 'дети', total: 1 },
+              { name: 'младенцы', total: 1 },
+            ]
+          })
+        .filter-sidebar__item.filter-sidebar__item_option_range-slider.js-filter-room-sidebar__item_option_range-slider
+          .range-slider-box
+            +range-slider({ title: 'диапазон цены' })
+            p.range-slider-box__description Стоимость за сутки пребывания в номере
+        .filter-sidebar__item.filter-sidebar__item_option_checkbox
+          span.filter-sidebar__input-title.filter-sidebar__input-title_long правила дома
+          +checkbox({ text: 'Можно курить', isChecked: false })
+          +checkbox({ text: 'Можно с питомцами' })
+          +checkbox({ text: 'Можно курить' })
+        .filter-sidebar__item.filter-sidebar__item_option_rich-checkbox
+          span.filter-sidebar__input-title.filter-sidebar__input-title_long доступность
+          +rich-checkbox-buttons({
+            list: [
+              { name: 'Широкий коридор', desc: 'Ширина коридоров в номере не менее 91 см.' },
+              { name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.' },
+            ],
+          })
+        .filter-sidebar__item.filter-sidebar__item_option_room-about-dropdown.js-filter-room-sidebar__item_option_room-about-dropdown
+          span.filter-sidebar__input-title удобства номера
+          +dropdown({
+            dropType: 'room-about',
+            isOpen: false,
+            list: [
+              { name: 'спальни', total: 2 },
+              { name: 'кровати', total: 2 },
+              { name: 'ванные комнаты', total: 0 },
+            ]
+          })
+        .filter-sidebar__item.filter-sidebar__item_option_checkbox-list.js-filter-room-sidebar__item_option_checkbox-list
+          +checkbox-list({
+            title: 'дополнительные удобства',
+            list: [
+                { text: 'Завтрак', isChecked: false },
+                { text: 'Письменный стол' },
+                { text: 'Стул для кормления' },
+                { text: 'Кроватка' },
+                { text: 'Телевизор', isChecked: false },
+                { text: 'Шампунь', isChecked: false },
+                { text: 'Телевизор', isChecked: false },
+                { text: 'Шампунь', isChecked: false },
+              ],
+          })
+      .rooms-list
+        h1.rooms-list__title Номера, которые мы для вас подобрали
+        .rooms-list__grid
+          each room in roomsList
+            .rooms-list__item.js-rooms-list__item
+              +cutaway-room-card({
+                number: room.number,
+                lux: room.lux,
+                price: room.price,
+                stars: room.start,
+                reviews: room.reviews,
+                sliders: room.sliders,
+              })
+      .pagination-block.js-pagintation-block
+        +pagination
         
