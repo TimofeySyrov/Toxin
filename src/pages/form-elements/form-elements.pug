@@ -30,10 +30,10 @@ block content
         .form-elements-hero__container
           .form-elements-hero__grid
             .form-elements-hero__column
-              .form-elements-hero__item.form-elements-hero__item_option_text-field.js-form-elements-hero__item_option_text-field
+              .form-elements-hero__item(data-component-name = "text-field")
                 p.form-elements-hero__title text field
                 +text-field({ placeholder: 'Email' })
-              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+              .form-elements-hero__item(data-component-name = "dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
                   title: 'dropdown',
@@ -44,21 +44,21 @@ block content
                     {name: 'младенцы', total: 0},
                   ]
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_text-field.js-form-elements-hero__item_option_text-field
+              .form-elements-hero__item(data-component-name = "text-field")
                 p.form-elements-hero__title masked text field
                 +text-field({ isMasked: true })
-              .form-elements-hero__item.form-elements-hero__item_option_date-dropdown.js-form-elements-hero__item_option_date-dropdown
+              .form-elements-hero__item(data-component-name = "date-dropdown")
                 +date-dropdown({
                   isOpen: false,
                   arr: 'date Dropdown',
                   dep: 'date Dropdown',
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_filter-date.js-form-elements-hero__item_option_filter-date
+              .form-elements-hero__item(data-component-name = "filter-date-dropdown")
                 p.form-elements-hero__title filter date dropdown
                 +filter-date-dropdown({
                   isOpen: false,
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_subs-text-field.js-form-elements-hero__item_option_subs-text-field
+              .form-elements-hero__item(data-component-name = "subscription-text-field")
                 p.form-elements-hero__title subscription text field
                 +subscription-text-field({
                   name: 'Email',
@@ -71,57 +71,53 @@ block content
                 +checkbox({ text: 'Можно курить', isChecked: false })
                 +checkbox({ text: 'Можно с питомцами' })
                 +checkbox({ text: 'Можно пригласить гостей (до 10 человек)' })
-              .form-elements-hero__item.form-elements-hero__item_option_radio
+              .form-elements-hero__item
                 p.form-elements-hero__title.form-elements-hero__title_long-indent Radio Buttons
                 +radio-buttons
-              .form-elements-hero__item.form-elements-hero__item_option_toggle
+              .form-elements-hero__item
                 p.form-elements-hero__title.form-elements-hero__title_long-indent Toggle
                 +toggle({ text: 'Получать спецпредложения' })
                 +toggle({ text: 'Получать спецпредложения', isChecked: false })
-              .form-elements-hero__item.form-elements-hero__item_option_like-button
+              .form-elements-hero__item
                 p.form-elements-hero__title.form-elements-hero__title_long-indent like button
-                .like-button-item.js-like-button-item
+                .like-button-item(data-component-name = "like-button")
                   +like-button
-                .like-button-item.js-like-button-item
+                .like-button-item(data-component-name = "like-button")
                   +like-button({
                     count: 12,
                     isChecked: true
                   })
-              .form-elements-hero__item.form-elements-hero__item_option_rate-button
+              .form-elements-hero__item
                 p.form-elements-hero__title.form-elements-hero__title_long-indent rate button
-                .rate-button-item.js-rate-button-item
+                .rate-button-item(data-component-name = "rate-button")
                   +rate-button({
                     rating: 4,
                   })
-                .rate-button-item.js-rate-button-item
+                .rate-button-item(data-component-name = "rate-button")
                   +rate-button({
                     rating: 5,
                     readonly: true,
                   })
             .form-elements-hero__column
-              .form-elements-hero__item.form-elements-hero__item_option_slider.js-form-elements-hero__item_option_slider
+              .form-elements-hero__item(data-component-name = "range-slider")
                 +range-slider
-              .form-elements-hero__item.form-elements-hero__item_option_button
+              .form-elements-hero__item
                 p.form-elements-hero__title.form-elements-hero__title_long-indent buttons
-                +button({
-                  type: 'background',
-                })
-              .form-elements-hero__item.form-elements-hero__item_option_button
-                +button({
-                  type: 'border'
-                })
-              .form-elements-hero__item.form-elements-hero__item_option_button
+                +button({ type: 'background' })
+              .form-elements-hero__item
+                +button({ type: 'border' })
+              .form-elements-hero__item
                 +button
-              .form-elements-hero__item.form-elements-hero__item_option_button
+              .form-elements-hero__item
                 +button({
                   type: 'long',
                   text: 'перейти к оплате'
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_pagination.js-form-elements-hero__item_option_pagination
+              .form-elements-hero__item(data-component-name = "pagination")
                 p.form-elements-hero__title.form-elements-hero__title_long-indent pagination
                 +pagination
             .form-elements-hero__column
-              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+              .form-elements-hero__item(data-component-name = "dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
                   title: 'dropdown',
@@ -133,7 +129,7 @@ block content
                     {name: 'ванные комнаты', total: 0}
                   ]
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_checkbox-list.js-form-elements-hero__item_option_checkbox-list
+              .form-elements-hero__item(data-component-name = "checkbox-list")
                 +checkbox-list({
                   list: [
                     { text: 'Завтрак', isChecked: false },
@@ -146,7 +142,7 @@ block content
                     { text: 'Шампунь', isChecked: false }
                   ]
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_room-info
+              .form-elements-hero__item
                 +room-info({
                   list: [
                     {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
@@ -154,7 +150,7 @@ block content
                   ]
                 })
             .form-elements-hero__column
-              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+              .form-elements-hero__item(data-component-name = "dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
                   title: 'dropdown',
@@ -165,7 +161,7 @@ block content
                     {name: 'младенцы', total: 0}
                   ]
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_rich-checkbox
+              .form-elements-hero__item
                 p.form-elements-hero__title.form-elements-hero__title_long-indent rich Checkbox Buttons
                 +rich-checkbox-buttons({
                   title: 'rich Checkbox Buttons',
@@ -175,7 +171,7 @@ block content
                   ]
                 })
             .form-elements-hero__column
-              .form-elements-hero__item.form-elements-hero__item_option_dropdown.js-form-elements-hero__item_option_dropdown
+              .form-elements-hero__item(data-component-name = "dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
                   title: 'dropdown',
@@ -186,7 +182,7 @@ block content
                     {name: 'младенцы', total: 0}
                   ]
                 })
-              .form-elements-hero__item.form-elements-hero__item_option_bullet-list
+              .form-elements-hero__item
                 p.form-elements-hero__title.form-elements-hero__title_long-indent bullet list
                 +bullet-list({
                   list: [
@@ -196,7 +192,7 @@ block content
                   ]
                 })
             .form-elements-hero__column.form-elements-hero__column_option_user-comment
-              .form-elements-hero__item.form-elements-hero__item_option_user-comment.js-form-elements-hero__item_option_user-comment
+              .form-elements-hero__item.form-elements-hero__item_option_user-comment(data-component-name = "user-comment")
                 +user-comment({
                   desc: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
                 })

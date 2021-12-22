@@ -18,7 +18,7 @@ block content
         .cards-hero__container
           .cards-hero__grid
             .cards-hero__column
-              .cards-hero__item.cards-hero__item_option_start-filter.js-cards-hero__item_option_start-filter
+              .cards-hero__item(data-component-name = "start-filter")
                 +start-filter({
                   title: 'Найдём номера под ваши пожелания',
                   dateOptions: { isOpen: false },
@@ -37,10 +37,10 @@ block content
                     href: 'search-room.html',
                   },
                 })
-              .cards-hero__item.cards-hero__item_option_registration.js-cards-hero__item_option_registration
+              .cards-hero__item(data-component-name = "registration-card")
                 +registration-card
             .cards-hero__column
-              .cards-hero__item.cards-hero__item_option_room-card.js-cards-hero__item_option_room-card
+              .cards-hero__item(data-component-name = "room-info-card")
                 +room-info-card({
                   id: '888',
                   priceOfDay: '9 990',
@@ -48,12 +48,12 @@ block content
                   services: '300',
                   isLux: true,
                 })
-              .cards-hero__item.cards-hero__item_option_login-card.js-cards-hero__item_option_login-card
+              .cards-hero__item(data-component-name = "login-card")
                 +login-card
             .cards-hero__column
-              .cards-hero__item.cards-hero__item_option_calendar.js-cards-hero__item_option_calendar
+              .cards-hero__item(data-component-name = "calendar")
                 +calendar
-              .cards-hero__item.cards-hero__item_option_cutaway-room.js-cards-hero__item_option_cutaway-room
+              .cards-hero__item(data-component-name = "cutaway-room-card")
                 +cutaway-room-card({
                   sliders: [
                     {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
@@ -62,7 +62,7 @@ block content
                     {src: 'assets/img/rooms/room-888.jpg', alt: 'room №888'},
                   ],
                 })
-              .cards-hero__item.cards-hero__item_option_cutaway-room.js-cards-hero__item_option_cutaway-room
+              .cards-hero__item(data-component-name = "cutaway-room-card")
                 +cutaway-room-card({
                   number: 840,
                   lux: false,

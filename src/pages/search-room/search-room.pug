@@ -17,10 +17,10 @@ block content
   main.search-room
     .search-room__container
       .filter-sidebar
-        .filter-sidebar__item.filter-sidebar__item_option_filter-date.js-filter-room-sidebar__item_option_filter-date
+        .filter-sidebar__item.filter-sidebar__item_option_filter-date(data-component-name = "filter-date-dropdown")
           span.filter-sidebar__input-title даты пребывания в отеле
           +filter-date-dropdown({ isOpen: false })
-        .filter-sidebar__item.filter-sidebar__item_option_guests-dropdown.js-filter-room-sidebar__item_option_guests-dropdown
+        .filter-sidebar__item(data-component-name = "dropdown")
           span.filter-sidebar__input-title гости
           +dropdown({
             isOpen: false,
@@ -30,16 +30,16 @@ block content
               { name: 'младенцы', total: 1 },
             ]
           })
-        .filter-sidebar__item.filter-sidebar__item_option_range-slider.js-filter-room-sidebar__item_option_range-slider
+        .filter-sidebar__item(data-component-name = "range-slider")
           .range-slider-box
             +range-slider({ title: 'диапазон цены' })
             p.range-slider-box__description Стоимость за сутки пребывания в номере
-        .filter-sidebar__item.filter-sidebar__item_option_checkbox
+        .filter-sidebar__item
           span.filter-sidebar__input-title.filter-sidebar__input-title_long правила дома
           +checkbox({ text: 'Можно курить', isChecked: false })
           +checkbox({ text: 'Можно с питомцами' })
           +checkbox({ text: 'Можно курить' })
-        .filter-sidebar__item.filter-sidebar__item_option_rich-checkbox
+        .filter-sidebar__item
           span.filter-sidebar__input-title.filter-sidebar__input-title_long доступность
           +rich-checkbox-buttons({
             list: [
@@ -47,7 +47,7 @@ block content
               { name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.' },
             ],
           })
-        .filter-sidebar__item.filter-sidebar__item_option_room-about-dropdown.js-filter-room-sidebar__item_option_room-about-dropdown
+        .filter-sidebar__item.filter-sidebar__item_option_room-about-dropdown(data-component-name = "dropdown")
           span.filter-sidebar__input-title удобства номера
           +dropdown({
             dropType: 'room-about',
@@ -58,7 +58,7 @@ block content
               { name: 'ванные комнаты', total: 0 },
             ]
           })
-        .filter-sidebar__item.filter-sidebar__item_option_checkbox-list.js-filter-room-sidebar__item_option_checkbox-list
+        .filter-sidebar__item(data-component-name = "checkbox-list")
           +checkbox-list({
             title: 'дополнительные удобства',
             list: [
@@ -76,7 +76,7 @@ block content
         h1.rooms-list__title Номера, которые мы для вас подобрали
         .rooms-list__grid
           each room in roomsList
-            .rooms-list__item.js-rooms-list__item
+            .rooms-list__item(data-component-name = "cutaway-room-card")
               +cutaway-room-card({
                 number: room.number,
                 lux: room.lux,
@@ -85,6 +85,6 @@ block content
                 reviews: room.reviews,
                 sliders: room.sliders,
               })
-      .pagination-block.js-pagintation-block
+      .pagination-block(data-component-name = "pagination")
         +pagination
         

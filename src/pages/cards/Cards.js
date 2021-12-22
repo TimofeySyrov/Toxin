@@ -34,12 +34,12 @@ class Cards {
 
   _getDOMElements() {
     return {
-      calendar: document.querySelector('.js-cards-hero__item_option_calendar'),
-      startFilter: document.querySelectorAll('.js-cards-hero__item_option_start-filter'),
-      registrationCard: document.querySelectorAll('.js-cards-hero__item_option_registration'),
-      roomInfoCard: document.querySelectorAll('.js-cards-hero__item_option_room-card'),
-      cutawayRoomCard: document.querySelectorAll('.js-cards-hero__item_option_cutaway-room'),
-      loginCard: document.querySelectorAll('.js-cards-hero__item_option_login-card'),
+      calendar: document.querySelector('[data-component-name="calendar"]'),
+      startFilter: document.querySelectorAll('[data-component-name="start-filter"]'),
+      registrationCard: document.querySelectorAll('[data-component-name="registration-card"]'),
+      roomInfoCard: document.querySelectorAll('[data-component-name="room-info-card"]'),
+      cutawayRoomCard: document.querySelectorAll('[data-component-name="cutaway-room-card"]'),
+      loginCard: document.querySelectorAll('[data-component-name="login-card"]'),
     };
   }
 }

@@ -47,16 +47,16 @@ class FormElements {
 
   _getDOMElements() {
     return {
-      pagination: document.querySelector('.js-form-elements-hero__item_option_pagination'),
-      textField: document.querySelectorAll('.js-form-elements-hero__item_option_text-field'),
-      dropdown: document.querySelectorAll('.js-form-elements-hero__item_option_dropdown'),
-      dateDropdown: document.querySelectorAll('.js-form-elements-hero__item_option_date-dropdown'),
-      filterDateDropdown: document.querySelectorAll('.js-form-elements-hero__item_option_filter-date'),
-      likeButton: document.querySelectorAll('.js-like-button-item'),
-      rateButton: document.querySelectorAll('.js-rate-button-item'),
-      rangeSlider: document.querySelectorAll('.js-form-elements-hero__item_option_slider'),
-      checkboxList: document.querySelectorAll('.js-form-elements-hero__item_option_checkbox-list'),
-      userComment: document.querySelectorAll('.js-form-elements-hero__item_option_user-comment'),
+      pagination: document.querySelector('[data-component-name="pagination"]'),
+      textField: document.querySelectorAll('[data-component-name="text-field"]'),
+      dropdown: document.querySelectorAll('[data-component-name="dropdown"]'),
+      dateDropdown: document.querySelectorAll('[data-component-name="date-dropdown"]'),
+      filterDateDropdown: document.querySelectorAll('[data-component-name="filter-date-dropdown"]'),
+      likeButton: document.querySelectorAll('[data-component-name="like-button"]'),
+      rateButton: document.querySelectorAll('[data-component-name="rate-button"]'),
+      rangeSlider: document.querySelectorAll('[data-component-name="range-slider"]'),
+      checkboxList: document.querySelectorAll('[data-component-name="checkbox-list"]'),
+      userComment: document.querySelectorAll('[data-component-name="user-comment"]'),
     };
   }
 }
