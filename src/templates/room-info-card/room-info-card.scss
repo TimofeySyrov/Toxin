@@ -25,12 +25,12 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $dark_shade_100;
+    color: $color-main-darker;
     margin-bottom: 5px;
   }
 
   &__room-number {
-    color: $dark_shade_100;
+    color: $color-main-darker;
   }
 
   &__number-id {
@@ -42,7 +42,7 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $purple;
+    color: $color-main;
     margin-left: 8px;
     display: none;
 
@@ -55,7 +55,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
-    color: $dark_shade_50;
+    color: $color-main-light;
   }
 
   &__price-text {
@@ -76,12 +76,12 @@
   &__info-icon {
     width: 20px;
     height: 20px;
-    border: 1px solid $dark_shade_25;
+    border: 1px solid $color-main-lighter;
     border-radius: 50%;
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
-    color: $dark_shade_25;
+    color: $color-main-lighter;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +97,7 @@
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 24px;
-    color: $dark_shade_75;
+    color: $color-main-dark;
     display: flex;
 
     &:last-child {
@@ -110,7 +110,7 @@
     max-width: 214px;
     margin-right: 5px;
   }
-  
+
   &__table-row-price {
     flex-grow: 2;
     text-align: right;
@@ -124,7 +124,7 @@
     font-weight: 700;
     font-size: 19px;
     line-height: 23px;
-    color: $dark_shade_100;
+    color: $color-main-darker;
   }
 
   &__line-separator {

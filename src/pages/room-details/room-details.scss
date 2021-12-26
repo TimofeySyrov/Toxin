@@ -8,7 +8,7 @@
 @import '../../templates/footer/footer.scss';
 
 .room-details-main {
-  border-bottom: 1px solid $dark_shade_25;
+  border-bottom: 1px solid $color-main-lighter;
 
   &__container {
     max-width: 1440px;
@@ -133,7 +133,7 @@
     font-weight: 700;
     font-size: 19px;
     line-height: 23px;
-    color: $dark_shade_100;
+    color: $color-main-darker;
     margin-bottom: 20px;
   }
 }
@@ -189,7 +189,7 @@
     font-weight: 400;
     line-height: 14px;
     text-align: right;
-    color: $dark_shade_50;
+    color: $color-main-light;
     white-space: nowrap;
   }
 

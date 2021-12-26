@@ -25,7 +25,7 @@
     }
 
     ul li a {
-      color: $dark_shade_50;
+      color: $color-main-light;
       font-size: 12px;
       line-height: 15px;
       text-decoration: none;
@@ -46,7 +46,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: $green-gradient;
+      background: $secondary-gradient;
       font-family: 'MaterialIcons';
       color: #fff;
       font-size: 24px;
@@ -60,7 +60,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: $green-gradient;
+      background: $secondary-gradient;
       font-family: 'MaterialIcons';
       color: #fff;
       font-size: 24px;

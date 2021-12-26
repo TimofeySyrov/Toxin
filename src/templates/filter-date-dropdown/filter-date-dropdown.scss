@@ -9,7 +9,7 @@
     position: relative;
     height: 44px;
     background: #fff;
-    border: 1px solid $dark_shade_25;
+    border: 1px solid $color-main-lighter;
     border-radius: 4px;
     padding-left: 15px;
     display: flex;
@@ -18,7 +18,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    color: $dark_shade_75;
+    color: $color-main-dark;
     cursor: pointer;
   }
 
@@ -30,7 +30,7 @@
     height: 44px;
     font-size: 24px;
     line-height: 24px;
-    color: $dark_shade_50;
+    color: $color-main-light;
     display: flex;
     justify-content: center;
     align-items: center;

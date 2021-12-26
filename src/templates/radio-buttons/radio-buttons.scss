@@ -22,7 +22,7 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    border: 1px solid $dark_shade_25;
+    border: 1px solid $color-main-lighter;
     border-radius: 50%;
     background-color: #fff;
     z-index: 1;
@@ -42,7 +42,7 @@
     }
 
     &:checked {
-      border-color: $purple;
+      border-color: $color-main;
 
       &::after {
         opacity: 1;
@@ -50,11 +50,11 @@
     }
 
     &:checked ~ .radio-buttons__box {
-      color: $dark_shade_75;
+      color: $color-main-dark;
     }
   }
 
   &__input-name {
-    color: $dark_shade_50;
+    color: $color-main-light;
   }
 }

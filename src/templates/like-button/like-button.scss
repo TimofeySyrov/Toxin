@@ -2,18 +2,18 @@
   min-width: 40px;
   min-height: 20px;
   padding: 2px 8px 2px 0px;
-  border: 1px solid $dark_shade_25;
+  border: 1px solid $color-main-lighter;
   border-radius: 10px;
   background: #fff;
-  color: $dark_shade_25;
+  color: $color-main-lighter;
   cursor: pointer;
   display: flex;
   align-items: center;
   user-select: none;
 
   &_active {
-    color: $purple;
-    border-color: $purple;
+    color: $color-main;
+    border-color: $color-main;
   }
 
   &__icon {

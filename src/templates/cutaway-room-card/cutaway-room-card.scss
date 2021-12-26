@@ -31,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $dark_shade_1;
+    border-bottom: 1px solid $color-main-transparent;
     padding-bottom: 10px;
   }
 
@@ -39,7 +39,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-    color: $dark_shade_100;
+    color: $color-main-darker;
 
     &-number {
       font-size: 19px;
@@ -52,13 +52,13 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $purple;
+    color: $color-main;
   }
 
   &__price {
     font-size: 12px;
     line-height: 18px;
-    color: $dark_shade_50;
+    color: $color-main-light;
 
     &-number {
       font-weight: 700;
@@ -75,7 +75,7 @@
     margin-top: 8px;
 
     &-reviews {
-      color: $dark_shade_50;
+      color: $color-main-light;
 
       &-num {
         font-weight: 700;

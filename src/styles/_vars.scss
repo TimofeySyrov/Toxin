@@ -1,12 +1,11 @@
-$dark_shade_100: rgba(31, 32, 65, 1);
-$dark_shade_75: rgba(31, 32, 65, 0.75);
-$dark_shade_50: rgba(31, 32, 65, 0.5);
-$dark_shade_25: rgba(31, 32, 65, 0.25);
-$dark_shade_5: rgba(31, 32, 65, 0.05);
-$dark_shade_1: rgba(31, 32, 65, 0.1);
-$purple: rgba(188, 156, 255, 1);
-$green: rgba(111, 207, 151, 1);
-$main-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-$green-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-
+$color-main-darker: rgba(31, 32, 65, 1);
+$color-main-dark: rgba(31, 32, 65, 0.75);
+$color-main-light: rgba(31, 32, 65, 0.5);
+$color-main-lighter: rgba(31, 32, 65, 0.25);
+$color-main-translucent: rgba(31, 32, 65, 0.05);
+$color-main-transparent: rgba(31, 32, 65, 0.1);
+$color-main: rgba(188, 156, 255, 1);
+$color-secondary: rgba(111, 207, 151, 1);
+$main-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$secondary-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 $main-font-family: Montserrat, Arial, sans-serif;

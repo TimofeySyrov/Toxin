@@ -34,7 +34,7 @@
 
   &__title {
     font-weight: 700;
-    color: $dark_shade_100;
+    color: $color-main-darker;
   }
 
   &__item {
@@ -61,31 +61,31 @@
 
     &_color {
       &_dark-shade-100 {
-        background: $dark_shade_100;
+        background: $color-main-darker;
       }
 
       &_dark-shade-75 {
-        background: $dark_shade_75;
+        background: $color-main-dark;
       }
 
       &_dark-shade-50 {
-        background: $dark_shade_50;
+        background: $color-main-light;
       }
 
       &_dark-shade-25 {
-        background: $dark_shade_25;
+        background: $color-main-lighter;
       }
 
       &_dark-shade-5 {
-        background: $dark_shade_5;
+        background: $color-main-translucent;
       }
 
       &_purple {
-        background: $purple;
+        background: $color-main;
       }
 
       &_green {
-        background: $green;
+        background: $color-secondary;
       }
     }
   }
@@ -93,7 +93,7 @@
 
 .fonts-list {
   max-width: 436px;
-  color: $dark_shade_25;
+  color: $color-main-lighter;
   margin-bottom: 50px;
   list-style: none;
 
@@ -108,7 +108,7 @@
 
   &__description {
     font-weight: 700;
-    color: $dark_shade_100;
+    color: $color-main-darker;
   }
 
   &__info-box {
@@ -145,7 +145,7 @@
 
         .fonts-list__description {
           font-weight: 400;
-          color: $dark_shade_75;
+          color: $color-main-dark;
         }
       }
     }

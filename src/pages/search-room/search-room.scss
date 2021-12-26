@@ -12,7 +12,7 @@
 
 .search-room {
   padding: 30px 15px 70px 15px;
-  border-bottom: 1px solid $dark_shade_25;
+  border-bottom: 1px solid $color-main-lighter;
 
   &__container {
     max-width: 1175px;
@@ -45,7 +45,7 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $dark_shade_100;
+    color: $color-main-darker;
     margin-bottom: 5px;
 
     &_long {
@@ -83,7 +83,7 @@
     margin-top: 13px;
     font-size: 12px;
     line-height: 14px;
-    color: $dark_shade_50;
+    color: $color-main-light;
   }
 }
 
@@ -95,7 +95,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    color: $dark_shade_100;
+    color: $color-main-darker;
     margin: 0;
     margin-bottom: 20px;
 

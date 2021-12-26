@@ -7,14 +7,14 @@
   font-family: $main-font-family;
 
   &_active {
-    border-color: $dark_shade_50;
+    border-color: $color-main-light;
   }
 
   &__name {
     position: relative;
     height: 44px;
     padding-left: 15px;
-    border: 1px solid $dark_shade_25;
+    border: 1px solid $color-main-lighter;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
@@ -32,7 +32,7 @@
     height: 44px;
     font-size: 24px;
     line-height: 24px;
-    color: $dark_shade_50;
+    color: $color-main-light;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,11 +49,11 @@
     flex-direction: column;
     row-gap: 7px;
     padding: 7px 7px 7px 15px;
-    border: 1px solid $dark_shade_25;
+    border: 1px solid $color-main-lighter;
     border-radius: 0 0 4px 4px;
     border-top: none;
     background: white;
-    color: $dark_shade_100;
+    color: $color-main-darker;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
@@ -81,12 +81,12 @@
   &__button {
     width: 30px;
     height: 30px;
-    border: 1px solid $dark_shade_25;
+    border: 1px solid $color-main-lighter;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $dark_shade_50;
+    color: $color-main-light;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
@@ -114,7 +114,7 @@
     display: none;
     font-size: 12px;
     line-height: 15px;
-    color: $purple;
+    color: $color-main;
     user-select: none;
     cursor: pointer;
 
@@ -123,7 +123,7 @@
     }
 
     &:active {
-      color: $dark_shade_50;
+      color: $color-main-light;
     }
 
     &_type {

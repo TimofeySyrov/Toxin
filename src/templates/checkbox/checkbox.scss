@@ -6,7 +6,7 @@
   margin-bottom: 11px;
   padding-left: 30px;
   line-height: 18px;
-  color: $dark_shade_50;
+  color: $color-main-light;
   display: inline-flex;
   align-items: center;
   cursor: pointer;
@@ -18,7 +18,7 @@
     left: 0;
     width: 20px;
     height: 20px;
-    border: 1px solid $dark_shade_25;
+    border: 1px solid $color-main-lighter;
     border-radius: 4px;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@
     cursor: pointer;
 
     &:checked {
-      border-color: $purple;
+      border-color: $color-main;
       background-image: url(../../assets/img/icons/check.svg);
     }
   }

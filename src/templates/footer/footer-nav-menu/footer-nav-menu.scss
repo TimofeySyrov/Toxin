@@ -15,19 +15,19 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
-    color: $dark_shade_100;
+    color: $color-main-darker;
   }
 
   &__item-name {
     white-space: nowrap;
     font-size: 14px;
     line-height: 17px;
-    color: $dark_shade_50;
+    color: $color-main-light;
     text-decoration: none;
 
     &:hover {
       font-weight: 700;
-      color: $dark_shade_75;
+      color: $color-main-dark;
     }
   }
 }
