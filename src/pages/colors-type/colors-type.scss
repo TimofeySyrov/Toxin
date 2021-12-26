@@ -8,6 +8,10 @@
     max-width: 1162px;
     margin: 0 auto;
     padding: 37px 30px;
+
+    @media screen and (max-width: 860px) {
+      padding: 37px 10px;
+    }
   }
 
   &__grid {
@@ -15,6 +19,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
     min-width: 286px;
+
+    @media screen and (max-width: 860px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
@@ -139,19 +148,6 @@
           color: $dark_shade_75;
         }
       }
-    }
-  }
-}
-
-@media screen and (max-width: 860px) {
-  .colors-type-hero {
-    &__container {
-      padding: 37px 10px;
-    }
-
-    &__grid {
-      flex-direction: column;
-      align-items: center;
     }
   }
 }

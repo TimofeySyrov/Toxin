@@ -41,10 +41,8 @@
     position: relative;
     z-index: 1;
   }
-}
 
-@media screen and (max-width: 360px) {
-  .start-filter {
+  @media screen and (max-width: 360px) {
     padding: 25px 15px 25px 15px;
   }
 }
