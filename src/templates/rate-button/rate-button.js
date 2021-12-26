@@ -9,7 +9,7 @@ class RateButton {
   }
 
   _findDOMElements() {
-    this.$rateButton = this.$container.find('.js-rate-button__container');
+    this.$rateButton = this.$container.find('[data-rate-body]');
     this.valueRating = this.$rateButton.attr('data-rating');
     this.valueReadonly = this.$rateButton.attr('data-readonly');
   }

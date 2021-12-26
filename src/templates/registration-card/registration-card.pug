@@ -8,22 +8,22 @@ mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' 
     p.registration-card__title Регистрация аккаунта
     .registration-card__user-name
       .registration-card__inputs-wrap
-        .registration-card__input.js-registration-card__input
+        div(data-component-name="text-field")
           +text-field({ placeholder: 'Имя' })
-        .registration-card__input.js-registration-card__input
+        div(data-component-name="text-field")
           +text-field({ placeholder: 'Фамилия' })
     .registration-card__user-sex
       +radio-buttons
     .registration-card__user-birthday
       p.registration-card__input-title дата рождения
-      .registration-card__input.js-registration-card__input
+      div(data-component-name="text-field")
         +text-field({ isMasked: true })
     .registration-card__email-password
       p.registration-card__input-title данные для входа в сервис
       .registration-card__inputs-wrap
-        .registration-card__input.js-registration-card__input
+        div(data-component-name="text-field")
           +text-field({ placeholder: 'Email' })
-        .registration-card__input.js-registration-card__input
+        div(data-component-name="text-field")
           +text-field({
             type: 'password',
             placeholder: 'Пароль',
@@ -33,14 +33,14 @@ mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' 
         text: 'Получать спецпредложения',
         isChecked: false,
       })
-    .registration-card__confirm-btn.js-registration-card-registr
+    .registration-card__confirm-btn
       +button({
         type: 'long',
         text: 'зарегистрироваться',
         href: hrefJoin,
       })
-    .registration-card__login-container
-      p.registration-card__login-container-title Уже есть аккаунт на Toxin
+    .registration-card__sign-in
+      p.registration-card__sign-in-title Уже есть аккаунт на Toxin
       +button({
         type: 'border',
         text: 'войти',

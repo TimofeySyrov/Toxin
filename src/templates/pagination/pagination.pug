@@ -6,9 +6,9 @@ mixin pagination({ items, pageSize, pageRange }={})
   )
     .pagination__body.js-pagination__body
     p.pagination__title
-      span.pagination__title-current-min.js-pagination__title-current-min 1
-      span.pagination__title-separator !{' – '}
-      span.pagination__title-current-min.js-pagination__title-current-max 12
-      span.pagination__title-text !{' из '}
-      span.pagination__title-items-count.js-pagination__title-items-count 100+
-      span.pagination__title-text !{' вариантов аренды'}
+      span(data-placeholder-type="current-min") 1
+      span !{' – '}
+      span(data-placeholder-type="current-max") 12
+      span !{' из '}
+      span(data-placeholder-type="count-all") 100+
+      span !{' вариантов аренды'}

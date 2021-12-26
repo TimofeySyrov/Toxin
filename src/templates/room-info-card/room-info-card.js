@@ -16,12 +16,12 @@ class RoomInfoCard {
 
   _findDOMElements() {
     const { body } = this;
-    this.pricePerDay = body.querySelector('.js-room-info-card__price-per-day');
-    this.daysPeriod = body.querySelector('.js-room-info-card__table-row-period');
-    this.daysPeriodPrice = body.querySelector('.js-room-info-card__days-period-price');
-    this.discount = body.querySelector('.js-room-info-card__discount');
-    this.additionalCharges = body.querySelector('.js-room-info-card__additional-charges');
-    this.finalCost = body.querySelector('.js-room-info-card__final-cost');
+    this.pricePerDay = body.querySelector('[data-placeholder-type="price-per-day"]');
+    this.daysPeriod = body.querySelector('[data-placeholder-type="period-number"');
+    this.daysPeriodPrice = body.querySelector('[data-placeholder-type="price-per-period"]');
+    this.discount = body.querySelector('[data-placeholder-type="discount-main-number"]');
+    this.additionalCharges = body.querySelector('[data-placeholder-type="discount-additional-number"]');
+    this.finalCost = body.querySelector('[data-placeholder-type="final-price"]');
   }
 
   _initComponents() {

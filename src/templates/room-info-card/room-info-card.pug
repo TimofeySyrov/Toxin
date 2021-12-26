@@ -16,17 +16,15 @@ mixin room-info-card(options={})
   .room-info-card.js-room-info-card
     .room-info-card__title
       .room-info-card__room-number
-        span.room-info-card__separator №!{' '}
+        span !{'№ '}
         span.room-info-card__number-id= id
-        span.room-info-card__number-lux(class= isLux && 'room-info-card__number-lux_active') люкс
+        span.room-info-card__lux-name(class= isLux && 'room-info-card__lux-name_active') люкс
       .room-info-card__room-price
-        span.room-info-card__price-amount.js-room-info-card__price-per-day= priceOfDay
-        span.room-info-card__price-currency= currency
+        span(data-placeholder-type="price-per-day")= priceOfDay
+        span= currency
         span.room-info-card__price-text !{' '}в сутки
     .room-info-card__dates
-      +date-dropdown({
-        isOpen: false,
-      })
+      +date-dropdown({ isOpen: false })
     .room-info-card__guests
       span.room-info-card__input-title гости
       +dropdown({
@@ -38,38 +36,38 @@ mixin room-info-card(options={})
         ]
       })
     table.room-info-card__price-table
-      tr.room-info-card__table-row.room-info-card__accommodation-price
+      tr.room-info-card__table-row
         td.room-info-card__table-row-name
-          span.room-info-card__table-row-amount= priceOfDay
-          span.room-info-card__table-row-currency= currency
+          span= priceOfDay
+          span= currency
           span !{' x '}
-          span.room-info-card__table-row-text.room-info-card__table-row-period.js-room-info-card__table-row-period 0
+          span(data-placeholder-type="period-number") 0
           span !{' суток'}
         td.room-info-card__table-row-price
-          span.room-info-card__table-row-amount.js-room-info-card__days-period-price 0
-          span.room-info-card__table-row-currency= currency
-      tr.room-info-card__table-row.room-info-card__discount-offer-services-first
+          span(data-placeholder-type="price-per-period") 0
+          span= currency
+      tr.room-info-card__table-row
         td.room-info-card__table-row-name
-          span.room-info-card__table-row-text Сбор за услуги: скидка!{' '}
-          span.room-info-card__table-row-amount.js-room-info-card__discount= discount
-          span.room-info-card__table-row-currency= currency
+          span Сбор за услуги: скидка!{' '}
+          span(data-placeholder-type="discount-main-number")= discount
+          span= currency
         td.room-info-card__info-icon i
         td.room-info-card__table-row-price
-          span.room-info-card__table-row-amount 0
-          span.room-info-card__table-row-currency= currency
-      tr.room-info-card__table-row.room-info-card__discount-offer-services-second
+          span 0
+          span= currency
+      tr.room-info-card__table-row
         td.room-info-card__table-row-name
-          span.room-info-card__table-row-text Сбор за дополнительные услуги
+          span Сбор за дополнительные услуги
         td.room-info-card__info-icon i
         td.room-info-card__table-row-price
-          span.room-info-card__table-row-amount.js-room-info-card__additional-charges= services
-          span.room-info-card__table-row-currency= currency
+          span(data-placeholder-type="discount-additional-number")= services
+          span= currency
     .room-info-card__final-box
-      span.room-info-card__final-text Итого
+      span Итого
       .room-info-card__line-separator
       .room-info-card__final-price
-        span.room-info-card__final-amount.js-room-info-card__final-cost 0
-        span.room-info-card__price-currency.room-info-card__final-currency= currency
+        span(data-placeholder-type="final-price") 0
+        span= currency
     .room-info-card__btn-confirm
       +button({
         type: 'long',

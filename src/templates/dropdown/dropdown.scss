@@ -5,7 +5,7 @@
   flex-direction: column;
   background: white;
   font-family: $main-font-family;
-  
+
   &_active {
     border-color: $dark_shade_50;
   }
@@ -21,7 +21,7 @@
     align-items: center;
     cursor: pointer;
     user-select: none;
-  
+
     &_active {
       border-radius: 4px 4px 0 0;
     }
@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     &_active {
       transform: rotate(-180deg);
     }
@@ -59,7 +59,7 @@
     line-height: 15px;
     text-transform: uppercase;
     z-index: 100;
-  
+
     &_active {
       display: flex;
     }
@@ -71,14 +71,14 @@
     align-items: center;
   }
 
-  &__item-counter {
+  &__counter {
     width: 92px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__item-btn {
+  &__button {
     width: 30px;
     height: 30px;
     border: 1px solid $dark_shade_25;
@@ -93,45 +93,47 @@
     user-select: none;
     cursor: pointer;
     opacity: 0.5;
-  
+
     &_active {
       opacity: 1;
     }
+
+    &_type {
+      &_plus {
+        opacity: 1;
+      }
+    }
   }
 
-  &__plus-btn {
-    opacity: 1;
-  }
-
-  &__btns {
-    padding: 13px 0 6px 0;
+  &__control-panel {
     display: block;
+  }
+
+  &__control-button {
+    padding: 13px 0 6px 0;
+    display: none;
     font-size: 12px;
     line-height: 15px;
     color: $purple;
     user-select: none;
-  }
-
-  &__clear-btn {
-    float: left;
-    display: none;
     cursor: pointer;
-    
-    &:active {
-      color: $dark_shade_50;
-    }
-  
+
     &_active {
       display: block;
     }
-  }
 
-  &__confirm-btn {
-    float: right;
-    cursor: pointer;
-  
     &:active {
       color: $dark_shade_50;
+    }
+
+    &_type {
+      &_clear {
+        float: left;
+      }
+
+      &_confirm {
+        float: right;
+      }
     }
   }
 }

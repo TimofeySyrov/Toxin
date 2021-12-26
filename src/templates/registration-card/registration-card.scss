@@ -60,15 +60,15 @@
     margin: 24px 0 30px 0;
   }
 
-  &__login-container {
+  &__sign-in {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
 
-    &-title {
-      font-size: 14px;
-      line-height: 18px;
-      color: #000000;
-    }
+  &__sign-in-title {
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
   }
 }

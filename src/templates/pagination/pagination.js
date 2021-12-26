@@ -5,9 +5,9 @@ class Pagination {
     this.options = options;
     this.$body = $(domParent).find('.js-pagination');
     this.$pagBody = this.$body.find('.js-pagination__body');
-    this.$currentMin = this.$body.find('.js-pagination__title-current-min');
-    this.$currentMax = this.$body.find('.js-pagination__title-current-max');
-    this.$allItemsCount = this.$body.find('.js-pagination__title-items-count');
+    this.$currentMin = this.$body.find('[data-placeholder-type="current-min"]');
+    this.$currentMax = this.$body.find('[data-placeholder-type="current-max"]');
+    this.$allItemsCount = this.$body.find('[data-placeholder-type="count-all"]');
 
     this._init();
   }

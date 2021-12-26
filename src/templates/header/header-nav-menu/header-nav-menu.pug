@@ -3,7 +3,7 @@ mixin header-nav-menu(listMenu= [])
     each item in listMenu
       li.nav-menu__item.js-nav-menu__item(data-with-submenu = item.submenu ? true : false)
         if item.submenu
-          span.nav-menu__link.nav-menu__link--submenu(href= item.href title= item.name) !{item.name}
+          span.nav-menu__link(href= item.href title= item.name) !{item.name}
           i.material-icons.nav-menu__icon expand_more
           ul.submenu
             each itemSubmenu in item.submenu

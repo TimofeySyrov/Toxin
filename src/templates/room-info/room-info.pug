@@ -1,8 +1,8 @@
-mixin room-info({ list=[], }={})
-  .room-info
+mixin room-info(list=[])
+  ul.room-info
     each item in list
-      .room-info__item
+      li.room-info__item
         .material-icons.room-info__icon #{item.icon}
-        .room-info_right
+        .room-info_info-box
           p.room-info__name #{item.name}
           p.room-info__desc #{item.desc}

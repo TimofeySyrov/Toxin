@@ -3,8 +3,8 @@ import * as d3 from 'd3';
 class DonutChart {
   constructor(domParent, options) {
     this.container = domParent.querySelector('.js-donut-chart');
-    this.diagram = this.container.querySelector('.js-donut-chart-diagram');
-    this.list = this.container.querySelector('.js-donut-chart-list');
+    this.diagram = this.container.querySelector('.js-donut-chart__box-diagram');
+    this.list = this.container.querySelector('.js-donut-chart__list');
     this.options = options;
 
     this._render();

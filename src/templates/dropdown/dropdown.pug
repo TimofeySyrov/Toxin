@@ -1,19 +1,21 @@
 //- dropType: 'guests' or 'room-about'
 mixin dropdown({ placeholder = 'Сколько гостей', dropType = 'guests', isOpen = true, list = [] }={})
+  - const isGuestsType = dropType === 'guests';
+
   .dropdown.js-dropdown(data-type= dropType data-is-open= isOpen)
     .dropdown__name.js-dropdown__name
-      span.dropdown__placeholder.js-dropdown__placeholder= placeholder
+      span(data-placeholder-type="dropdown-name")= placeholder
       span.dropdown__icon.material-icons.js-dropdown__icon expand_more
     .dropdown__menu
       ul.dropdown__list.js-dropdown__list
         each item in list
           li.dropdown__item.js-dropdown__item(data-item-type= item.name)
-            span.dropdown__item-name.js-dropdown__item-name #{item.name}
-            .dropdown__item-counter
-              .dropdown__item-btn.dropdown__minus-btn.js-dropdown__minus-btn -
-              p.dropdown__item-total.js-dropdown__item-total #{item.total || '0'}
-              .dropdown__item-btn.dropdown__plus-btn.js-dropdown__plus-btn +
-        if dropType === 'guests'
-          li.dropdown__item.dropdown__btns
-            p.dropdown__clear-btn.js-dropdown__clear-btn Очистить
-            p.dropdown__confirm-btn.js-dropdown__confirm-btn Применить
+            span(data-placeholder-type="item-name") #{item.name}
+            .dropdown__counter
+              .dropdown__button(data-button-type="minus") -
+              p(data-placeholder-type="item-total") #{item.total || '0'}
+              .dropdown__button.dropdown__button_type_plus(data-button-type="plus") +
+        if isGuestsType
+          li.dropdown__control-panel
+            p.dropdown__control-button.dropdown__control-button_type_clear(data-button-type="clear") Очистить
+            p.dropdown__control-button.dropdown__control-button_type_confirm(data-button-type="confirm") Применить

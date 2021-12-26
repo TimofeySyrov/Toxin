@@ -5,10 +5,10 @@ class DateDropdown {
     this.body = domParent.querySelector('.js-date-dropdown');
     this.calendarBody = this.body.querySelector('.js-date-dropdown__calendar-container');
     this.bodyInputs = this.body.querySelectorAll('.js-date-dropdown__input');
-    this.arrivalInput = this.body.querySelector('.js-date-dropdown-arrival');
-    this.depatureInput = this.body.querySelector('.js-date-dropdown-depature');
+    this.arrivalInput = this.body.querySelector('[data-input-type="arrival"]');
+    this.depatureInput = this.body.querySelector('[data-input-type="depature"]');
     this.inputArrows = this.body.querySelectorAll('.js-date-dropdown__arrow');
-    this.isCalendarOpen = this.body.getAttribute('data-calendar-isOpen');
+    this.isCalendarOpen = this.body.getAttribute('data-is-open');
     this.observers = [];
 
     this._init();

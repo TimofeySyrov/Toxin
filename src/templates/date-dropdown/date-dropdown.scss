@@ -6,7 +6,7 @@
   flex-direction: column;
   font-family: $main-font-family;
 
-  &__items {
+  &__list {
     display: inline-flex;
     justify-content: flex-start;
     gap: 20px;

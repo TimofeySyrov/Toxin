@@ -5,7 +5,7 @@
   position: relative;
   font-family: $main-font-family;
 
-  &__name-box {
+  &__name {
     position: relative;
     height: 44px;
     background: #fff;
@@ -22,7 +22,7 @@
     cursor: pointer;
   }
 
-  &__arrow {
+  &__icon {
     position: absolute;
     right: 0;
     top: 0;

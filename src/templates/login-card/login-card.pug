@@ -5,16 +5,18 @@ mixin login-card({ hrefLogin='search-room.html', hrefRegister='sign-up.html' }={
   .login-card.js-login-card
     p.login-card__title Войти
     .login-card__user-form
-      +text-field({ placeholder: 'Email' })
-      +text-field({ type: 'password', placeholder: 'Пароль' })
-    .login-card__sign-in.js-login-card-login-btn
+      div(data-component-name="text-field")
+        +text-field({ placeholder: 'Email' })
+      div(data-component-name="text-field")
+        +text-field({ type: 'password', placeholder: 'Пароль' })
+    .login-card__sign-in
       +button({
           type: 'long',
           text: 'войти',
           href: hrefLogin
         })
-    .login-card__registration-container
-      p.login-card__registration-title Нет аккаунта на Toxin?
+    .login-card__sign-up
+      p.login-card__sign-up-title Нет аккаунта на Toxin?
       +button({
         type: 'border',
         text: 'создать',

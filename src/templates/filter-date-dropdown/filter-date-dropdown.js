@@ -3,11 +3,11 @@ import Calendar from '../calendar/calendar';
 class FilterDateDropdown {
   constructor(domParent) {
     this.body = domParent.querySelector('.js-filter-date-dropdown');
-    this.nameBox = this.body.querySelector('.js-filter-date-dropdown__name-box');
+    this.nameBox = this.body.querySelector('.js-filter-date-dropdown__name');
     this.calendarBody = this.body.querySelector('.js-filter-date-dropdown__calendar');
-    this.calendarInput = this.body.querySelector('.js-filter-date-dropdown__input');
-    this.inputArrow = this.body.querySelector('.js-filter-date-dropdown__arrow');
-    this.isCalendarOpen = this.body.getAttribute('data-calendar-isopen');
+    this.calendarInput = this.body.querySelector('[data-placeholder-type="dropdown-name"]');
+    this.inputArrow = this.body.querySelector('.js-filter-date-dropdown__icon');
+    this.isCalendarOpen = this.body.getAttribute('data-is-open');
 
     this._init();
     this._bindEventListener();
@@ -75,7 +75,7 @@ class FilterDateDropdown {
   }
 
   _rotateArrow() {
-    this.inputArrow.classList.toggle('filter-date-dropdown__arrow_active');
+    this.inputArrow.classList.toggle('filter-date-dropdown__icon_active');
   }
 }
 

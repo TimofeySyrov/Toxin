@@ -4,8 +4,8 @@ class RangeSlider {
   constructor(domParent) {
     this.container = domParent.querySelector('.js-range-slider');
 
-    this.minPrice = this.container.querySelector('.js-range-slider__min-price');
-    this.maxPrice = this.container.querySelector('.js-range-slider__max-price');
+    this.minPrice = this.container.querySelector('[data-placeholder-type="count-min"]');
+    this.maxPrice = this.container.querySelector('[data-placeholder-type="count-max"]');
     this.rangeBody = this.container.querySelector('.js-range-slider__slider');
 
     this._init();

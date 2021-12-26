@@ -11,7 +11,7 @@ mixin text-field(options={})
 
   label.text-field.js-text-field
     input.text-field__input(
-      class= isMasked && 'js-text-field__input_masked'
+      data-masked-input= isMasked
       type= type
       name= name
       placeholder= isMasked ? 'ДД.ММ.ГГГГ' : placeholder

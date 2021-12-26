@@ -2,7 +2,7 @@ mixin footer-nav-menu({ listMenu = [] }={})
   nav.footer-nav-menu
     each list in listMenu
       ul.footer-nav-menu__list
-        li.footer-nav-menu__list-item.footer-nav-menu__list-title= list.title
+        li.footer-nav-menu__title= list.title
         each link in list.links
-          li.footer-nav-menu__list-item
+          li.footer-nav-menu__item
             a.footer-nav-menu__item-name(href= link.href title= link.title)= link.title

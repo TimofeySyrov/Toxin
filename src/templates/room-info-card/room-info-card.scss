@@ -38,7 +38,7 @@
     line-height: 17px;
   }
 
-  &__number-lux {
+  &__lux-name {
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
@@ -103,17 +103,17 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    &-name {
-      flex-grow: 1;
-      max-width: 214px;
-      margin-right: 5px;
-    }
-
-    &-price {
-      flex-grow: 2;
-      text-align: right;
-    }
+  &__table-row-name {
+    flex-grow: 1;
+    max-width: 214px;
+    margin-right: 5px;
+  }
+  
+  &__table-row-price {
+    flex-grow: 2;
+    text-align: right;
   }
 
   &__final-box {

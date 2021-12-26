@@ -3,7 +3,7 @@ mixin range-slider({ title = 'Range Slider', prices = {min: '5000', max: '10000'
     .range-slider__title
       .range-slider__name #{title}
       .range-slider__prices
-        span.range-slider__text.range-slider__min-price.js-range-slider__min-price #{prices.min}#{currency}
-        span.range-slider__text= separator
-        span.range-slider__text.range-slider__max-price.js-range-slider__max-price #{prices.max}#{currency}
+        span(data-placeholder-type="count-min") #{prices.min}#{currency}
+        span= separator
+        span(data-placeholder-type="count-max") #{prices.max}#{currency}
     .range-slider__slider.js-range-slider__slider

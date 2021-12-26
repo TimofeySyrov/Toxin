@@ -10,18 +10,18 @@ class Dropdown {
     this.type = this.container.getAttribute('data-type');
     this.isOpen = this.container.getAttribute('data-is-open');
     this.nameBox = this.container.querySelector('.js-dropdown__name');
-    this.placeholderBox = this.container.querySelector('.js-dropdown__placeholder');
+    this.placeholderBox = this.container.querySelector('[data-placeholder-type="dropdown-name"]');
     this.iconBox = this.container.querySelector('.js-dropdown__icon');
     this.listBox = this.container.querySelector('.js-dropdown__list');
-    this.totalBoxes = this.container.querySelectorAll('.js-dropdown__item-total');
+    this.totalBoxes = this.container.querySelectorAll('[data-placeholder-type="item-total"]');
     this.itemBoxes = this.container.querySelectorAll('.js-dropdown__item');
-    this.itemsMinusBtn = this.container.querySelectorAll('.js-dropdown__minus-btn');
-    this.itemPlusBtn = this.container.querySelectorAll('.js-dropdown__plus-btn');
+    this.itemsMinusBtn = this.container.querySelectorAll('[data-button-type="minus"]');
+    this.itemPlusBtn = this.container.querySelectorAll('[data-button-type="plus"]');
     const isGuestsType = this.type === 'guests';
 
     if (isGuestsType) {
-      this.confirmBtn = this.container.querySelector('.js-dropdown__confirm-btn');
-      this.clearBtn = this.container.querySelector('.js-dropdown__clear-btn ');
+      this.confirmBtn = this.container.querySelector('[data-button-type="confirm"]');
+      this.clearBtn = this.container.querySelector('[data-button-type="clear"]');
     }
   }
 
@@ -34,6 +34,7 @@ class Dropdown {
 
     if (isGuestsType) {
       this._showTotalGuests();
+      this._showConfirmBtn();
     }
 
     if (isRoomAboutType) {
@@ -149,23 +150,27 @@ class Dropdown {
     const $minus = item.firstChild;
     const $total = $minus.nextSibling;
     const totalIsZero = parseInt($total.innerHTML) === 0;
-    const isActiveMinus = $minus.classList.contains('dropdown__item-btn_active');
+    const isActiveMinus = $minus.classList.contains('dropdown__button_active');
 
     if (!totalIsZero && !isActiveMinus) {
-      $minus.classList.add('dropdown__item-btn_active');
+      $minus.classList.add('dropdown__button_active');
     }
 
     if (totalIsZero && isActiveMinus) {
-      $minus.classList.remove('dropdown__item-btn_active');
+      $minus.classList.remove('dropdown__button_active');
     }
   }
 
+  _showConfirmBtn() {
+    this.confirmBtn.classList.add('dropdown__control-button_active');
+  }
+
   _showClearBtn() {
-    this.clearBtn.classList.add('dropdown__clear-btn_active');
+    this.clearBtn.classList.add('dropdown__control-button_active');
   }
 
   _hideClearBtn() {
-    this.clearBtn.classList.remove('dropdown__clear-btn_active');
+    this.clearBtn.classList.remove('dropdown__control-button_active');
   }
 
   _handleConfirmBtnClick() {
@@ -227,7 +232,7 @@ class Dropdown {
 
     this.itemBoxes.forEach((item) => {
       const itemType = item.getAttribute('data-item-type');
-      const $itemTotal = item.querySelector('.js-dropdown__item-total');
+      const $itemTotal = item.querySelector('[data-placeholder-type="item-total"]');
 
       switch (itemType) {
         case 'взрослые':
@@ -305,7 +310,7 @@ class Dropdown {
 
     this.itemBoxes.forEach((item) => {
       const itemType = item.getAttribute('data-item-type');
-      const $itemTotal = item.querySelector('.js-dropdown__item-total');
+      const $itemTotal = item.querySelector('[data-placeholder-type="item-total"]');
 
       switch (itemType) {
         case 'спальни':

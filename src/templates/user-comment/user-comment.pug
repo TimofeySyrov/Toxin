@@ -4,7 +4,7 @@ mixin user-comment({ likeCount = 12, likeCheck = true, srcImg = "assets/img/user
   .user-comment.js-user-comment
     .user-comment__left-box
       img.user-comment__user-img(src=srcImg, alt=name)
-      .user-comment__like-btn.js-user-comment__like-btn
+      div(data-comment-like-body)
         +like-button({
           count: likeCount,
           isChecked: likeCheck
