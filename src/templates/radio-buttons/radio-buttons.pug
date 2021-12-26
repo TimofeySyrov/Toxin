@@ -1,5 +1,5 @@
 mixin radio-buttons ({ groupName = "group-default", list = [{name: "Мужчина", check: true}, {name: "Женщина"}] }={})
-  form.radio-buttons
+  .radio-buttons
     each val,index in list
       label.radio-buttons__label
         input.radio-buttons__input(type="radio" name= groupName value= val.name checked= val.check)
