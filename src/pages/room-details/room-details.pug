@@ -25,13 +25,11 @@ block content
             .room-details
               .room-details__container
                 p.room-details__title Сведения о номере
-                +room-info({
-                  list: [
-                    {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
-                    {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'},
-                    {icon: 'whatshot', name: 'Уют', desc: 'Номер оснащён камином'},
-                  ]
-                })
+                +room-info([
+                  {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
+                  {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'},
+                  {icon: 'whatshot', name: 'Уют', desc: 'Номер оснащён камином'},
+                ])
             .impressions-room
               .impressions-room__container
                 p.impressions-room__title Впечатления от номера

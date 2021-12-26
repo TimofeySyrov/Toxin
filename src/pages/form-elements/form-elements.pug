@@ -143,12 +143,10 @@ block content
                   ]
                 })
               .form-elements-hero__item
-                +room-info({
-                  list: [
-                    {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
-                    {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'}
-                  ]
-                })
+                +room-info([
+                  {icon: 'insert_emoticon', name: 'Комфорт', desc: 'Шумопоглощающие стены'},
+                  {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'}
+                ])
             .form-elements-hero__column
               .form-elements-hero__item(data-component-name = "dropdown")
                 p.form-elements-hero__title dropdown
