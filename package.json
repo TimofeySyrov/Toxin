@@ -29,7 +29,6 @@
     "html-webpack-plugin": "^5.3.1",
     "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^1.5.0",
-    "node-sass": "^5.0.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "sass-loader": "^11.0.1",
@@ -43,6 +42,7 @@
     "d3": "^4.13.0",
     "inputmask": "^5.0.5",
     "jquery-bar-rating": "^1.2.2",
+    "node-sass": "^7.0.1",
     "normalize.css": "^8.0.1",
     "nouislider": "^15.2.0",
     "slick-carousel": "^1.8.1"
