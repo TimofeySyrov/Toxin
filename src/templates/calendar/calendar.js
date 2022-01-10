@@ -2,7 +2,7 @@ import 'air-datepicker';
 
 class Calendar {
   constructor(params) {
-    this.$body = $(params.body);
+    this.$body = $(params.body).find('.js-calendar');
     this.options = params.options || {};
     this.isOpen = false;
     this.firstInitIsOpen = params.isOpen;
@@ -70,30 +70,30 @@ class Calendar {
 
   _addCalendarButtons() {
     const clearBtnTemplate = `
-      <div class="calendar__buttons calendar__buttons-clear js-calendar-clear">
+      <div data-button-type="clear" class="calendar__buttons calendar__button">
         Очистить
       </div>
     `;
     const confirmBtnTemplate = `
-      <div class="calendar__buttons calendar__buttons-confirm js-calendar-confirm">
+      <div data-button-type="confirm" class="calendar__buttons calendar__button">
         Применить
       </div>
     `;
     const $datepicker = this.$body.find('.datepicker');
-    const $buttons = $datepicker.find('.date-picker-calendar__buttons');
+    const $buttons = $datepicker.find('.calendar__buttons');
     const isHaveButtons = $buttons.length > 0;
 
     if (!isHaveButtons) {
-      $datepicker.append('<div class="date-picker-calendar__buttons"></div>');
+      $datepicker.append('<div class="calendar__buttons"></div>');
       this.$body
-        .find('.date-picker-calendar__buttons')
+        .find('.calendar__buttons')
         .append([clearBtnTemplate, confirmBtnTemplate]);
     }
   }
 
   _bindEventListenerBtns() {
-    const $clearBtn = this.$body.find('.js-calendar-clear');
-    const $confirmBtn = this.$body.find('.js-calendar-confirm');
+    const $clearBtn = this.$body.find('[data-button-type="clear"]');
+    const $confirmBtn = this.$body.find('[data-button-type="confirm"]');
 
     $clearBtn.on('click', this._handleClearBtnClick.bind(this));
     $confirmBtn.on('click', this._handleConfirmBtnClick.bind(this));

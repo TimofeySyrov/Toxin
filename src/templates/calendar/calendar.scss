@@ -1,9 +1,11 @@
-.date-picker-calendar__buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+.calendar {
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
 
-  .calendar__buttons {
+  &__button {
     font-family: $main-font-family;
     font-weight: 700;
     font-size: 12px;
@@ -11,14 +13,7 @@
     text-transform: uppercase;
     color: $color-main;
     user-select: none;
-
-    &-clear {
-      cursor: pointer;
-    }
-
-    &-confirm {
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 }
 
