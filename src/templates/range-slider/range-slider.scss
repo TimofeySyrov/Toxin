@@ -20,7 +20,7 @@
 
   &__prices {
     font-weight: 400;
-    color: $color-main-light;
+    color: $color-main;
   }
 
   &__slider {
@@ -29,7 +29,7 @@
 
   .noUi-target {
     background: #fff;
-    border: 1px solid $color-main-lighter;
+    border: 1px solid $color-main-light;
     border-radius: 3px;
     box-shadow: none;
   }

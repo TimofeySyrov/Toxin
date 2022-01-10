@@ -11,7 +11,7 @@
     min-height: 20px;
     margin-right: 10px;
     background: #fff;
-    border: 1px solid $color-main-lighter;
+    border: 1px solid $color-main-light;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -22,14 +22,14 @@
       content: '';
       width: 12px;
       height: 12px;
-      background-color: $color-main-lighter;
+      background-color: $color-main-light;
       border-radius: 50%;
       margin: 0 4px;
       transition: transform 0.3s ease;
     }
 
     &:checked {
-      border-color: $color-main;
+      border-color: $color-secondary;
 
       &::after {
         transform: translateX(18px);

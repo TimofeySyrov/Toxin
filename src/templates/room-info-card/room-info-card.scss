@@ -42,7 +42,7 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $color-main;
+    color: $color-secondary;
     margin-left: 8px;
     display: none;
 
@@ -55,7 +55,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
-    color: $color-main-light;
+    color: $color-main;
   }
 
   &__price-text {
@@ -76,12 +76,12 @@
   &__info-icon {
     width: 20px;
     height: 20px;
-    border: 1px solid $color-main-lighter;
+    border: 1px solid $color-main-light;
     border-radius: 50%;
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
-    color: $color-main-lighter;
+    color: $color-main-light;
     display: inline-flex;
     justify-content: center;
     align-items: center;

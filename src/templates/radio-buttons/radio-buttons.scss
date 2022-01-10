@@ -22,7 +22,7 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    border: 1px solid $color-main-lighter;
+    border: 1px solid $color-main-light;
     border-radius: 50%;
     background-color: #fff;
     z-index: 1;
@@ -42,7 +42,7 @@
     }
 
     &:checked {
-      border-color: $color-main;
+      border-color: $color-secondary;
 
       &::after {
         opacity: 1;
@@ -55,6 +55,6 @@
   }
 
   &__input-name {
-    color: $color-main-light;
+    color: $color-main;
   }
 }

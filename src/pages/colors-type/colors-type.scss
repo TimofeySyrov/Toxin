@@ -69,11 +69,11 @@
       }
 
       &_dark-shade-50 {
-        background: $color-main-light;
+        background: $color-main;
       }
 
       &_dark-shade-25 {
-        background: $color-main-lighter;
+        background: $color-main-light;
       }
 
       &_dark-shade-5 {
@@ -81,11 +81,11 @@
       }
 
       &_purple {
-        background: $color-main;
+        background: $color-secondary;
       }
 
       &_green {
-        background: $color-secondary;
+        background: $color-tertiary;
       }
     }
   }
@@ -93,7 +93,7 @@
 
 .fonts-list {
   max-width: 436px;
-  color: $color-main-lighter;
+  color: $color-main-light;
   margin-bottom: 50px;
   list-style: none;
 

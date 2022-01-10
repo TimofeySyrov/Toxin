@@ -52,13 +52,13 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $color-main;
+    color: $color-secondary;
   }
 
   &__price {
     font-size: 12px;
     line-height: 18px;
-    color: $color-main-light;
+    color: $color-main;
 
     &-number {
       font-weight: 700;
@@ -75,7 +75,7 @@
     margin-top: 8px;
 
     &-reviews {
-      color: $color-main-light;
+      color: $color-main;
 
       &-num {
         font-weight: 700;

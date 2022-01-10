@@ -2,18 +2,18 @@
   min-width: 40px;
   min-height: 20px;
   padding: 2px 8px 2px 0px;
-  border: 1px solid $color-main-lighter;
+  border: 1px solid $color-main-light;
   border-radius: 10px;
   background: #fff;
-  color: $color-main-lighter;
+  color: $color-main-light;
   cursor: pointer;
   display: flex;
   align-items: center;
   user-select: none;
 
   &_active {
-    color: $color-main;
-    border-color: $color-main;
+    color: $color-secondary;
+    border-color: $color-secondary;
   }
 
   &__icon {

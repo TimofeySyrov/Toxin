@@ -11,7 +11,7 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $color-main;
+    color: $color-secondary;
     user-select: none;
     cursor: pointer;
   }
@@ -95,7 +95,7 @@
 
 .datepicker--cell.datepicker--cell-day.-in-range-.-current- {
   border-radius: 0;
-  color: $color-main-light;
+  color: $color-main;
 }
 
 .datepicker--cell.-range-from- {
@@ -175,7 +175,7 @@
   flex-wrap: wrap;
   font-family: $main-font-family;
   font-weight: 700;
-  color: $color-main;
+  color: $color-secondary;
 }
 
 .datepicker--day-name {
@@ -271,13 +271,13 @@
   width: 100%;
   padding: 20px;
   background: #fff;
-  border: 1px solid $color-main-lighter;
+  border: 1px solid $color-main-light;
   box-shadow: 0px 10px 20px $color-main-translucent;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 12px;
   line-height: 15px;
-  color: $color-main-light;
+  color: $color-main;
   position: absolute;
   left: -100000px;
   opacity: 0;
@@ -290,7 +290,7 @@
   .material-icons {
     font-size: 24px;
     line-height: 20px;
-    color: $color-main;
+    color: $color-secondary;
   }
 }
 
@@ -428,12 +428,12 @@
 
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
-  color: $color-main-lighter;
+  color: $color-main-light;
 }
 
 .-disabled-.-focus-.datepicker--cell-day.-other-month-,
 .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
-  color: $color-main-lighter;
+  color: $color-main-light;
 }
 
 .-selected-.datepicker--cell-day.-other-month-,
@@ -542,7 +542,7 @@
 }
 
 .calendar__buttons:hover {
-  color: $color-main-light;
+  color: $color-main;
 }
 
 .-selected-.datepicker--cell-day.-other-month-,

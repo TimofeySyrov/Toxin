@@ -9,7 +9,7 @@
     margin-bottom: 10px;
     padding-left: 30px;
     line-height: 18px;
-    color: $color-main-light;
+    color: $color-main;
     cursor: pointer;
 
     &:last-child {
@@ -24,7 +24,7 @@
     left: 0;
     width: 20px;
     height: 20px;
-    border: 1px solid $color-main-lighter;
+    border: 1px solid $color-main-light;
     border-radius: 4px;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -32,7 +32,7 @@
     cursor: pointer;
 
     &:checked {
-      border-color: $color-main;
+      border-color: $color-secondary;
       background-image: url(../../assets/img/icons/check.svg);
     }
   }

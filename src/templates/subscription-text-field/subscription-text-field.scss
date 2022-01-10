@@ -8,8 +8,8 @@
     width: 100%;
     height: 44px;
     background: #fff;
-    color: $color-main-lighter;
-    border: 1px solid $color-main-lighter;
+    color: $color-main-light;
+    border: 1px solid $color-main-light;
     border-radius: 4px;
     padding: 0 59px 0 15px;
     font-family: $main-font-family;
@@ -17,13 +17,13 @@
     line-height: 24px;
 
     &::placeholder {
-      color: $color-main-lighter;
+      color: $color-main-light;
     }
 
     &:hover,
     &:focus {
       color: $color-main-dark;
-      border-color: $color-main-light;
+      border-color: $color-main;
       outline: none;
     }
   }
