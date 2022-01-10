@@ -1,7 +1,7 @@
 class HeaderNavMenu {
   constructor(domParent) {
-    this.body = domParent.querySelector('.js-nav-menu');
-    this.navItems = this.body.querySelectorAll('.js-nav-menu__item');
+    this.body = domParent.querySelector('.js-header-nav-menu');
+    this.navItems = this.body.querySelectorAll('.js-header-nav-menu__item');
 
     this._init();
   }
@@ -24,10 +24,10 @@ class HeaderNavMenu {
 
     if (!clickOnItem) {
       this.itemsWithSubmenu.forEach((item) => {
-        const isActive = item.classList.contains('nav-menu__item_active');
+        const isActive = item.classList.contains('header-nav-menu__item_active');
 
         if (isActive) {
-          item.classList.remove('nav-menu__item_active');
+          item.classList.remove('header-nav-menu__item_active');
         }
       });
     }
@@ -58,7 +58,7 @@ class HeaderNavMenu {
   _handleNavItemClick(event) {
     const { currentTarget } = event;
 
-    currentTarget.classList.toggle('nav-menu__item_active');
+    currentTarget.classList.toggle('header-nav-menu__item_active');
   }
 }
 

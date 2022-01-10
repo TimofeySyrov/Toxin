@@ -1,8 +1,8 @@
 mixin rich-checkbox-buttons({ list=[] }={})
-  .rich-checkbox-btns
+  .rich-checkbox-buttons
     each btn in list
-      label.rich-checkbox-btns__item
-        input.rich-checkbox-btns__input(type="checkbox" checked= btn.check)
-        .rich-checkbox-btns__box
-          p.rich-checkbox-btns__name !{btn.name}
-          p.rich-checkbox-btns__desc !{btn.desc}
+      label.rich-checkbox-buttons__item
+        input.rich-checkbox-buttons__input(type="checkbox" checked= btn.check)
+        .rich-checkbox-buttons__box
+          p.rich-checkbox-buttons__name !{btn.name}
+          p.rich-checkbox-buttons__desc !{btn.desc}

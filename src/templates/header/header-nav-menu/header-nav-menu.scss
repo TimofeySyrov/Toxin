@@ -1,4 +1,4 @@
-.nav-menu {
+.header-nav-menu {
   display: flex;
   align-items: center;
   list-style: none;
@@ -12,12 +12,12 @@
     user-select: none;
 
     &_active {
-      .nav-menu__link {
+      .header-nav-menu__link {
         font-weight: 700;
         color: $color-main-dark;
       }
 
-      .nav-menu__icon {
+      .header-nav-menu__icon {
         color: $color-main-dark;
       }
 
