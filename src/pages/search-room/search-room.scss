@@ -38,6 +38,10 @@
   flex-direction: column;
   min-width: 266px;
 
+  @media screen and (max-width: 920px) {
+    margin: 0 auto;
+  }
+
   &__input-title {
     display: block;
     font-family: $main-font-family;
@@ -72,10 +76,6 @@
       }
     }
   }
-
-  @media screen and (max-width: 920px) {
-    margin: 0 auto;
-  }
 }
 
 .range-slider-box {
@@ -90,6 +90,12 @@
 .rooms-list {
   grid-column: 2;
   grid-row: 1;
+
+  @media screen and (max-width: 920px) {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0 auto;
+  }
 
   &__title {
     font-weight: 700;
@@ -118,12 +124,6 @@
       grid-template-columns: repeat(1, 270px);
       justify-content: center;
     }
-  }
-
-  @media screen and (max-width: 920px) {
-    grid-column: 1;
-    grid-row: 2;
-    margin: 0 auto;
   }
 }
 

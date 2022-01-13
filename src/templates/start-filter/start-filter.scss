@@ -12,6 +12,10 @@
   background: #fff;
   font-family: $main-font-family;
 
+  @media screen and (max-width: 360px) {
+    padding: 25px 15px 25px 15px;
+  }
+
   &__title {
     font-weight: 700;
     font-size: 24px;
@@ -40,9 +44,5 @@
     margin-bottom: 31px;
     position: relative;
     z-index: 1;
-  }
-
-  @media screen and (max-width: 360px) {
-    padding: 25px 15px 25px 15px;
   }
 }

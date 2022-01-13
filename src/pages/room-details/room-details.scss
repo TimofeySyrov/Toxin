@@ -20,6 +20,10 @@
   width: 100%;
   max-height: 485px;
 
+  @media screen and (max-width: 830px) {
+    max-height: fit-content;
+  }
+
   &__grid {
     max-height: inherit;
     display: grid;
@@ -53,10 +57,6 @@
       row-gap: 10px;
     }
   }
-
-  @media screen and (max-width: 830px) {
-    max-height: fit-content;
-  }
 }
 
 .room-main-img {
@@ -71,14 +71,14 @@
   width: 100%;
   object-fit: cover;
 
-  &--revert {
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-  }
-
   @media screen and (max-width: 830px) {
     max-height: 430px;
     width: 100%;
     object-fit: cover;
+  }
+
+  &--revert {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
   }
 }
 
@@ -159,13 +159,13 @@
 .booking-card {
   grid-area: booking-card;
 
-  &__container {
-    width: 100%;
+  @media screen and (max-width: 830px) {
     display: flex;
     justify-content: center;
   }
 
-  @media screen and (max-width: 830px) {
+  &__container {
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -207,6 +207,11 @@
   display: flex;
   column-gap: 98px;
 
+  @media screen and (max-width: 760px) {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
   &__title {
     &_indented {
       margin-left: 20px;
@@ -217,13 +222,8 @@
     max-width: 341px;
   }
 
-  @media screen and (max-width: 760px) {
-    flex-direction: column;
-    row-gap: 20px;
-  }
-
-  @media screen and (max-width: 440px) {
-    &__rules-box {
+  &__rules-box {
+    @media screen and (max-width: 440px) {
       margin-bottom: 20px;
     }
   }

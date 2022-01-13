@@ -37,8 +37,8 @@
   }
 }
 
-@media screen and (max-width: 410px) {
-  .start-filter {
+.start-filter {
+  @media screen and (max-width: 410px) {
     margin: 0 auto;
 
     &__dates {

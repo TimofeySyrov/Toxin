@@ -17,6 +17,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 1200px) {
+      padding: 15px 15px;
+    }
   }
 
   &__logo {
@@ -32,6 +36,26 @@
 
   &__nav-container {
     display: flex;
+
+    @media screen and (max-width: 940px) {
+      display: none;
+      padding: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 5px;
+      position: absolute;
+      z-index: 102;
+      top: 105%;
+      right: 15px;
+      background-color: #ffffff;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    &_active {
+      @media screen and (max-width: 940px) {
+        display: flex;
+      }
+    }
   }
 
   &__nav-menu {
@@ -39,11 +63,22 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
+
+    @media screen and (max-width: 940px) {
+      margin: 0;
+      justify-content: flex-start;
+    }
   }
 
   &__auth-box {
     display: flex;
     margin: 0 auto;
+
+    @media screen and (max-width: 940px) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 10px;
+    }
   }
 
   &__user {
@@ -52,6 +87,12 @@
     border-left: 1px solid $color-main-transparent;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 940px) {
+      padding: 20px 0 0 0;
+      border: 0;
+      border-top: 1px solid $color-main-transparent;
+    }
   }
 
   &__user-name {
@@ -64,59 +105,20 @@
   &__login-btn {
     width: fit-content;
     margin-right: 20px;
-  }
 
-  @media screen and (max-width: 1200px) {
-    &__container {
-      padding: 15px 15px;
+    @media screen and (max-width: 940px) {
+      margin: 0;
     }
   }
 
-  @media screen and (max-width: 940px) {
-    &__menu-button {
+  &__menu-button {
+    @media screen and (max-width: 940px) {
       display: flex;
     }
+  }
 
-    &__nav-container {
-      display: none;
-      padding: 16px;
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-radius: 5px;
-      position: absolute;
-      z-index: 102;
-      top: 105%;
-      right: 15px;
-      background-color: #ffffff;
-      flex-direction: column;
-      row-gap: 20px;
-
-      &_active {
-        display: flex;
-      }
-    }
-
-    &__nav-menu {
-      margin: 0;
-      justify-content: flex-start;
-    }
-
-    &__auth-box {
-      flex-direction: column;
-      align-items: center;
-      row-gap: 10px;
-    }
-
-    &__user {
-      padding: 20px 0 0 0;
-      border: 0;
-      border-top: 1px solid $color-main-transparent;
-    }
-
-    &__login-btn {
-      margin: 0;
-    }
-
-    .header-nav-menu {
+  .header-nav-menu {
+    @media screen and (max-width: 940px) {
       flex-direction: column;
       align-items: flex-start;
       row-gap: 10px;
