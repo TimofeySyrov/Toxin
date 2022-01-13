@@ -68,15 +68,9 @@ class DateDropdown {
   _setDates(dates) {
     const { arrivalInput, depatureInput } = this;
     const inputPlaceholder = 'ДД.ММ.ГГГГ'.toUpperCase();
-    const isSelectedDate = (date) => {
-      const isUndefined = date === undefined;
-      const isEmpty = date === '';
+    const isSelectedDate = dates !== undefined && dates !== '';
 
-      if (!isUndefined && !isEmpty) return true;
-      return false;
-    };
-
-    if (isSelectedDate(dates)) {
+    if (isSelectedDate) {
       const isRange = dates.indexOf('-') !== -1;
 
       if (isRange) {

@@ -50,15 +50,9 @@ class FilterDateDropdown {
 
   _setDates(dates) {
     const inputPlaceholder = 'Выберите даты';
-    const isSelectedDate = (date) => {
-      const isUndefined = date === undefined;
-      const isEmpty = date === '';
+    const isSelectedDate = dates !== undefined && dates !== '';
 
-      if (!isUndefined && !isEmpty) return true;
-      return false;
-    };
-
-    if (isSelectedDate(dates)) {
+    if (isSelectedDate) {
       const isRange = dates.indexOf('-') !== -1;
       const lowerCaseDates = dates.toLowerCase();
 
