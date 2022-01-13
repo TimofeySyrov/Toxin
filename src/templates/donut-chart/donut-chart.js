@@ -30,11 +30,10 @@ class DonutChart {
       chartData[item.id] = Number(item.value);
     });
 
-    const isRadiusOutSide = radiusOutSide;
+    const isRadiusOutSide = radiusOutSide !== undefined && radiusInSide !== null;
     const calcRadiusOutSide = Math.min(size.width, size.height) / 2 - size.margin;
     const chartOutsideRadius = isRadiusOutSide ? radiusOutSide : calcRadiusOutSide;
     const calcRadiusInside = Number(radiusInSide || 50) * (chartOutsideRadius / 100);
-    const chartInsideRadius = calcRadiusInside;
 
     const color = d3.scaleOrdinal()
       .domain(chartData)
@@ -48,7 +47,7 @@ class DonutChart {
       .data(dataReady)
       .enter()
       .append('path')
-      .attr('d', d3.arc().innerRadius(chartInsideRadius).outerRadius(chartOutsideRadius))
+      .attr('d', d3.arc().innerRadius(calcRadiusInside).outerRadius(chartOutsideRadius))
       .attr('fill', (d) => (color(d.data.key)))
       .attr('stroke', 'white')
       .style('stroke-width', '2px');
