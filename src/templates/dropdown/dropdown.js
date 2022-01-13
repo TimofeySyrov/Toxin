@@ -207,26 +207,21 @@ class Dropdown {
     this._hideClearBtn();
   }
 
+  _getWordEnding(num, dec) {
+    let currentCount = num;
+
+    if (currentCount > 100) currentCount %= 100;
+    if (currentCount <= 20 && currentCount >= 10) return dec[2];
+    if (currentCount > 20) currentCount %= 10;
+    if (currentCount !== 1) {
+      if (currentCount > 1 && currentCount < 5) return dec[1];
+      return dec[2];
+    }
+    return dec[0];
+  }
+
   _showTotalGuests() {
     const placeholder = 'Сколько гостей';
-    const getAdultsPlaceholder = (number) => {
-      const isOne = number === 1;
-      const isTwo = number > 1 && number <= 4;
-      const isFive = number > 4;
-
-      if (isOne) return 'гость';
-      if (isTwo) return 'гостя';
-      if (isFive) return 'гостей';
-    };
-    const getBabiesPlaceholder = (number) => {
-      const isOne = number === 1;
-      const isTwo = number > 1 && number <= 4;
-      const isFive = number > 4;
-
-      if (isOne) return 'младенец';
-      if (isTwo) return 'младенца';
-      if (isFive) return 'младенцев';
-    };
     let adults = 0;
     let babies = 0;
 
@@ -259,10 +254,10 @@ class Dropdown {
     if (!totalAmountIsZero) {
       const isAdults = adults !== 0;
       const isBabies = babies !== 0;
-      const adultsPlaceholder = `${adults} ${getAdultsPlaceholder(adults)}`;
+      const adultsPlaceholder = `${adults} ${this._getWordEnding(adults, ['гость', 'гостя', 'гостей'])}`;
 
       if (isAdults && isBabies) {
-        const babiesPlaceholder = `${babies} ${getBabiesPlaceholder(babies)}`;
+        const babiesPlaceholder = `${babies} ${this._getWordEnding(babies, ['младенец', 'младенца', 'младенцев'])}`;
 
         this.placeholderBox.innerHTML = `${adultsPlaceholder}, ${babiesPlaceholder}`;
       }
@@ -277,33 +272,6 @@ class Dropdown {
 
   _showTotalAboutRoom() {
     const placeholder = 'Выберите удобства';
-    const getBedroomsPlaceholder = (number) => {
-      const isOne = number === 1;
-      const isTwo = number > 1 && number <= 4;
-      const isFive = number > 4;
-
-      if (isOne) return 'спальня';
-      if (isTwo) return 'спальни';
-      if (isFive) return 'спальней';
-    };
-    const getBedsPlaceholder = (number) => {
-      const isOne = number === 1;
-      const isTwo = number > 1 && number <= 4;
-      const isFive = number > 4;
-
-      if (isOne) return 'кровать';
-      if (isTwo) return 'кровати';
-      if (isFive) return 'кроватей';
-    };
-    const getBathroomsPlaceholder = (number) => {
-      const isOne = number === 1;
-      const isTwo = number > 1 && number <= 4;
-      const isFive = number > 4;
-
-      if (isOne) return 'ванная комната';
-      if (isTwo) return 'ванные комнаты';
-      if (isFive) return 'ванных комнат';
-    };
     let bedrooms = 0;
     let beds = 0;
     let bathrooms = 0;
@@ -338,9 +306,18 @@ class Dropdown {
       const isBedrooms = bedrooms !== 0;
       const isBeds = beds !== 0;
       const isBathrooms = bathrooms !== 0;
-      const bedroomsPlaceholder = `${bedrooms} ${getBedroomsPlaceholder(bedrooms)}`;
-      const bedsPlaceholder = `${beds} ${getBedsPlaceholder(beds)}`;
-      const bathroomsPlaceholder = `${bathrooms} ${getBathroomsPlaceholder(bathrooms)}`;
+      const bedroomsPlaceholder = `${bedrooms} ${this._getWordEnding(
+        bedrooms,
+        ['спальня', 'спальни', 'спальней'],
+      )}`;
+      const bedsPlaceholder = `${beds} ${this._getWordEnding(
+        beds,
+        ['кровать', 'кровати', 'кроватей'],
+      )}`;
+      const bathroomsPlaceholder = `${bathrooms} ${this._getWordEnding(
+        bathrooms,
+        ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+      )}`;
 
       if (isBedrooms) {
         if (isBeds) {
