@@ -12,10 +12,10 @@ class HeaderNavMenu {
   }
 
   _bindEventListeners() {
-    window.addEventListener('click', this._handleWindowClick.bind(this));
+    document.addEventListener('click', this._handleDocumentClick.bind(this));
   }
 
-  _handleWindowClick(event) {
+  _handleDocumentClick(event) {
     const { target } = event;
     const [currentItem] = this.itemsWithSubmenu.filter((item) => (
       item.contains(target)

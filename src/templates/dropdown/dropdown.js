@@ -54,7 +54,7 @@ class Dropdown {
   _bindEventListeners() {
     const isGuestsType = this.type === 'guests';
 
-    window.addEventListener('click', this._handleWindowClick.bind(this), false);
+    document.addEventListener('click', this._handleDocumentClick.bind(this), false);
     this.nameBox.addEventListener('click', this._handleNameBoxClick.bind(this));
     this._bindEventListenerItemButtons();
 
@@ -87,7 +87,7 @@ class Dropdown {
     }
   }
 
-  _handleWindowClick(event) {
+  _handleDocumentClick(event) {
     const { target } = event;
     const clickOnDropdown = this.container.contains(target);
 

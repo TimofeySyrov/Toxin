@@ -27,12 +27,12 @@ class FilterDateDropdown {
   }
 
   _bindEventListener() {
-    window.addEventListener('click', this._handleWindowClick.bind(this), true);
+    document.addEventListener('click', this._handleDocumentClick.bind(this), true);
     this.nameBox.addEventListener('click', this._handleNameBoxClick.bind(this));
     this.calendar.observeShowCalendarEvent(this._rotateArrow.bind(this));
   }
 
-  _handleWindowClick(event) {
+  _handleDocumentClick(event) {
     const { target } = event;
     const clickOnDropdown = this.body.contains(target);
     const isOpenCalendar = this.calendar.isOpen;

@@ -39,13 +39,13 @@ class DateDropdown {
     const [bodyArrivalInput, bodyDepatureInput] = this.bodyInputs;
     const { calendar } = this;
 
-    window.addEventListener('click', this._handleWindowClick.bind(this), true);
+    document.addEventListener('click', this._handleDocumentClick.bind(this), true);
     bodyArrivalInput.addEventListener('click', this._handleInputClick.bind(this));
     bodyDepatureInput.addEventListener('click', this._handleInputClick.bind(this));
     calendar.observeShowCalendarEvent(this._rotateArrows.bind(this));
   }
 
-  _handleWindowClick(event) {
+  _handleDocumentClick(event) {
     const { target } = event;
     const clickOnDropdown = this.body.contains(target);
     const isOpenCalendar = this.calendar.isOpen;
