@@ -81,9 +81,9 @@ class Calendar {
     `;
     const $datepicker = this.$body.find('.datepicker');
     const $buttons = $datepicker.find('.calendar__buttons');
-    const isHaveButtons = $buttons.length > 0;
+    const hasButtons = $buttons.length > 0;
 
-    if (!isHaveButtons) {
+    if (!hasButtons) {
       $datepicker.append('<div class="calendar__buttons"></div>');
       this.$body
         .find('.calendar__buttons')
