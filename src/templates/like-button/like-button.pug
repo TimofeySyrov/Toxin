@@ -1,4 +1,10 @@
 mixin like-button({ count = 2, isChecked = false }={})
-  button.like-button.js-like-button(data-checked= `${isChecked}` type="button")
-    span.material-icons.like-button__icon.js-like-button__icon favorite_border
+  button.like-button.js-like-button(
+    data-checked= isChecked
+    type="button"
+    class= isChecked && 'like-button_active'
+  )
+    span.material-icons.like-button__icon.js-like-button__icon(
+      class= isChecked && 'like-button__icon_active'
+    )= isChecked ? 'favorite' : 'favorite_border'
     span.like-button__count.js-like-button__count= count
