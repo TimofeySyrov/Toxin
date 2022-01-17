@@ -28,8 +28,9 @@ class Header {
     const { target } = event;
     const clickOnMenuButton = target === this.menuButton;
     const clickOnMenu = this.menuContainer.contains(target);
+    const isClickOutsideComponent = !clickOnMenu && !clickOnMenuButton;
 
-    if (!clickOnMenu && !clickOnMenuButton) {
+    if (isClickOutsideComponent) {
       this.menuContainer.classList.remove('header__nav-container_active');
     }
   }

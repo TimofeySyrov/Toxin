@@ -49,8 +49,9 @@ class DateDropdown {
     const { target } = event;
     const clickOnDropdown = this.body.contains(target);
     const isOpenCalendar = this.calendar.isOpen;
+    const isClickOutsideComponent = !clickOnDropdown && isOpenCalendar;
 
-    if (!clickOnDropdown && isOpenCalendar) {
+    if (isClickOutsideComponent) {
       this.calendar.hideCalendar();
       this._rotateArrows();
     }
