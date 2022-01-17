@@ -15,7 +15,8 @@ class SearchRoom {
   _initComponents() {
     const {
       filterDateDropdown,
-      dropdown,
+      guestDropdown,
+      roomDropdown,
       rangeSlider,
       checkboxList,
       cutawayRoomCard,
@@ -29,7 +30,8 @@ class SearchRoom {
       pageRange: 3,
     });
     filterDateDropdown.forEach((item) => new FilterDateDropdown(item));
-    dropdown.forEach((item) => new Dropdown(item));
+    guestDropdown.forEach((item) => new Dropdown(item, ['гость', 'гостя', 'гостей']));
+    roomDropdown.forEach((item) => new Dropdown(item));
     rangeSlider.forEach((item) => new RangeSlider(item));
     checkboxList.forEach((item) => new CheckboxList(item));
     cutawayRoomCard.forEach((item) => new CutawayRoomCard(item));
@@ -39,7 +41,8 @@ class SearchRoom {
     return {
       pagination: document.querySelector('[data-component-name="pagination"]'),
       filterDateDropdown: document.querySelectorAll('[data-component-name="filter-date-dropdown"]'),
-      dropdown: document.querySelectorAll('[data-component-name="dropdown"]'),
+      guestDropdown: document.querySelectorAll('[data-component-name="guest-dropdown"]'),
+      roomDropdown: document.querySelectorAll('[data-component-name="room-dropdown"]'),
       rangeSlider: document.querySelectorAll('[data-component-name="range-slider"]'),
       checkboxList: document.querySelectorAll('[data-component-name="checkbox-list"]'),
       cutawayRoomCard: document.querySelectorAll('[data-component-name="cutaway-room-card"]'),

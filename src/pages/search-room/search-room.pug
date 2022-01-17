@@ -20,7 +20,7 @@ block content
         .filter-sidebar__item.filter-sidebar__item_option_filter-date(data-component-name = "filter-date-dropdown")
           span.filter-sidebar__input-title даты пребывания в отеле
           +filter-date-dropdown({ isOpen: false })
-        .filter-sidebar__item(data-component-name = "dropdown")
+        .filter-sidebar__item(data-component-name = "guest-dropdown")
           span.filter-sidebar__input-title гости
           +dropdown({
             isOpen: false,
@@ -47,11 +47,11 @@ block content
               { name: 'Помощник для инвалидов', desc: 'На 1 этаже вас встретит специалист  и проводит до номера.' },
             ],
           })
-        .filter-sidebar__item.filter-sidebar__item_option_room-about-dropdown(data-component-name = "dropdown")
+        .filter-sidebar__item.filter-sidebar__item_option_room-about-dropdown(data-component-name = "room-dropdown")
           span.filter-sidebar__input-title удобства номера
           +dropdown({
-            dropType: 'room-about',
             isOpen: false,
+            withControlPanel: false,
             list: [
               { name: 'спальни', total: 2 },
               { name: 'кровати', total: 2 },

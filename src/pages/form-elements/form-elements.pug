@@ -33,11 +33,10 @@ block content
               .form-elements-hero__item(data-component-name = "text-field")
                 p.form-elements-hero__title text field
                 +text-field({ placeholder: 'Email' })
-              .form-elements-hero__item(data-component-name = "dropdown")
+              .form-elements-hero__item(data-component-name = "guest-dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
-                  title: 'dropdown',
-                  isOpenList: false,
+                  isOpen: false,
                   list: [
                     {name: 'взрослые', total: 0},
                     {name: 'дети', total: 0},
@@ -117,12 +116,11 @@ block content
                 p.form-elements-hero__title.form-elements-hero__title_long-indent pagination
                 +pagination
             .form-elements-hero__column
-              .form-elements-hero__item(data-component-name = "dropdown")
+              .form-elements-hero__item(data-component-name = "room-dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
-                  title: 'dropdown',
-                  dropType: 'room-about',
-                  isOpenList: false,
+                  isOpen: false,
+                  withControlPanel: false,
                   list: [
                     {name: 'спальни', total: 2},
                     {name: 'кровати', total: 2},
@@ -148,11 +146,10 @@ block content
                   {icon: 'location_city', name: 'Удобство', desc: 'Окно в каждой из спален'}
                 ])
             .form-elements-hero__column
-              .form-elements-hero__item(data-component-name = "dropdown")
+              .form-elements-hero__item(data-component-name = "guest-dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
-                  title: 'dropdown',
-                  isOpenList: false,
+                  isOpen: false,
                   list: [
                     {name: 'взрослые', total: 0},
                     {name: 'дети', total: 0},
@@ -169,11 +166,10 @@ block content
                   ]
                 })
             .form-elements-hero__column
-              .form-elements-hero__item(data-component-name = "dropdown")
+              .form-elements-hero__item(data-component-name = "guest-dropdown")
                 p.form-elements-hero__title dropdown
                 +dropdown({
-                  title: 'dropdown',
-                  isOpenList: false,
+                  isOpen: false,
                   list: [
                     {name: 'взрослые', total: 2},
                     {name: 'дети', total: 1},

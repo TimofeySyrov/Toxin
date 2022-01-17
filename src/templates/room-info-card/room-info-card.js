@@ -27,7 +27,7 @@ class RoomInfoCard {
   _initComponents() {
     const { body } = this;
     this.dateDropdown = new DateDropdown(body);
-    this.dropdown = new Dropdown(body);
+    this.dropdown = new Dropdown(body, ['гость', 'гостя', 'гостей']);
   }
 
   _subscribeToDateChanges() {

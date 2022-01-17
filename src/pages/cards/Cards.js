@@ -25,7 +25,7 @@ class Cards {
       body: calendar,
       isOpen: true,
     });
-    startFilter.forEach((item) => new StartFilter(item));
+    startFilter.forEach((item) => new StartFilter(item, ['гость', 'гостя', 'гостей']));
     registrationCard.forEach((item) => new RegistrationCard(item));
     roomInfoCard.forEach((item) => new RoomInfoCard(item));
     cutawayRoomCard.forEach((item) => new CutawayRoomCard(item));

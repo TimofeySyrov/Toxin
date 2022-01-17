@@ -11,7 +11,7 @@ class Index {
     const { startFilter } = this._getDOMElements();
 
     new Header(document);
-    startFilter.forEach((item) => new StartFilter(item));
+    startFilter.forEach((item) => new StartFilter(item, ['гость', 'гостя', 'гостей']));
   }
 
   _getDOMElements() {

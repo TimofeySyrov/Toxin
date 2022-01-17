@@ -18,7 +18,8 @@ class FormElements {
   _initComponents() {
     const {
       textField,
-      dropdown,
+      guestDropdown,
+      roomDropdown,
       dateDropdown,
       filterDateDropdown,
       likeButton,
@@ -35,7 +36,8 @@ class FormElements {
       pageRange: 3,
     });
     textField.forEach((item) => new TextField(item));
-    dropdown.forEach((item) => new Dropdown(item));
+    guestDropdown.forEach((item) => new Dropdown(item, ['гость', 'гостя', 'гостей']));
+    roomDropdown.forEach((item) => new Dropdown(item));
     dateDropdown.forEach((item) => new DateDropdown(item));
     filterDateDropdown.forEach((item) => new FilterDateDropdown(item));
     likeButton.forEach((item) => new LikeButton(item));
@@ -49,7 +51,8 @@ class FormElements {
     return {
       pagination: document.querySelector('[data-component-name="pagination"]'),
       textField: document.querySelectorAll('[data-component-name="text-field"]'),
-      dropdown: document.querySelectorAll('[data-component-name="dropdown"]'),
+      guestDropdown: document.querySelectorAll('[data-component-name="guest-dropdown"]'),
+      roomDropdown: document.querySelectorAll('[data-component-name="room-dropdown"]'),
       dateDropdown: document.querySelectorAll('[data-component-name="date-dropdown"]'),
       filterDateDropdown: document.querySelectorAll('[data-component-name="filter-date-dropdown"]'),
       likeButton: document.querySelectorAll('[data-component-name="like-button"]'),
