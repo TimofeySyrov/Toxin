@@ -3,7 +3,7 @@ import TextField from '../text-field/text-field';
 class LoginCard {
   constructor(domParent) {
     this.body = domParent.querySelector('.js-login-card');
-    this.inputs = this.body.querySelectorAll('[data-component-name="text-field"]');
+    this.inputs = this.body.querySelectorAll('.js-text-field-component');
 
     this._init();
   }

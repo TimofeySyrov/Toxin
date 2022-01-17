@@ -8,22 +8,22 @@ mixin registration-card({ hrefLogin='sign-in.html', hrefJoin='search-room.html' 
     p.registration-card__title Регистрация аккаунта
     .registration-card__user-name
       .registration-card__inputs-wrap
-        div(data-component-name="text-field")
+        .text-field-component.js-text-field-component
           +text-field({ placeholder: 'Имя' })
-        div(data-component-name="text-field")
+        .text-field-component.js-text-field-component
           +text-field({ placeholder: 'Фамилия' })
     .registration-card__user-sex
       +radio-buttons
     .registration-card__user-birthday
       p.registration-card__input-title дата рождения
-      div(data-component-name="text-field")
+      .text-field-component.js-text-field-component
         +text-field({ isMasked: true })
     .registration-card__email-password
       p.registration-card__input-title данные для входа в сервис
       .registration-card__inputs-wrap
-        div(data-component-name="text-field")
+        .text-field-component.js-text-field-component
           +text-field({ placeholder: 'Email' })
-        div(data-component-name="text-field")
+        .text-field-component.js-text-field-component
           +text-field({
             type: 'password',
             placeholder: 'Пароль',

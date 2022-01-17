@@ -9,7 +9,7 @@ class UserComment {
 
   _init() {
     const { body } = this;
-    const likeButtonBody = body.querySelector('[data-comment-like-body]');
+    const likeButtonBody = body.querySelector('.js-like-button-component');
     this.likeButton = new LikeButton(likeButtonBody);
   }
 }
