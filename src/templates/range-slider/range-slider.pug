@@ -1,9 +1,9 @@
-mixin range-slider({ title = 'Range Slider', prices = {min: '5000', max: '10000'}, separator = ' - ', currency = '₽' }={})
+mixin range-slider({ title = 'Range Slider', range = {min: '5000', max: '10000'}, separator = ' - ', endSymbol = '₽' }={})
   .range-slider.js-range-slider
     .range-slider__title
       .range-slider__name #{title}
       .range-slider__prices
-        span(data-placeholder-type="count-min") #{prices.min}#{currency}
+        span(data-placeholder-type="count-min") #{range.min}#{endSymbol}
         span= separator
-        span(data-placeholder-type="count-max") #{prices.max}#{currency}
+        span(data-placeholder-type="count-max") #{range.max}#{endSymbol}
     .range-slider__slider.js-range-slider__slider
