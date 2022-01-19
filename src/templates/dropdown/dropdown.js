@@ -84,9 +84,9 @@ class Dropdown {
 
   _handleDocumentClick(event) {
     const { target } = event;
-    const clickOnDropdown = this.container.contains(target);
+    const isClickOnDropdown = this.container.contains(target);
 
-    if (!clickOnDropdown) {
+    if (!isClickOnDropdown) {
       this._hideList();
     }
   }

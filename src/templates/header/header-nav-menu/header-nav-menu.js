@@ -20,9 +20,9 @@ class HeaderNavMenu {
     const [currentItem] = this.itemsWithSubmenu.filter((item) => (
       item.contains(target)
     ));
-    const clickOnItem = currentItem !== undefined && currentItem !== null;
+    const isClickOnItem = currentItem !== undefined && currentItem !== null;
 
-    if (!clickOnItem) {
+    if (!isClickOnItem) {
       this.itemsWithSubmenu.forEach((item) => {
         const isActive = item.classList.contains('header-nav-menu__item_active');
 

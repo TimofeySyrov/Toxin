@@ -47,9 +47,9 @@ class DateDropdown {
 
   _handleDocumentClick(event) {
     const { target } = event;
-    const clickOnDropdown = this.body.contains(target);
+    const isClickOnDropdown = this.body.contains(target);
     const isOpenCalendar = this.calendar.isOpen;
-    const isClickOutsideComponent = !clickOnDropdown && isOpenCalendar;
+    const isClickOutsideComponent = !isClickOnDropdown && isOpenCalendar;
 
     if (isClickOutsideComponent) {
       this.calendar.hideCalendar();
